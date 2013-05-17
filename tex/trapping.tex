@@ -1,0 +1,315 @@
+%
+\documentclass[useAMS,8pt,twocolumn]{article}
+%\bibliographystyle{apj}
+
+\pdfpagewidth  200mm
+\pdfpageheight 297mm
+\addtolength{\oddsidemargin}{-.4in}
+%\addtolength{\evensidemargin}{-.4in}                                           
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.6in}
+
+
+%\usepackage[T1]{fontenc}
+%\usepackage[latin9]{inputenc}
+%\usepackage{geometry}
+%\geometry{verbose,letterpaper,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+%\usepackage{apjfonts}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsbsy}
+%\usepackage{mathrsfs}
+\usepackage{mathpazo,bm}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{natbib}
+%\usepackage{amssymb}
+
+
+\newlength{\hfwidth}
+\newlength{\hfwidthsingle}
+\addtolength{\hfwidthsingle}{.5\textwidth} %single fig in figure
+\addtolength{\hfwidth}{.497\textwidth} %single fig in figure*
+
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pderivn}[3]{\frac{\partial^{#3} #1}{\partial #2^{#3}}}
+\newcommand{\vt}[1]{\mathbf{#1}}       %for tensors
+\renewcommand{\v}[1]{{\boldsymbol{#1}}} %for vectors
+\newcommand{\Ro}{\mathrm{Ro}}
+\def\white#1{\textcolor{white}{#1}}
+\newcommand{\del}{\v{\nabla}}
+\newcommand{\grad}{\del}
+\newcommand{\Div}{\del\cdot}
+\newcommand{\Divp}[1]{\del\cdot\left(#1\right)}
+\newcommand{\curl}{\del\times}
+\newcommand{\Laplace}{\nabla^2}
+\newcommand{\de}{\mathrm{d}} 
+\newcommand{\rint}{$s_{\rm int}\,$}
+\newcommand{\rext}{$s_{\rm ext}\,$}
+\newcommand{\hats}{\hat{\v{s}}}
+\newcommand{\hatphi}{\hat{\v{\phi}}}
+\newcommand{\hatz}{\hat{\v{z}}}
+\newcommand{\hatx}{\hat{\v{x}}}
+\newcommand{\haty}{\hat{\v{y}}}
+\newcommand{\hatm}{{\hat{m}}}
+\newcommand{\hatn}{{\hat{n}}}
+\newcommand{\he}{{\hat{e}}}
+\newcommand{\hmu}{{\hat{\mu}}}
+\newcommand{\hnu}{{\hat{\nu}}}
+\newcommand{\va}{v_{_{\rm A}}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\cte}{\textrm{cte}}
+\newcommand{\up}{u^\prime}
+\newcommand{\pp}{p^\prime}
+
+\newcommand{\Eq}[1]{Eq. (\ref{#1})}
+\newcommand{\Eqs}[2]{Eqs. (\ref{#1}) and~(\ref{#2})}
+\newcommand{\Eqss}[2]{Eqs. (\ref{#1})--(\ref{#2})}
+\newcommand{\eq}[1]{\Eq{#1}}
+\newcommand{\eqs}[2]{\Eqs{#1}{#2}}
+\newcommand{\eqss}[2]{\Eqss{#1}{#2}}
+\newcommand{\App}[1]{Appendix~\ref{#1}}
+\newcommand{\app}[1]{\App{#1}}
+\newcommand{\Figure}[1]{Figure~\ref{#1}}
+\newcommand{\Fig}[1]{Fig.~\ref{#1}}
+\newcommand{\fig}[1]{\Fig{#1}}
+\newcommand{\Figs}[2]{Figs.~\ref{#1} and \ref{#2}}
+
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\beqn}{\begin{eqnarray}}
+\newcommand{\eeqn}{\end{eqnarray}}
+\newcommand{\epsp}{\varepsilon_{_{+}}}
+\newcommand{\epsm}{\varepsilon_{_{-}}}
+
+\begin{document}
+\date{}
+
+\title{Steady-state of dust distributions in vortices}
+\author{}
+
+\maketitle
+
+ALMA is returning images of transitional disks in which large
+asymmetries are seen in the dust distribution of mm-size in the outer
+disk. The explanation in vogue borrows from the protoplanetary disk 
+literature by suggesting that these asymmetries are the
+result of dust trapping in giant vortices. The vortex excitation method would
+be Rossby Wave Instability (RWI) at planetary gap edges. 
+
+Due to the drag force, dust trapped in vortices will accumulate in the
+center. Diffusion is needed to maintain a steady state over the
+lifetime of the disk. In here, we seek to obtain steady state solution
+of the diffusion-advection equation of dust in the possible vortices 
+seen in the observations. 
+
+\section{Dust steady state} 
+
+Considering the dust is of small sizes, we can treat it as a
+fluid. The dust should then follow the continuity equation 
+
+\beq
+  \pderiv{\rho_d}{t} = -(\v{v}\cdot\del)\rho_d - \rho_d \Div{\v{v}} + D\Laplace{\rho_d}
+\eeq
+
+\noindent where $\rho_d$ is the dust density, $\v{v}$ is the dust
+velocity, and $D$ is the diffusion coefficient (the diffusion is due
+to elliptical turbulence in the vortex core and in general will be
+different than the turbulent viscosity in the disk). 
+
+To derive the velocities, instead of solving the momentum equations
+for the dust, we make use of the relative velocity, following Youdin
+(2008)  
+
+\beq
+\v{v} = \v{u} + \tau  c_s^2 \,  \grad{\ln \rho_g} 
+\label{eq:v}
+\eeq
+
+\noindent valid for isothermal gas and small values of the friction time $\tau$. The
+velocity $\v{u}$ is the velocity of the gas. Inside a vortex, it is
+divergenceless and must satisfy 
+
+\beq
+  u_x = -\varOmega_V y / \chi \qquad  u_y= \varOmega_V x \chi
+\eeq
+
+\noindent for a vortex of aspect ratio $\chi= y/x > 1$. The Kida
+solution $\varOmega_V = 3\Omega_K/2(\chi-1)$ smoothly matches 
+this velocity field to the Keplerian shear. Taking the divergent of
+\eq{eq:v} gives 
+
+\beq
+\Div{\v{v}} = \tau c_s^2 \, \Laplace{\, \ln \, \rho_g} 
+\label{eq:divv}
+\eeq
+
+\noindent and we can find the Laplacian of the pressure via the Euler
+equation. At steady state, the force balance yields 
+
+\begin{eqnarray}
+c_s^2 \pderiv{\ln \,\rho_g}{x} &=& 3\varOmega^2 x + 2\varOmega u_y -
+u_y\pderiv{u_x}{y} \nonumber \\
+&=& \left(3\varOmega^2 - 2\Omega\Omega_V \chi + \varOmega_V^2\right) x  = C_1 x  \\
+c_s^2 \pderiv{\ln \,\rho_g}{y} &=& - 2\varOmega u_x -
+u_x\pderiv{u_y}{x} \nonumber \\
+&=& \left(-2\Omega\Omega_V/\chi + \Omega_V^2\right) y = C_2 y
+\end{eqnarray}
+
+\noindent  so, 
+
+\beq
+\Div{\v{v}} = C = \tau (C_1+C_2).
+\eeq
+
+\noindent Replacing that in the continuity equation, and setting $\partial_t$ =
+0 for steady state, 
+
+\beq
+  (\v{u}\cdot\del)\rho_d + C \rho_d  - D\Laplace{\rho_d} = 0 
+\eeq
+
+\noindent where we set $\v{v}=\v{u}$ in the first term, accurate to
+first order since $\tau$ is supposed to be small. Substituting the gas velocity,
+
+\beq
+   \Omega_V y / \chi \partial_x \rho_d -  \Omega_V x \chi \partial_y
+  \rho_d - C \rho_d  + D\partial_x^2{\rho_d} + D\partial_y^2{\rho_d} = 0.
+\eeq
+
+Dividing by $D$ and substituting $A=\varOmega_V/D$ and $B=C/D$, we
+arrive at the modified advection-diffusion equation that should
+determine the steady-state distribution of the vortex-trapped dust.
+
+\beq
+  \pderivn{\rho_d}{x}{2} + \pderivn{\rho_d}{y}{2} + A  y\chi^{-1} \pderiv{\rho_d}{x} -  A x \chi \pderiv{\rho_d}{y} - B \rho_d   = 0 
+\eeq
+
+
+\section{Change of variable}
+
+We change variables to the coordinate system used in Chang \& Oishi (2010)
+
+\beqn
+  x &=& a \cos\phi \\
+  y &=& a\chi\sin\phi
+\eeqn
+
+The system is not orthogonal, but it has the advantage of matching the
+aspect ratio of the ellipses (In contrast, the elliptic coordinate
+system, though orthogonal, describes a system of confocal ellipses of
+different aspect ratio, that does not coincide with the geometry of
+the problem). 
+
+In these coordinates, the transformations are $\partial_\v{a} =
+\vt{A} \partial_\v{x}$, and $\partial_\v{x} =
+\vt{A}^{-1} \partial_\v{a}$, with $\v{a} = (a,\phi)^T$, and $\v{x} =
+(x,y)^T$. That is
+
+\beq
+\left[\begin{array}{c}
+    \pderiv{f}{a}  \\
+    \pderiv{f}{\phi}
+  \end{array}\right] = \vt{A} 
+  \left[\begin{array}{c}
+      \pderiv{f}{x}  \\
+      \pderiv{f}{y}
+    \end{array}\right] 
+\eeq
+
+With 
+
+\beq
+\vt{A} = \left[\begin{array}{cc}
+\pderiv{x}{a}  & \pderiv{y}{a}  \\
+\pderiv{x}{\phi}  & \pderiv{y}{\phi} \\
+\end{array}\right] = \left[\begin{array}{cc}
+\cos\phi  & \chi\sin\phi  \\
+-a\sin\phi  & a\chi\cos\phi \\
+\end{array}\right] 
+\eeq
+
+The inverse matrix is 
+
+\beq
+\vt{A}^{-1} = \frac{1}{a\chi} \left[\begin{array}{cc}
+a\chi\cos\phi  & -\chi\sin\phi  \\
+a\sin\phi  & \cos\phi \\
+\end{array}\right]  
+\eeq
+
+The transformations are therefore
+
+\beqn
+\pderiv{}{x} &=& \cos\phi \pderiv{}{a} - \frac{\sin\phi}{a} \pderiv{}{\phi} \\
+\pderiv{}{y} &=& \frac{1}{\chi}\left(\sin\phi \pderiv{}{a} + \frac{\cos\phi}{a} \pderiv{}{\phi} \right)
+\eeqn
+
+And the second derivatives are 
+
+\beqn
+\pderivn{}{x}{2} &=& \left(\cos\phi \pderiv{}{a} - \frac{\sin\phi}{a}
+  \pderiv{}{\phi}\right) \left(\cos\phi \pderiv{}{a} -
+  \frac{\sin\phi}{a} \pderiv{}{\phi}\right)\\
+&=& \cos^2\phi\partial^2_a + a^{-2}\sin^2\phi \partial^2_\phi -
+a^{-1}\sin 2\phi \partial^2_{a\phi} + a^{-2}\sin 2\phi\partial_\phi +
+a^{-1}\sin^2\phi \partial_a 
+\eeqn
+
+\beqn
+\pderivn{}{y}{2} &=& \frac{1}{\chi^2}\left(\sin\phi \pderiv{}{a} + \frac{\cos\phi}{a} \pderiv{}{\phi} \right) \left(\sin\phi \pderiv{}{a} + \frac{\cos\phi}{a} \pderiv{}{\phi} \right)\\
+&=& \frac{1}{\chi^2}\left[ \sin^2\phi \partial^2_a +
+  a^{-2}\cos^2\phi \partial^2_\phi + a^{-1}\sin
+  2\phi \partial^2_{a\phi} - a^{-2}\sin 2\phi \partial_\phi +
+  a^{-1}\cos^2\phi \partial_a \right] 
+\eeqn
+
+The Laplacian is thus 
+
+\beqn
+\Laplace{} &= &\frac{1}{2}\left[ \epsm \cos 2\phi + \epsp\right] \partial^2_a  \\
+                &+& \frac{1}{2a^2}\left[ \epsp - \epsm \cos 2\phi\right] \partial^2_\phi  \\
+                &+& \frac{\sin 2\phi}{a}\epsm \partial^2_{a\phi}  \\
+                &+& \frac{1}{2a}\left[ \epsp - \epsm \cos 2\phi\right] \partial_a  \\
+                &+& \frac{\sin 2\phi}{a^2} \epsm\partial_\phi
+\eeqn
+
+with $\varepsilon_{\pm} = (1 \pm \chi^{-2})$. 
+
+As for the advection term, $\v{v}\cdot\grad$, with $\v{v}$ =$\v{u}$
+$Aa(\sin\phi,\chi\cos\phi)$, it conveniently reduces to  $\v{v}\cdot\grad= - A \partial_\phi $
+
+The dust-trapping equation is therefore 
+
+\beq
+\left(\Laplace{} - A\partial_\phi - B\right) \rho_d = 0 
+\eeq
+
+For an ``axisymmetric'' vortex, it reduces to 
+
+\beq
+\frac{\epsp}{2}\pderivn{\rho_d}{a}{2} +
+\frac{\epsp}{2a}\pderiv{\rho_d}{a} - B \rho_p = 0  
+\eeq
+
+That is, 
+
+\beq
+y^{\prime\prime} + \frac{1}{a}y^\prime - k^2 y = 0 
+\label{eq:axisymmetric}
+\eeq where $y(a) = rho_d$ and $k^2 = 2B/\epsp$.  The solution of \eq{eq:axisymmetric} is a
+sum of Bessel functions: 
+
+\beq
+y(a) = c_1 J_0 (ika) + c_2 Y_0(-ika) 
+\eeq
+
+
+Where $c_1$ and $c_2$ are constants, $J_0(z)$ is the zeroth Bessel function of first kind, and
+$Y_0(z)$ is the zeroth Bessel function of second kind. 
+
+
+
+
+\end{document}
