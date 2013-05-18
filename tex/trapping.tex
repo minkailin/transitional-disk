@@ -132,7 +132,7 @@ velocity $\v{u}$ is the velocity of the gas. Inside a vortex, it is
 divergenceless and must satisfy 
 
 \beq
-  u_x = -\varOmega_V y / \chi \qquad  u_y= \varOmega_V x \chi
+  u_x = \varOmega_V y / \chi \qquad  u_y= -\varOmega_V x \chi
 \eeq
 
 \noindent for a vortex of aspect ratio $\chi= y/x > 1$. The Kida
@@ -251,17 +251,22 @@ And the second derivatives are
 \beqn
 \pderivn{}{x}{2} &=& \left(\cos\phi \pderiv{}{a} - \frac{\sin\phi}{a}
   \pderiv{}{\phi}\right) \left(\cos\phi \pderiv{}{a} -
-  \frac{\sin\phi}{a} \pderiv{}{\phi}\right)\\
+  \frac{\sin\phi}{a} \pderiv{}{\phi}\right) \nonumber \\ \\
 &=& \cos^2\phi\partial^2_a + a^{-2}\sin^2\phi \partial^2_\phi -
-a^{-1}\sin 2\phi \partial^2_{a\phi} + a^{-2}\sin 2\phi\partial_\phi +
+a^{-1}\sin 2\phi \partial^2_{a\phi} \nonumber \\
+&&+ a^{-2}\sin 2\phi\partial_\phi +
 a^{-1}\sin^2\phi \partial_a 
 \eeqn
 
 \beqn
-\pderivn{}{y}{2} &=& \frac{1}{\chi^2}\left(\sin\phi \pderiv{}{a} + \frac{\cos\phi}{a} \pderiv{}{\phi} \right) \left(\sin\phi \pderiv{}{a} + \frac{\cos\phi}{a} \pderiv{}{\phi} \right)\\
+\pderivn{}{y}{2} &=& \frac{1}{\chi^2}\left(\sin\phi \pderiv{}{a} +
+  \frac{\cos\phi}{a} \pderiv{}{\phi} \right) \left(\sin\phi
+  \pderiv{}{a} + \frac{\cos\phi}{a} \pderiv{}{\phi} \right) \nonumber
+\\ \\
 &=& \frac{1}{\chi^2}\left[ \sin^2\phi \partial^2_a +
   a^{-2}\cos^2\phi \partial^2_\phi + a^{-1}\sin
-  2\phi \partial^2_{a\phi} - a^{-2}\sin 2\phi \partial_\phi +
+  2\phi \partial^2_{a\phi}\right. \nonumber \\
+&&\left.- a^{-2}\sin 2\phi \partial_\phi +
   a^{-1}\cos^2\phi \partial_a \right] 
 \eeqn
 
@@ -286,7 +291,14 @@ The dust-trapping equation is therefore
 \left(\Laplace{} - A\partial_\phi - B\right) \rho_d = 0 
 \eeq
 
-For an ``axisymmetric'' vortex, it reduces to 
+For an ``axisymmetric'' vortex, we set $\partial_\phi$ = 0, so 
+
+\beq
+\left[\frac{1}{2}\left( \epsm \cos 2\phi +\epsp\right) \partial^2_a   + \frac{1}{2a}\left( \epsp - \epsm\cos 2\phi\right) \partial_a  - B\right] \rho_d = 0 
+\eeq
+
+We now integrate the coefficients in $\phi$, from 0 to 2$\pi$, to get
+rid of the dependencies on trigonometric functions. This yields
 
 \beq
 \frac{\epsp}{2}\pderivn{\rho_d}{a}{2} +
@@ -298,7 +310,7 @@ That is,
 \beq
 y^{\prime\prime} + \frac{1}{a}y^\prime - k^2 y = 0 
 \label{eq:axisymmetric}
-\eeq where $y(a) = rho_d$ and $k^2 = 2B/\epsp$.  The solution of \eq{eq:axisymmetric} is a
+\eeq where $y(a) = \rho_d$ and $k^2 = 2B/\epsp$.  The general solution of \eq{eq:axisymmetric} is a
 sum of Bessel functions: 
 
 \beq
@@ -306,8 +318,28 @@ y(a) = c_1 J_0 (ika) + c_2 Y_0(-ika)
 \eeq
 
 
-Where $c_1$ and $c_2$ are constants, $J_0(z)$ is the zeroth Bessel function of first kind, and
-$Y_0(z)$ is the zeroth Bessel function of second kind. 
+%Where $c_1$ and $c_2$ are constants, $J_0(z)$ is the zeroth Bessel function of first kind, and
+%$Y_0(z)$ is the zeroth Bessel function of second kind. In terms of
+%Bessel functions with real arguments, we recall that 
+
+%\beqn
+%J_n(iz) &=& i^n I_n(z) \\
+%I_n(z) &=& i^{-n}\left[ {\rm csc}(\pi n) Y_{-n}(iz) - {\rm cot} (\pi n) Y_n(iz)\right]
+%\eeqn
+
+%\noindent for $n=0$, the second type Bessel funtions are equal, so the
+%term in parentheses 
+
+%the term in brackets becomes $I_0(z)$, and 
+
+%Y_n(iz) &=& i^{(n+1)} I_n(z) + \frac{2}{\pi} i^n K_n(z)
+%\eeqn where z is a complex argument, and I and K are the modified
+%Bessel functions of first and second kind, respectively. The solution
+%then becomes
+
+%\beq
+%y(a) = c_1 I_0 (ka) + c_2 i I_0(-ka) + \frac{2c_2}{\pi} K_0(-ka) 
+%\eeq
 
 
 
