@@ -445,12 +445,15 @@ ordinary differential equations,
 \frac{m(m+2)}{4a^2}\rho_{m+2} \right]
 \eeqn
 for each $m$. We only consider even $m$. For $m=0$, the $\rho_{m-2}$
-terms are absent. It will be convenient to write the above equations
+terms are absent. We require $\rho_m^\prime(0)=0$ and $\rho_{m\geq2}(0)=0$. 
+
+It will be convenient to write the above equations
 in operator form,
 \beq\label{eq:ode2}
 \tilde{\chi}\mathcal{B}_m\rho_{m-2}(x) + \mathcal{A}_m\rho_m(x) + \tilde{\chi}\mathcal{C}_m\rho_{m+2}(x)=0,
 \eeq
-where $x\equiv ka$, $\tilde{\chi}\equiv(\chi^2-1)/[2(\chi^2+1)]$, and
+where $x\equiv ka$ (not to be confused with the original Cartesian
+co-ordinate), $\tilde{\chi}\equiv(\chi^2-1)/[2(\chi^2+1)]$, and 
 \beqn\label{eq:ops}
 \mathcal{B}_m &\equiv& \frac{d^2}{dx^2} -
 \frac{2}{x}\left(m-\frac{3}{2}\right)\frac{d}{dx} + \frac{m(m-2)}{x^2},\\
@@ -466,5 +469,91 @@ where $k_m^2 \equiv 1+\mathrm{i}mA/B$. We note that
 \mathcal{A}_mJ_m(\mu x) &=& \left(k_m^2 - \mu^2\right)J_m(\mu x),\\
 \mathcal{C}_mJ_{m+2}(\mu x) &= & = \mu^2J_m(\mu x),
 \eeqn
-and $\mu$ is a constant. 
+where $\mu$ is a constant. 
+
+\subsection{$x\ll 1$}
+As $x\to0$, we expect $\rho_0$ to be the dominant term in
+Eq. \ref{eq:series}, because the non-axisymmetric components vanish
+at the origin. Furthermore, we require $|\rho_m|$ to decrease with
+respect to $m$ in order to achieve convergence. In this section we
+seek the simplest non-axisymmetric solution
+\beq
+\rho(a,\phi) \simeq \rho_0(a) + \rho_2(a)\exp{2\mathrm{i}m\phi}. 
+\eeq
+Specifically, we write
+\beq
+\rho_0(x) = D_0J_0(k_0x) + \epsilon(x),  
+\eeq
+where $\epsilon(x)$ represents the correction to the axisymmetric
+solution due to $\rho_2(x)$. $D_0$ is a constant. The ODEs to be
+solved are 
+\beqn
+\mathcal{A}_0\epsilon(x) &=& -\tilde{\chi}\mathcal{C}_0\rho_2(x),\label{eq:m2_eq1}\\
+\mathcal{A}_2\rho_2(x) &=& -\tilde{\chi}\left[D_0k_0^2J_2(k_0x) +
+  \mathcal{B}_2\epsilon(x)\right].\label{eq:m2_eq2} 
+\eeqn
+
+At this stage, we make the \emph{assumption} that the $\epsilon$ term
+in Eq. \ref{eq:m2_eq2} can be neglected. Thus $\rho_2$ satisfies
+\beq\label{eq:rho2_approx}
+\mathcal{A}_2\rho_2(x) \simeq -\tilde{\chi}D_0k_0^2J_2(k_0x).
+\eeq
+A solution to Eq. \ref{eq:rho2_approx} is
+\beq\label{eq:rho2_approx_sol}
+\rho_2(x)  = -\frac{\tilde{\chi}D_0k_0^2J_2(k_0x)}{k_2^2 - k_0^2}. 
+\eeq
+The general solution to Eq. \ref{eq:rho2_approx} would also include the
+complementary function $J_2(k_2x)$. However, $k_2$ is complex and $|k_2|\gg 1$ (because we are considering
+$\mathrm{St}\ll1$), so $J_2(k_2x)$
+may not be well behaved at boundaries. We have therefore taken the
+particular integral to Eq. \ref{eq:rho2_approx} as the solution for
+$\rho_2$. This is to regard $\rho_0$ as a source term for
+$\rho_2$. The regime $|k_2|\gg1$ corresponds to  
+$\rho_2$ being a small perturbation to the
+axisymmetric solution. 
+
+We can use Eq. \ref{eq:rho2_approx_sol} in Eq. \ref{eq:m2_eq1} to
+calculate the correction term $\epsilon$. The ODE to solve is
+\beqn
+\mathcal{A}_0\epsilon(x)
+&=&\frac{\tilde{\chi}^2D_0k_0^2}{k_2^2-k_0^2}]\mathcal{C}_0J_2(k_0x) \nonumber \\ 
+&=&\frac{\tilde{\chi}^2D_0k_0^4J_0(k_0x)}{k_2^2-k_0^2}.
+\eeqn
+The particular integral is 
+\beq
+\epsilon(x) = \frac{\tilde{\chi}^2D_0k_0^3xJ_1(k_0x)}{2\left(k_2^2 -
+  k_0^2\right)}. 
+\eeq
+Using this expression for $\epsilon(x)$, we can evaluate
+$\mathcal{B}_2\epsilon(x)$ in order to assess our assumption that
+$\epsilon(x)$ has a negligible contribution to $\rho_2$. We find
+\beq
+\mathcal{B}_2\epsilon(x) =
+-\frac{\tilde{\chi}^2D_0k_0^5xJ_1(k_0x)}{2\left(k_2^2 -
+  k_0^2\right)}. 
+\eeq
+Both the $\tilde{\chi}^2$ term and the $k_2^2$ term contributes to
+making $\mathcal{B}_2\epsilon$ small in comparison to the $J_2$ term
+on the RHS of Eq. \ref{eq:m2_eq2}. 
+
+An iteration scheme can now be set up. One can update
+$\rho_2$ with the inclusion of $\mathcal{B}_2\epsilon(x)$ using
+Eq. \ref{eq:m2_eq2}, then in turn update $\epsilon(x)$ using
+Eq. \ref{eq:m2_eq1} and so on. 
+
+
+\subsection{Lower $m$ mode as a source for higher $m$ mode}
+Let us assume that for each $m\geq2$, $\rho_{m-2}$ acts as a source
+for $\rho_{m}$, and that the effect due to $\rho_{m+2}$ can be
+neglected. That is
+\beq
+\mathcal{A}_m\rho_m(x) = -\tilde{\chi}\mathcal{B}_m\rho_{m-2}. 
+\eeq 
+Then, by induction,
+\beq
+\rho_m(x) =D_0
+\frac{(-1)^{m/2}\tilde{\chi}^{m/2}k_0^m}{\prod_{l=1}^{m/2}(k_{2l}^2-k_0^2)}J_m(k_0x). 
+\eeq
+
+
 \end{document}
