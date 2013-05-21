@@ -161,11 +161,10 @@ u_x\pderiv{u_y}{x} \nonumber \\
 
 \beqn
 \Div{\v{v}} &=& -\tau (C_1+C_2) = - C\\
-&=& - \tau\varOmega^2\left[ 2\omega_{_V}
-  \left(\frac{\chi^2+1}{\chi^2}\right) - \omega_{_V}^2 - 3\right]
+&=& - \tau\varOmega^2 \left[2\omega_{_V}\left(\frac{\chi^2+1}{\chi}\right) - (2\omega_{_V}^2 + 3) \right]
 \eeqn
 
-\noindent Where we define C as positive, so that the divergence is negative (physically meaning that the dust gets trapped). Replacing that in the continuity equation, and setting $\partial_t$ =
+\noindent Where we define $C$ as positive, so that the divergence is negative (physically meaning that the dust gets trapped). Replacing that in the continuity equation, and setting $\partial_t$ =
 0 for steady state, 
 
 \beq
@@ -319,8 +318,8 @@ sum of Bessel functions:
 y(a) = c_1 J_0 (ka) + c_2 Y_0(ka) 
 \eeq
 
-Since  $Y_0(0)=0$, we can physically discard this solution, setting
-$c_2=0$. So, the axisymmetric mode is
+Since  $Y_0$ diverges at the origin, we can physically discard 
+this solution, setting $c_2=0$. So, the axisymmetric mode is
 
 \beq
 \rho(a) = c_1 \ J_0 (ka)
@@ -329,32 +328,37 @@ $c_2=0$. So, the axisymmetric mode is
 Or
 
 \beq
-\rho(a) = c_1 \ J_0 \left(a\varOmega\sqrt{\frac{2\tau}{D\epsp}} \ f(\chi)\right)
+\rho(a) = c_1 \ J_0 \left(a\varOmega \ f(\chi) \sqrt{\frac{2\tau}{D}} \right)
 \eeq
 
-with $f^2(\chi) = (2\omega_{_V} (\chi + \chi^{-1}) - \omega_{_V} - 3)$. We 
-can substitute the diffusion coefficient $D=\delta \varOmega H^2$ where 
+\noindent with 
+
+\beqn
+f^2(\chi) &=& \epsp^{-1} \left[2\omega_{_V}\left(\frac{\chi^2+1}{\chi}\right) - (2\omega_{_V}^2 + 3) \right]\nonumber \\
+          &=& 2\omega_{_V}\chi - \epsp^{-1}(2\omega_{_V}^2 + 3)
+\eeqn
+
+We can substitute the diffusion coefficient $D=\delta \varOmega H^2$ where 
 $\delta$ is a dimensionless coefficient, and ${\rm St} = \tau\varOmega$ for 
 the Stokes number, writing thus 
 
 \beq
-\rho(a) = c_1 \ J_0 \left(\frac{a}{H} \sqrt{\frac{2{\rm St}}{\delta}}\psi(\chi)\right)
+\rho(a) = c_1 \ J_0 \left(\frac{a}{H} \ f(\chi) \sqrt{\frac{2{\rm St}}{\delta}}\right)
 \eeq 
 
-with $\psi(\chi) = f(\chi) \epsp^{-1/2}$. The Bessel function $J_0(x)$ is
+The Bessel function $J_0(x)$ is
 non-motononic, with the first root around $x=2.5$. As the density
 cannot be negative, that sets the validity of our solution. The
 solution is also constrained by our use of the shearing sheet
 equations, so the results should not be valid for $x \gg H$. 
  
-We plot the function $\psi(\chi)$ for the Kida and the Goodman
+We plot the function $f(\chi)$ for the Kida and the Goodman
 solution, which are defined in the real axis only for $\chi > 2$ ($\psi^2
 < 0$ for less than that). The Goodman solition tends to an asymptote
 around 0.7. The Kida solution has a  tail around $0.5\pm0.25$ in the
 interval of physical relevance. The first zero is therefore around
 $a_0 \approx H \sqrt{\delta/{\rm St}}$.  As we made use of the
-approximation $\v{v}=\v{u}$, ${\rm St} \ll 1$, and the solution is indeed $a_0 \gg
-H$
+approximation $\v{v}=\v{u}$, ${\rm St} \ll 1$, and the solution is indeed $a_0 \gg H$, for finite values of $\delta$.
 
 \subsection{Axisymmetric u $\ne$ v }
 
@@ -399,13 +403,27 @@ The solution for which is
     Ei}\left(\frac{k^2a^2}{4}\right)\right]
 \eeq
 
-where ${\rm Ei}(x)$ is the exponential integral function. Since it diverges
-for $x\rightarrow\infty$, $c_2$ has to be zero, and 
+\noindent where ${\rm Ei}(x)$ is the exponential integral function. 
+Since it diverges at the origin, $c_2$ has to be zero, and 
 
 \beq
-\rho_d(a) = \rho_{d0} \exp\left(-\frac{a^2}{2H_a^2}\right)
+\rho_d(a) = \rho_{d0} \exp\left(-\frac{a^2}{2H_V^2}\right)
 \eeq
 
-with $H_a = \sqrt{2}/k$. 
+with $H_V = \sqrt{2}/k$ for symmetry with the gas sonic scale. We can 
+rewrite this length scale recalling that 
+
+\beqn
+k^2 = \frac{2C}{\epsp D} = \frac{2{\rm St}}{\delta H^2} f^2(\chi)
+\eeqn 
+
+\noindent We can then write 
+
+\beq
+ H_V = \frac{H}{f(\chi)} \sqrt{\frac{\delta}{\rm St}}
+\eeq
+
+\noindent where $\psi(\chi)$ depends on the vortex solution used. We plot 
+$\psi(\chi)$ for the Kida and Goodman solutions in \fig{fig:fchi}.
 
 \end{document}
