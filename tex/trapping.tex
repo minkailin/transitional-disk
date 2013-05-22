@@ -114,18 +114,223 @@
 \section{Introduction}
 \label{sect:introduction}
 
-ALMA is returning images of transitional disks in which large
-asymmetries are seen in the dust distribution of mm-size in the outer
-disk. The explanation in vogue borrows from the protoplanetary disk 
-literature by suggesting that these asymmetries are the
-result of dust trapping in giant vortices. The vortex excitation method would
-be Rossby Wave Instability (RWI) at planetary gap edges. 
+Transitional disks are a class of disks that lacks a near infrared
+excess, implying absense of optically thick warm dust in the inner
+disk. At the same time, these disks show signatures of cold gas in the
+outer disk, and 50\% of such disks show signs of accretion (Calvet et
+al. 2005, Espaillat et al. 2007, \comm{check, quote relevant works}). 
+The age of these disks, in the 1-10 Myr range, suggests that they are undergoing 
+the evolutionary stage between gas-rich protoplanetary disks and gas-poor
+debris disks. The absense of dust in the inner disk is usually
+attributed to the planet formation process, supposed to be completed
+or nearly completed in that region. 
 
-Due to the drag force, dust trapped in vortices will accumulate in the
-center. Diffusion is needed to maintain a steady state over the
-lifetime of the disk. In here, we seek to obtain steady state solution
-of the diffusion-advection equation of dust in the possible vortices 
-seen in the observations. 
+Since the early images of transitional disks, a variety of deviations
+from axisymmetry have been observed in the outer disk \comm{quote works}. These asymmetries 
+have recently been observed with the Atacama Large Millimeter Array
+(ALMA), showing large lopsided dust distributions \comm{quote works}. The explanation in
+vogue borrows from the protoplanetary disk literature by suggesting that these asymmetries are the
+result of dust trapping in giant anticyclonic vortices. 
+
+Trapping of solids in gas vortices was independently suggested
+by Barge \& Sommeria (1995) and Tanga et al. (1996) as a route for
+planet formation in the inner regions of circumstellar
+disks. Particles trapping in a vortex is analog to the particle drift
+that happens in the disk
+itself. The gas in the disk rotates at a slight sub-Keplerian rate,
+because the pressure, decreasing outwards, opposes gravity,
+lowering the amount of angular momentum needed to achieve centrifugal
+equilibrium. A particle does not feel the pressure gradient, orbiting at
+the Keplerian velocity in the absense of drag forces. The particle
+thus travels faster than the gas, feeling a
+headwind and sinking. In a vortex, gravity is substituted by the
+Coriolis force, leading to a similar result. Particles experience a
+drag force, lose angular momentum, and sink toward the vortex
+center, where they accumulate. Klahr \& Henning (1997) applied the model 
+to turbulent eddies in the solar nebula, finding trapping of mm-sized
+particles preferentially \comm{why this wrong result?}, and suggested
+this could aid on the formation of chondrules. The dynamics of dust
+trapping in vortices was developed by Chavanis (2000), a detailed work 
+that set the analytical foundations of the field \comm{model,
+  limitations, results?}.  
+
+The first attempt to simulate the process with
+fully nonlinear compressible hydrodynamics was carried by Johansen et
+al. (2004), imposing a vortex solution into a  shearing box (a Cartesian box sampling a small
+patch of the disk, co-rotating with the flow at a fixed distance from
+the star, see e.g. Hawley et al. 1995, Umurhan 2010). The model had limitations, chiefly the use of Laplacian
+viscosity, that limited the lifetime of the vortex, and the symmetries
+imposed by the shearing box, that affected the geometry and evolution
+of the vortex.  Both effects combined did not allow the
+imposed vortex solution to survive for more than a single orbit, but
+nonetheless the vortex ability to trap dust was validated. 
+
+These studies, however, did not consider the question of how to
+form disk vortices in first place. Because vortices are exact nonlinear solutions to the equations of
+hydrodynamics, these works used analytical vortex solutions, and remained
+agnostic with respect to their origin. As it turns out, forming and
+sustaining disk vortices proved to be a formidable problem in
+itself. Because of the strong stabilizing effect of the Keplerian
+shear, formation mechanisms rely on modifications of the shear
+profile, in what have been called ``edge modes''. These modes have
+first been found by Hohfeld \& Lovelace (1978), and mentioned en
+passant by Toomre (1981), both in the context of galactic disks. The first detailed analysis of their
+(in)stability properties was provided by Papaloizou \& Pringle (1985) in the
+context of ``thick tori'' accretion disks around
+black holes, a work that was followed by Hawley et al. (1987), that
+simulated the process, and showed that the instability saturates into
+vortices. It was the hope back then that this process, that became
+known as ``Papaloizou-Pringle instability'', would generate the
+long-sough mechanism for accretion, but the fact that it needed a
+modification of the shear profile did not play into its favor. 
+
+Though the interest on this process waned rapidly after the re-discovery of the MRI
+(Velikhov 1959, Chandrasekhar 1961) by Balbus \& Hawley (1991), and
+its rise to paradigmatic status as the main source of angular momentum
+transport in accretion disks, it is still valid for forming
+vortices. The calculation was brough to the context of cold disks by
+Lovelace et al. (1999), who also extended the analysis to
+non-barotropic disks, and renamed the process Rossby wave instability
+(RWI), due to a similarity between the unstable modes and the
+meandering waves in planetary weather. While in the context of thick
+tori models the modification of the shear profile may not come about
+easily, the situation is different in protoplanetary
+disks. Simulations show that two processes naturally form such
+profiles. One is the boundary between the MRI-active magnetized zone
+and the MRI-dead resistive zone; in the transition, a resistivity
+inversion occurs, with matter piling up, generating the favourable
+shear profile (Varni\`ere et al. 2006). The accumulation of dust in RWI vortices at dead zone boundaries was
+studied at first by Inaba \& Barge (2006), who found that \comm{what
+  did they find?}. The other is at the edge of a
+gap opened by a planet. That the gap edge is unstable to the RWI is seen in
+the inviscid simulations of many codes in the code comparison study of
+de Val-Borro et al. (2006). The process was studied in detail by de
+Val-Borro et al. (2007). 
+
+These efforts culminated into a coherent picture of vortex-assisted
+planet formation in dead zone vortices by Lyra et al. (2008, 2009a) and in 
+gap edge vortices by Lyra et al. (2009b). These works solved
+selfconsistently for the nonlinear compressible hydrodynamics and the
+aerodynamics of interacting solid particles, in inviscid models in the
+inertial frame, removing the limitations in Johansen et al. (2004),
+albeit in the context of 2D disks. These works inspired a renewed
+interest in the RWI, that has been vigorously studied in three
+dimensions by Meheut et al. (2010, 2012a, 2012b, 2012c) , Lin \&
+Papaloizou (2011),  Lin (2012, 2013ab), and Lyra \& Mac Low (2012)
+\comm{tell what these studies found}. 
+
+Part of these results have been translated to the field of
+transitional disks. The main difference is that while the focus 
+of vortex dust-trapping research in protoplanetary disks is the
+concentration of pebbles rocks and boulders in the inner disk to form
+planets, in transitional disks the focus is on the trapping of sub-mm
+and mm-size dust in the outer disk to match the observed lopsided 
+asymmetries. While the motivation and dust sizes are different, the
+physics is scale-free and almost identical. The particle size that is
+preferentially trapped is set by the friction time, $\tau_{\rm f}$, which is a
+function of the gas density and particle radius. A suitable nondimensionalization for the
+friction time is the Stokes number, St = $\varOmega \tau_{\rm f}$,
+where $\varOmega$ is the Keplerian frequency. While in the dense, fast
+rotating, inner regions of T-Tauri disks, the best particle size (St =1, e.g. Youdin 2008)
+corresponds to meter-size, in the thin, outer regions of transitional
+disks, the size corresponding to St=1 drops by about three orders of
+magnitude. The resulting trapping of sub-mm and mm-size dust may not
+lead to the critical densities necessary to form planets, but they may
+well explain the puzzling observed lopsided asymmetries. 
+
+%Reg\'aly et al. (2012) suggested that the sub-mm 
+%observations of Brown et al. (2009) could be the result of dust
+%trapping in vortices that, they suggest, could be triggered at dead
+%zone edges, as in Varni\`ere et al. (2006), Inaba \& Barge (2006), and Lyra et
+%al. (2008, 2009a). The dead zone mechanism is probably not reasonable 
+
+%While the mechanism is probably not reasonable
+%(outer edges of dead zones are very smooth,
+
+
+% where the main particle that gets trapped is not
+%from mm to meter size, but from micron to mm-size. Whereas the focus
+%of the dust trapping research on 
+
+
+%The motivation also
+%changes from 
+
+
+
+
+%numerical work that s
+
+%Vortex formation has been
+%considered in connection 
+
+%was considered
+%by Hawley et al. (1987), in ``thick tori'' accretion disks around
+%black holes, subject to the Papaloizou-Pringle instability (1985). 
+
+
+
+%While 2D vortices naturally coallesce out of random
+%small-scale noise as a result of an inverse cascade (Batchelor 1967), 
+%3D closed elliptic streamlines are rendered unstable as inertial waves propagating 
+%along them find resonance with the strain field; a process that
+%has been called ``elliptic instability'' (Pierrehumbert
+%1986, Bayly 1986, Kerswell et al. 2002, Lesur \& Papaloizou 2009, Lyra
+%2013). 
+
+
+
+
+
+
+%The vortex excitation method would
+%be Rossby Wave Instability (RWI) at planetary gap edges. 
+
+
+
+%- Definition of transitional disks
+%- Asymmetries in these disks (signposts of planets)
+%- BORROWS from the planet formation and protoplanetary disk literature
+%to suggest vortices
+%- RWI is a well studied process
+%- Dust trapping: 
+%Barge & Sommeria; 
+%Tanga et al. (initial ideas) ;
+%Klahr & Henning 1997
+%Chavanis 2000 - detailed study of dust trapping, 
+%Anders' article 2004, used that to simulate dust trapping in a
+%shearing sheet; agnostic about vortex formation mechanism;
+%(check Fred Adams, see if there's anything in there)
+%Papa & Pringle 84, Hawley 87 ; Lovelace et al. 99, Li et al. 00 (RWI)
+
+%Varniere & Tagger 06, dead zones
+%de Val Borro et al. 2006 (many codes); 2007 vortex trapping by itself
+
+%culminated in the planet-forming model assisted by vortex trapping in
+%dead zone vortices (Lyra et al. 2008, 2009a) and gap edge vortices
+%(Lyra et al. 09b). 
+
+%A renaissance was sparkled in the study of the RWI and other methods
+%for producing vortices, such as the baroclinic instability
+%(mention?). 
+
+%Recently transitional disks have become a new venue for exploring the
+%physics of vortex trapping. 
+
+%* Wilner et al. 2002 - 3Mj at 40 AU with e=0.6 (check how's that now) 
+
+%ALMA is returning images of transitional disks in which large
+%asymmetries are seen in the dust distribution of mm-size in the outer
+%disk. The explanation in vogue borrows from the protoplanetary disk 
+%literature by suggesting that these asymmetries are the
+%result of dust trapping in giant vortices. The vortex excitation method would
+%be Rossby Wave Instability (RWI) at planetary gap edges. 
+
+%Due to the drag force, dust trapped in vortices will accumulate in the
+%center. Diffusion is needed to maintain a steady state over the
+%lifetime of the disk. In here, we seek to obtain steady state solution
+%of the diffusion-advection equation of dust in the possible vortices 
+%seen in the observations. 
 
 \section{Dust steady state} 
 \label{sect:model-equations}
@@ -525,7 +730,7 @@ at the origin. Furthermore, we require $|\rho_m|$ to decrease with
 respect to $m$ in order to achieve convergence. In this section we
 seek the simplest non-axisymmetric solution
 \beq
-\rho(a,\phi) \simeq \rho_0(a) + \rho_2(a)\exp{\left(2\mathrm{i}m\phi\right)}. 
+\rho(a,\phi) \simeq \rho_0(a) + \rho_2(a)\exp{\left(2\mathrm{i}\phi\right)}. 
 \eeq
 Specifically, we write
 \beq
