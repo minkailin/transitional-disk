@@ -238,62 +238,53 @@ magnitude. The resulting trapping of sub-mm and mm-size dust may not
 lead to the critical densities necessary to form planets, but they may
 well explain the puzzling observed lopsided asymmetries. 
 
-%Reg\'aly et al. (2012) suggested that the sub-mm 
-%observations of Brown et al. (2009) could be the result of dust
-%trapping in vortices that, they suggest, could be triggered at dead
-%zone edges, as in Varni\`ere et al. (2006), Inaba \& Barge (2006), and Lyra et
-%al. (2008, 2009a). The dead zone mechanism is probably not reasonable 
+Reg\'aly et al. (2012) suggested that the sub-mm 
+observations of Brown et al. (2009) could be the result of dust
+trapping in vortices that, they suggest, could be triggered at dead
+zone edges, as in Varni\`ere et al. (2006), Inaba \& Barge (2006), and Lyra et
+al. (2008, 2009a). The dead zone mechanism is probably not reasonable,
+because the radii is quite far out, and the outer edge of the dead
+edge is quite smooth (Dzyuerkevich 2010, Neal 2013). It is probably
+not the result of baroclinic instability either, because the outer
+disk is isothermal, and the baroclinic instability requires a negative
+entropy gradient. This leaves gap-edge RWI as a plausible mechanism. 
 
-%While the mechanism is probably not reasonable
-%(outer edges of dead zones are very smooth,
+If indeed the asymmetries are due to gap edge Rossby vortices, then, 
+as the drag force drives dust toward the vortex center, diffusion is
+needed to maintain a steady state over the lifetime of the disk \footnote{{This
+diffusion is the result of elliptic instability and in general
+different than the diffusion in the gas phase (see e.g., Lyra \& Klahr
+2011)}}. Steady state solutions should exist in this case and, indeed, Ataiee
+et al. (2013), modeling particles of different Stokes numbers, finds
+two different dust distributions, as expected. Birnstiel et al. (2013) 
+presented an analytical model that yields the dust density
+distribution. The solution, however, makes use of the stringent
+approximation of canceling the radial pressure gradient, so it applies
+only at the radial location of a pressure maximum; it effectively
+describes an infinitesimally narrow ring.  In this work we derive the 
+steady state distribution of dust trapped in vortices, accurate to first order in
+Stokes number, and general in space. In Section 2 we derive the
+advective-diffusive equation, and in Sect 3 the appropriate coordinate
+transformation. In Sect 4 we solve the equation for the axisymmetric
+case, and in Sect 5 we generalize it for non-axisymmetry. Concluding
+remarks follow. 
 
-
-% where the main particle that gets trapped is not
-%from mm to meter size, but from micron to mm-size. Whereas the focus
-%of the dust trapping research on 
-
-
-%The motivation also
-%changes from 
-
-
-
-
-%numerical work that s
-
-%Vortex formation has been
-%considered in connection 
-
-%was considered
-%by Hawley et al. (1987), in ``thick tori'' accretion disks around
-%black holes, subject to the Papaloizou-Pringle instability (1985). 
-
-
-
-%While 2D vortices naturally coallesce out of random
-%small-scale noise as a result of an inverse cascade (Batchelor 1967), 
-%3D closed elliptic streamlines are rendered unstable as inertial waves propagating 
-%along them find resonance with the strain field; a process that
-%has been called ``elliptic instability'' (Pierrehumbert
-%1986, Bayly 1986, Kerswell et al. 2002, Lesur \& Papaloizou 2009, Lyra
-%2013). 
+%Due to the drag force, dust trapped in vortices will accumulate in the
+%center. Diffusion is needed to maintain a steady state over the
+%lifetime of the disk. In here, we seek to obtain steady state solution
+%of the diffusion-advection equation of dust in the possible vortices 
+%seen in the observations. 
 
 
 
 
-
-
-%The vortex excitation method would
-%be Rossby Wave Instability (RWI) at planetary gap edges. 
-
-
-
+%Outline of the Introduction: 
 %- Definition of transitional disks
 %- Asymmetries in these disks (signposts of planets)
 %- BORROWS from the planet formation and protoplanetary disk literature
 %to suggest vortices
 %- RWI is a well studied process
-%- Dust trapping: 
+%- Dust trapping: mention works of: 
 %Barge & Sommeria; 
 %Tanga et al. (initial ideas) ;
 %Klahr & Henning 1997
@@ -302,21 +293,20 @@ well explain the puzzling observed lopsided asymmetries.
 %shearing sheet; agnostic about vortex formation mechanism;
 %(check Fred Adams, see if there's anything in there)
 %Papa & Pringle 84, Hawley 87 ; Lovelace et al. 99, Li et al. 00 (RWI)
-
 %Varniere & Tagger 06, dead zones
 %de Val Borro et al. 2006 (many codes); 2007 vortex trapping by itself
-
 %culminated in the planet-forming model assisted by vortex trapping in
 %dead zone vortices (Lyra et al. 2008, 2009a) and gap edge vortices
 %(Lyra et al. 09b). 
-
-%A renaissance was sparkled in the study of the RWI and other methods
-%for producing vortices, such as the baroclinic instability
-%(mention?). 
+%A renaissance was sparkled in the study of the RWI, e.g., Min-Kai's
+%and Heloise's work.  
+%(mention other methods for producing vortices, and why they fail for
+%transitional disk - dead zone to far out, baroclinic can't go in isothermal)
 
 %Recently transitional disks have become a new venue for exploring the
 %physics of vortex trapping. 
 
+%Works on dust with ALMA: Cassasus, Isela, Nienke
 %* Wilner et al. 2002 - 3Mj at 40 AU with e=0.6 (check how's that now) 
 
 %ALMA is returning images of transitional disks in which large
@@ -326,11 +316,6 @@ well explain the puzzling observed lopsided asymmetries.
 %result of dust trapping in giant vortices. The vortex excitation method would
 %be Rossby Wave Instability (RWI) at planetary gap edges. 
 
-%Due to the drag force, dust trapped in vortices will accumulate in the
-%center. Diffusion is needed to maintain a steady state over the
-%lifetime of the disk. In here, we seek to obtain steady state solution
-%of the diffusion-advection equation of dust in the possible vortices 
-%seen in the observations. 
 
 \section{Dust steady state} 
 \label{sect:model-equations}
