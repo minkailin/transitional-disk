@@ -1,21 +1,22 @@
 %
-\documentclass[useAMS,8pt,twocolumn]{article}
-%\bibliographystyle{apj}
+%\documentclass[useAMS,8pt,twocolumn]{article}
+\documentclass[apj]{emulateapj}
+\bibliographystyle{apj}
 
-\pdfpagewidth  200mm
-\pdfpageheight 297mm
-\addtolength{\oddsidemargin}{-.4in}
-%\addtolength{\evensidemargin}{-.4in}                                           
-\addtolength{\textwidth}{1.1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.6in}
+%\pdfpagewidth  200mm
+%\pdfpageheight 297mm
+%\addtolength{\oddsidemargin}{-.4in}
+%%\addtolength{\evensidemargin}{-.4in}                                           
+%\addtolength{\textwidth}{1.1in}
+%\addtolength{\topmargin}{-.5in}
+%\addtolength{\textheight}{1.6in}
 
 
 %\usepackage[T1]{fontenc}
 %\usepackage[latin9]{inputenc}
 %\usepackage{geometry}
 %\geometry{verbose,letterpaper,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
-%\usepackage{apjfonts}
+\usepackage{apjfonts}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{amsbsy}
@@ -38,6 +39,9 @@
 \renewcommand{\v}[1]{{\boldsymbol{#1}}} %for vectors
 \newcommand{\Ro}{\mathrm{Ro}}
 \def\white#1{\textcolor{white}{#1}}
+\definecolor{brown}{rgb}{0.42,0.24,0.07}
+\def\brown#1{\textcolor{brown}{#1}}
+\newcommand{\comm}[1]{({\it \brown{#1}})}
 \newcommand{\del}{\v{\nabla}}
 \newcommand{\grad}{\del}
 \newcommand{\Div}{\del\cdot}
@@ -69,6 +73,8 @@
 \newcommand{\eq}[1]{\Eq{#1}}
 \newcommand{\eqs}[2]{\Eqs{#1}{#2}}
 \newcommand{\eqss}[2]{\Eqss{#1}{#2}}
+\newcommand{\eqp}[1]{(Eq. \ref{#1})}
+
 \newcommand{\App}[1]{Appendix~\ref{#1}}
 \newcommand{\app}[1]{\App{#1}}
 \newcommand{\Figure}[1]{Figure~\ref{#1}}
@@ -83,13 +89,30 @@
 \newcommand{\epsp}{\varepsilon_{_{+}}}
 \newcommand{\epsm}{\varepsilon_{_{-}}}
 
+\shorttitle{Dust in disk vortices}
+\shortauthors{Lyra \& Lin}
+
+\slugcomment{Draft version}
+
 \begin{document}
-\date{}
+%\date{}
 
-\title{Steady-state of dust distributions in vortices}
-\author{}
+\title{Steady state of dust distributions in disk vortices}
+\author{Wladimir Lyra\altaffilmark{1,2,3,$\star$} and Min-Kai Lin\altaffilmark{4,$\star$}}
+\email{wlyra@caltech.edu, \ mklin924@cita.utoronto.ca}
+\altaffiltext{1}{Jet Propulsion Laboratory, California Institute of Technology, 4800 Oak Grove Drive, Pasadena, CA, 91109, USA}
+\altaffiltext{2}{Division of Geological \& Planetary Sciences, California Institute of Technology, 1200 E California Blvd MC 150-21, Pasadena, CA 91125 USA}
+\altaffiltext{3}{Sagan Fellow}
+\altaffiltext{4}{Canadian Institute for Theoretical Astrophysics , 60
+  St. George Street, Toronto, Ontario, M5S 3H8, Canada}
+\altaffiltext{$\star$}{Both authors contributed equally to this work}
 
-\maketitle
+\begin{abstract}
+.
+\end{abstract}
+
+\section{Introduction}
+\label{sect:introduction}
 
 ALMA is returning images of transitional disks in which large
 asymmetries are seen in the dust distribution of mm-size in the outer
@@ -105,6 +128,7 @@ of the diffusion-advection equation of dust in the possible vortices
 seen in the observations. 
 
 \section{Dust steady state} 
+\label{sect:model-equations}
 
 Considering the dust is of small sizes, we can treat it as a
 fluid. The dust should then follow the continuity equation 
@@ -288,9 +312,11 @@ $\varOmega_V a(\sin\phi,-\chi\cos\phi)$, it conveniently reduces to  $\v{v}\cdot
 
 The dust-trapping equation is therefore 
 
-\beq
+\beq \label{eq:dust-trapping-uvzero}
 \left(\Laplace{} + A\partial_\phi + B\right) \rho_d = 0 
 \eeq
+
+\section{Axisymmetric dust distribution}
 
 For an ``axisymmetric'' vortex, we set $\partial_\phi$ = 0, so 
 
@@ -430,11 +456,11 @@ k^2 = \frac{2C}{\epsp D} = \frac{2{\rm St}}{\delta H^2} f^2(\chi)
 $\psi(\chi)$ for the Kida and Goodman solutions in \fig{fig:fchi}.
 
 
-\section{Non-axisymmtric problem}
+\section{Non-axisymmetric problem}
 For the non-axisymmetric problem ($\partial_\phi\neq0$), we first
 return to the limit $\tau\to0$ or $\rm{St}\ll 1$ for dust velocity and
 formally set $\bm{v}=\bm{u}$ in the advection term 
-$\bm{v}\cdot\nabla$. We are therefore comparing dust advection due to
+$\bm{v}\cdot\del$. We are therefore comparing dust advection due to
 the background vortex flow and diffusion. 
 %This is expected to be valid close to the vortex center
 %($a\to0$). Furthermore, Eq. \ref{eq:gen_axi} and
@@ -443,11 +469,13 @@ the background vortex flow and diffusion.
 \subsection{Conversion to ordinary differential equations}
 The dust density $\rho_d$ is periodic in the $\phi$ co-ordinate. We
 therefore seek solutions of the form
+
 \beq\label{eq:series}
-\rho_d(a,\phi) = \Re\sum_{n=0}^\infty\rho_n(a)\exp{\mathrm{i}n\phi}. 
+\rho_d(a,\phi) = {\rm Re}
+\left[\sum_{n=0}^\infty\rho_n(a)\exp{\left(\mathrm{i}n\phi\right)} \right].
 \eeq
 Henceforth, we will drop the real part notation for convenience. Inserting
-Eq. \ref{eq:series} into the partial differential equation,
+\eq{eq:series} into the partial differential equation \eqp{eq:dust-trapping-uvzero},
 multiplying by $\exp{(-\mathrm{i}m\phi)}$ and integrating the resulting
 expressions over the $\phi$ co-ordinate, we arrive at a set of
 ordinary differential equations,
@@ -462,8 +490,9 @@ ordinary differential equations,
 +\frac{1}{2a}\left(m+\frac{3}{2}\right)\rho_{m+2}^\prime +
 \frac{m(m+2)}{4a^2}\rho_{m+2} \right]
 \eeqn
-for each $m$. We only consider even $m$. For $m=0$, the $\rho_{m-2}$
-terms are absent. We require $\rho_m^\prime(0)=0$ and $\rho_{m\geq2}(0)=0$. 
+for each $m$. We only consider even $m$ \comm{why?}. For $m=0$, the $\rho_{m-2}$
+terms are absent. We require $\rho_m^\prime(0)=0$ and
+$\rho_{m\geq2}(0)=0$ \comm{why?}. 
 
 It will be convenient to write the above equations
 in operator form,
@@ -491,12 +520,12 @@ where $\mu$ is a constant.
 
 \subsection{$x\ll 1$}
 As $x\to0$, we expect $\rho_0$ to be the dominant term in
-Eq. \ref{eq:series}, because the non-axisymmetric components vanish
+\eq{eq:series}, because the non-axisymmetric components vanish
 at the origin. Furthermore, we require $|\rho_m|$ to decrease with
 respect to $m$ in order to achieve convergence. In this section we
 seek the simplest non-axisymmetric solution
 \beq
-\rho(a,\phi) \simeq \rho_0(a) + \rho_2(a)\exp{2\mathrm{i}m\phi}. 
+\rho(a,\phi) \simeq \rho_0(a) + \rho_2(a)\exp{\left(2\mathrm{i}m\phi\right)}. 
 \eeq
 Specifically, we write
 \beq
@@ -512,25 +541,25 @@ solved are
 \eeqn
 
 At this stage, we make the \emph{assumption} that the $\epsilon$ term
-in Eq. \ref{eq:m2_eq2} can be neglected. Thus $\rho_2$ satisfies
+in \eq{eq:m2_eq2} can be neglected \comm{why?}. Thus $\rho_2$ satisfies
 \beq\label{eq:rho2_approx}
 \mathcal{A}_2\rho_2(x) \simeq -\tilde{\chi}D_0k_0^2J_2(k_0x).
 \eeq
-A solution to Eq. \ref{eq:rho2_approx} is
+A solution to \eq{eq:rho2_approx} is
 \beq\label{eq:rho2_approx_sol}
 \rho_2(x)  = -\frac{\tilde{\chi}D_0k_0^2J_2(k_0x)}{k_2^2 - k_0^2}. 
 \eeq
-The general solution to Eq. \ref{eq:rho2_approx} would also include the
+The general solution to \eq{eq:rho2_approx} would also include the
 complementary function $J_2(k_2x)$. However, $k_2$ is complex and $|k_2|\gg 1$ (because we are considering
 $\mathrm{St}\ll1$), so $J_2(k_2x)$
 may not be well behaved at boundaries. We have therefore taken the
-particular integral to Eq. \ref{eq:rho2_approx} as the solution for
+particular integral to \eq{eq:rho2_approx} as the solution for
 $\rho_2$. This is to regard $\rho_0$ as a source term for
 $\rho_2$. The regime $|k_2|\gg1$ corresponds to  
 $\rho_2$ being a small perturbation to the
 axisymmetric solution. 
 
-We can use Eq. \ref{eq:rho2_approx_sol} in Eq. \ref{eq:m2_eq1} to
+We can use \eq{eq:rho2_approx_sol} in \eq{eq:m2_eq1} to
 calculate the correction term $\epsilon$. The ODE to solve is
 \beqn
 \mathcal{A}_0\epsilon(x)
@@ -545,19 +574,21 @@ The particular integral is
 Using this expression for $\epsilon(x)$, we can evaluate
 $\mathcal{B}_2\epsilon(x)$ in order to assess our assumption that
 $\epsilon(x)$ has a negligible contribution to $\rho_2$. We find
+
 \beq
 \mathcal{B}_2\epsilon(x) =
 -\frac{\tilde{\chi}^2D_0k_0^5xJ_1(k_0x)}{2\left(k_2^2 -
   k_0^2\right)}. 
 \eeq
+
 Both the $\tilde{\chi}^2$ term and the $k_2^2$ term contributes to
 making $\mathcal{B}_2\epsilon$ small in comparison to the $J_2$ term
-on the RHS of Eq. \ref{eq:m2_eq2}. 
+on the RHS of \eq{eq:m2_eq2}. 
 
 An iteration scheme can now be set up. One can update
 $\rho_2$ with the inclusion of $\mathcal{B}_2\epsilon(x)$ using
-Eq. \ref{eq:m2_eq2}, then in turn update $\epsilon(x)$ using
-Eq. \ref{eq:m2_eq1} and so on. 
+\eq{eq:m2_eq2}, then in turn update $\epsilon(x)$ using
+\eq{eq:m2_eq1} and so on. 
 
 
 \subsection{Lower $m$ mode as a source for higher $m$ mode}
@@ -573,5 +604,24 @@ Then, by induction,
 \frac{(-1)^{m/2}\tilde{\chi}^{m/2}k_0^m}{\prod_{l=1}^{m/2}(k_{2l}^2-k_0^2)}J_m(k_0x). 
 \eeq
 
+%\begin{figure}
+%  \begin{center}
+%    \resizebox{\columnwidth}{!}{\includegraphics{../figs/damped_oscl.png}}
+%  \end{center}
+%\caption[]{Two of the five solutions of \eq{eq:polynomium}, corresponding
+%to damped oscillations through most of the parameter space. In a small region
+%(high dust-to-gas ratio and high frequency) modes are exponentially damped
+%without oscillating. The other three solutions \fig{fig:growth} involve linear
+%growth.}
+% \label{fig:damped-oscl}
+%\end{figure}
+
+\section{Conclusions}
+
+\acknowledgments
+
+\begin{thebibliography}{}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\end{thebibliography}
 
 \end{document}
