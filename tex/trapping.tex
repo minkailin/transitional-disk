@@ -529,7 +529,78 @@ The dust-trapping equation is therefore
 
 
 
-\section{Axisymmetric dust distribution}
+\section{``Axisymmetric'' dust distribution}
+
+We now make the assumption that the dust distribution follows, in shape, that of
+the gas (we will relax this approximation in the next section). In this case, the
+dust distribution follows ellipses of equal aspect ratio. So,
+$\partial_\nu$ = 0, ``axisymmetric'' in the ($a,\nu$)
+coordinates. Equation~\ref{eq:dust-trapping-uvzero} becomes
+
+\beqn
+&&\left\{\frac{1}{2}\left(\epsm \cos 2\nu +\epsp\right) \partial^2_a  +  \left[\frac{1}{2a}\left( \epsp - \epsm\cos 2\nu\right) \right.\right. \nonumber\\
+&&\left.\left.\white{\frac{1}{1}}+ (B_1\cos^2\nu +  B_2\sin^2\nu)a\right] \partial_a  + B\right\} \rho_d = 0 
+\eeqn
+
+We now integrate the coefficients in $\nu$, from 0 to 2$\pi$. This yields
+
+%\beq
+%\left[\frac{\epsp}{2}\partial^2_a  +  \left(\frac{\epsp}{2a} + \frac{Ba}{2}\right) \partial_a  + B\right]\rho_d = 0 
+%\eeq
+
+\beq\label{eq:dust-trapping-axis}
+\left[\partial^2_a  +  \left(\frac{1}{a} +  \frac{k^2}{2}a\right) \partial_a  + k^2\right]\rho_d = 0 
+\eeq
+
+\noindent where we define $k^2=2B/\epsp$. The solution of
+\eq{eq:dust-trapping-axis} is 
+
+\beq
+\rho_d(a) = \exp\left(-\frac{k^2a^2}{4}\right)  \left[c_1 + c_2 {\rm
+    Ei}\left(\frac{k^2a^2}{4}\right)\right]
+\eeq
+
+\noindent where $c_1$ and $c_2$ are constants, and ${\rm Ei}(x)$ is the exponential integral function. 
+Since it diverges at the origin, $c_2$ has to be zero, and 
+
+\beq
+\rho_d(a) = \rho_{d0} \exp\left(-\frac{a^2}{2H_V^2}\right)
+\eeq
+
+\noindent with $H_V = \sqrt{2}/k$ for symmetry with the gas sonic scale. We can 
+rewrite this length scale recalling that $k^2=2B/\epsp$ and
+$B=C/D$. So, 
+
+\beqn
+k^2 = \frac{2{\rm St}}{\delta H^2} f^2(\chi)
+\eeqn 
+
+\noindent where 
+
+\beqn
+f^2(\chi) &=& \epsp^{-1} \left[2\omega_{_V}\left(\frac{\chi^2+1}{\chi}\right) - (2\omega_{_V}^2 + 3) \right]\nonumber \\
+          &=& 2\omega_{_V}\chi - \epsp^{-1}(2\omega_{_V}^2 + 3)
+\eeqn
+
+\noindent is a scale function, that depends on the vortex solution
+used. We plot $f(\chi)$ for the Kida and GNG solutions in
+\fig{fig:scale-function}. The dust distribution is thus 
+
+\beq\label{eq:gen_axi}
+\rho_d(a) = \rho_{d0} \ \exp\left(-\frac{a^2}{2H_V^2}\right) \ ,
+\eeq
+\beq
+ H_V = \frac{H}{f(\chi)} \sqrt{\frac{\delta}{\rm St}}. 
+\eeq
+
+Dust distributions for different values of
+$\delta/{\rm St}$ are plotted in \fig{fig:gaussian}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Axisymmetric $\v{u} = \v{v}$ }
 
 For an ``axisymmetric'' vortex, we set $\partial_\nu$ = 0, so 
 
@@ -572,10 +643,6 @@ Or
 
 \noindent with 
 
-\beqn
-f^2(\chi) &=& \epsp^{-1} \left[2\omega_{_V}\left(\frac{\chi^2+1}{\chi}\right) - (2\omega_{_V}^2 + 3) \right]\nonumber \\
-          &=& 2\omega_{_V}\chi - \epsp^{-1}(2\omega_{_V}^2 + 3)
-\eeqn
 
 We can substitute the diffusion coefficient $D=\delta \varOmega H^2$ where 
 $\delta$ is a dimensionless coefficient, and ${\rm St} = \tau\varOmega$ for 
@@ -599,6 +666,7 @@ interval of physical relevance. The first zero is therefore around
 $a_0 \approx H \sqrt{\delta/{\rm St}}$.  As we made use of the
 approximation $\v{v}=\v{u}$, ${\rm St} \ll 1$, and the solution is indeed $a_0 \gg H$, for finite values of $\delta$.
 
+<<<<<<< HEAD
 \subsection{Axisymmetric u $\ne$ v }
 
 In deriving eq 10, we assumed $\v{u}=\v{v}$, for practical reasons. We
@@ -672,6 +740,17 @@ in the limit $\rm{St}\ll 1$ and formally set $\bm{v}=\bm{u}$
 in the advection term $\bm{v}\cdot\del$. We are therefore comparing  
 dust advection due to the background vortex flow and diffusion. We remark that including the   
 $\tau$ term for dust velocity only helps to concentrate dust at the vortex core (pressure maximum).   
+=======
+\section{Non-axisymmetric problem}
+For the non-axisymmetric problem ($\partial_\nu\neq0$), we first
+return to the limit $\tau\to0$ or $\rm{St}\ll 1$ for dust velocity and
+formally set $\bm{v}=\bm{u}$ in the advection term 
+$\bm{v}\cdot\del$. We are therefore comparing dust advection due to
+the background vortex flow and diffusion. 
+%This is expected to be valid close to the vortex center
+%($a\to0$). Furthermore, Eq. \ref{eq:gen_axi} and
+%Eq. \ref{eq:axi} are identical at $O(k^2a^2)$.   
+>>>>>>> 27b3c678e99a1ed32e2055974dcca9a57a5169f5
 
 \subsection{Conversion to ordinary differential equations}
 The dust density $\rho_d$ is periodic in the $\nu$ co-ordinate. We
