@@ -337,12 +337,12 @@ for the dust, we make use of the relative velocity, following Youdin
 (2008)  
 
 \beq
-\v{v} = \v{u} + \tau  c_s^2 \,  \grad{\ln \rho_g} 
+\v{v} = \v{u} + \tau  \grad{h} 
 \label{eq:v}
 \eeq
 
-\noindent valid for isothermal gas and small values of the friction time $\tau$. The
-velocity $\v{u}$ is the velocity of the gas. Inside a vortex, it is
+\noindent accurate to first order in $\tau$. The enthalpy $h$ is defined 
+as $dh = dp /\rho$, and  $\v{u}$ is the velocity of the gas. Inside a vortex, it is
 divergenceless and must satisfy 
 
 \beq
@@ -355,26 +355,27 @@ this velocity field to the Keplerian shear. Taking the divergent of
 \eq{eq:v} gives 
 
 \beq
-\Div{\v{v}} = \tau c_s^2 \, \Laplace{\, \ln \, \rho_g} 
+\Div{\v{v}} = \tau \Laplace{h} 
 \label{eq:divv}
 \eeq
 
-\noindent and we can find the Laplacian of the pressure via the Euler
+\noindent and we can find the Laplacian of the enthalpy via the Euler
 equation. At steady state, the force balance yields 
 
 \begin{eqnarray}
-c_s^2 \pderiv{\ln \,\rho_g}{x} &=& 3\varOmega^2 x + 2\varOmega u_y -
+\pderiv{h}{x} &=& 3\varOmega^2 x + 2\varOmega u_y -
 u_y\pderiv{u_x}{y} \nonumber \\
-&=& \left(3\varOmega^2 - 2\Omega\Omega_V \chi + \varOmega_V^2\right) x  = -C_1 x  \\
-c_s^2 \pderiv{\ln \,\rho_g}{y} &=& - 2\varOmega u_x -
+&=& \left(3\varOmega^2 - 2\Omega\Omega_V \chi + \varOmega_V^2\right) x
+= -\tau^{-1} \ C_1 x  \\
+\pderiv{h}{y} &=& - 2\varOmega u_x -
 u_x\pderiv{u_y}{x} \nonumber \\
-&=& \left(-2\Omega\Omega_V/\chi + \Omega_V^2\right) y = -C_2 y
+&=& \left(-2\Omega\Omega_V/\chi + \Omega_V^2\right) y = -\tau^{-1} \ C_2 y
 \end{eqnarray}
 
 \noindent  so, with $\omega_{_V}=\varOmega_V/\varOmega$
 
 \beqn
-\Div{\v{v}} &=& -\tau (C_1+C_2) = - C\\
+\Div{\v{v}} &=& -(C_1+C_2) = - C\\
 &=& - \tau\varOmega^2 \left[2\omega_{_V}\left(\frac{\chi^2+1}{\chi}\right) - (2\omega_{_V}^2 + 3) \right]
 \eeqn
 
@@ -382,33 +383,40 @@ u_x\pderiv{u_y}{x} \nonumber \\
 0 for steady state, 
 
 \beq
-D\Laplace{\rho_d} + C\rho_d -  (\v{u}\cdot\del)\rho_d = 0 
+\left(D\Laplace{} -  \v{v}\cdot\del  + C\right)\rho_d = 0 
 \eeq
 
-\noindent where we set $\v{v}=\v{u}$ in the first term, accurate to
-first order since $\tau$ is supposed to be small. Substituting the gas velocity,
-
-\beq
-   -\Omega_V y / \chi \partial_x \rho_d +  \Omega_V x \chi \partial_y
-  \rho_d + C \rho_d  + D\partial_x^2{\rho_d} + D\partial_y^2{\rho_d} = 0.
-\eeq
-
-Dividing by $D$ and substituting $A=\varOmega_V/D$ and $B=C/D$, we
+Substituting the gas velocity, and dividing by $D$, we
 arrive at the modified advection-diffusion equation that should
 determine the steady-state distribution of the vortex-trapped dust.
 
+%\beq
+%   -\Omega_V y / \chi \partial_x \rho_d +  \Omega_V x \chi \partial_y
+%  \rho_d + C \rho_d  + D\partial_x^2{\rho_d} + D\partial_y^2{\rho_d} = 0.
+%\eeq
+
+%Dividing by $D$ and substituting $A=\varOmega_V/D$ and $B=C/D$, we
+%arrive at the modified advection-diffusion equation that should
+%determine the steady-state distribution of the vortex-trapped dust.
+
+%\beqn
+%&&  \pderivn{\rho_d}{x}{2} + \pderivn{\rho_d}{y}{2} - \left(Ay\chi^{-1} - B_1x\right) \pderiv{\rho_d}{x} +\\  
+%&& \quad \left(A x \chi + B_2y\right) \pderiv{\rho_d}{y} + B \rho_d   = 0 
+%\eeqn
+
 \beq
-  \pderivn{\rho_d}{x}{2} + \pderivn{\rho_d}{y}{2} - A  y\chi^{-1} \pderiv{\rho_d}{x} +  A x \chi \pderiv{\rho_d}{y} + B \rho_d   = 0 
+\left[\Laplace{} - \left(Ay\chi^{-1} - B_1x\right) \partial_x  +  \left(A x \chi + B_2y\right) \partial_y + B \right] \rho_d   = 0 
 \eeq
 
+\noindent where we also substituted  $A=\varOmega_V/D$ and $B_i=C_i/D$.
 
 \section{Change of variable}
 
 We change variables to the coordinate system used in Chang \& Oishi (2010)
 
 \beqn
-  x &=& a \cos\phi \\
-  y &=& a\chi\sin\phi
+  x &=& a \cos\nu \\
+  y &=& a\chi\sin\nu
 \eeqn
 
 The system is not orthogonal, but it has the advantage of matching the
@@ -419,13 +427,13 @@ the problem).
 
 In these coordinates, the transformations are $\partial_\v{a} =
 \vt{A} \partial_\v{x}$, and $\partial_\v{x} =
-\vt{A}^{-1} \partial_\v{a}$, with $\v{a} = (a,\phi)^T$, and $\v{x} =
+\vt{A}^{-1} \partial_\v{a}$, with $\v{a} = (a,\nu)^T$, and $\v{x} =
 (x,y)^T$. That is
 
 \beq
 \left[\begin{array}{c}
     \pderiv{f}{a}  \\
-    \pderiv{f}{\phi}
+    \pderiv{f}{\nu}
   \end{array}\right] = \vt{A} 
   \left[\begin{array}{c}
       \pderiv{f}{x}  \\
@@ -438,10 +446,10 @@ With
 \beq
 \vt{A} = \left[\begin{array}{cc}
 \pderiv{x}{a}  & \pderiv{y}{a}  \\
-\pderiv{x}{\phi}  & \pderiv{y}{\phi} \\
+\pderiv{x}{\nu}  & \pderiv{y}{\nu} \\
 \end{array}\right] = \left[\begin{array}{cc}
-\cos\phi  & \chi\sin\phi  \\
--a\sin\phi  & a\chi\cos\phi \\
+\cos\nu  & \chi\sin\nu  \\
+-a\sin\nu  & a\chi\cos\nu \\
 \end{array}\right] 
 \eeq
 
@@ -449,72 +457,87 @@ The inverse matrix is
 
 \beq
 \vt{A}^{-1} = \frac{1}{a\chi} \left[\begin{array}{cc}
-a\chi\cos\phi  & -\chi\sin\phi  \\
-a\sin\phi  & \cos\phi \\
+a\chi\cos\nu  & -\chi\sin\nu  \\
+a\sin\nu  & \cos\nu \\
 \end{array}\right]  
 \eeq
 
 The transformations are therefore
 
 \beqn
-\pderiv{}{x} &=& \cos\phi \pderiv{}{a} - \frac{\sin\phi}{a} \pderiv{}{\phi} \\
-\pderiv{}{y} &=& \frac{1}{\chi}\left(\sin\phi \pderiv{}{a} + \frac{\cos\phi}{a} \pderiv{}{\phi} \right)
+\pderiv{}{x} &=& \cos\nu \pderiv{}{a} - \frac{\sin\nu}{a} \pderiv{}{\nu} \\
+\pderiv{}{y} &=& \frac{1}{\chi}\left(\sin\nu \pderiv{}{a} + \frac{\cos\nu}{a} \pderiv{}{\nu} \right)
 \eeqn
 
-And the second derivatives are 
+%And the second derivatives are 
 
-\beqn
-\pderivn{}{x}{2} &=& \left(\cos\phi \pderiv{}{a} - \frac{\sin\phi}{a}
-  \pderiv{}{\phi}\right) \left(\cos\phi \pderiv{}{a} -
-  \frac{\sin\phi}{a} \pderiv{}{\phi}\right) \nonumber \\ \\
-&=& \cos^2\phi\partial^2_a + a^{-2}\sin^2\phi \partial^2_\phi -
-a^{-1}\sin 2\phi \partial^2_{a\phi} \nonumber \\
-&&+ a^{-2}\sin 2\phi\partial_\phi +
-a^{-1}\sin^2\phi \partial_a 
-\eeqn
+%\beqn
+%\pderivn{}{x}{2} &=& \left(\cos\nu \pderiv{}{a} - \frac{\sin\nu}{a}
+%  \pderiv{}{\nu}\right) \left(\cos\nu \pderiv{}{a} -
+%  \frac{\sin\nu}{a} \pderiv{}{\nu}\right) \nonumber \\ \\
+%&=& \cos^2\nu\partial^2_a + a^{-2}\sin^2\nu \partial^2_\nu -
+%a^{-1}\sin 2\nu \partial^2_{a\nu} \nonumber \\
+%&&+ a^{-2}\sin 2\nu\partial_\nu +
+%a^{-1}\sin^2\nu \partial_a 
+%\eeqn
 
-\beqn
-\pderivn{}{y}{2} &=& \frac{1}{\chi^2}\left(\sin\phi \pderiv{}{a} +
-  \frac{\cos\phi}{a} \pderiv{}{\phi} \right) \left(\sin\phi
-  \pderiv{}{a} + \frac{\cos\phi}{a} \pderiv{}{\phi} \right) \nonumber
-\\ \\
-&=& \frac{1}{\chi^2}\left[ \sin^2\phi \partial^2_a +
-  a^{-2}\cos^2\phi \partial^2_\phi + a^{-1}\sin
-  2\phi \partial^2_{a\phi}\right. \nonumber \\
-&&\left.- a^{-2}\sin 2\phi \partial_\phi +
-  a^{-1}\cos^2\phi \partial_a \right] 
-\eeqn
+%\beqn
+%\pderivn{}{y}{2} &=& \frac{1}{\chi^2}\left(\sin\nu \pderiv{}{a} +
+%  \frac{\cos\nu}{a} \pderiv{}{\nu} \right) \left(\sin\nu
+% \pderiv{}{a} + \frac{\cos\nu}{a} \pderiv{}{\nu} \right) \nonumber
+%\\ \\
+%&=& \frac{1}{\chi^2}\left[ \sin^2\nu \partial^2_a +
+%  a^{-2}\cos^2\nu \partial^2_\nu + a^{-1}\sin
+%  2\nu \partial^2_{a\nu}\right. \nonumber \\
+%&&\left.- a^{-2}\sin 2\nu \partial_\nu +
+%  a^{-1}\cos^2\nu \partial_a \right] 
+%\eeqn
 
 The Laplacian is thus 
 
 \beqn
-\Laplace{} &= &\frac{1}{2}\left[ \epsm \cos 2\phi + \epsp\right] \partial^2_a  \\
-                &+& \frac{1}{2a^2}\left[ \epsp - \epsm \cos 2\phi\right] \partial^2_\phi  \\
-                &-& \frac{\sin 2\phi}{a}\epsm \partial^2_{a\phi}  \\
-                &+& \frac{1}{2a}\left[ \epsp - \epsm \cos 2\phi\right] \partial_a  \\
-                &+& \frac{\sin 2\phi}{a^2} \epsm\partial_\phi
+\Laplace{} &= &\frac{1}{2}\left[ \epsm \cos 2\nu + \epsp\right] \partial^2_a  \\
+                &+& \frac{1}{2a^2}\left[ \epsp - \epsm \cos 2\nu\right] \partial^2_\nu  \\
+                &-& \frac{\sin 2\nu}{a}\epsm \partial^2_{a\nu}  \\
+                &+& \frac{1}{2a}\left[ \epsp - \epsm \cos 2\nu\right] \partial_a  \\
+                &+& \frac{\sin 2\nu}{a^2} \epsm\partial_\nu
 \eeqn
 
-with $\varepsilon_{\pm} = (1 \pm \chi^{-2})$. 
+\noindent with $\varepsilon_{\pm} = (1 \pm \chi^{-2})$.  As for the advection term, we have 
 
-As for the advection term, $\v{v}\cdot\grad$, with $\v{v}$=$\v{u}$=
-$\varOmega_V a(\sin\phi,-\chi\cos\phi)$, it conveniently reduces to  $\v{v}\cdot\grad=  -\varOmega_V \partial_\phi $
+\beqn
+\v{v}\cdot\del &=& (\v{u} + \tau \grad h) \cdot \del \nonumber \\
+%&=& - \varOmega_V \partial_\nu - \left( C_1 x \partial_x + C_2 y\partial_y\right) \nonumber \\
+&=& - \left[\varOmega_V - \frac{\sin2\nu}{2}  (C_1 -  C_2)\right]\partial_\nu \nonumber \\
+&&- \left( C_1 \cos^2\nu   + C_2\sin^2\nu \right) a \ \partial_a 
+\eeqn
+
+%with $\v{v}$=$\v{u}$=
+%$\varOmega_V a(\sin\nu,-\chi\cos\nu)$, it conveniently reduces to  $\v{v}\cdot\grad=  -\varOmega_V \partial_\nu $
 
 The dust-trapping equation is therefore 
 
-\beq \label{eq:dust-trapping-uvzero}
-\left(\Laplace{} + A\partial_\phi + B\right) \rho_d = 0 
-\eeq
+%\beq \label{eq:dust-trapping-uvzero}
+%\left(\Laplace{} + A\partial_\nu + B\right) \rho_d = 0 
+%\eeq
+
+\beqn \label{eq:dust-trapping-uvzero}
+&& \left\{ \Laplace{} + \left[A - \frac{\sin2\nu}{2}  (B_1 - B_2)\right]\partial_\nu \ +  \right.  \nonumber\\
+&& \left. \white{\frac{1}{1}}\left( B_1 \cos^2\nu   + B_2\sin^2\nu
+  \right) a \ \partial_a  + B \right\} \rho_d = 0 
+\eeqn
+
+
 
 \section{Axisymmetric dust distribution}
 
-For an ``axisymmetric'' vortex, we set $\partial_\phi$ = 0, so 
+For an ``axisymmetric'' vortex, we set $\partial_\nu$ = 0, so 
 
 \beq
-\left[\frac{1}{2}\left( \epsm \cos 2\phi +\epsp\right) \partial^2_a   + \frac{1}{2a}\left( \epsp - \epsm\cos 2\phi\right) \partial_a  + B\right] \rho_d = 0 
+\left[\frac{1}{2}\left( \epsm \cos 2\nu +\epsp\right) \partial^2_a   + \frac{1}{2a}\left( \epsp - \epsm\cos 2\nu\right) \partial_a  + B\right] \rho_d = 0 
 \eeq
 
-We now integrate the coefficients in $\phi$, from 0 to 2$\pi$, to get
+We now integrate the coefficients in $\nu$, from 0 to 2$\pi$, to get
 rid of the dependencies on trigonometric functions. This yields
 
 \beq
@@ -583,26 +606,24 @@ relax now this approximation, substituting $\v{v}$ for eq 2. The
 advection term then becomes 
 
 \beqn
-(\v{v}\cdot\del) &=& (\v{u}\cdot\del)  + \tau c_s^2 (\grad\ln \cdot
-\del) \nonumber \\
-&=& - \varOmega_V \partial_\phi - \tau \left( C_1 x \partial_x + C_2 y
+\v{v}\cdot\del &=& (\v{u} + \tau \grad h) \cdot \del \nonumber \\
+&=& - \varOmega_V \partial_\nu - \left( C_1 x \partial_x + C_2 y
   \partial_y\right) \nonumber \\
-&=& - \varOmega_V \partial_\phi - \tau \left( C_1 \cos^2\phi   + C_2
-  \sin^2\phi \right) a \ \partial_a \nonumber \\
-&&+ \tau \cos\phi\sin\phi  (C_1 - C_2) \partial_\phi
+&=& - \varOmega_V \partial_\nu - \left( C_1 \cos^2\nu   + C_2
+  \sin^2\nu \right) a \ \partial_a \nonumber \\
+&&+ \cos\nu\sin\nu  (C_1 - C_2) \partial_\nu
 \eeqn
 
-And, for the axisymmetric mode, $\partial_\phi=0$, so
+And, for the axisymmetric mode, $\partial_\nu=0$, so
 
 \beq
-(\v{v}\cdot\del) = - \tau a \left( C_1 
-  \cos^2\phi  + C_2  \sin^2\phi \right) \partial_a
+\v{v}\cdot\del = - a \left( C_1  \cos^2\nu  + C_2  \sin^2\nu \right) \partial_a
 \eeq
 
-Integrating it over $\frac{1}{2\pi}\int_0^{2\pi} d\phi$, 
+Integrating it over $\frac{1}{2\pi}\int_0^{2\pi} d\nu$, 
 
 \beq
-(\v{v}\cdot\del) = - \frac{C a}{2} \pderiv{}{a}
+\v{v}\cdot\del = - \frac{C a}{2} \pderiv{}{a}
 \eeq
 
 And the dust trapping equation becomes 
@@ -645,21 +666,20 @@ k^2 = \frac{2C}{\epsp D} = \frac{2{\rm St}}{\delta H^2} f^2(\chi)
 \noindent where $\psi(\chi)$ depends on the vortex solution used. We plot 
 $\psi(\chi)$ for the Kida and Goodman solutions in \fig{fig:fchi}.
 
-
 \section{Non-axisymmetric corrections}
-We now consider the non-axisymmetric problem ($\partial_\phi\neq0$) 
+We now consider the non-axisymmetric problem ($\partial_\nu\neq0$) 
 in the limit $\rm{St}\ll 1$ and formally set $\bm{v}=\bm{u}$ 
 in the advection term $\bm{v}\cdot\del$. We are therefore comparing  
 dust advection due to the background vortex flow and diffusion. We remark that including the   
 $\tau$ term for dust velocity only helps to concentrate dust at the vortex core (pressure maximum).   
- 
+
 \subsection{Conversion to ordinary differential equations}
-The dust density $\rho_d$ is periodic in the $\phi$ co-ordinate. We 
+The dust density $\rho_d$ is periodic in the $\nu$ co-ordinate. We
 therefore seek solutions of the form
 
 \beq\label{eq:series}
-\rho_d(a,\phi) = {\rm Re}
-\left[\sum_{n=0}^\infty\rho_n(a)\exp{\left(\mathrm{i}n\phi\right)} \right].
+\rho_d(a,\nu) = {\rm Re}
+\left[\sum_{n=0}^\infty\rho_n(a)\exp{\left(\mathrm{i}n\nu\right)} \right].
 \eeq
 For convenience, we will drop the real part notation from now on. Inserting
 \eq{eq:series} into the partial differential equation \eqp{eq:dust-trapping-uvzero},
@@ -676,7 +696,11 @@ ordinary differential equations,
 %+\frac{1}{2a}\left(m+\frac{3}{2}\right)\rho_{m+2}^\prime +
 %\frac{m(m+2)}{4a^2}\rho_{m+2} \right]
 %\eeqn
-%for each $m$. 
+%for each $m$. We only consider even $m$ \comm{why?}. For $m=0$, the $\rho_{m-2}$
+%terms are absent. We require $\rho_m^\prime(0)=0$ and
+%$\rho_{m\geq2}(0)=0$ \comm{why?}. 
+%It will be convenient to write the above equations
+%in operator form,
 \beq\label{eq:ode2}
 \tilde{\chi}\mathcal{B}_m\rho_{m-2}(z) + \mathcal{A}_m\rho_m(z) + \tilde{\chi}\mathcal{C}_m\rho_{m+2}(z)=0,
 \eeq
@@ -702,8 +726,8 @@ Since dust is advected by fluid with elliptic streamlines, we
 expect $\rho(a,\nu)$ to have even symmetry in $\nu$. Henceforth we
 only consider even $m$. We seek solutions with  
 $\rho_m^\prime(0)=0$ and $\rho_{m\geq2}(0)=0$, so that
-$\partial_x\rho_d=\partial_y\rho_d=0$ at the origin. That is, dust
-reaches maximal density there.  
+$\partial_x\rho_d=\partial_y\rho_d=0$ at the origin, consistent with 
+dust reaching maximal density there.  
 
 %It will be convenient to write the above equations
 %in operator form,
@@ -724,7 +748,7 @@ respect to $m$ in order to achieve convergence.
 
 In this section we seek the simplest non-axisymmetric solution 
 \beq
-\rho(a,\phi) \simeq \rho_0(a) + \rho_2(a)\exp{\left(2\mathrm{i}\phi\right)}. 
+\rho(a,\nu) \simeq \rho_0(a) + \rho_2(a)\exp{\left(2\mathrm{i}\nu\right)}. 
 \eeq
  
 
