@@ -646,80 +646,93 @@ k^2 = \frac{2C}{\epsp D} = \frac{2{\rm St}}{\delta H^2} f^2(\chi)
 $\psi(\chi)$ for the Kida and Goodman solutions in \fig{fig:fchi}.
 
 
-\section{Non-axisymmetric problem}
-For the non-axisymmetric problem ($\partial_\phi\neq0$), we first
-return to the limit $\tau\to0$ or $\rm{St}\ll 1$ for dust velocity and
-formally set $\bm{v}=\bm{u}$ in the advection term 
-$\bm{v}\cdot\del$. We are therefore comparing dust advection due to
-the background vortex flow and diffusion. 
-%This is expected to be valid close to the vortex center
-%($a\to0$). Furthermore, Eq. \ref{eq:gen_axi} and
-%Eq. \ref{eq:axi} are identical at $O(k^2a^2)$.   
-
+\section{Non-axisymmetric corrections}
+We now consider the non-axisymmetric problem ($\partial_\phi\neq0$) 
+in the limit $\rm{St}\ll 1$ and formally set $\bm{v}=\bm{u}$ 
+in the advection term $\bm{v}\cdot\del$. We are therefore comparing  
+dust advection due to the background vortex flow and diffusion. We remark that including the   
+$\tau$ term for dust velocity only helps to concentrate dust at the vortex core (pressure maximum).   
+ 
 \subsection{Conversion to ordinary differential equations}
-The dust density $\rho_d$ is periodic in the $\phi$ co-ordinate. We
+The dust density $\rho_d$ is periodic in the $\phi$ co-ordinate. We 
 therefore seek solutions of the form
 
 \beq\label{eq:series}
 \rho_d(a,\phi) = {\rm Re}
 \left[\sum_{n=0}^\infty\rho_n(a)\exp{\left(\mathrm{i}n\phi\right)} \right].
 \eeq
-Henceforth, we will drop the real part notation for convenience. Inserting
+For convenience, we will drop the real part notation from now on. Inserting
 \eq{eq:series} into the partial differential equation \eqp{eq:dust-trapping-uvzero},
 multiplying by $\exp{(-\mathrm{i}m\phi)}$ and integrating the resulting
-expressions over the $\phi$ co-ordinate, we arrive at a set of
-ordinary differential equations,
-
-\beqn\label{eq:ode1}
-&&0=\epsilon_{-}\left[\frac{1}{4}\rho_{m-2}^{\prime\prime}
--\frac{1}{2a}\left(m-\frac{3}{2}\right)\rho_{m-2}^\prime +
-\frac{m(m-2)}{4a^2}\rho_{m-2}\right] \nonumber\\
-&&+\frac{\epsilon_+}{2}\left(\rho_m^{\prime\prime}+\frac{1}{a}\rho_m^\prime\right)
--\left(\frac{m^2\epsilon_+}{2a^2}-\mathrm{i}mA-B\right)\rho_m\nonumber\\
-&&+\epsilon_{-}\left[\frac{1}{4}\rho_{m+2}^{\prime\prime}
-+\frac{1}{2a}\left(m+\frac{3}{2}\right)\rho_{m+2}^\prime +
-\frac{m(m+2)}{4a^2}\rho_{m+2} \right]
-\eeqn
-for each $m$. We only consider even $m$ \comm{why?}. For $m=0$, the $\rho_{m-2}$
-terms are absent. We require $\rho_m^\prime(0)=0$ and
-$\rho_{m\geq2}(0)=0$ \comm{why?}. 
-
-It will be convenient to write the above equations
-in operator form,
+expressions over the $\phi$ co-ordinate, we arrive at a set of 
+ordinary differential equations, 
+%\beqn\label{eq:ode1}
+%&&0=\epsilon_{-}\left[\frac{1}{4}\rho_{m-2}^{\prime\prime}
+%-\frac{1}{2a}\left(m-\frac{3}{2}\right)\rho_{m-2}^\prime +
+%\frac{m(m-2)}{4a^2}\rho_{m-2}\right] \nonumber\\
+%&&+\frac{\epsilon_+}{2}\left(\rho_m^{\prime\prime}+\frac{1}{a}\rho_m^\prime\right)
+%-\left(\frac{m^2\epsilon_+}{2a^2}-\mathrm{i}mA-B\right)\rho_m\nonumber\\
+%&&+\epsilon_{-}\left[\frac{1}{4}\rho_{m+2}^{\prime\prime}
+%+\frac{1}{2a}\left(m+\frac{3}{2}\right)\rho_{m+2}^\prime +
+%\frac{m(m+2)}{4a^2}\rho_{m+2} \right]
+%\eeqn
+%for each $m$. 
 \beq\label{eq:ode2}
-\tilde{\chi}\mathcal{B}_m\rho_{m-2}(x) + \mathcal{A}_m\rho_m(x) + \tilde{\chi}\mathcal{C}_m\rho_{m+2}(x)=0,
+\tilde{\chi}\mathcal{B}_m\rho_{m-2}(z) + \mathcal{A}_m\rho_m(z) + \tilde{\chi}\mathcal{C}_m\rho_{m+2}(z)=0,
 \eeq
-where $x\equiv ka$ (not to be confused with the original Cartesian
-co-ordinate), $\tilde{\chi}\equiv(\chi^2-1)/[2(\chi^2+1)]$, and 
+where $z\equiv ka$, $\tilde{\chi}\equiv(\chi^2-1)/[2(\chi^2+1)]$, and 
 \beqn\label{eq:ops}
-\mathcal{B}_m &\equiv& \frac{d^2}{dx^2} -
-\frac{2}{x}\left(m-\frac{3}{2}\right)\frac{d}{dx} + \frac{m(m-2)}{x^2},\\
-\mathcal{A}_m &\equiv& \frac{d^2}{dx^2} + \frac{1}{x}\frac{d}{dx} +
-\left(k_m^2 - \frac{m^2}{x^2}\right),\\
-\mathcal{C}_m  &\equiv& \frac{d^2}{dx^2} +
-\frac{2}{x}\left(m+\frac{3}{2}\right)\frac{d}{dx} +
-\frac{m(m+2)}{x^2}, 
+\mathcal{B}_m &\equiv& \frac{d^2}{dz^2} -
+\frac{2}{z}\left(m-\frac{3}{2}\right)\frac{d}{dz} + \frac{m(m-2)}{z^2},\\
+\mathcal{A}_m &\equiv& \frac{d^2}{dz^2} + \frac{1}{z}\frac{d}{dz} +
+\left(k_m^2 - \frac{m^2}{z^2}\right),\\
+\mathcal{C}_m  &\equiv& \frac{d^2}{dz^2} +
+\frac{2}{z}\left(m+\frac{3}{2}\right)\frac{d}{dz} +
+\frac{m(m+2)}{z^2}, 
 \eeqn
-where $k_m^2 \equiv 1+\mathrm{i}mA/B$. We note that
-\beqn\label{eq:ops2}
-\mathcal{B}_mJ_{m-2}(\mu x) &=& \mu^2J_m(\mu x),\\
-\mathcal{A}_mJ_m(\mu x) &=& \left(k_m^2 - \mu^2\right)J_m(\mu x),\\
-\mathcal{C}_mJ_{m+2}(\mu x) &= & = \mu^2J_m(\mu x),
-\eeqn
-where $\mu$ is a constant. 
+where $k_m^2 \equiv 1+\mathrm{i}mA/B$. Eq. \eq{eq:ode2} holds for each
+$m$ except for $m=0$ for which the $\rho_{m-2}$ term is absent. Each
+$\rho_m$ couples to $\rho_{m\pm2}$ through operators $\mathcal{B}_m$
+and $\mathcal{C}_m$. The axisymmetric problem is recovered by
+setting $\rho_{m>0}=0$. 
+%The coupling terms vanish for $\chi=1$, as
+%expected, since in that case the vortex flow is truly axisymmetric.    
 
-\subsection{$x\ll 1$}
-As $x\to0$, we expect $\rho_0$ to be the dominant term in
-\eq{eq:series}, because the non-axisymmetric components vanish
-at the origin. Furthermore, we require $|\rho_m|$ to decrease with
-respect to $m$ in order to achieve convergence. In this section we
-seek the simplest non-axisymmetric solution
+Since dust is advected by fluid with elliptic streamlines, we
+expect $\rho(a,\nu)$ to have even symmetry in $\nu$. Henceforth we
+only consider even $m$. We seek solutions with  
+$\rho_m^\prime(0)=0$ and $\rho_{m\geq2}(0)=0$, so that
+$\partial_x\rho_d=\partial_y\rho_d=0$ at the origin. That is, dust
+reaches maximal density there.  
+
+%It will be convenient to write the above equations
+%in operator form,
+Finally, we note that
+\beqn\label{eq:ops2}
+\mathcal{B}_mJ_{m-2}(\mu z) &=& \mu^2J_m(\mu z),\\
+\mathcal{A}_mJ_m(\mu z) &=& \left(k_m^2 - \mu^2\right)J_m(\mu z),\\
+\mathcal{C}_mJ_{m+2}(\mu z) &= & = \mu^2J_m(\mu z),
+\eeqn
+where $\mu$ is a constant. These relations will be useful in
+constructing solutions. 
+
+\subsection{$z\ll 1$}
+As $a\to 0$, We expect this to be valid as $a\to0$ because the non-axisymmetric 
+components vanish at the origin, so $\rho_0$ becomes the dominant term
+in \eq{eq:series}. Furthermore, we require $|\rho_m|$ to decrease with
+respect to $m$ in order to achieve convergence.
+
+In this section we seek the simplest non-axisymmetric solution 
 \beq
 \rho(a,\phi) \simeq \rho_0(a) + \rho_2(a)\exp{\left(2\mathrm{i}\phi\right)}. 
 \eeq
-Specifically, we write
+ 
+
+ 
+
+Let
 \beq
-\rho_0(x) = D_0J_0(k_0x) + \epsilon(x),  
+\rho_0(z) = D_0J_0(k_0z) + \epsilon(z),  
 \eeq
 where $\epsilon(x)$ represents the correction to the axisymmetric
 solution due to $\rho_2(x)$. $D_0$ is a constant. The ODEs to be
@@ -730,8 +743,8 @@ solved are
   \mathcal{B}_2\epsilon(x)\right].\label{eq:m2_eq2} 
 \eeqn
 
-At this stage, we make the \emph{assumption} that the $\epsilon$ term
-in \eq{eq:m2_eq2} can be neglected \comm{why?}. Thus $\rho_2$ satisfies
+To make further progress, at this stage we \emph{assume} that the
+$\epsilon$ term in \eq{eq:m2_eq2} can be neglected. Thus $\rho_2$ satisfies
 \beq\label{eq:rho2_approx}
 \mathcal{A}_2\rho_2(x) \simeq -\tilde{\chi}D_0k_0^2J_2(k_0x).
 \eeq
