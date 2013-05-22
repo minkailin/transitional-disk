@@ -723,7 +723,7 @@ setting $\rho_{m>0}=0$.
 %expected, since in that case the vortex flow is truly axisymmetric.    
 
 Since dust is advected by fluid with elliptic streamlines, we
-expect $\rho(a,\nu)$ to have even symmetry in $\nu$. Henceforth we
+expect $\rho_d(a,\nu)$ to have even symmetry in $\nu$. Henceforth we
 only consider even $m$. We seek solutions with  
 $\rho_m^\prime(0)=0$ and $\rho_{m\geq2}(0)=0$, so that
 $\partial_x\rho_d=\partial_y\rho_d=0$ at the origin, consistent with 
@@ -741,48 +741,50 @@ where $\mu$ is a constant. These relations will be useful in
 constructing solutions. 
 
 \subsection{$z\ll 1$}
-As $a\to 0$, We expect this to be valid as $a\to0$ because the non-axisymmetric 
-components vanish at the origin, so $\rho_0$ becomes the dominant term
-in \eq{eq:series}. Furthermore, we require $|\rho_m|$ to decrease with
-respect to $m$ in order to achieve convergence.
-
-In this section we seek the simplest non-axisymmetric solution 
+As $z\to 0$, we expect $\rho_0$ becomes the dominant term
+in \eq{eq:series} because the non-axisymmetric components vanish at the origin. 
+Furthermore, we require $|\rho_m|$ to decrease with respect to $m$ in order to achieve convergence. 
+This motivates us to seek the simplest non-axisymmetric solution as  
 \beq
-\rho(a,\nu) \simeq \rho_0(a) + \rho_2(a)\exp{\left(2\mathrm{i}\nu\right)}. 
+\rho_d(z,\nu) \simeq \rho_0(z) + \rho_2(z)\exp{\left(2\mathrm{i}\nu\right)},  
 \eeq
- 
-
- 
-
-Let
+for $z\ll 1$. We proceed as follows. Let
 \beq
 \rho_0(z) = D_0J_0(k_0z) + \epsilon(z),  
 \eeq
 where $\epsilon(x)$ represents the correction to the axisymmetric
-solution due to $\rho_2(x)$. $D_0$ is a constant. The ODEs to be
+solution due to $\rho_2(z)$. $D_0$ is a constant. The ODEs to be
 solved are 
 \beqn
-\mathcal{A}_0\epsilon(x) &=& -\tilde{\chi}\mathcal{C}_0\rho_2(x),\label{eq:m2_eq1}\\
-\mathcal{A}_2\rho_2(x) &=& -\tilde{\chi}\left[D_0k_0^2J_2(k_0x) +
-  \mathcal{B}_2\epsilon(x)\right].\label{eq:m2_eq2} 
+\mathcal{A}_0\epsilon(z) &=& -\tilde{\chi}\mathcal{C}_0\rho_2(z),\label{eq:m2_eq1}\\
+\mathcal{A}_2\rho_2(z) &=& -\tilde{\chi}\left[D_0k_0^2J_2(k_0z) +
+  \mathcal{B}_2\epsilon(z)\right].\label{eq:m2_eq2} 
 \eeqn
 
 To make further progress, at this stage we \emph{assume} that the
 $\epsilon$ term in \eq{eq:m2_eq2} can be neglected. Thus $\rho_2$ satisfies
 \beq\label{eq:rho2_approx}
-\mathcal{A}_2\rho_2(x) \simeq -\tilde{\chi}D_0k_0^2J_2(k_0x).
+\mathcal{A}_2\rho_2(z) \simeq -\tilde{\chi}D_0k_0^2J_2(k_0z).
 \eeq
 A solution to \eq{eq:rho2_approx} is
 \beq\label{eq:rho2_approx_sol}
-\rho_2(x)  = -\frac{\tilde{\chi}D_0k_0^2J_2(k_0x)}{k_2^2 - k_0^2}. 
+\rho_2(z)  = -\frac{\tilde{\chi}D_0k_0^2J_2(k_0z)}{k_2^2 - k_0^2}. 
 \eeq
+
 The general solution to \eq{eq:rho2_approx} would also include the
-complementary function $J_2(k_2x)$. However, $k_2$ is complex and $|k_2|\gg 1$ (because we are considering
-$\mathrm{St}\ll1$), so $J_2(k_2x)$
-may not be well behaved at boundaries. We have therefore taken the
+complementary function $J_2(k_2z)$. However, $k_2$ is complex and $|k_2|\gg 1$ (because we are considering
+$\mathrm{St}\ll1$), so $J_2(k_2z)$
+may not be well behaved at boundaries. 
+
+
+We have therefore taken the
 particular integral to \eq{eq:rho2_approx} as the solution for
-$\rho_2$. This is to regard $\rho_0$ as a source term for
-$\rho_2$. The regime $|k_2|\gg1$ corresponds to  
+$\rho_2$. 
+
+This is to regard $\rho_0$ as a source term for
+$\rho_2$. 
+
+The regime $|k_2|\gg1$ corresponds to  
 $\rho_2$ being a small perturbation to the
 axisymmetric solution. 
 
