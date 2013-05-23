@@ -57,7 +57,7 @@ endfor
 loadct,5
 
  plot,a,rhok[*,0],/nodata,$
-      xtitle='!8a/H!x',ytitle=textoidl("\rho")+"!8!dd!n(a/H)!x",$
+      xtitle='!8a/H!x',ytitle=textoidl("\rho")+"!8!dd!n(a)!x",$
       title="Dust distribution"
 
       
