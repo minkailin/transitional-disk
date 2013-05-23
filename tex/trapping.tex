@@ -1,4 +1,21 @@
 %
+
+% Til - semi-analytic model, borrowing from Pinilla. Ours: fully analytic. 
+
+%Najita et al 2007
+%Cieza et al. 2008, 2010
+%Espaillat et al. 2010
+%Kim et al. 2009
+%Merin et al. 2010
+%Muzzerole et al. 2010
+%
+% transition disks: young stars with spectral evidence for cool 
+% dust but which lack diagnostic of warm dust
+%
+% colder: big hole; warmer: small hole
+% 
+
+
 %\documentclass[useAMS,8pt,twocolumn]{article}
 \documentclass[apj]{emulateapj}
 \bibliographystyle{apj}
@@ -25,7 +42,7 @@
 \usepackage{amsmath}
 \usepackage{multirow}
 \usepackage{natbib}
-%\usepackage{amssymb}
+\usepackage{amssymb}
 
 
 \newlength{\hfwidth}
@@ -257,17 +274,25 @@ different than the diffusion in the gas phase (see e.g., Lyra \& Klahr
 2011)}}. Steady state solutions should exist in this case and, indeed, Ataiee
 et al. (2013), modeling particles of different Stokes numbers, finds
 two different dust distributions, as expected. Birnstiel et al. (2013) 
-presented an analytical model that yields the dust density
-distribution. The solution, however, makes use of the stringent
-approximation of canceling the radial pressure gradient, so it applies
-only at the radial location of a pressure maximum; it effectively
-describes an infinitesimally narrow ring.  In this work we derive the 
-steady state distribution of dust trapped in vortices, accurate to first order in
-Stokes number, and general in space. In Section 2 we derive the
+presented a semi-analytical model that solves for the azimuthal dust 
+distribution while using fits from numerical simulations (Pinilla et al. 2012)
+to constrain the radial morphology. In this work we present an analytical 
+model for the steady state distribution of dust trapped in vortices, 
+accurate to first order in Stokes number, and general in space. In 
+Section 2 we derive the
 advective-diffusive equation, and in Sect 3 the appropriate coordinate
 transformation. In Sect 4 we solve the equation for the axisymmetric
 case, and in Sect 5 we generalize it for non-axisymmetry. Concluding
 remarks follow. 
+
+
+%that yields the dust density
+%distribution. The solution, however, makes use of the stringent
+%approximation of canceling the radial pressure gradient, so it applies
+%only at the radial location of a pressure maximum; it effectively
+%describes an infinitesimally narrow ring.  
+
+
 
 %Due to the drag force, dust trapped in vortices will accumulate in the
 %center. Diffusion is needed to maintain a steady state over the
@@ -542,7 +567,7 @@ coordinates. Equation~\ref{eq:dust-trapping-uvzero} becomes
 &&\left.\left.\white{\frac{1}{1}}+ (B_1\cos^2\nu +  B_2\sin^2\nu)a\right] \partial_a  + B\right\} \rho_d = 0 
 \eeqn
 
-We now integrate the coefficients in $\nu$, from 0 to 2$\pi$. This yields
+We now integrate the above equation in $\nu$, from 0 to 2$\pi$. This yields
 
 %\beq
 %\left[\frac{\epsp}{2}\partial^2_a  +  \left(\frac{\epsp}{2a} + \frac{Ba}{2}\right) \partial_a  + B\right]\rho_d = 0 
@@ -590,9 +615,7 @@ used. We plot $f(\chi)$ for the Kida and GNG solutions in
 \fig{fig:scale-function}. They are defined in the real axis only for $\chi > 2$ ($f^2
 < 0$ for $0 < \chi < 2$ ). The Goodman solution tends to an asymptote
 around 0.7. The Kida solution has a  tail around $0.5\pm0.25$ in the
-interval of physical relevance ($2 < \chi <\sim 10$) .
-
-The dust distribution is thus 
+interval of physical relevance ($2 < \chi \lesssim 10$). The dust distribution is thus 
 
 \beq\label{eq:gen_axi}
 \rho_d(a) = \rho_{d0} \ \exp\left(-\frac{a^2}{2H_V^2}\right) \ ,
@@ -612,7 +635,7 @@ $\delta/{\rm St}$ are plotted in \fig{fig:gaussian}.
 
 It is illustrative to consider the case in which $\v{u} \gg \tau\grad{h}$,
 so that we can approximate $\v{v}=\v{u}$ in the advection term. In
-this case, the dust-trapping equation reduces to a relatively simple equation
+this case, \eq{eq:dust-trapping-uvzero} reduces to a relatively simple equation
 
 \beq
 \left(\Laplace{} + A\partial_\nu + B \right)\rho_d = 0 
@@ -656,7 +679,8 @@ and the solution  is indeed $a_0 \gg H$, for finite values of $\delta$.
 
 We compare the Bessel function with the exponential found in the
 previous section for the general solution. They agree up to 1\% inside
-$H_V$, and up to 10\% within 2$H_V$. Confident that the approxiate
+$H_V$, and up to 10\% within 2$H_V$ \comm{check the numbers again and 
+add a figure}. Confident that the approxiate
 $\v{u}=\v{v}$ solution works well within the vortex core, we use this
 approximation to find solutions to the full non-axisymmetric problem,
 in the next section. 
@@ -687,14 +711,14 @@ expressions over the $\nu$ co-ordinate, we arrive at a set of
 ordinary differential equations,
 
 \beqn\label{eq:ode1}
-&&0=\epsilon_{-}\left[\frac{1}{4}\rho_{m-2}^{\prime\prime}
+&&\epsilon_{-}\left[\frac{1}{4}\rho_{m-2}^{\prime\prime}
 -\frac{1}{2a}\left(m-\frac{3}{2}\right)\rho_{m-2}^\prime +
 \frac{m(m-2)}{4a^2}\rho_{m-2}\right] \nonumber\\
 &&+\frac{\epsilon_+}{2}\left(\rho_m^{\prime\prime}+\frac{1}{a}\rho_m^\prime\right)
 -\left(\frac{m^2\epsilon_+}{2a^2}-\mathrm{i}mA-B\right)\rho_m\nonumber\\
 &&+\epsilon_{-}\left[\frac{1}{4}\rho_{m+2}^{\prime\prime}
 +\frac{1}{2a}\left(m+\frac{3}{2}\right)\rho_{m+2}^\prime +
-\frac{m(m+2)}{4a^2}\rho_{m+2} \right]
+\frac{m(m+2)}{4a^2}\rho_{m+2} \right] = 0 \nonumber \\
 \eeqn
 for each $m$. We only consider even $m$ \comm{why?}. For $m=0$, the $\rho_{m-2}$
 terms are absent. We require $\rho_m^\prime(0)=0$ and
@@ -809,6 +833,8 @@ Then, by induction,
 \rho_m(x) =D_0
 \frac{(-1)^{m/2}\tilde{\chi}^{m/2}k_0^m}{\prod_{l=1}^{m/2}(k_{2l}^2-k_0^2)}J_m(k_0x). 
 \eeq
+
+\clearpage
 
 \begin{figure}
   \begin{center}
