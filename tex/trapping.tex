@@ -671,7 +671,7 @@ That is,
 y^{\prime\prime} + \frac{1}{a}y^\prime + k^2 y = 0 
 \label{eq:axisymmetric}
 \eeq where $y(a) = \rho_d$ and $k$ is given by \eq{eq:k}. This
-equation only differs from \eq{eq:gen_axi} through the
+equation only differs from \eq{eq:dust-trapping-axis} through the
 absence of the $k^2a\partial_a$ term, which occurs when the full
 expression for the dust velocity is used. Clearly it is negligible 
 for sufficiently small $a$.  
@@ -700,82 +700,12 @@ equations, so the results should not be valid for $x \gg H$.
 As we made use of the approximation $\v{v}=\v{u}$, ${\rm St} \ll 1$,
 and the solution  is indeed $a_0 \gg H$, for finite values of $\delta$.
 
-We compare the Bessel function with the exponential found in the
-previous section for the general solution. They agree up to 1\% inside
-$H_V$, and up to 10\% within 2$H_V$ \comm{check the numbers again and 
-add a figure}. Confident that the approxiate
+We compare in \fig{fig:bessel-gaussian} the Bessel function with the exponential found in the
+previous section for the general solution. They agree up to 10\% inside
+$ka$=1.5 (i.e., $a/H_V\approx 1$), and up to 1\% within $ka$=1 (i.e., $a/H_V\approx 0.7$). Confident that the approximate
 $\v{u}=\v{v}$ solution works well within the vortex core, we use this
 approximation to find solutions to the full non-axisymmetric problem,
 in the next section. 
-
-
-
-\subsection{Axisymmetric u $\ne$ v }
-
-In deriving eq 10, we assumed $\v{u}=\v{v}$, for practical reasons. We
-relax now this approximation, substituting $\v{v}$ for eq 2. The
-advection term then becomes 
-
-\beqn
-\v{v}\cdot\del &=& (\v{u} + \tau \grad h) \cdot \del \nonumber \\
-&=& - \varOmega_V \partial_\nu - \left( C_1 x \partial_x + C_2 y
-  \partial_y\right) \nonumber \\
-&=& - \varOmega_V \partial_\nu - \left( C_1 \cos^2\nu   + C_2
-  \sin^2\nu \right) a \ \partial_a \nonumber \\
-&&+ \cos\nu\sin\nu  (C_1 - C_2) \partial_\nu
-\eeqn
-
-And, for the axisymmetric mode, $\partial_\nu=0$, so
-
-\beq
-\v{v}\cdot\del = - a \left( C_1  \cos^2\nu  + C_2  \sin^2\nu \right) \partial_a
-\eeq
-
-Integrating it over $\frac{1}{2\pi}\int_0^{2\pi} d\nu$, 
-
-\beq
-\v{v}\cdot\del = - \frac{C a}{2} \pderiv{}{a}
-\eeq
-
-And the dust trapping equation becomes 
-
-\beq
-\left[\pderivn{}{a}{2} + \left(\frac{1}{a} +
-  \frac{k^2a}{2}\right)\pderiv{}{a} + k^2\right]\rho_d = 0 
-\eeq
-
-The solution for which is 
-
-\beq
-\rho_d(a) = \exp\left(-\frac{k^2a^2}{4}\right)  \left[c_1 + c_2 {\rm
-    Ei}\left(\frac{k^2a^2}{4}\right)\right]
-\eeq
-
-\noindent where ${\rm Ei}(x)$ is the exponential integral function. 
-Since it diverges at the origin, $c_2$ has to be zero, and 
-
-\beq
-\rho_d(a) = \rho_{d0} \exp\left(-\frac{a^2}{2H_V^2}\right)
-\eeq
-
-with $H_V = \sqrt{2}/k$ for symmetry with the gas sonic scale. We can 
-rewrite this length scale recalling that 
-
-\beqn
-k^2 = \frac{2C}{\epsp D} = \frac{2{\rm St}}{\delta H^2} f^2(\chi)
-\eeqn 
-
-\noindent We can then write 
-
-\beq
-\rho_d(a) = \rho_{d0} \exp\left(-\frac{a^2}{2H_a^2}\right)
-\eeq
-\beq
- H_V = \frac{H}{f(\chi)} \sqrt{\frac{\delta}{\rm St}}
-\eeq
-
-\noindent where $\psi(\chi)$ depends on the vortex solution used. We plot 
-$\psi(\chi)$ for the Kida and Goodman solutions in \fig{fig:fchi}.
 
 \section{Non-axisymmetric corrections}
 We consider the non-axisymmetric problem ($\partial_\nu\neq0$) inside
@@ -991,6 +921,14 @@ magnitudes of the induced higher $m$ modes decay with $m$.
   \end{center}
 \caption[]{.}
  \label{fig:gaussian}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+    \resizebox{\columnwidth}{!}{\includegraphics{../figs/bessel-gaussian.png}}
+  \end{center}
+\caption[]{.}
+ \label{fig:bessel-gaussian}
 \end{figure}
 
 %\begin{figure}
