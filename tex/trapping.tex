@@ -735,22 +735,11 @@ k^2 = \frac{2C}{\epsp D} = \frac{2{\rm St}}{\delta H^2} f^2(\chi)
 $\psi(\chi)$ for the Kida and Goodman solutions in \fig{fig:fchi}.
 
 \section{Non-axisymmetric corrections}
-We now consider the non-axisymmetric problem ($\partial_\nu\neq0$) 
+We consider the non-axisymmetric problem ($\partial_\nu\neq0$) 
 in the limit $\rm{St}\ll 1$ and formally set $\bm{v}=\bm{u}$ 
 in the advection term $\bm{v}\cdot\del$. We are therefore comparing  
-dust advection due to the background vortex flow and diffusion. We remark that including the   
-$\tau$ term for dust velocity only helps to concentrate dust at the vortex core (pressure maximum).   
-=======
-\section{Non-axisymmetric problem}
-For the non-axisymmetric problem ($\partial_\nu\neq0$), we first
-return to the limit $\tau\to0$ or $\rm{St}\ll 1$ for dust velocity and
-formally set $\bm{v}=\bm{u}$ in the advection term 
-$\bm{v}\cdot\del$. We are therefore comparing dust advection due to
-the background vortex flow and diffusion. 
-%This is expected to be valid close to the vortex center
-%($a\to0$). Furthermore, Eq. \ref{eq:gen_axi} and
-%Eq. \ref{eq:axi} are identical at $O(k^2a^2)$.   
->>>>>>> 27b3c678e99a1ed32e2055974dcca9a57a5169f5
+dust advection due to the background vortex flow and diffusion. We remark that including the    
+$\tau$ term for dust velocity only helps to concentrate dust at the vortex core (pressure maximum).    
 
 \subsection{Conversion to ordinary differential equations}
 The dust density $\rho_d$ is periodic in the $\nu$ co-ordinate. We
@@ -797,13 +786,14 @@ where $k_m^2 \equiv 1+\mathrm{i}mA/B$. Eq. \eq{eq:ode2} holds for each
 $m$ except for $m=0$ for which the $\rho_{m-2}$ term is absent. Each
 $\rho_m$ couples to $\rho_{m\pm2}$ through operators $\mathcal{B}_m$
 and $\mathcal{C}_m$. The axisymmetric problem is recovered by
-setting $\rho_{m>0}=0$. 
+setting $\rho_{m>0}=0$. (We remark that a similar set of ODEs may be
+derived when the full expression for dust velocity is used.)  
 %The coupling terms vanish for $\chi=1$, as
 %expected, since in that case the vortex flow is truly axisymmetric.    
 
-Since dust is advected by fluid with elliptic streamlines, we
-expect $\rho_d(a,\nu)$ to have even symmetry in $\nu$. Henceforth we
-only consider even $m$. We seek solutions with  
+In the limit $\rm{St}\ll 1$, dust is advected by fluid with elliptic
+streamlines, so we expect $\rho_d(a,\nu)$ to have even symmetry in
+$\nu$. Henceforth we only consider even $m$. We seek solutions with  
 $\rho_m^\prime(0)=0$ and $\rho_{m\geq2}(0)=0$, so that
 $\partial_x\rho_d=\partial_y\rho_d=0$ at the origin, consistent with 
 dust reaching maximal density there.  
@@ -820,10 +810,11 @@ where $\mu$ is a constant. These relations will be useful in
 constructing solutions. 
 
 \subsection{$z\ll 1$}
-As $z\to 0$, we expect $\rho_0$ becomes the dominant term
-in \eq{eq:series} because the non-axisymmetric components vanish at the origin. 
-Furthermore, we require $|\rho_m|$ to decrease with respect to $m$ in order to achieve convergence. 
-This motivates us to seek the simplest non-axisymmetric solution as  
+For small $\rm{St}$, $z=ka$ is small. As $z\to 0$, we expect $\rho_0$
+becomes the dominant term in \eq{eq:series} because the
+non-axisymmetric components vanish at the origin. Furthermore, we
+require $|\rho_m|$ to decrease with respect to $m$ in order to achieve
+convergence. This motivates us to seek the simplest non-axisymmetric solution as  
 \beq
 \rho_d(z,\nu) \simeq \rho_0(z) + \rho_2(z)\exp{\left(2\mathrm{i}\nu\right)},  
 \eeq
@@ -834,7 +825,7 @@ for $z\ll 1$. We proceed as follows. Let
 where $\epsilon(x)$ represents the correction to the axisymmetric
 solution due to $\rho_2(z)$. $D_0$ is a constant. The ODEs to be
 solved are 
-\beqn
+\beqn 
 \mathcal{A}_0\epsilon(z) &=& -\tilde{\chi}\mathcal{C}_0\rho_2(z),\label{eq:m2_eq1}\\
 \mathcal{A}_2\rho_2(z) &=& -\tilde{\chi}\left[D_0k_0^2J_2(k_0z) +
   \mathcal{B}_2\epsilon(z)\right].\label{eq:m2_eq2} 
@@ -850,53 +841,50 @@ A solution to \eq{eq:rho2_approx} is
 \rho_2(z)  = -\frac{\tilde{\chi}D_0k_0^2J_2(k_0z)}{k_2^2 - k_0^2}. 
 \eeq
 
-The general solution to \eq{eq:rho2_approx} would also include the
-complementary function $J_2(k_2z)$. However, $k_2$ is complex and $|k_2|\gg 1$ (because we are considering
-$\mathrm{St}\ll1$), so $J_2(k_2z)$
-may not be well behaved at boundaries. 
-
-
-We have therefore taken the
+The general solution to \eq{eq:rho2_approx} includes the
+complementary function $J_2(k_2z)$. However, $k_2$ is complex and
+$|k_2|\gg 1$ (because we are considering $\mathrm{St}\ll1$), so $J_2(k_2z)$
+may not be well behaved at boundaries. To avoid complications from
+Bessel functions of complex arguments, we have therefore taken the
 particular integral to \eq{eq:rho2_approx} as the solution for
-$\rho_2$. 
-
-This is to regard $\rho_0$ as a source term for
-$\rho_2$. 
-
-The regime $|k_2|\gg1$ corresponds to  
-$\rho_2$ being a small perturbation to the
-axisymmetric solution. 
+$\rho_2$. This is to regard $\rho_0$ as a source term for
+$\rho_2$. For $|k_2^2|\gg 1$, Eq. \ref{eq:rho2_approx_sol} indicates  
+$\rho_2$ is a small perturbation to the axisymmetric solution. 
 
 We can use \eq{eq:rho2_approx_sol} in \eq{eq:m2_eq1} to
-calculate the correction term $\epsilon$. The ODE to solve is
-\beqn
-\mathcal{A}_0\epsilon(x)
-&=&\frac{\tilde{\chi}^2D_0k_0^2}{k_2^2-k_0^2}\mathcal{C}_0J_2(k_0x) \nonumber \\ 
-&=&\frac{\tilde{\chi}^2D_0k_0^4J_0(k_0x)}{k_2^2-k_0^2}.
-\eeqn
-The particular integral is 
+calculate the correction term $\epsilon$. We find 
+%The ODE to solve is
+%\beqn
+%\mathcal{A}_0\epsilon(x)
+%&=&\frac{\tilde{\chi}^2D_0k_0^2}{k_2^2-k_0^2}\mathcal{C}_0J_2(k_0x) \nonumber \\ 
+%&=&\frac{\tilde{\chi}^2D_0k_0^4J_0(k_0x)}{k_2^2-k_0^2}.
+%\eeqn
+%The particular integral is 
 \beq
 \epsilon(x) = \frac{\tilde{\chi}^2D_0k_0^3xJ_1(k_0x)}{2\left(k_2^2 -
   k_0^2\right)}. 
 \eeq
+This represents another correction to the axisymmetric solution. It is
+also small because of $|k_2^2|$. Furthermore, it is smaller than
+$\rho_2(z)$ by a factor $\tilde{\chi}$. 
+
 Using this expression for $\epsilon(x)$, we can evaluate
 $\mathcal{B}_2\epsilon(x)$ in order to assess our assumption that
 $\epsilon(x)$ has a negligible contribution to $\rho_2$. We find
-
 \beq
 \mathcal{B}_2\epsilon(x) =
 -\frac{\tilde{\chi}^2D_0k_0^5xJ_1(k_0x)}{2\left(k_2^2 -
   k_0^2\right)}. 
 \eeq
 
-Both the $\tilde{\chi}^2$ term and the $k_2^2$ term contributes to
-making $\mathcal{B}_2\epsilon$ small in comparison to the $J_2$ term
-on the RHS of \eq{eq:m2_eq2}. 
+%Both the $\tilde{\chi}^2$ term and the $k_2^2$ term contributes to
+%making $\mathcal{B}_2\epsilon$ small in comparison to the $J_2$ term
+%on the RHS of \eq{eq:m2_eq2}. 
 
-An iteration scheme can now be set up. One can update
-$\rho_2$ with the inclusion of $\mathcal{B}_2\epsilon(x)$ using
-\eq{eq:m2_eq2}, then in turn update $\epsilon(x)$ using
-\eq{eq:m2_eq1} and so on. 
+%An iteration scheme can now be set up. One can update
+%$\rho_2$ with the inclusion of $\mathcal{B}_2\epsilon(x)$ using
+%\eq{eq:m2_eq2}, then in turn update $\epsilon(x)$ using
+%\eq{eq:m2_eq1} and so on. 
 
 
 \subsection{Lower $m$ mode as a source for higher $m$ mode}
