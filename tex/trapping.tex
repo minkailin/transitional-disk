@@ -355,28 +355,39 @@ fluid. The dust should then follow the continuity equation
 \noindent where $\rho_d$ is the dust density, $\v{v}$ is the dust
 velocity, and $D$ is the diffusion coefficient (the diffusion is due
 to elliptical turbulence in the vortex core and in general will be
-different than the turbulent viscosity in the disk). 
+different than the turbulent viscosity in the disk). We assume $D$ is
+constant. 
 
 To derive the velocities, instead of solving the momentum equations
 for the dust, we make use of the relative velocity, following Youdin
 (2008)  
 
 \beq
-\v{v} = \v{u} + \tau  \grad{h} 
+\v{v} = \v{u} + \tau  \grad{h}, 
 \label{eq:v}
 \eeq
 
-\noindent accurate to first order in $\tau$. The enthalpy $h$ is defined 
-as $dh = dp /\rho$, and  $\v{u}$ is the velocity of the gas. Inside a vortex, it is
-divergenceless and must satisfy 
+\noindent accurate to first order in $\tau$, assumed constant, and
+$\v{u}$ is the velocity of the gas. We have taken a 
+barotropic fluid model for which the pressure $p=p(\rho)$ and $\rho$ is the
+gas density. The enthalpy $h$ is then defined 
+as $dh = dp /\rho$. 
 
+Inside the vortex, we adopt the following model for $\v{u}$
 \beq
   u_x = \varOmega_V y / \chi \qquad  u_y= -\varOmega_V x \chi
 \eeq
-
 \noindent for a vortex of aspect ratio $\chi= y/x > 1$. The Kida
 solution $\varOmega_V = 3\Omega_K/2(\chi-1)$ smoothly matches 
-this velocity field to the Keplerian shear. Taking the divergent of
+this velocity field to the Keplerian shear. We note that the dust
+velocity is comprised of a divergent-free part, $\v{u}$, and a
+curl-free part, $\tau\nabla{h}$. The vortex flow attempts to keep the
+dust particles on closed ellpitic streamlines via $\v{u}$, while friction
+attempts to concentrate dust toward pressure maximum via $\tau\nabla
+h$. The only effect that attempts to spread out the dust is diffusion
+via $D$.  
+
+Taking the divergence of
 \eq{eq:v} gives 
 
 \beq
@@ -385,7 +396,8 @@ this velocity field to the Keplerian shear. Taking the divergent of
 \eeq
 
 \noindent and we can find the Laplacian of the enthalpy via the Euler
-equation. At steady state, the force balance yields 
+equation. Adopting the shearing sheet approximation, in steady state
+the force balance yields  
 
 \begin{eqnarray}
 \pderiv{h}{x} &=& 3\varOmega^2 x + 2\varOmega u_y -
@@ -633,15 +645,20 @@ $\delta/{\rm St}$ are plotted in \fig{fig:gaussian}.
 
 \subsection{Axisymmetric $\v{u} = \v{v}$ }
 
-It is illustrative to consider the case in which $\v{u} \gg \tau\grad{h}$,
-so that we can approximate $\v{v}=\v{u}$ in the advection term. In
+It is illustrative to consider the case in which $|\v{u}| \gg \tau|\grad{h}|$,
+so that we can approximate $\v{v}=\v{u}$ in the advection term.  In 
 this case, \eq{eq:dust-trapping-uvzero} reduces to a relatively simple equation
 
-\beq
-\left(\Laplace{} + A\partial_\nu + B \right)\rho_d = 0 
+\beq\label{eq:uveq}
+\left(\Laplace{} + A\partial_\nu + B \right)\rho_d = 0. 
 \eeq
+\eq{eq:uveq} compares dust diffusion to dust advection due to the
+vortex flow alone. Note that we are effectively considering regions
+close to the vortex center because $\nabla h$ vanishes there, while
+$\nabla^2h$ (i.e. $B$), does not.  
 
-And, assuming axis-symmetry and integrating in $\frac{1}{2\pi} \int_0^{2\pi} d\nu$, we get 
+Now, assuming axis-symmetry and integrating in
+$\frac{1}{2\pi} \int_0^{2\pi} d\nu$, we get  
 
 \beq
 \frac{\epsp}{2}\pderivn{\rho_d}{a}{2} +
@@ -653,7 +670,13 @@ That is,
 \beq
 y^{\prime\prime} + \frac{1}{a}y^\prime + k^2 y = 0 
 \label{eq:axisymmetric}
-\eeq where $y(a) = \rho_d$ and $k$ is given by \eq{eq:k}.  The general solution of \eq{eq:axisymmetric} is a
+\eeq where $y(a) = \rho_d$ and $k$ is given by \eq{eq:k}. This
+equation only differs from \eq{eq:gen_axi} through the
+absence of the $k^2a\partial_a$ term, which occurs when the full
+expression for the dust velocity is used. Clearly it is negligible 
+for sufficiently small $a$.  
+
+The general solution of \eq{eq:axisymmetric} is a
 sum of Bessel functions: 
 
 \beq
@@ -686,15 +709,82 @@ approximation to find solutions to the full non-axisymmetric problem,
 in the next section. 
 
 
-\section{Non-axisymmetric problem}
-For the non-axisymmetric problem ($\partial_\nu\neq0$), we first
-return to the limit $\tau\to0$ or $\rm{St}\ll 1$ for dust velocity and
-formally set $\bm{v}=\bm{u}$ in the advection term 
-$\bm{v}\cdot\del$. We are therefore comparing dust advection due to
-the background vortex flow and diffusion. 
-%This is expected to be valid close to the vortex center
-%($a\to0$). Furthermore, Eq. \ref{eq:gen_axi} and
-%Eq. \ref{eq:axi} are identical at $O(k^2a^2)$.   
+
+\subsection{Axisymmetric u $\ne$ v }
+
+In deriving eq 10, we assumed $\v{u}=\v{v}$, for practical reasons. We
+relax now this approximation, substituting $\v{v}$ for eq 2. The
+advection term then becomes 
+
+\beqn
+\v{v}\cdot\del &=& (\v{u} + \tau \grad h) \cdot \del \nonumber \\
+&=& - \varOmega_V \partial_\nu - \left( C_1 x \partial_x + C_2 y
+  \partial_y\right) \nonumber \\
+&=& - \varOmega_V \partial_\nu - \left( C_1 \cos^2\nu   + C_2
+  \sin^2\nu \right) a \ \partial_a \nonumber \\
+&&+ \cos\nu\sin\nu  (C_1 - C_2) \partial_\nu
+\eeqn
+
+And, for the axisymmetric mode, $\partial_\nu=0$, so
+
+\beq
+\v{v}\cdot\del = - a \left( C_1  \cos^2\nu  + C_2  \sin^2\nu \right) \partial_a
+\eeq
+
+Integrating it over $\frac{1}{2\pi}\int_0^{2\pi} d\nu$, 
+
+\beq
+\v{v}\cdot\del = - \frac{C a}{2} \pderiv{}{a}
+\eeq
+
+And the dust trapping equation becomes 
+
+\beq
+\left[\pderivn{}{a}{2} + \left(\frac{1}{a} +
+  \frac{k^2a}{2}\right)\pderiv{}{a} + k^2\right]\rho_d = 0 
+\eeq
+
+The solution for which is 
+
+\beq
+\rho_d(a) = \exp\left(-\frac{k^2a^2}{4}\right)  \left[c_1 + c_2 {\rm
+    Ei}\left(\frac{k^2a^2}{4}\right)\right]
+\eeq
+
+\noindent where ${\rm Ei}(x)$ is the exponential integral function. 
+Since it diverges at the origin, $c_2$ has to be zero, and 
+
+\beq
+\rho_d(a) = \rho_{d0} \exp\left(-\frac{a^2}{2H_V^2}\right)
+\eeq
+
+with $H_V = \sqrt{2}/k$ for symmetry with the gas sonic scale. We can 
+rewrite this length scale recalling that 
+
+\beqn
+k^2 = \frac{2C}{\epsp D} = \frac{2{\rm St}}{\delta H^2} f^2(\chi)
+\eeqn 
+
+\noindent We can then write 
+
+\beq
+\rho_d(a) = \rho_{d0} \exp\left(-\frac{a^2}{2H_a^2}\right)
+\eeq
+\beq
+ H_V = \frac{H}{f(\chi)} \sqrt{\frac{\delta}{\rm St}}
+\eeq
+
+\noindent where $\psi(\chi)$ depends on the vortex solution used. We plot 
+$\psi(\chi)$ for the Kida and Goodman solutions in \fig{fig:fchi}.
+
+\section{Non-axisymmetric corrections}
+We consider the non-axisymmetric problem ($\partial_\nu\neq0$) inside
+the vortex core in the limit $\rm{St}\ll 1$. We formally set
+$\bm{v}=\bm{u}$ in the advection term $\bm{v}\cdot\del$. Our
+dust-trapping equation is then comparing advection due to the
+background vortex flow and diffusion. Physically, we expect that
+including the $\tau$ term for dust velocity in the advection term only
+helps to concentrate dust at the vortex core (pressure maximum).      
 
 \subsection{Conversion to ordinary differential equations}
 The dust density $\rho_d$ is periodic in the $\nu$ co-ordinate. We
@@ -704,135 +794,186 @@ therefore seek solutions of the form
 \rho_d(a,\nu) = {\rm Re}
 \left[\sum_{n=0}^\infty\rho_n(a)\exp{\left(\mathrm{i}n\nu\right)} \right].
 \eeq
-Henceforth, we will drop the real part notation for convenience. Inserting
+For convenience, we will drop the real part notation from now on. Inserting
 \eq{eq:series} into the partial differential equation \eqp{eq:dust-trapping-uvzero},
-multiplying by $\exp{(-\mathrm{i}m\nu)}$ and integrating the resulting
-expressions over the $\nu$ co-ordinate, we arrive at a set of
-ordinary differential equations,
+multiplying by $\exp{(-\mathrm{i}m\phi)}$, and integrating the resulting
+expressions over the $\phi$ co-ordinate, we arrive at a set of 
+ordinary differential equations, 
+%\beqn\label{eq:ode1}
+%&&0=\epsilon_{-}\left[\frac{1}{4}\rho_{m-2}^{\prime\prime}
+%-\frac{1}{2a}\left(m-\frac{3}{2}\right)\rho_{m-2}^\prime +
+%\frac{m(m-2)}{4a^2}\rho_{m-2}\right] \nonumber\\
+%&&+\frac{\epsilon_+}{2}\left(\rho_m^{\prime\prime}+\frac{1}{a}\rho_m^\prime\right)
+%-\left(\frac{m^2\epsilon_+}{2a^2}-\mathrm{i}mA-B\right)\rho_m\nonumber\\
+%&&+\epsilon_{-}\left[\frac{1}{4}\rho_{m+2}^{\prime\prime}
+%+\frac{1}{2a}\left(m+\frac{3}{2}\right)\rho_{m+2}^\prime +
+%\frac{m(m+2)}{4a^2}\rho_{m+2} \right]
+%\eeqn
+%for each $m$. We only consider even $m$ \comm{why?}. For $m=0$, the $\rho_{m-2}$
+%terms are absent. We require $\rho_m^\prime(0)=0$ and
+%$\rho_{m\geq2}(0)=0$ \comm{why?}. 
+%It will be convenient to write the above equations
+%in operator form,
 
-\beqn\label{eq:ode1}
-&&\epsilon_{-}\left[\frac{1}{4}\rho_{m-2}^{\prime\prime}
--\frac{1}{2a}\left(m-\frac{3}{2}\right)\rho_{m-2}^\prime +
-\frac{m(m-2)}{4a^2}\rho_{m-2}\right] \nonumber\\
-&&+\frac{\epsilon_+}{2}\left(\rho_m^{\prime\prime}+\frac{1}{a}\rho_m^\prime\right)
--\left(\frac{m^2\epsilon_+}{2a^2}-\mathrm{i}mA-B\right)\rho_m\nonumber\\
-&&+\epsilon_{-}\left[\frac{1}{4}\rho_{m+2}^{\prime\prime}
-+\frac{1}{2a}\left(m+\frac{3}{2}\right)\rho_{m+2}^\prime +
-\frac{m(m+2)}{4a^2}\rho_{m+2} \right] = 0 \nonumber \\
-\eeqn
-for each $m$. We only consider even $m$ \comm{why?}. For $m=0$, the $\rho_{m-2}$
-terms are absent. We require $\rho_m^\prime(0)=0$ and
-$\rho_{m\geq2}(0)=0$ \comm{why?}. 
-
-It will be convenient to write the above equations
-in operator form,
 \beq\label{eq:ode2}
-\tilde{\chi}\mathcal{B}_m\rho_{m-2}(x) + \mathcal{A}_m\rho_m(x) + \tilde{\chi}\mathcal{C}_m\rho_{m+2}(x)=0,
+\tilde{\chi}\mathcal{B}_m\rho_{m-2}(z) + \mathcal{A}_m\rho_m(z) + \tilde{\chi}\mathcal{C}_m\rho_{m+2}(z)=0,
 \eeq
-where $x\equiv ka$ (not to be confused with the original Cartesian
-co-ordinate), $\tilde{\chi}\equiv(\chi^2-1)/[2(\chi^2+1)]$, and 
+where $z\equiv ka$, $\tilde{\chi}\equiv(\chi^2-1)/[2(\chi^2+1)]$, and 
 \beqn\label{eq:ops}
-\mathcal{B}_m &\equiv& \frac{d^2}{dx^2} -
-\frac{2}{x}\left(m-\frac{3}{2}\right)\frac{d}{dx} + \frac{m(m-2)}{x^2},\\
-\mathcal{A}_m &\equiv& \frac{d^2}{dx^2} + \frac{1}{x}\frac{d}{dx} +
-\left(k_m^2 - \frac{m^2}{x^2}\right),\\
-\mathcal{C}_m  &\equiv& \frac{d^2}{dx^2} +
-\frac{2}{x}\left(m+\frac{3}{2}\right)\frac{d}{dx} +
-\frac{m(m+2)}{x^2}, 
+\mathcal{B}_m &\equiv& \frac{d^2}{dz^2} -
+\frac{2}{z}\left(m-\frac{3}{2}\right)\frac{d}{dz} + \frac{m(m-2)}{z^2},\\
+\mathcal{A}_m &\equiv& \frac{d^2}{dz^2} + \frac{1}{z}\frac{d}{dz} +
+\left(k_m^2 - \frac{m^2}{z^2}\right),\\
+\mathcal{C}_m  &\equiv& \frac{d^2}{dz^2} +
+\frac{2}{z}\left(m+\frac{3}{2}\right)\frac{d}{dz} +
+\frac{m(m+2)}{z^2}, 
 \eeqn
-where $k_m^2 \equiv 1+\mathrm{i}mA/B$. We note that
-\beqn\label{eq:ops2}
-\mathcal{B}_mJ_{m-2}(\mu x) &=& \mu^2J_m(\mu x),\\
-\mathcal{A}_mJ_m(\mu x) &=& \left(k_m^2 - \mu^2\right)J_m(\mu x),\\
-\mathcal{C}_mJ_{m+2}(\mu x) &= & = \mu^2J_m(\mu x),
-\eeqn
-where $\mu$ is a constant. 
+where $k_m^2 \equiv 1+\mathrm{i}mA/B$. \eq{eq:ode2} holds for each
+$m$ except for $m=0$ for which the $\rho_{m-2}$ terms are absent. Each
+$\rho_m$ couples to $\rho_{m\pm2}$ through operators $\mathcal{B}_m$
+and $\mathcal{C}_m$. The axisymmetric problem is recovered by
+setting $\rho_{m>0}=0$. (We remark that a similar set of ODEs may be
+derived when the full expression for dust velocity is used.)  
+%The coupling terms vanish for $\chi=1$, as
+%expected, since in that case the vortex flow is truly axisymmetric.    
 
-\subsection{$x\ll 1$}
-As $x\to0$, we expect $\rho_0$ to be the dominant term in
-\eq{eq:series}, because the non-axisymmetric components vanish
-at the origin. Furthermore, we require $|\rho_m|$ to decrease with
-respect to $m$ in order to achieve convergence. In this section we
-seek the simplest non-axisymmetric solution
+In the limit $\rm{St}\ll 1$, dust is advected by fluid with elliptic
+streamlines, so we expect $\rho_d(a,\nu)$ to have even symmetry in
+$\nu$. Henceforth we only consider even $m$. We seek solutions with  
+$\rho_m^\prime(0)=0$ and $\rho_{m\geq2}(0)=0$, so that
+$\partial_x\rho_d=\partial_y\rho_d=0$ at the origin, consistent with 
+dust reaching maximal density there.  
+
+%It will be convenient to write the above equations
+%in operator form,
+Finally, we note that
+\beqn\label{eq:ops2}
+\mathcal{B}_mJ_{m-2}(\mu z) &=& \mu^2J_m(\mu z),\\
+\mathcal{A}_mJ_m(\mu z) &=& \left(k_m^2 - \mu^2\right)J_m(\mu z),\\
+\mathcal{C}_mJ_{m+2}(\mu z) &= & \mu^2J_m(\mu z),
+\eeqn
+where $\mu$ is a constant. These relations will be useful in
+constructing solutions. 
+
+\subsection{$z\ll 1$}
+For small $\rm{St}$, $z=ka$ is small. As $z\to 0$, we expect $\rho_0$
+becomes the dominant term in \eq{eq:series} because the
+non-axisymmetric components vanish at the origin. Furthermore, we
+require $|\rho_m|$ to decrease with respect to $m$ in order to achieve
+convergence. This motivates us to seek the simplest non-axisymmetric solution as  
 \beq
-\rho(a,\nu) \simeq \rho_0(a) + \rho_2(a)\exp{\left(2\mathrm{i}\nu\right)}. 
+\rho_d(z,\nu) \simeq \rho_0(z) + \rho_2(z)\exp{\left(2\mathrm{i}\nu\right)},  
 \eeq
-Specifically, we write
+for $z\ll 1$. We proceed as follows. Let
 \beq
-\rho_0(x) = D_0J_0(k_0x) + \epsilon(x),  
+\rho_0(z) = D_0J_0(k_0z) + \epsilon(z),  
 \eeq
 where $\epsilon(x)$ represents the correction to the axisymmetric
-solution due to $\rho_2(x)$. $D_0$ is a constant. The ODEs to be
+solution due to $\rho_2(z)$. $D_0$ is a constant not to be confused
+with diffusion. The ODEs to be
 solved are 
-\beqn
-\mathcal{A}_0\epsilon(x) &=& -\tilde{\chi}\mathcal{C}_0\rho_2(x),\label{eq:m2_eq1}\\
-\mathcal{A}_2\rho_2(x) &=& -\tilde{\chi}\left[D_0k_0^2J_2(k_0x) +
-  \mathcal{B}_2\epsilon(x)\right].\label{eq:m2_eq2} 
+\beqn 
+\mathcal{A}_0\epsilon(z) &=& -\tilde{\chi}\mathcal{C}_0\rho_2(z),\label{eq:m2_eq1}\\
+\mathcal{A}_2\rho_2(z) &=& -\tilde{\chi}\left[D_0k_0^2J_2(k_0z) +
+  \mathcal{B}_2\epsilon(z)\right].\label{eq:m2_eq2} 
 \eeqn
 
-At this stage, we make the \emph{assumption} that the $\epsilon$ term
-in \eq{eq:m2_eq2} can be neglected \comm{why?}. Thus $\rho_2$ satisfies
+To make further progress, at this stage we \emph{assume} that the
+$\epsilon$ term in \eq{eq:m2_eq2} can be neglected. Thus $\rho_2$ satisfies
 \beq\label{eq:rho2_approx}
-\mathcal{A}_2\rho_2(x) \simeq -\tilde{\chi}D_0k_0^2J_2(k_0x).
+\mathcal{A}_2\rho_2(z) \simeq -\tilde{\chi}D_0k_0^2J_2(k_0z).
 \eeq
-A solution to \eq{eq:rho2_approx} is
+This can be solved by 
 \beq\label{eq:rho2_approx_sol}
-\rho_2(x)  = -\frac{\tilde{\chi}D_0k_0^2J_2(k_0x)}{k_2^2 - k_0^2}. 
+\rho_2(z)  = -\frac{\tilde{\chi}D_0k_0^2J_2(k_0z)}{k_2^2 - k_0^2}, 
 \eeq
-The general solution to \eq{eq:rho2_approx} would also include the
-complementary function $J_2(k_2x)$. However, $k_2$ is complex and $|k_2|\gg 1$ (because we are considering
-$\mathrm{St}\ll1$), so $J_2(k_2x)$
-may not be well behaved at boundaries. We have therefore taken the
-particular integral to \eq{eq:rho2_approx} as the solution for
-$\rho_2$. This is to regard $\rho_0$ as a source term for
-$\rho_2$. The regime $|k_2|\gg1$ corresponds to  
-$\rho_2$ being a small perturbation to the
-axisymmetric solution. 
+implying the axisymmetric solution from the previous section, 
+$J_0(z)$, acts as a source for the $m=2$ non-axisymmetric
+component. Note that because we are considering $\rm{St}\ll1$ and
+therefore $|k_2^2|\gg1$, Eq. \ref{eq:rho2_approx_sol} indicates $\rho_2$
+is a small perturbation to the axisymmetric solution.     
 
+
+%The general solution to \eq{eq:rho2_approx} includes the
+%complementary function $J_2(k_2z)$. However, $k_2$ is complex and
+%$|k_2|\gg 1$ (because we are considering $\mathrm{St}\ll1$), so $J_2(k_2z)$
+%may not be well behaved at boundaries. To avoid complications from
+%Bessel functions of complex arguments, we have therefore taken the
+%particular integral to \eq{eq:rho2_approx} as the solution for
+%$\rho_2$. This is to regard $\rho_0$ as a source term for
+%$\rho_2$ . For $|k_2^2|\gg 1$, Eq. \ref{eq:rho2_approx_sol} indicates  
+ 
 We can use \eq{eq:rho2_approx_sol} in \eq{eq:m2_eq1} to
-calculate the correction term $\epsilon$. The ODE to solve is
-\beqn
-\mathcal{A}_0\epsilon(x)
-&=&\frac{\tilde{\chi}^2D_0k_0^2}{k_2^2-k_0^2}\mathcal{C}_0J_2(k_0x) \nonumber \\ 
-&=&\frac{\tilde{\chi}^2D_0k_0^4J_0(k_0x)}{k_2^2-k_0^2}.
-\eeqn
-The particular integral is 
+calculate the correction term $\epsilon$. We find 
+%The ODE to solve is
+%\beqn
+%\mathcal{A}_0\epsilon(x)
+%&=&\frac{\tilde{\chi}^2D_0k_0^2}{k_2^2-k_0^2}\mathcal{C}_0J_2(k_0x) \nonumber \\ 
+%&=&\frac{\tilde{\chi}^2D_0k_0^4J_0(k_0x)}{k_2^2-k_0^2}.
+%\eeqn
+%The particular integral is 
 \beq
 \epsilon(x) = \frac{\tilde{\chi}^2D_0k_0^3xJ_1(k_0x)}{2\left(k_2^2 -
   k_0^2\right)}. 
 \eeq
-Using this expression for $\epsilon(x)$, we can evaluate
+This term is also small because of $|k_2^2|\gg1$. Furthermore, it is
+smaller than $\rho_2(z)$ by a factor $\tilde{\chi}$.  
+
+Collecting the above results and Taylor-expanding the Bessel functions, our
+weakly non-axisymmetric solution for $z\ll 1$ reads:
+
+\beqn
+\rho_0(z) &=& D_0\left[1 -
+  \frac{k_0^2z^2}{4}\left(1-\frac{\tilde{\chi}^2k_0^3}{k_2^2-k_0^2}\right)
++ O(z^4)\right],\\
+\rho_2(z) &=&
+-\frac{D_0\tilde{\chi}k_0^2}{(k_2^2-k_0^2)}\left[\frac{k_0^2z^2}{8}+O(z^4)\right].  
+\eeqn 
+
+In the previous section, we obtained the axisymmetric solution
+assuming the axisymmetric components are negligible. Here, we 
+see explicitly that the axisymmetric solution in fact leads to
+non-axisymmetry through the coupling terms, but these corrections are
+small for $\rm{St}\ll1$.   
+
+\subsubsection{Consistency check}
+Using the above expression for $\epsilon(x)$, we can evaluate
 $\mathcal{B}_2\epsilon(x)$ in order to assess our assumption that
 $\epsilon(x)$ has a negligible contribution to $\rho_2$. We find
-
 \beq
-\mathcal{B}_2\epsilon(x) =
--\frac{\tilde{\chi}^2D_0k_0^5xJ_1(k_0x)}{2\left(k_2^2 -
+\mathcal{B}_2\epsilon(z) =
+-\frac{\tilde{\chi}^2D_0k_0^5zJ_1(k_0z)}{2\left(k_2^2 -
   k_0^2\right)}. 
 \eeq
+Provided that $|k_2^2|\gg1$, this term is indeed small compared to the
+first term on the RHS of Eq. \ref{eq:m2_eq2}. Furthermore, because
+$zJ_1(z)\propto z^2$ for $z\ll1$, this term causes a small correction
+to $\rho_2$ at $O(z^4)$ via Eq. \ref{eq:m2_eq2}. Our solution 
+procedure above is self-consistent.  
 
-Both the $\tilde{\chi}^2$ term and the $k_2^2$ term contributes to
-making $\mathcal{B}_2\epsilon$ small in comparison to the $J_2$ term
-on the RHS of \eq{eq:m2_eq2}. 
-
-An iteration scheme can now be set up. One can update
-$\rho_2$ with the inclusion of $\mathcal{B}_2\epsilon(x)$ using
-\eq{eq:m2_eq2}, then in turn update $\epsilon(x)$ using
-\eq{eq:m2_eq1} and so on. 
-
+%Both the $\tilde{\chi}^2$ term and the $k_2^2$ term contributes to
+%making $\mathcal{B}_2\epsilon$ small in comparison to the $J_2$ term
+%on the RHS of \eq{eq:m2_eq2}. 
+%An iteration scheme can now be set up. One can update
+%$\rho_2$ with the inclusion of $\mathcal{B}_2\epsilon(x)$ using
+%\eq{eq:m2_eq2}, then in turn update $\epsilon(x)$ using
+%\eq{eq:m2_eq1} and so on. 
 
 \subsection{Lower $m$ mode as a source for higher $m$ mode}
-Let us assume that for each $m\geq2$, $\rho_{m-2}$ acts as a source
-for $\rho_{m}$, and that the effect due to $\rho_{m+2}$ can be
-neglected. That is
-\beq
+We can extend the above procedure to obtain approximate solutions for
+$\rho_{m>2}$. We regard $\rho_{m-2}$ acts as a source for $\rho_{m}$. That is
+\beq\label{eq:higherm}
 \mathcal{A}_m\rho_m(x) = -\tilde{\chi}\mathcal{B}_m\rho_{m-2}. 
 \eeq 
 Then, by induction,
-\beq
+\beq\label{eq:induction}
 \rho_m(x) =D_0
 \frac{(-1)^{m/2}\tilde{\chi}^{m/2}k_0^m}{\prod_{l=1}^{m/2}(k_{2l}^2-k_0^2)}J_m(k_0x). 
 \eeq
+Although Eq. \ref{eq:higherm} is artificial, the closed-formed
+approximate solutions, Eq. \ref{eq:induction}, may be useful as initial
+guesses for a numerical relaxation scheme. It also explicitly shows that the
+magnitudes of the induced higher $m$ modes decay with $m$.  
 
 \clearpage
 
