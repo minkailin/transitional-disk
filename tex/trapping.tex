@@ -248,7 +248,8 @@ preferentially trapped is set by the friction time, $\tau_{\rm f}$, which is a
 function of the gas density and particle radius. A suitable nondimensionalization for the
 friction time is the Stokes number, St = $\varOmega \tau_{\rm f}$,
 where $\varOmega$ is the Keplerian frequency. While in the dense, fast
-rotating, inner regions of T-Tauri disks, the best particle size (St =1, e.g. Youdin 2008)
+rotating, inner regions of T-Tauri disks, the best particle size (St =1, e.g. 
+Youdin \& Goodman 2005, Youdin 2008)
 corresponds to meter-size, in the thin, outer regions of transitional
 disks, the size corresponding to St=1 drops by about three orders of
 magnitude. The resulting trapping of sub-mm and mm-size dust may not
@@ -350,6 +351,7 @@ fluid. The dust should then follow the continuity equation
 
 \beq
   \pderiv{\rho_d}{t} = -(\v{v}\cdot\del)\rho_d - \rho_d \Div{\v{v}} + D\Laplace{\rho_d}
+  \label{eq:continuity}
 \eeq
 
 \noindent where $\rho_d$ is the dust density, $\v{v}$ is the dust
@@ -359,8 +361,8 @@ different than the turbulent viscosity in the disk). We assume $D$ is
 constant. 
 
 To derive the velocities, instead of solving the momentum equations
-for the dust, we make use of the relative velocity, following Youdin
-(2008)  
+for the dust, we make use of the relative velocity, following Youdin \& Goodman (2005,
+see also Youdin 2008)  
 
 \beq
 \v{v} = \v{u} + \tau  \grad{h}, 
@@ -376,6 +378,7 @@ as $dh = dp /\rho$.
 Inside the vortex, we adopt the following model for $\v{u}$
 \beq
   u_x = \varOmega_V y / \chi \qquad  u_y= -\varOmega_V x \chi
+  \label{eq:vortex}
 \eeq
 \noindent for a vortex of aspect ratio $\chi= y/x > 1$. The Kida
 solution $\varOmega_V = 3\Omega_K/2(\chi-1)$ smoothly matches 
@@ -414,6 +417,7 @@ u_x\pderiv{u_y}{x} \nonumber \\
 \beqn
 \Div{\v{v}} &=& -(C_1+C_2) = - C\\
 &=& - \tau\varOmega^2 \left[2\omega_{_V}\left(\frac{\chi^2+1}{\chi}\right) - (2\omega_{_V}^2 + 3) \right]
+\label{eq:scale-div}
 \eeqn
 
 \noindent Where we define $C$ as positive, so that the divergence is negative (physically meaning that the dust gets trapped). Replacing that in the continuity equation, and setting $\partial_t$ =
@@ -421,6 +425,7 @@ u_x\pderiv{u_y}{x} \nonumber \\
 
 \beq
 \left(D\Laplace{} -  \v{v}\cdot\del  + C\right)\rho_d = 0 
+\label{eq:steady}
 \eeq
 
 Substituting the gas velocity, and dividing by $D$, we
@@ -443,6 +448,7 @@ determine the steady-state distribution of the vortex-trapped dust.
 
 \beq
 \left[\Laplace{} - \left(Ay\chi^{-1} - B_1x\right) \partial_x  +  \left(A x \chi + B_2y\right) \partial_y + B \right] \rho_d   = 0 
+\label{eq:dust-trapping-cartesian}
 \eeq
 
 \noindent where we also substituted  $A=\varOmega_V/D$ and $B_i=C_i/D$.
@@ -452,8 +458,8 @@ determine the steady-state distribution of the vortex-trapped dust.
 We change variables to the coordinate system used in Chang \& Oishi (2010)
 
 \beqn
-  x &=& a \cos\nu \\
-  y &=& a\chi\sin\nu
+  x &=& a \cos\nu \label{eq:change-x}\\
+  y &=& a\chi\sin\nu  \label{eq:change-y}
 \eeqn
 
 The system is not orthogonal, but it has the advantage of matching the
@@ -533,11 +539,11 @@ The transformations are therefore
 The Laplacian is thus 
 
 \beqn
-\Laplace{} &= &\frac{1}{2}\left[ \epsm \cos 2\nu + \epsp\right] \partial^2_a  \\
-                &+& \frac{1}{2a^2}\left[ \epsp - \epsm \cos 2\nu\right] \partial^2_\nu  \\
-                &-& \frac{\sin 2\nu}{a}\epsm \partial^2_{a\nu}  \\
-                &+& \frac{1}{2a}\left[ \epsp - \epsm \cos 2\nu\right] \partial_a  \\
-                &+& \frac{\sin 2\nu}{a^2} \epsm\partial_\nu
+\Laplace{} &= &\frac{1}{2}\left[ \epsm \cos 2\nu +  \epsp\right] \partial^2_a  \nonumber \\
+                &+& \frac{1}{2a^2}\left[ \epsp - \epsm \cos 2\nu\right] \partial^2_\nu \nonumber \\
+                &-& \frac{\sin 2\nu}{a}\epsm \partial^2_{a\nu}   \nonumber \\
+                &+& \frac{1}{2a}\left[ \epsp - \epsm \cos 2\nu\right] \partial_a \nonumber \\
+                &+& \frac{\sin 2\nu}{a^2} \epsm\partial_\nu \label{eq:laplace}
 \eeqn
 
 \noindent with $\varepsilon_{\pm} = (1 \pm \chi^{-2})$.  As for the advection term, we have 
@@ -546,7 +552,7 @@ The Laplacian is thus
 \v{v}\cdot\del &=& (\v{u} + \tau \grad h) \cdot \del \nonumber \\
 %&=& - \varOmega_V \partial_\nu - \left( C_1 x \partial_x + C_2 y\partial_y\right) \nonumber \\
 &=& - \left[\varOmega_V - \frac{\sin2\nu}{2}  (C_1 -  C_2)\right]\partial_\nu \nonumber \\
-&&- \left( C_1 \cos^2\nu   + C_2\sin^2\nu \right) a \ \partial_a 
+&&- \left( C_1 \cos^2\nu   + C_2\sin^2\nu \right) a \ \partial_a \label{eq:advection-term}
 \eeqn
 
 %with $\v{v}$=$\v{u}$=
@@ -558,10 +564,10 @@ The dust-trapping equation is therefore
 %\left(\Laplace{} + A\partial_\nu + B\right) \rho_d = 0 
 %\eeq
 
-\beqn \label{eq:dust-trapping-uvzero}
+\beqn 
 && \left\{ \Laplace{} + \left[A - \frac{\sin2\nu}{2}  (B_1 - B_2)\right]\partial_\nu \ +  \right.  \nonumber\\
 && \left. \white{\frac{1}{1}}\left( B_1 \cos^2\nu   + B_2\sin^2\nu
-  \right) a \ \partial_a  + B \right\} \rho_d = 0 
+  \right) a \ \partial_a  + B \right\} \rho_d = 0 \label{eq:dust-trapping-uvzero}
 \eeqn
 
 
@@ -620,6 +626,7 @@ k^2 = \frac{2{\rm St}}{\delta H^2} f^2(\chi)
 \beqn
 f^2(\chi) &=& \epsp^{-1} \left[2\omega_{_V}\left(\frac{\chi^2+1}{\chi}\right) - (2\omega_{_V}^2 + 3) \right]\nonumber \\
           &=& 2\omega_{_V}\chi - \epsp^{-1}(2\omega_{_V}^2 + 3)
+\label{eq:scale-function}
 \eeqn
 
 \noindent is a scale function, that depends on the vortex solution
@@ -629,19 +636,71 @@ used. We plot $f(\chi)$ for the Kida and GNG solutions in
 around 0.7. The Kida solution has a  tail around $0.5\pm0.25$ in the
 interval of physical relevance ($2 < \chi \lesssim 10$). The dust distribution is thus 
 
-\beq\label{eq:gen_axi}
+\begin{figure}
+  \begin{center}
+    \resizebox{\columnwidth}{!}{\includegraphics{../figs/scale_function.png}}
+  \end{center}
+\caption[]{The scale function $f(\chi)$, defined by
+  \eq{eq:scale-function}, for the Kida ($\varOmega_V=3/2
+  \ \varOmega_K/(\chi-1)$) and GNG ($\varOmega_V=\varOmega_K
+  \sqrt{3/(\chi^2-1)}$ solutions, respectively. The scale function is
+  related to the square root of the negative of the divergence
+  \eqp{eq:scale-div}, and defined only for $\chi>2$. For smaller $\chi$ the
+  divergence flips positive, meaning that dust is expelled from the
+  vortex instead of getting trapped. This happens because of the
+  correlation between $\varOmega_V$ and $\chi$. The aspect ratio shrinks
+  as the vortex intensifies. At some point, the vortex rotates too
+  fast, and particles are expelled by the centrifugal force (see e.g.,
+  Chavanis 2000).}
+ \label{fig:scale-function}
+\end{figure}
+
+
+\beq
 \rho_d(a) = \rho_{d0} \ \exp\left(-\frac{a^2}{2H_V^2}\right) \ ,
+\label{eq:gen_axi}
 \eeq
+
 \beq
  H_V = \frac{H}{f(\chi)} \sqrt{\frac{\delta}{\rm St}}. 
+\label{eq:hv}
 \eeq
 
-Dust distributions for different values of
-$\delta/{\rm St}$ are plotted in \fig{fig:gaussian}.
+The above solution is remarkable. Given the sonic scale $H$ and a vortex 
+aspect ratio $\chi$, a single parameter ($\delta/{\rm St}$) controls the 
+distribution of dust. This had already been 
+hinted upon by Cuzzi et al. (1993) and Dubrulle et al. (1995) 
+in the context of steady states of dust sedimentation. An insightful study by 
+Jacquet et al. (2012) emphasized the relevance of this parameter for 
+global redistribution of solids. Birstiel et al. (2013) also find this to be 
+the parameter of relevance in their semi-analytical model. Dust distributions 
+for different values of $\delta/{\rm St}$ are plotted in \fig{fig:gaussian}, as a 
+function of $a/H$. We show in \fig{fig:disk}, in the inertial frame, 
+the dust distribution for $\delta/St$=1 in a Kida vortex of $\chi=4$ embedded in a 
+disk of aspect ratio is $H/r$=0.1. 
 
+\begin{figure}
+  \begin{center}
+    \resizebox{\columnwidth}{!}{\includegraphics{../figs/gaussian.png}}
+  \end{center}
+\caption[]{Dust distribution for the axisymmetric case. As in
+  \fig{fig:scale-function}, red and blue lines are for the Kida and
+  GNG solutions, respectively. Distributions for $\delta/{\rm St}$=0.1, 1, and
+  10 are shown (dashed, solid, and dot-dashed lines). The $x$-axis is
+  $a/H$, where $H$ is the gas scale height. There is degeneracy
+  between $\delta/{\rm St}$ and $f(\chi)$, as is clear from \eq{eq:hv}.}
+ \label{fig:gaussian}
+\end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\begin{figure}
+\begin{center}
+  \resizebox{\columnwidth}{!}{\includegraphics{../figs/disk.png}}
+ \end{center}
+\caption[]{Three parameters, plus a vortex solution, control the dust distribution. 
+The figure shows the appearance of the dust trapped in a Kida vortex of $\chi=4$, 
+for $\delta/St$=1, in a disk of aspect ratio $H/r$=0.1.}
+ \label{fig:disk}
+\end{figure}
 
 \subsection{Axisymmetric $\v{u} = \v{v}$ }
 
@@ -708,6 +767,18 @@ $ka$=1.5 (i.e., $a/H_V\approx 1$), and up to 1\% within $ka$=1 (i.e., $a/H_V\app
 $\v{u}=\v{v}$ solution works well within the vortex core, we use this
 approximation to find solutions to the full non-axisymmetric problem,
 in the next section. 
+
+\begin{figure}
+  \begin{center}
+    \resizebox{\columnwidth}{!}{\includegraphics{../figs/bessel-gaussian.png}}
+  \end{center}
+\caption[]{The axisymmetric solutions for (solid line) the general 
+$\v{v}=\v{u}+\tau\grad{h}$ case and, (dashed line) the $\v{v}=\v{u}$ case.
+The exponential and Bessel solutions agree up to 10\% up to $x$=1.5, and up 
+to 1\% up to $x$=1. We conclude that this approximate solution is quite accurate 
+for describing the dust distribution in the vortex core.}
+ \label{fig:bessel-gaussian}
+\end{figure}
 
 
 \section{Non-axisymmetric corrections}
@@ -877,6 +948,16 @@ non-axisymmetry through the coupling terms, but these corrections are
 small for $\rm{St}\ll1$. We conclude that dust in the vortex core is
 effectively axisymmetric.   
 
+\begin{figure}
+  \begin{center}
+    \resizebox{\columnwidth}{!}{\includegraphics{../figs/nonaxi.png}}
+  \end{center}
+  \caption[]{Magnitude of the $m=2$ non-axisymmetric component normalized by the magnitude of the axisymmetric part of the solution, for the Kida vortex (red) and GNG vortex (blue) of aspect-ratio $\chi=10$ and Stokes number $\rm{St}=0.3$. }
+ \label{fig:nonaxi}
+\end{figure}
+
+
+
 \subsubsection{Consistency check}
 Using the above expression for $\epsilon(x)$, we can evaluate
 $\mathcal{B}_2\epsilon(x)$ in order to assess our assumption that
@@ -918,38 +999,7 @@ magnitudes of the induced higher $m$ modes decay with $m$.
 
 \clearpage
 
-\begin{figure}
-  \begin{center}
-    \resizebox{\columnwidth}{!}{\includegraphics{../figs/scale_function.png}}
-  \end{center}
-\caption[]{.}
- \label{fig:scale-function}
-\end{figure}
 
-\begin{figure}
-  \begin{center}
-    \resizebox{\columnwidth}{!}{\includegraphics{../figs/gaussian.png}}
-  \end{center}
-\caption[]{.}
- \label{fig:gaussian}
-\end{figure}
-
-\begin{figure}
-  \begin{center}
-    \resizebox{\columnwidth}{!}{\includegraphics{../figs/bessel-gaussian.png}}
-  \end{center}
-\caption[]{.}
- \label{fig:bessel-gaussian}
-\end{figure}
-
-
-\begin{figure}
-  \begin{center}
-    \resizebox{\columnwidth}{!}{\includegraphics{../figs/nonaxi.png}}
-  \end{center}
-  \caption[]{Magnitude of the $m=2$ non-axisymmetric component normalized by the magnitude of the axisymmetric part of the solution, for the Kida vortex (red) and GNG vortex (blue) of aspect-ratio $\chi=10$ and Stokes number $\rm{St}=0.3$. }
- \label{fig:nonaxi}
-\end{figure}
 
 %\begin{figure}
 %\begin{center}
@@ -958,7 +1008,6 @@ magnitudes of the induced higher $m$ modes decay with $m$.
 %\caption[]{.}
 % \label{fig:gaussian-bessel}
 %\end{figure}
-
 
 
 \section{Conclusions}
