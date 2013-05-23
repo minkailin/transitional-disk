@@ -674,7 +674,7 @@ That is,
 y^{\prime\prime} + \frac{1}{a}y^\prime + k^2 y = 0 
 \label{eq:axisymmetric}
 \eeq where $y(a) = \rho_d$ and $k$ is given by \eq{eq:k}. This
-equation only differs from \eq{eq:gen_axi} through the
+equation only differs from \eq{eq:dust-trapping-axis} through the
 absence of the $k^2a\partial_a$ term, which occurs when the full
 expression for the dust velocity is used. Clearly it is negligible 
 for sufficiently small $a$.  
@@ -702,16 +702,12 @@ equations, so the results should not be valid for $x \gg H$.
 As we made use of the approximation $\v{v}=\v{u}$, ${\rm St} \ll 1$,
 and the solution  is indeed $a_0 \gg H$, for finite values of $\delta$.
 
-We compare the Bessel function with the exponential found in the
-previous section for the general solution. They agree up to 1\% inside
-$H_V$, and up to 10\% within 2$H_V$ \comm{check the numbers again and 
-add a figure}. Confident that the approxiate
+We compare in \fig{fig:bessel-gaussian} the Bessel function with the exponential found in the
+previous section for the general solution. They agree up to 10\% inside
+$ka$=1.5 (i.e., $a/H_V\approx 1$), and up to 1\% within $ka$=1 (i.e., $a/H_V\approx 0.7$). Confident that the approximate
 $\v{u}=\v{v}$ solution works well within the vortex core, we use this
 approximation to find solutions to the full non-axisymmetric problem,
 in the next section. 
-
-
-
 
 
 \section{Non-axisymmetric corrections}
@@ -928,6 +924,14 @@ magnitudes of the induced higher $m$ modes decay with $m$.
   \end{center}
 \caption[]{.}
  \label{fig:gaussian}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+    \resizebox{\columnwidth}{!}{\includegraphics{../figs/bessel-gaussian.png}}
+  \end{center}
+\caption[]{.}
+ \label{fig:bessel-gaussian}
 \end{figure}
 
 %\begin{figure}
