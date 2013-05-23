@@ -341,7 +341,9 @@ for the dust, we make use of the relative velocity, following Youdin
 \label{eq:v}
 \eeq
 
-\noindent accurate to first order in $\tau$. The enthalpy $h$ is defined 
+\noindent accurate to first order in $\tau$. We have assumed a
+barotropic fluid for which the pressure $p=p(\rho)$ and $\rho$ is the
+gas density. The enthalpy $h$ is then defined 
 as $dh = dp /\rho$, and  $\v{u}$ is the velocity of the gas. Inside a vortex, it is
 divergenceless and must satisfy 
 
@@ -662,7 +664,7 @@ approximation to find solutions to the full non-axisymmetric problem,
 in the next section. 
 
 
-<<<<<<< HEAD
+
 \subsection{Axisymmetric u $\ne$ v }
 
 In deriving eq 10, we assumed $\v{u}=\v{v}$, for practical reasons. We
@@ -832,21 +834,26 @@ $\epsilon$ term in \eq{eq:m2_eq2} can be neglected. Thus $\rho_2$ satisfies
 \beq\label{eq:rho2_approx}
 \mathcal{A}_2\rho_2(z) \simeq -\tilde{\chi}D_0k_0^2J_2(k_0z).
 \eeq
-A solution to \eq{eq:rho2_approx} is
+This can be solved by 
 \beq\label{eq:rho2_approx_sol}
-\rho_2(z)  = -\frac{\tilde{\chi}D_0k_0^2J_2(k_0z)}{k_2^2 - k_0^2}. 
+\rho_2(z)  = -\frac{\tilde{\chi}D_0k_0^2J_2(k_0z)}{k_2^2 - k_0^2}, 
 \eeq
+implying the axisymmetric solution from the previous section, 
+$J_0(z)$, acts as a source for the $m=2$ non-axisymmetric
+component. Note that because we are considering $\rm{St}\ll1$ and
+therefore $|k_2^2|\gg1$, Eq. \ref{eq:rho2_approx_sol} indicates $\rho_2$
+is a small perturbation to the axisymmetric solution.     
 
-The general solution to \eq{eq:rho2_approx} includes the
-complementary function $J_2(k_2z)$. However, $k_2$ is complex and
-$|k_2|\gg 1$ (because we are considering $\mathrm{St}\ll1$), so $J_2(k_2z)$
-may not be well behaved at boundaries. To avoid complications from
-Bessel functions of complex arguments, we have therefore taken the
-particular integral to \eq{eq:rho2_approx} as the solution for
-$\rho_2$. This is to regard $\rho_0$ as a source term for
-$\rho_2$. For $|k_2^2|\gg 1$, Eq. \ref{eq:rho2_approx_sol} indicates  
-$\rho_2$ is a small perturbation to the axisymmetric solution. 
 
+%The general solution to \eq{eq:rho2_approx} includes the
+%complementary function $J_2(k_2z)$. However, $k_2$ is complex and
+%$|k_2|\gg 1$ (because we are considering $\mathrm{St}\ll1$), so $J_2(k_2z)$
+%may not be well behaved at boundaries. To avoid complications from
+%Bessel functions of complex arguments, we have therefore taken the
+%particular integral to \eq{eq:rho2_approx} as the solution for
+%$\rho_2$. This is to regard $\rho_0$ as a source term for
+%$\rho_2$ . For $|k_2^2|\gg 1$, Eq. \ref{eq:rho2_approx_sol} indicates  
+ 
 We can use \eq{eq:rho2_approx_sol} in \eq{eq:m2_eq1} to
 calculate the correction term $\epsilon$. We find 
 %The ODE to solve is
@@ -860,28 +867,46 @@ calculate the correction term $\epsilon$. We find
 \epsilon(x) = \frac{\tilde{\chi}^2D_0k_0^3xJ_1(k_0x)}{2\left(k_2^2 -
   k_0^2\right)}. 
 \eeq
-This represents another correction to the axisymmetric solution. It is
-also small because of $|k_2^2|$. Furthermore, it is smaller than
-$\rho_2(z)$ by a factor $\tilde{\chi}$. 
+This term is also small because of $|k_2^2|\gg1$. Furthermore, it is
+smaller than $\rho_2(z)$ by a factor $\tilde{\chi}$.  
 
+Gathering the above results and expanding the Bessel functions, our
+weakly non-axisymmetric solution for $z\ll 1$ reads:
+
+\beqn
+\rho_0(z) &=& D_0\left[1 -
+  \frac{k_0^2z^2}{4}\left(1-\frac{\tilde{\chi}^2k_0^3}{k_2^2-k_0^2}\right)
++ O(z^4)\right],\\
+\rho_2(z) &=&
+-\frac{D_0\tilde{\chi}k_0^2}{(k_2^2-k_0^2)}\left[\frac{k_0^2z^2}{8}+O(z^4)\right].  
+\eeqn 
+
+Thus, the axisymmetric solution from the previous section causes
+non-axisymmetry through the coupling terms, but these corrections are
+small for $\rm{St}\ll1$. 
+
+\subsubsection{Consistency check}
 Using this expression for $\epsilon(x)$, we can evaluate
 $\mathcal{B}_2\epsilon(x)$ in order to assess our assumption that
 $\epsilon(x)$ has a negligible contribution to $\rho_2$. We find
 \beq
-\mathcal{B}_2\epsilon(x) =
--\frac{\tilde{\chi}^2D_0k_0^5xJ_1(k_0x)}{2\left(k_2^2 -
+\mathcal{B}_2\epsilon(z) =
+-\frac{\tilde{\chi}^2D_0k_0^5zJ_1(k_0z)}{2\left(k_2^2 -
   k_0^2\right)}. 
 \eeq
+Provided that $|k_2^2|\gg1$, this term is indeed small compared to the
+first term on the RHS of Eq. \ref{eq:m2_eq2}. Furthermore, because
+$zJ_1(z)\propto z^2$ for $z\ll1$, this term causes a small correction
+to $\rho_2$ at $O(z^4)$ via Eq. \ref{eq:m2_eq2}. Our solution 
+procedure above is self-consistent.  
 
 %Both the $\tilde{\chi}^2$ term and the $k_2^2$ term contributes to
 %making $\mathcal{B}_2\epsilon$ small in comparison to the $J_2$ term
 %on the RHS of \eq{eq:m2_eq2}. 
-
 %An iteration scheme can now be set up. One can update
 %$\rho_2$ with the inclusion of $\mathcal{B}_2\epsilon(x)$ using
 %\eq{eq:m2_eq2}, then in turn update $\epsilon(x)$ using
 %\eq{eq:m2_eq1} and so on. 
-
 
 \subsection{Lower $m$ mode as a source for higher $m$ mode}
 Let us assume that for each $m\geq2$, $\rho_{m-2}$ acts as a source
@@ -895,6 +920,8 @@ Then, by induction,
 \rho_m(x) =D_0
 \frac{(-1)^{m/2}\tilde{\chi}^{m/2}k_0^m}{\prod_{l=1}^{m/2}(k_{2l}^2-k_0^2)}J_m(k_0x). 
 \eeq
+
+
 
 \begin{figure}
   \begin{center}
