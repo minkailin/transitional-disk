@@ -330,30 +330,39 @@ fluid. The dust should then follow the continuity equation
 \noindent where $\rho_d$ is the dust density, $\v{v}$ is the dust
 velocity, and $D$ is the diffusion coefficient (the diffusion is due
 to elliptical turbulence in the vortex core and in general will be
-different than the turbulent viscosity in the disk). 
+different than the turbulent viscosity in the disk). We assume $D$ is
+constant. 
 
 To derive the velocities, instead of solving the momentum equations
 for the dust, we make use of the relative velocity, following Youdin
 (2008)  
 
 \beq
-\v{v} = \v{u} + \tau  \grad{h} 
+\v{v} = \v{u} + \tau  \grad{h}, 
 \label{eq:v}
 \eeq
 
-\noindent accurate to first order in $\tau$. We have assumed a
-barotropic fluid for which the pressure $p=p(\rho)$ and $\rho$ is the
+\noindent accurate to first order in $\tau$, assumed constant, and
+$\v{u}$ is the velocity of the gas. We have taken a 
+barotropic fluid model for which the pressure $p=p(\rho)$ and $\rho$ is the
 gas density. The enthalpy $h$ is then defined 
-as $dh = dp /\rho$, and  $\v{u}$ is the velocity of the gas. Inside a vortex, it is
-divergenceless and must satisfy 
+as $dh = dp /\rho$. 
 
+Inside the vortex, we adopt the following model for $\v{u}$
 \beq
   u_x = \varOmega_V y / \chi \qquad  u_y= -\varOmega_V x \chi
 \eeq
-
 \noindent for a vortex of aspect ratio $\chi= y/x > 1$. The Kida
 solution $\varOmega_V = 3\Omega_K/2(\chi-1)$ smoothly matches 
-this velocity field to the Keplerian shear. Taking the divergent of
+this velocity field to the Keplerian shear. We note that the dust
+velocity is comprised of a divergent-free part, $\v{u}$, and a
+curl-free part, $\tau\nabla{h}$. The vortex flow attempts to keep the
+dust particles on closed ellpitic streamlines via $\v{u}$, while friction
+attempts to concentrate dust toward pressure maximum via $\tau\nabla
+h$. The only effect that attempts to spread out the dust is diffusion
+via $D$.  
+
+Taking the divergence of
 \eq{eq:v} gives 
 
 \beq
@@ -362,7 +371,8 @@ this velocity field to the Keplerian shear. Taking the divergent of
 \eeq
 
 \noindent and we can find the Laplacian of the enthalpy via the Euler
-equation. At steady state, the force balance yields 
+equation. Adopting the shearing sheet approximation, in steady state
+the force balance yields  
 
 \begin{eqnarray}
 \pderiv{h}{x} &=& 3\varOmega^2 x + 2\varOmega u_y -
@@ -612,15 +622,20 @@ $\delta/{\rm St}$ are plotted in \fig{fig:gaussian}.
 
 \subsection{Axisymmetric $\v{u} = \v{v}$ }
 
-It is illustrative to consider the case in which $\v{u} \gg \tau\grad{h}$,
-so that we can approximate $\v{v}=\v{u}$ in the advection term. In
+It is illustrative to consider the case in which $|\v{u}| \gg \tau|\grad{h}|$,
+so that we can approximate $\v{v}=\v{u}$ in the advection term.  In 
 this case, the dust-trapping equation reduces to a relatively simple equation
 
-\beq
-\left(\Laplace{} + A\partial_\nu + B \right)\rho_d = 0 
+\beq\label{eq:uveq}
+\left(\Laplace{} + A\partial_\nu + B \right)\rho_d = 0. 
 \eeq
+\eq{eq:uveq} compares dust diffusion to dust advection due to the
+vortex flow alone. Note that we are effectively considering regions
+close to the vortex center because $\nabla h$ vanishes there, while
+$\nabla^2h$ (i.e. $B$), does not.  
 
-And, assuming axis-symmetry and integrating in $\frac{1}{2\pi} \int_0^{2\pi} d\nu$, we get 
+Now, assuming axis-symmetry and integrating in
+$\frac{1}{2\pi} \int_0^{2\pi} d\nu$, we get  
 
 \beq
 \frac{\epsp}{2}\pderivn{\rho_d}{a}{2} +
@@ -632,7 +647,13 @@ That is,
 \beq
 y^{\prime\prime} + \frac{1}{a}y^\prime + k^2 y = 0 
 \label{eq:axisymmetric}
-\eeq where $y(a) = \rho_d$ and $k$ is given by \eq{eq:k}.  The general solution of \eq{eq:axisymmetric} is a
+\eeq where $y(a) = \rho_d$ and $k$ is given by \eq{eq:k}. This
+equation only differs from \eq{eq:gen_axi} through the
+absence of the $k^2a\partial_a$ term, which occurs when the full
+expression for the dust velocity is used. Clearly it is negligible 
+for sufficiently small $a$.  
+
+The general solution of \eq{eq:axisymmetric} is a
 sum of Bessel functions: 
 
 \beq
@@ -722,7 +743,7 @@ k^2 = \frac{2C}{\epsp D} = \frac{2{\rm St}}{\delta H^2} f^2(\chi)
 
 \noindent We can then write 
 
-\beq\label{eq:gen_axi}
+\beq
 \rho_d(a) = \rho_{d0} \exp\left(-\frac{a^2}{2H_a^2}\right)
 \eeq
 \beq
@@ -733,13 +754,13 @@ k^2 = \frac{2C}{\epsp D} = \frac{2{\rm St}}{\delta H^2} f^2(\chi)
 $\psi(\chi)$ for the Kida and Goodman solutions in \fig{fig:fchi}.
 
 \section{Non-axisymmetric corrections}
-We consider the non-axisymmetric problem ($\partial_\nu\neq0$) 
-in the limit $\rm{St}\ll 1$ and formally set $\bm{v}=\bm{u}$ 
-in the advection term $\bm{v}\cdot\del$. Physically, our dust-trapping
-equation is then comparing advection due to the background vortex flow
-and diffusion. We remark that including the $\tau$ term for dust
-velocity only helps to concentrate dust at the vortex core (pressure
-maximum).      
+We consider the non-axisymmetric problem ($\partial_\nu\neq0$) inside
+the vortex core in the limit $\rm{St}\ll 1$. We formally set
+$\bm{v}=\bm{u}$ in the advection term $\bm{v}\cdot\del$. Our
+dust-trapping equation is then comparing advection due to the
+background vortex flow and diffusion. Physically, we expect that
+including the $\tau$ term for dust velocity in the advection term only
+helps to concentrate dust at the vortex core (pressure maximum).      
 
 \subsection{Conversion to ordinary differential equations}
 The dust density $\rho_d$ is periodic in the $\nu$ co-ordinate. We
@@ -782,8 +803,8 @@ where $z\equiv ka$, $\tilde{\chi}\equiv(\chi^2-1)/[2(\chi^2+1)]$, and
 \frac{2}{z}\left(m+\frac{3}{2}\right)\frac{d}{dz} +
 \frac{m(m+2)}{z^2}, 
 \eeqn
-where $k_m^2 \equiv 1+\mathrm{i}mA/B$. Eq. \eq{eq:ode2} holds for each
-$m$ except for $m=0$ for which the $\rho_{m-2}$ term is absent. Each
+where $k_m^2 \equiv 1+\mathrm{i}mA/B$. \eq{eq:ode2} holds for each
+$m$ except for $m=0$ for which the $\rho_{m-2}$ terms are absent. Each
 $\rho_m$ couples to $\rho_{m\pm2}$ through operators $\mathcal{B}_m$
 and $\mathcal{C}_m$. The axisymmetric problem is recovered by
 setting $\rho_{m>0}=0$. (We remark that a similar set of ODEs may be
@@ -823,7 +844,8 @@ for $z\ll 1$. We proceed as follows. Let
 \rho_0(z) = D_0J_0(k_0z) + \epsilon(z),  
 \eeq
 where $\epsilon(x)$ represents the correction to the axisymmetric
-solution due to $\rho_2(z)$. $D_0$ is a constant. The ODEs to be
+solution due to $\rho_2(z)$. $D_0$ is a constant not to be confused
+with diffusion. The ODEs to be
 solved are 
 \beqn 
 \mathcal{A}_0\epsilon(z) &=& -\tilde{\chi}\mathcal{C}_0\rho_2(z),\label{eq:m2_eq1}\\
@@ -872,7 +894,7 @@ calculate the correction term $\epsilon$. We find
 This term is also small because of $|k_2^2|\gg1$. Furthermore, it is
 smaller than $\rho_2(z)$ by a factor $\tilde{\chi}$.  
 
-Gathering the above results and expanding the Bessel functions, our
+Collecting the above results and Taylor-expanding the Bessel functions, our
 weakly non-axisymmetric solution for $z\ll 1$ reads:
 
 \beqn
@@ -883,9 +905,11 @@ weakly non-axisymmetric solution for $z\ll 1$ reads:
 -\frac{D_0\tilde{\chi}k_0^2}{(k_2^2-k_0^2)}\left[\frac{k_0^2z^2}{8}+O(z^4)\right].  
 \eeqn 
 
-Thus, the axisymmetric solution from the previous section causes
+In the previous section, we obtained the axisymmetric solution
+assuming the axisymmetric components are negligible. Here, we 
+see explicitly that the axisymmetric solution in fact leads to
 non-axisymmetry through the coupling terms, but these corrections are
-small for $\rm{St}\ll1$. 
+small for $\rm{St}\ll1$.   
 
 \subsubsection{Consistency check}
 Using the above expression for $\epsilon(x)$, we can evaluate
@@ -911,19 +935,20 @@ procedure above is self-consistent.
 %\eq{eq:m2_eq1} and so on. 
 
 \subsection{Lower $m$ mode as a source for higher $m$ mode}
-Let us assume that for each $m\geq2$, $\rho_{m-2}$ acts as a source
-for $\rho_{m}$, and that the effect due to $\rho_{m+2}$ can be
-neglected. That is
-\beq
+We can extend the above procedure to obtain approximate solutions for
+$\rho_{m>2}$. We regard $\rho_{m-2}$ acts as a source for $\rho_{m}$. That is
+\beq\label{eq:higherm}
 \mathcal{A}_m\rho_m(x) = -\tilde{\chi}\mathcal{B}_m\rho_{m-2}. 
 \eeq 
 Then, by induction,
-\beq
+\beq\label{eq:induction}
 \rho_m(x) =D_0
 \frac{(-1)^{m/2}\tilde{\chi}^{m/2}k_0^m}{\prod_{l=1}^{m/2}(k_{2l}^2-k_0^2)}J_m(k_0x). 
 \eeq
-
-
+Although Eq. \ref{eq:higherm} is artificial, the closed-formed
+approximate solutions, Eq. \ref{eq:induction}, may be useful as initial
+guesses for a numerical relaxation scheme. It also explicitly shows that the
+magnitudes of the induced higher $m$ modes decay with $m$.  
 
 \begin{figure}
   \begin{center}
