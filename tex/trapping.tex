@@ -773,9 +773,10 @@ in the next section.
     \resizebox{\columnwidth}{!}{\includegraphics{../figs/bessel-gaussian.png}}
   \end{center}
 \caption[]{The axisymmetric solutions for (solid line) the general 
-$\v{v}=\v{u}+\tau\grad{h}$ case and, (dashed line) the $\v{v}=\v{u}$ case.
+$\v{v}=\v{u}+\tau\grad{h}$ case and, (dashed line) the case where
+  we set $\v{v}=\v{u}$ for dust advection.
 The exponential and Bessel solutions agree up to 10\% up to $x$=1.5, and up 
-to 1\% up to $x$=1. We conclude that this approximate solution is quite accurate 
+to 1\% up to $x$=1. We conclude that the latter approximate solution is quite accurate 
 for describing the dust distribution in the vortex core.}
  \label{fig:bessel-gaussian}
 \end{figure}
@@ -933,20 +934,29 @@ becomes small compared to $J_0$ for small $z$.
 Collecting the above results and Taylor-expanding the Bessel functions, our
 weakly non-axisymmetric solution for $z\ll 1$ reads:
 
+%\beqn
+%\rho_0(z) &=& D_0\left[1 -
+%  \frac{k_0^2z^2}{4}\left(1-\frac{\tilde{\chi}^2k_0^3}{k_2^2-k_0^2}\right)
+%+ O(z^4)\right],\\
+%\rho_2(z) &=&
+%-\frac{D_0\tilde{\chi}k_0^2}{(k_2^2-k_0^2)}\left[\frac{k_0^2z^2}{8}+O(z^4)\right].  
+%\eeqn 
+
 \beqn
 \rho_0(z) &=& D_0\left[1 -
-  \frac{k_0^2z^2}{4}\left(1-\frac{\tilde{\chi}^2k_0^3}{k_2^2-k_0^2}\right)
+  \frac{z^2}{4}\left(1-\frac{\tilde{\chi}^2B}{2\mathrm{i}A}\right)
 + O(z^4)\right],\\
 \rho_2(z) &=&
--\frac{D_0\tilde{\chi}k_0^2}{(k_2^2-k_0^2)}\left[\frac{k_0^2z^2}{8}+O(z^4)\right].  
+-\frac{D_0\tilde{\chi}B}{2\mathrm{i}A}\left[\frac{z^2}{8}+O(z^4)\right],  
 \eeqn 
+where we used the definition of $k_m$. 
 
 In the previous section, we obtained the axisymmetric solution
 assuming the axisymmetric components are negligible. Here, we 
 see explicitly that the axisymmetric solution in fact leads to
 non-axisymmetry through the coupling terms, but these corrections are
-small for $\rm{St}\ll1$. We conclude that dust in the vortex core is
-effectively axisymmetric.   
+small for $\rm{St}\ll1$, because $B\propto\mathrm{St}$. 
+We conclude that dust in the vortex core is effectively axisymmetric.   
 
 \begin{figure}
   \begin{center}
@@ -996,10 +1006,6 @@ Although Eq. \ref{eq:higherm} is artificial, the closed-formed
 approximate solutions, Eq. \ref{eq:induction}, may be useful as initial
 guesses for a numerical relaxation scheme. It also explicitly shows that the
 magnitudes of the induced higher $m$ modes decay with $m$.  
-
-\clearpage
-
-
 
 %\begin{figure}
 %\begin{center}
