@@ -1,21 +1,4 @@
 %
-
-% Til - semi-analytic model, borrowing from Pinilla. Ours: fully analytic. 
-
-%Najita et al 2007
-%Cieza et al. 2008, 2010
-%Espaillat et al. 2010
-%Kim et al. 2009
-%Merin et al. 2010
-%Muzzerole et al. 2010
-%
-% transition disks: young stars with spectral evidence for cool 
-% dust but which lack diagnostic of warm dust
-%
-% colder: big hole; warmer: small hole
-% 
-
-
 %\documentclass[useAMS,8pt,twocolumn]{article}
 \documentclass[apj]{emulateapj}
 \bibliographystyle{apj}
@@ -131,6 +114,13 @@
 \section{Introduction}
 \label{sect:introduction}
 
+% These changes are: small near-IR excesses, significant mid and far-IR
+%excesses. (near-IR -> 1-5mu, mid-IR -> 5-20 mu, far-IR beyond 20 mu) 
+
+% mid excess => wall
+% far IR => Cold dust
+% near IR => some (pre-transitional), evidence of optically thick warm dust, small inner disk 
+
 Transitional disks are a class of disks that lacks a near infrared
 excess, implying absense of optically thick warm dust in the inner
 disk. At the same time, these disks show signatures of cold gas in the
@@ -141,6 +131,55 @@ the evolutionary stage between gas-rich protoplanetary disks and gas-poor
 debris disks. The absense of dust in the inner disk is usually
 attributed to the planet formation process, supposed to be completed
 or nearly completed in that region. 
+
+%Strom et al. 1989 : identification
+%others on identification: Skrutskie et al. 1990 (suggested gap model)
+%others on identification: Gauvin & Strom 1992; Marsh & Mahoney 1992; Wolk & Walter 1996
+%Calvet et al. 2005 : coined term
+%Espaillat et al. 2007 : census
+%Najita et al 2007 : census
+%Espaillat et al. 2008: confirmation of gap in LkCa 15
+%Cieza et al. 2008, 2010
+%Espaillat et al. 2010
+%Kim et al. 2009
+%Merin et al. 2010
+%Muzzerole et al. 2010
+%It must be noted that - Clarke & Owen, not clear if transitional disks are associated with planets at all. 
+
+
+%Najita et al 2007
+%Cieza et al. 2008, 2010
+%Espaillat et al. 2010
+%Kim et al. 2009
+%Merin et al. 2010
+%Muzzerole et al. 2010
+%
+% transition disks: young stars with spectral evidence for cool 
+% dust but which lack diagnostic of warm dust
+%
+% colder: big hole; warmer: small hole
+% 
+
+% Hughes et al. 2007 2009, Andrews et al. 2009, 2010, 2011, for 
+% confirmed with sub-mm and mm interferometric imaging that TDs have
+% truncated outer edges. Thalmann et al. 2010 does the same for LkCa 15
+% for NIR imaging. 
+
+%Optically thick inner disk of PTD : veiling of NIR (Espaillat et al. 2008a, 2010)
+
+%NIR interferometry confirms that the inner disk is small (Pott et al. 2010, 
+% Olofsson et al. 2011) 
+
+% potential planets claimed: Kraus et al. 2011 (LkCa 15), Huelamo et al. 2011
+% (T Cha). 
+
+%Disks undergoing clearing: Lada et al. 2006, Hernandez et al. 2007,
+%Cieza et al. 2010, Muzerolle et al. 2010, Luhman et al. 2010, Merin et al. 
+%2010, Currie & Sicilia-Aguilar 2011. 
+
+% 
+
+
 
 Since the early images of transitional disks, a variety of deviations
 from axisymmetry have been observed in the outer disk \comm{quote works}. These asymmetries 
@@ -269,10 +308,12 @@ entropy gradient. This leaves gap-edge RWI as a plausible mechanism.
 
 If indeed the asymmetries are due to gap edge Rossby vortices, then, 
 as the drag force drives dust toward the vortex center, diffusion is
-needed to maintain a steady state over the lifetime of the disk \footnote{{This
-diffusion is the result of elliptic instability and in general
-different than the diffusion in the gas phase (see e.g., Lyra \& Klahr
-2011)}}. Steady state solutions should exist in this case and, indeed, Ataiee
+needed to maintain a steady state over the lifetime of the disk. 
+%\footnote{{This
+%diffusion is the result of elliptic instability and in general
+%different than the diffusion in the gas phase (see e.g., Lyra \& Klahr
+%2011)}}. 
+Steady state solutions should exist in this case and, indeed, Ataiee
 et al. (2013), modeling particles of different Stokes numbers, finds
 two different dust distributions, as expected. Birnstiel et al. (2013) 
 presented a semi-analytical model that solves for the azimuthal dust 
@@ -350,7 +391,7 @@ Considering the dust is of small sizes, we can treat it as a
 fluid. The dust should then follow the continuity equation 
 
 \beq
-  \pderiv{\rho_d}{t} = -(\v{v}\cdot\del)\rho_d - \rho_d \Div{\v{v}} + D\Laplace{\rho_d}
+  \pderiv{\rho_d}{t} = -(\v{v}\cdot\del)\rho_d - \rho_d \Div{\v{v}} + D\Laplace{\rho_d},
   \label{eq:continuity}
 \eeq
 
@@ -369,13 +410,13 @@ see also Youdin 2008)
 \label{eq:v}
 \eeq
 
-\noindent accurate to first order in $\tau$, assumed constant, and
-$\v{u}$ is the velocity of the gas. We have taken a 
-barotropic fluid model for which the pressure $p=p(\rho)$ and $\rho$ is the
-gas density. The enthalpy $h$ is then defined 
-as $dh = dp /\rho$. 
+\noindent where $\v{u}$ is the gas velocity. Equation~\ref{eq:v} is 
+accurate to first order in friction time $\tau$, assumed 
+constant. The enthalpy $h$ is defined as $dh = dp /\rho$, where $p$ 
+is the pressure and $\rho$ the gas density. 
 
-Inside the vortex, we adopt the following model for $\v{u}$
+Inside the vortex, the flow is divergenceless, and 
+we adopt the following model for $\v{u}$
 \beq
   u_x = \varOmega_V y / \chi \qquad  u_y= -\varOmega_V x \chi
   \label{eq:vortex}
@@ -383,18 +424,17 @@ Inside the vortex, we adopt the following model for $\v{u}$
 \noindent for a vortex of aspect ratio $\chi= y/x > 1$. The Kida
 solution $\varOmega_V = 3\Omega_K/2(\chi-1)$ smoothly matches 
 this velocity field to the Keplerian shear. We note that the dust
-velocity is comprised of a divergent-free part, $\v{u}$, and a
-curl-free part, $\tau\nabla{h}$. The vortex flow attempts to keep the
-dust particles on closed ellpitic streamlines via $\v{u}$, while friction
-attempts to concentrate dust toward pressure maximum via $\tau\nabla
-h$. The only effect that attempts to spread out the dust is diffusion
-via $D$.  
+velocity is comprised of a divergence-free part, $\v{u}$, and a
+curl-free part, $\tau\grad{h}$. The vortex flow attempts to keep the
+dust particles on closed elliptic streamlines, via $\v{u}$, while friction
+attempts to concentrate dust toward pressure maximum, via $\tau\grad
+h$. The only effect that attempts to spread out the dust is diffusion, via $D$.  
 
 Taking the divergence of
 \eq{eq:v} gives 
 
 \beq
-\Div{\v{v}} = \tau \Laplace{h} 
+\Div{\v{v}} = \tau \Laplace{h}, 
 \label{eq:divv}
 \eeq
 
@@ -406,31 +446,34 @@ the force balance yields
 \pderiv{h}{x} &=& 3\varOmega^2 x + 2\varOmega u_y -
 u_y\pderiv{u_x}{y} \nonumber \\
 &=& \left(3\varOmega^2 - 2\Omega\Omega_V \chi + \varOmega_V^2\right) x
-= -\tau^{-1} \ C_1 x  \\
+= -\frac{C_1}{\tau} \  x,  \\
 \pderiv{h}{y} &=& - 2\varOmega u_x -
 u_x\pderiv{u_y}{x} \nonumber \\
-&=& \left(-2\Omega\Omega_V/\chi + \Omega_V^2\right) y = -\tau^{-1} \ C_2 y
+&=& \left(-2\Omega\Omega_V/\chi + \Omega_V^2\right) y = -\frac{C_2}{\tau} \  y.
 \end{eqnarray}
 
-\noindent  so, with $\omega_{_V}=\varOmega_V/\varOmega$
+\noindent  Substituting the equations above into \eq{eq:divv}, also
+with $\omega_{_V}=\varOmega_V/\varOmega$, the divergence becomes 
 
 \beqn
-\Div{\v{v}} &=& -(C_1+C_2) = - C\\
-&=& - \tau\varOmega^2 \left[2\omega_{_V}\left(\frac{\chi^2+1}{\chi}\right) - (2\omega_{_V}^2 + 3) \right]
+\Div{\v{v}} &=& -(C_1+C_2) = - C \label{eq:const-div}\\
+&=& - \tau\varOmega^2
+\left[2\omega_{_V}\left(\frac{\chi^2+1}{\chi}\right) - (2\omega_{_V}^2
+  + 3) \right], 
 \label{eq:scale-div}
 \eeqn
 
-\noindent Where we define $C$ as positive, so that the divergence is negative (physically meaning that the dust gets trapped). Replacing that in the continuity equation, and setting $\partial_t$ =
+\noindent where we define $C$ as positive, so that the divergence is negative (physically meaning that the dust gets trapped). Replacing \eq{eq:const-div} in the continuity equation, and setting $\partial_t$ =
 0 for steady state, 
 
 \beq
-\left(D\Laplace{} -  \v{v}\cdot\del  + C\right)\rho_d = 0 
+\left(D\Laplace{} -  \v{v}\cdot\del  + C\right)\rho_d = 0. 
 \label{eq:steady}
 \eeq
 
 Substituting the gas velocity, and dividing by $D$, we
 arrive at the modified advection-diffusion equation that should
-determine the steady-state distribution of the vortex-trapped dust.
+determine the steady-state distribution of the vortex-trapped dust, 
 
 %\beq
 %   -\Omega_V y / \chi \partial_x \rho_d +  \Omega_V x \chi \partial_y
@@ -447,10 +490,11 @@ determine the steady-state distribution of the vortex-trapped dust.
 %\eeqn
 
 \beq
-\left[\Laplace{} - \left(Ay\chi^{-1} - B_1x\right) \partial_x  +  \left(A x \chi + B_2y\right) \partial_y + B \right] \rho_d   = 0 
+\left[\Laplace{} - \left(Ay\chi^{-1} - B_1x\right) \partial_x  +
+  \left(A x \chi + B_2y\right) \partial_y + B \right] \rho_d   = 0,  
 \label{eq:dust-trapping-cartesian}
 \eeq
-
+\\
 \noindent where we also substituted  $A=\varOmega_V/D$ and $B_i=C_i/D$.
 
 \section{Change of variable}
@@ -458,33 +502,45 @@ determine the steady-state distribution of the vortex-trapped dust.
 We change variables to the coordinate system used in Chang \& Oishi (2010)
 
 \beqn
-  x &=& a \cos\nu \label{eq:change-x}\\
-  y &=& a\chi\sin\nu  \label{eq:change-y}
+  x &=& a \cos\nu, \label{eq:change-x}\\
+  y &=& a\chi\sin\nu.  \label{eq:change-y}
 \eeqn
 
 The system is not orthogonal, but it has the advantage of matching the
 aspect ratio of the ellipses (In contrast, the elliptic coordinate
 system, though orthogonal, describes a system of confocal ellipses of
 different aspect ratio, that does not coincide with the geometry of
-the problem). 
+the problem). In these coordinates, the transformations are 
 
-In these coordinates, the transformations are $\partial_\v{a} =
-\vt{A} \partial_\v{x}$, and $\partial_\v{x} =
-\vt{A}^{-1} \partial_\v{a}$, with $\v{a} = (a,\nu)^T$, and $\v{x} =
-(x,y)^T$. That is
+%$\partial_\v{a} =
+%\vt{A} \partial_\v{x}$, and $\partial_\v{x} =
+%\vt{A}^{-1} \partial_\v{a}$, with $\v{a} = (a,\nu)^T$, and $\v{x} =
+%(x,y)^T$. That is
 
 \beq
 \left[\begin{array}{c}
-    \pderiv{f}{a}  \\
-    \pderiv{f}{\nu}
+    \partial_{a}  \\
+    \partial_{\nu}
   \end{array}\right] = \vt{A} 
   \left[\begin{array}{c}
-      \pderiv{f}{x}  \\
-      \pderiv{f}{y}
+      \partial_{x}  \\
+      \partial_{y}
     \end{array}\right] 
+%
+\quad {\rm and} \quad 
+%
+\left[\begin{array}{c}
+    \partial_{x}  \\
+    \partial_{y}
+  \end{array}\right] = \vt{A}^{-1} 
+  \left[\begin{array}{c}
+      \partial_{a}  \\
+      \partial_{\nu}
+    \end{array}\right],  
+%
 \eeq
 
-With 
+\noindent with 
 
 \beq
 \vt{A} = \left[\begin{array}{cc}
@@ -493,23 +549,23 @@ With
 \end{array}\right] = \left[\begin{array}{cc}
 \cos\nu  & \chi\sin\nu  \\
 -a\sin\nu  & a\chi\cos\nu \\
-\end{array}\right] 
+\end{array}\right]. 
 \eeq
 
-The inverse matrix is 
+\noindent The inverse matrix is 
 
 \beq
 \vt{A}^{-1} = \frac{1}{a\chi} \left[\begin{array}{cc}
 a\chi\cos\nu  & -\chi\sin\nu  \\
 a\sin\nu  & \cos\nu \\
-\end{array}\right]  
+\end{array}\right].  
 \eeq
 
 The transformations are therefore
 
 \beqn
-\pderiv{}{x} &=& \cos\nu \pderiv{}{a} - \frac{\sin\nu}{a} \pderiv{}{\nu} \\
-\pderiv{}{y} &=& \frac{1}{\chi}\left(\sin\nu \pderiv{}{a} + \frac{\cos\nu}{a} \pderiv{}{\nu} \right)
+\pderiv{}{x} &=& \cos\nu \pderiv{}{a} - \frac{\sin\nu}{a} \pderiv{}{\nu}, \\
+\pderiv{}{y} &=& \frac{1}{\chi}\left(\sin\nu \pderiv{}{a} + \frac{\cos\nu}{a} \pderiv{}{\nu} \right),
 \eeqn
 
 %And the second derivatives are 
@@ -536,14 +592,14 @@ The transformations are therefore
 %  a^{-1}\cos^2\nu \partial_a \right] 
 %\eeqn
 
-The Laplacian is thus 
+\noindent and the Laplacian is thus 
 
 \beqn
 \Laplace{} &= &\frac{1}{2}\left[ \epsm \cos 2\nu +  \epsp\right] \partial^2_a  \nonumber \\
                 &+& \frac{1}{2a^2}\left[ \epsp - \epsm \cos 2\nu\right] \partial^2_\nu \nonumber \\
                 &-& \frac{\sin 2\nu}{a}\epsm \partial^2_{a\nu}   \nonumber \\
                 &+& \frac{1}{2a}\left[ \epsp - \epsm \cos 2\nu\right] \partial_a \nonumber \\
-                &+& \frac{\sin 2\nu}{a^2} \epsm\partial_\nu \label{eq:laplace}
+                &+& \frac{\sin 2\nu}{a^2} \epsm\partial_\nu, \label{eq:laplace}
 \eeqn
 
 \noindent with $\varepsilon_{\pm} = (1 \pm \chi^{-2})$.  As for the advection term, we have 
@@ -552,7 +608,7 @@ The Laplacian is thus
 \v{v}\cdot\del &=& (\v{u} + \tau \grad h) \cdot \del \nonumber \\
 %&=& - \varOmega_V \partial_\nu - \left( C_1 x \partial_x + C_2 y\partial_y\right) \nonumber \\
 &=& - \left[\varOmega_V - \frac{\sin2\nu}{2}  (C_1 -  C_2)\right]\partial_\nu \nonumber \\
-&&- \left( C_1 \cos^2\nu   + C_2\sin^2\nu \right) a \ \partial_a \label{eq:advection-term}
+&&- \left( C_1 \cos^2\nu   + C_2\sin^2\nu \right) a \ \partial_a. \label{eq:advection-term}
 \eeqn
 
 %with $\v{v}$=$\v{u}$=
@@ -567,7 +623,7 @@ The dust-trapping equation is therefore
 \beqn 
 && \left\{ \Laplace{} + \left[A - \frac{\sin2\nu}{2}  (B_1 - B_2)\right]\partial_\nu \ +  \right.  \nonumber\\
 && \left. \white{\frac{1}{1}}\left( B_1 \cos^2\nu   + B_2\sin^2\nu
-  \right) a \ \partial_a  + B \right\} \rho_d = 0 \label{eq:dust-trapping-uvzero}
+  \right) a \ \partial_a  + B \right\} \rho_d = 0. \label{eq:dust-trapping-uvzero}
 \eeqn
 
 
@@ -986,6 +1042,15 @@ magnitudes of the induced higher $m$ modes decay with $m$.
 
 \begin{thebibliography}{}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Calvet et al.}(2005)}]{Calvet05} Calvet, N., D'Alessio, P.,
+  Watson, D. M., Franco-Hernández, R., Furlan, E., Green, J., Sutter,
+  P. M., Forrest, W. J., Hartmann, L., Uchida, K. I., Keller, L. D.,
+  Sargent, B., Najita, J., Herter, T. L., Barry, D. J., \& Hall,
+  P. 2005, ApJ, 630, 185
+
+
+
 \end{thebibliography}
 
 \end{document}
