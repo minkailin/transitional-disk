@@ -767,9 +767,12 @@ this case, \eq{eq:dust-trapping-uvzero} reduces to a relatively simple equation
 \beq\label{eq:uveq}
 \left(\Laplace{} + A\partial_\nu + B \right)\rho_d = 0. 
 \eeq
-\eq{eq:uveq} compares dust diffusion to dust advection due to the
-vortex flow alone. Note that we are effectively considering regions
-close to the vortex center because $\nabla h$ vanishes there, while
+%\eq{eq:uveq} compares dust diffusion to dust advection due to the
+%vortex flow alone. 
+\eq{eq:uveq} reflects dust diffusion (first term), dust advection due
+to the vortex flow (second term) and dust concentration (third term). 
+Note that we are effectively considering regions close to the vortex
+center because $\nabla h$ vanishes there, while  
 $\nabla^2h$ (i.e. $B$), does not.  
 
 Now, assuming axis-symmetry and integrating in
@@ -777,7 +780,7 @@ $\frac{1}{2\pi} \int_0^{2\pi} d\nu$, we get
 
 \beq
 \frac{\epsp}{2}\pderivn{\rho_d}{a}{2} +
-\frac{\epsp}{2a}\pderiv{\rho_d}{a} + B \rho_p = 0  
+\frac{\epsp}{2a}\pderiv{\rho_d}{a} + B \rho_d = 0  
 \eeq
 
 That is, 
@@ -792,12 +795,11 @@ expression for the dust velocity is used. Clearly it is negligible
 for sufficiently small $a$.  
 
 The general solution of \eq{eq:axisymmetric} is a
-sum of Bessel functions: 
+sum of Bessel functions of the first and second kinds: 
 
 \beq
 y(a) = c_1 J_0 (ka) + c_2 Y_0(ka) 
 \eeq
-
 Since  $Y_0$ diverges at the origin, we can physically discard 
 this solution, setting $c_2=0$. So, the axisymmetric mode is $\rho(a)
 = c_1 \ J_0 (ka)$, or
@@ -827,9 +829,10 @@ in the next section.
     \resizebox{\columnwidth}{!}{\includegraphics{../figs/bessel-gaussian.png}}
   \end{center}
 \caption[]{The axisymmetric solutions for (solid line) the general 
-$\v{v}=\v{u}+\tau\grad{h}$ case and, (dashed line) the $\v{v}=\v{u}$ case.
+$\v{v}=\v{u}+\tau\grad{h}$ case and, (dashed line) the case where
+  we set $\v{v}=\v{u}$ for dust advection.
 The exponential and Bessel solutions agree up to 10\% up to $x$=1.5, and up 
-to 1\% up to $x$=1. We conclude that this approximate solution is quite accurate 
+to 1\% up to $x$=1. We conclude that the latter approximate solution is quite accurate 
 for describing the dust distribution in the vortex core.}
  \label{fig:bessel-gaussian}
 \end{figure}
@@ -839,10 +842,10 @@ for describing the dust distribution in the vortex core.}
 We consider the non-axisymmetric problem ($\partial_\nu\neq0$) inside
 the vortex core in the limit $\rm{St}\ll 1$. We formally set
 $\bm{v}=\bm{u}$ in the advection term $\bm{v}\cdot\del$. Our
-dust-trapping equation is then comparing advection due to the
-background vortex flow and diffusion. Physically, we expect that
+dust-trapping equation, \eq{eq:uveq}, then concerns advection due to 
+the vortex flow alone. Physically, we expect that
 including the $\tau$ term for dust velocity in the advection term only
-helps to concentrate dust at the vortex core (pressure maximum).      
+helps to concentrate dust toward the vortex core (pressure maximum).      
 
 \subsection{Conversion to ordinary differential equations}
 The dust density $\rho_d$ is periodic in the $\nu$ co-ordinate. We
@@ -855,7 +858,7 @@ therefore seek solutions of the form
 For convenience, we will drop the real part notation from now on. Inserting
 \eq{eq:series} into the partial differential equation \eqp{eq:dust-trapping-uvzero},
 multiplying by $\exp{(-\mathrm{i}m\phi)}$, and integrating the resulting
-expressions over the $\phi$ co-ordinate, we arrive at a set of 
+expressions over the $\nu$ co-ordinate, we arrive at a set of 
 ordinary differential equations, 
 %\beqn\label{eq:ode1}
 %&&0=\epsilon_{-}\left[\frac{1}{4}\rho_{m-2}^{\prime\prime}
@@ -977,22 +980,49 @@ calculate the correction term $\epsilon$. We find
 This term is also small because of $|k_2^2|\gg1$. Furthermore, it is
 smaller than $\rho_2(z)$ by a factor $\tilde{\chi}$.  
 
+We plot $|\rho_2|/|\rho_0|$ as a function of $z$ in \fig{fig:nonaxi}, 
+for $\chi=10$ and $\rm{St}=0.3$. We see that for $z\lesssim 1$, even 
+for such a not-so-small Stokes number, the deviations from axisymmetry
+is on the order a few per cent. This is attributed to the fact
+that the corrections involve higher order Bessel functions, which
+becomes small compared to $J_0$ for small $z$.   
+
 Collecting the above results and Taylor-expanding the Bessel functions, our
 weakly non-axisymmetric solution for $z\ll 1$ reads:
 
+%\beqn
+%\rho_0(z) &=& D_0\left[1 -
+%  \frac{k_0^2z^2}{4}\left(1-\frac{\tilde{\chi}^2k_0^3}{k_2^2-k_0^2}\right)
+%+ O(z^4)\right],\\
+%\rho_2(z) &=&
+%-\frac{D_0\tilde{\chi}k_0^2}{(k_2^2-k_0^2)}\left[\frac{k_0^2z^2}{8}+O(z^4)\right].  
+%\eeqn 
+
 \beqn
 \rho_0(z) &=& D_0\left[1 -
-  \frac{k_0^2z^2}{4}\left(1-\frac{\tilde{\chi}^2k_0^3}{k_2^2-k_0^2}\right)
+  \frac{z^2}{4}\left(1-\frac{\tilde{\chi}^2B}{2\mathrm{i}A}\right)
 + O(z^4)\right],\\
 \rho_2(z) &=&
--\frac{D_0\tilde{\chi}k_0^2}{(k_2^2-k_0^2)}\left[\frac{k_0^2z^2}{8}+O(z^4)\right].  
+-\frac{D_0\tilde{\chi}B}{2\mathrm{i}A}\left[\frac{z^2}{8}+O(z^4)\right],  
 \eeqn 
+where we used the definition of $k_m$. 
 
 In the previous section, we obtained the axisymmetric solution
 assuming the axisymmetric components are negligible. Here, we 
 see explicitly that the axisymmetric solution in fact leads to
 non-axisymmetry through the coupling terms, but these corrections are
-small for $\rm{St}\ll1$.   
+small for $\rm{St}\ll1$, because $B\propto\mathrm{St}$. 
+We conclude that dust in the vortex core is effectively axisymmetric.   
+
+\begin{figure}
+  \begin{center}
+    \resizebox{\columnwidth}{!}{\includegraphics{../figs/nonaxi.png}}
+  \end{center}
+  \caption[]{Magnitude of the $m=2$ non-axisymmetric component normalized by the magnitude of the axisymmetric part of the solution, for the Kida vortex (red) and GNG vortex (blue) of aspect-ratio $\chi=10$ and Stokes number $\rm{St}=0.3$. }
+ \label{fig:nonaxi}
+\end{figure}
+
+
 
 \subsubsection{Consistency check}
 Using the above expression for $\epsilon(x)$, we can evaluate
@@ -1033,7 +1063,13 @@ approximate solutions, Eq. \ref{eq:induction}, may be useful as initial
 guesses for a numerical relaxation scheme. It also explicitly shows that the
 magnitudes of the induced higher $m$ modes decay with $m$.  
 
-\clearpage
+%\begin{figure}
+%\begin{center}
+%  \resizebox{\columnwidth}{!}{\includegraphics{../figs/gaussian-bessel.png}}
+% \end{center}
+%\caption[]{.}
+% \label{fig:gaussian-bessel}
+%\end{figure}
 
 
 \section{Conclusions}
