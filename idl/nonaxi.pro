@@ -42,7 +42,7 @@ pro nonaxi, chi=chi, st=st, zmax=zmax
   device,filename='nonaxi.eps',/encapsul,/color,$
          xsize=13.6,ysize=13.6/phi
   !p.font=0
-  ;; ps_fonts
+  ps_fonts
   thick=3
   
   !p.color=0
@@ -59,7 +59,7 @@ pro nonaxi, chi=chi, st=st, zmax=zmax
 
   plot,z,data_kida,/nodata,ystyle=1,xrange=[0.,zmax],xstyle=1,$
        ytitle=textoidl('|\rho_2|/|\rho_0|'),$
-       xtitle='z=ka'
+       xtitle='!8z=ka!x'
   
   oplot,z,data_kida,color=120
   oplot,z,data_gng,color=50
