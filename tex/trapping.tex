@@ -169,7 +169,9 @@ Snellgrove 2001, Paardekooper \& Mellema 2004, Quillen et
 al. 2004, de Val Borro et al. 2006, Klahr \& Kley 2006, Lyra et
 al. 2009, Lin et al. 2010, Zhu et al. 2011, Kley et al. 2012) and indeed a planet detection has
 been claimed for this system (Kraus et al. 2011), as well as for 
-T Cha (Hu\'elamo et al. 2011). The planet interpretation is particularly attractive for explaining
+T Cha (Hu\'elamo et al. 2011).
+
+ The planet interpretation is particularly attractive for explaining
 puzzling asymmetries seen in high angular resolution  mm and sub-mm 
 images of the outer regions of transitional disks. These come in the
 shape of elliptical dust walls (Isella et al. 2012), spiral arms
@@ -278,7 +280,7 @@ result of dust trapping in giant anticyclonic vortices.
 % 
 
 Trapping of solids in gas vortices was independently suggested
-by Barge \& Sommeria (1995) and Tanga et al. (1996) as a route for
+by Barge \& Sommeria (1995), Adams \& Watkins (1995), and Tanga et al. (1996) as a route for
 planet formation in the inner regions of circumstellar
 disks. Particles trapping in a vortex is analog to the particle drift
 that happens in the disk
@@ -293,15 +295,23 @@ Coriolis force, leading to a similar result. Particles experience a
 drag force, lose angular momentum, and sink toward the vortex
 center, where they accumulate. Klahr \& Henning (1997) applied the model 
 to turbulent eddies in the solar nebula, finding trapping of mm-sized
-particles preferentially \comm{why this wrong result?}, and suggested
-this could aid on the formation of chondrules. The dynamics of dust
-trapping in vortices was developed by Chavanis (2000), a detailed work 
-that set the analytical foundations of the field \comm{model,
-  limitations, results?}.  
+particles preferentially, and suggested this could aid on the
+formation of chondrules. The dynamics of dust trapping in vortices was 
+developed in a detailed work by Chavanis (2000), who applied the
+Saffman (1992) vortex solution in an astrophysical context, deriving expressions for
+the capture time, mass capture rate, and diffusive ejection, setting
+much of the analytical foundations of the field. 
 
-The first attempt to simulate the process with
-fully nonlinear compressible hydrodynamics was carried by Johansen et
-al. (2004), imposing a vortex solution into a  shearing box (a Cartesian box sampling a small
+%Bracco 1998 => anicyclones form as relics of originally tuburlent disk
+%Klahr & Bodenheimer => baroclinic instability
+%Godon & Livio 1999 => Viscosity
+%Hodgson & Brandenburg (1998) => frozen vortices trap dust
+%de la Fuente Marcos & Barge (2001) => frozen vortex
+
+The first attempt to simulate the dust-capturing process with
+fully time-dependent nonlinear compressible hydrodynamics was carried
+by Johansen et al. (2004), imposing the vortex solution of Goodman et al. (1987,
+hereafter GNG) into a shearing box (a Cartesian box sampling a small
 patch of the disk, co-rotating with the flow at a fixed distance from
 the star, see e.g. Hawley et al. 1995, Umurhan 2010). The model had limitations, chiefly the use of Laplacian
 viscosity, that limited the lifetime of the vortex, and the symmetries
@@ -312,8 +322,8 @@ nonetheless the vortex ability to trap dust was validated.
 
 These studies, however, did not consider the question of how to
 form disk vortices in first place. Because vortices are exact nonlinear solutions to the equations of
-hydrodynamics, these works used analytical vortex solutions, and remained
-agnostic with respect to their origin. As it turns out, forming and
+hydrodynamics, these works used analytical prescriptions, instead of
+forming them ab initio. As it turns out, forming and
 sustaining disk vortices proved to be a formidable problem in
 itself. Because of the strong stabilizing effect of the Keplerian
 shear, formation mechanisms rely on modifications of the shear
@@ -344,13 +354,13 @@ disks. Simulations show that two processes naturally form such
 profiles. One is the boundary between the MRI-active magnetized zone
 and the MRI-dead resistive zone; in the transition, a resistivity
 inversion occurs, with matter piling up, generating the favourable
-shear profile (Varni\`ere et al. 2006). The accumulation of dust in RWI vortices at dead zone boundaries was
-studied at first by Inaba \& Barge (2006), who found that \comm{what
-  did they find?}. The other is at the edge of a
-gap opened by a planet. That the gap edge is unstable to the RWI is seen in
-the inviscid simulations of many codes in the code comparison study of
-de Val-Borro et al. (2006). The process was studied in detail by de
-Val-Borro et al. (2007). 
+shear profile (Varni\`ere \& Tagger 2006). The accumulation of dust in
+RWI vortices was subsequently confirmed by Inaba \& Barge (2006),
+albeit in the fluid approach, that limited the dust size they could
+use. The other is at the edge of a gap opened by a planet. That the
+gap edge is unstable to the RWI is seen in the inviscid simulations 
+of many codes in the code comparison study of de Val-Borro et
+al. (2006). The process was studied in detail by de Val-Borro et al. (2007). 
 
 These efforts culminated into a coherent picture of vortex-assisted
 planet formation in dead zone vortices by Lyra et al. (2008, 2009a) and in 
@@ -358,11 +368,10 @@ gap edge vortices by Lyra et al. (2009b). These works solved
 selfconsistently for the nonlinear compressible hydrodynamics and the
 aerodynamics of interacting solid particles, in inviscid models in the
 inertial frame, removing the limitations in Johansen et al. (2004),
-albeit in the context of 2D disks. These works inspired a renewed
+albeit in the context of 2D disks. These works were followed by a renewed
 interest in the RWI, that has been vigorously studied in three
 dimensions by Meheut et al. (2010, 2012a, 2012b, 2012c) , Lin \&
-Papaloizou (2011),  Lin (2012, 2013ab), and Lyra \& Mac Low (2012)
-\comm{tell what these studies found}. 
+Papaloizou (2011),  Lin (2012, 2013ab), and Lyra \& Mac Low (2012). 
 
 Part of these results have been translated to the field of
 transitional disks. The main difference is that while the focus 
@@ -376,7 +385,7 @@ preferentially trapped is set by the friction time, $\tau_{\rm f}$, which is a
 function of the gas density and particle radius. A suitable nondimensionalization for the
 friction time is the Stokes number, St = $\varOmega \tau_{\rm f}$,
 where $\varOmega$ is the Keplerian frequency. While in the dense, fast
-rotating, inner regions of T-Tauri disks, the best particle size (St =1, e.g. 
+rotating, inner regions of primordial disks, the best particle size (St =1, e.g. 
 Youdin \& Goodman 2005, Youdin 2008)
 corresponds to meter-size, in the thin, outer regions of transitional
 disks, the size corresponding to St=1 drops by about three orders of
@@ -387,24 +396,19 @@ well explain the puzzling observed lopsided asymmetries.
 Reg\'aly et al. (2012) suggested that the sub-mm 
 observations of Brown et al. (2009) could be the result of dust
 trapping in vortices that, they suggest, could be triggered at dead
-zone edges, as in Varni\`ere et al. (2006), Inaba \& Barge (2006), and Lyra et
-al. (2008, 2009a). The dead zone mechanism is probably not reasonable,
+zone edges (Varni\`ere \& Tagger 2006, Inaba \& Barge 2006, Lyra et
+al. 2008, 2009a). The dead zone mechanism is probably not reasonable,
 because the radii is quite far out, and the outer edge of the dead
-edge is quite smooth (Dzyuerkevich 2010, Neal 2013). It is probably
-not the result of baroclinic instability either, because the outer
+edge is quite smooth (Dzyurkevich et al. 2010, Russel et al. 2013). It is probably
+not the result of baroclinic instability either (Klahr \& Bodenheimer
+2003, Lesur \& Papaloizou 2010, Lyra \& Klahr 2011, Raettig et al. 2013), because the outer
 disk is isothermal, and the baroclinic instability requires a negative
 entropy gradient. This leaves gap-edge RWI as a plausible mechanism. 
 
 If indeed the asymmetries are due to gap edge Rossby vortices, then, 
 as the drag force drives dust toward the vortex center, diffusion is
-needed to maintain a steady state over the lifetime of the disk. 
-%\footnote{{This
-%diffusion is the result of elliptic instability and in general
-%different than the diffusion in the gas phase (see e.g., Lyra \& Klahr
-%2011)}}. 
-Steady state solutions should exist in this case and, indeed, Ataiee
-et al. (2013), modeling particles of different Stokes numbers, finds
-two different dust distributions, as expected. Birnstiel et al. (2013) 
+needed to maintain a steady state over the lifetime of the disk
+(Chavanis 2000). Birnstiel et al. (2013) 
 presented a semi-analytical model that solves for the azimuthal dust 
 distribution while using fits from numerical simulations (Pinilla et al. 2012)
 to constrain the radial morphology. In this work we present an analytical 
@@ -415,6 +419,11 @@ advective-diffusive equation, and in Sect 3 the appropriate coordinate
 transformation. In Sect 4 we solve the equation for the axisymmetric
 case, and in Sect 5 we generalize it for non-axisymmetry. Concluding
 remarks follow. 
+%\footnote{{This
+%diffusion is the result of elliptic instability and in general
+%different than the diffusion in the gas phase (see e.g., Lyra \& Klahr
+%2011)}}. 
+
 
 
 %that yields the dust density
