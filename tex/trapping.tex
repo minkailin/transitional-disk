@@ -108,7 +108,8 @@
 \altaffiltext{$\star$}{Both authors contributed equally to this work}
 
 \begin{abstract}
-.
+ALMA is returning images of transitional disks in which large asymmetries are seen in the dust distribution of mm- size in the outer disk. The explanation in vogue borrows from the protoplanetary disk literature by suggesting that these asymmetries are the result of dust trapping in giant vortices. The vortex excitation method would be Rossby Wave Instability (RWI) at planetary gap edges.
+Due to the drag force, dust trapped in vortices will accumulate in the center. Diffusion is needed to maintain a steady state over the lifetime of the disk. In here, we seek to obtain steady state solution of the diffusion-advection equation of dust in the possible vortices seen in the observations.
 \end{abstract}
 
 \section{Introduction}
@@ -125,8 +126,8 @@ Transitional disks are a class of circumstellar disks that lack a
 significant near-infrared (1-5$\mu$m) excess, while showing steep
 slopes in mid-infrared (5-20$\mu$m) and
 far-infrared ($>$20$\mu$m) excesses typical of classical T-Tauri disks
-(Strom et al. 1989, Skrutskie et al. 1990, Gauvin \& Strom 1992; Marsh
-\& Mahoney 1992; Wolk \& Walter 1996, Calvet et al. 2002, Calvet et al. 2005, Muzerolle et
+(Strom et al. 1989, Skrutskie et al. 1990, Gauvin \& Strom 1992; 
+Wolk \& Walter 1996, Calvet et al. 2002, Calvet et al. 2005, Muzerolle et
 al. 2006; Sicilia-Aguilar et al. 2006, Currie et al. 2009, Currie \&
 Sicilia-Aguilar 2011). This ``opacity hole''  implies
 absense of optically thick warm dust in the inner disk, with a dust
@@ -140,16 +141,16 @@ primordial and gas-poor debris disks, hence the name.
 
 Explanations for the opacity hole generally fall in four distinct
 categories; grain growth and dust settling (Dominik \& Dullemond
-2005, Brauer et al. 2007, Zsom et al. 2010), photoevaporation
+2005, Brauer et al. 2007, Zsom et al. 2011), photoevaporation
 (Alexander et al. 2006, Cieza et al. 2008, 
 Pascucci \& Sterzik 2009, Owen et al. 2010), 
 dynamical interaction with close stellar or substellar companions
 (Artymowicz \& Lubow 1994, Ireland \& Kraus 2008), and planet
 formation via dust locking (Safronov 1969, Lyttleton 1972, Goldreich
 \& Ward 1973, Youdin \& Shu 2002, Johansen et al. 2007) and gap
-carving (Papaloizou \& Lin 1984, Bryden et al. 1999, Paardekooper \& Mellema 2004,
+carving (Papaloizou \& Lin 1984, Lin \& Papaloizou 1984, 1986, Bryden et al. 1999, Paardekooper \& Mellema 2004,
 Quillen et al. 2004, Najita et al. 2007). Analyses of individual disks (Calvet et
-al. 2004, Calvet et al. 2005, Brown et al. 2008, Espaillat et
+al. 2004, Calvet et al. 2005, Espaillat et
 al. 2008) tend to favor one process over another, and even census
 studies of statistically significant samples of disks find one process
 to be dominant (Najita et al. 2007, Cieza et al. 2008). These
@@ -163,12 +164,12 @@ the case of LkCa 15. Espaillat et al. (2008, 2010) find some
 near-infrared excess, consistent with a small (Pott et al. 2010,
 Olofsson et al. 2011) truncated inner disk separated from the cold
 outer disk by a large gap. A gap is the expected result of tidal
-planet-disk interaction (Lin \& Papaloizou, 1979a,b; Lin \& Papaloizou
-Lin, 1986; Lin \& Papaloizou 1993, Nelson et al. 2000, Masset \&
+planet-disk interaction (Papaloizou \& Lin 1984, Lin \& Papaloizou
+1984, 1986, Nelson et al. 2000, Masset \&
 Snellgrove 2001, Paardekooper \& Mellema 2004, Quillen et
 al. 2004, de Val Borro et al. 2006, Klahr \& Kley 2006, Lyra et
 al. 2009, Lin et al. 2010, Zhu et al. 2011, Kley et al. 2012) and indeed a planet detection has
-been claimed for this system (Kraus et al. 2011), as well as for 
+been claimed for this system (Kraus \& Ireland 2012), as well as for 
 T Cha (Hu\'elamo et al. 2011).
 
  The planet interpretation is particularly attractive for explaining
@@ -297,8 +298,7 @@ center, where they accumulate. Klahr \& Henning (1997) applied the model
 to turbulent eddies in the solar nebula, finding trapping of mm-sized
 particles preferentially, and suggested this could aid on the
 formation of chondrules. The dynamics of dust trapping in vortices was 
-developed in a detailed work by Chavanis (2000), who applied the
-Saffman (1992) vortex solution in an astrophysical context, deriving expressions for
+developed in a detailed work by Chavanis (2000), who in an astrophysical context, derived expressions for
 the capture time, mass capture rate, and diffusive ejection, setting
 much of the analytical foundations of the field. 
 
@@ -399,7 +399,7 @@ trapping in vortices that, they suggest, could be triggered at dead
 zone edges (Varni\`ere \& Tagger 2006, Inaba \& Barge 2006, Lyra et
 al. 2008, 2009a). The dead zone mechanism is probably not reasonable,
 because the radii is quite far out, and the outer edge of the dead
-edge is quite smooth (Dzyurkevich et al. 2010, Russel et al. 2013). It is probably
+edge is quite smooth (Dzyurkevich et al. 2010, Landry et al. 2013). It is probably
 not the result of baroclinic instability either (Klahr \& Bodenheimer
 2003, Lesur \& Papaloizou 2010, Lyra \& Klahr 2011, Raettig et al. 2013), because the outer
 disk is isothermal, and the baroclinic instability requires a negative
@@ -515,20 +515,19 @@ is the pressure and $\rho$ the gas density.
 Inside the vortex, the gas flow is divergenceless, and 
 we adopt the following model for $\v{u}$
 \beq
-  u_x = \varOmega_V y /, \chi \qquad  u_y= -\varOmega_V x \chi,
+  u_x = \varOmega_V y / \chi \qquad  u_y= -\varOmega_V x \chi,
   \label{eq:vortex}
 \eeq
 \noindent for a vortex of aspect ratio $\chi= y/x > 1$. In this work
 we consider the Kida solution,
 \beq
-\varOmega_V = 3\Omega_K/2(\chi-1),  
+\varOmega_V = 3\varOmega/2(\chi-1),  
 \eeq
 which smoothly matches the above velocity field to the Keplerian
 shear; as well as the GNG solution
 \beq
-\varOmega_V=\varOmega_K\sqrt{3/(\chi^2-1)}.
+\varOmega_V=\varOmega\sqrt{3/(\chi^2-1)}.
 \eeq
-\comm{OmegaK is Omega?}
 
 We note that the dust
 velocity is comprised of a divergent-free part, $\v{u}$, and a
@@ -553,11 +552,11 @@ the force balance yields
 \begin{eqnarray}
 \pderiv{h}{x} &=& 3\varOmega^2 x + 2\varOmega u_y -
 u_y\pderiv{u_x}{y} \nonumber \\
-&=& \left(3\varOmega^2 - 2\Omega\Omega_V \chi + \varOmega_V^2\right) x
+&=& \left(3\varOmega^2 - 2\varOmega\varOmega_V \chi + \varOmega_V^2\right) x
 = -\frac{C_1}{\tau} \  x,  \\
 \pderiv{h}{y} &=& - 2\varOmega u_x -
 u_x\pderiv{u_y}{x} \nonumber \\
-&=& \left(-2\Omega\Omega_V/\chi + \Omega_V^2\right) y = -\frac{C_2}{\tau} \  y.
+&=& \left(-2\varOmega\varOmega_V/\chi + \varOmega_V^2\right) y = -\frac{C_2}{\tau} \  y.
 \end{eqnarray}
 
 \noindent  Substituting the equations above into \eq{eq:divv}, also
@@ -584,7 +583,7 @@ arrive at the modified advection-diffusion equation that should
 determine the steady-state distribution of the vortex-trapped dust, 
 
 %\beq
-%   -\Omega_V y / \chi \partial_x \rho_d +  \Omega_V x \chi \partial_y
+%   -\varOmega_V y / \chi \partial_x \rho_d +  \varOmega_V x \chi \partial_y
 %  \rho_d + C \rho_d  + D\partial_x^2{\rho_d} + D\partial_y^2{\rho_d} = 0.
 %\eeq
 
@@ -1211,124 +1210,129 @@ magnitudes of the induced higher $m$ modes decay with $m$.
 \begin{thebibliography}{}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
-Adams \& Watkins 1995
-Alexander et al. 2006
-Artymowicz \& Lubow 1994
-Balbus \& Hawley 1991
-Barge \& Sommeria 1995
-Birnstiel et al. (2013) 
-Brauer et al. 2007
-Brown et al. 2008
-Brown et al. 2009
-Bryden et al. 1999
-Calvet et al. 2002
-Calvet et al. 2004
-%
+\bibitem[{{Adams \& Watkins}(1995)}]{Adams-Watkins95} Adams, F, C. \& Watkins, R. 1995, ApJ, 451, 314
+\bibitem[{{Alexander et al.}(2006)}]{Alexander06} Alexander, R. D., Clarke, C. J., \& Pringle, J. E 2006, MNRAS, 369, 216
+\bibitem[{{Artymowicz \& Lubow}(2004)}]{Artymowicz-Lubow04} Artymowicz, P. \& Lubow, S. H. 1994, ApJ, 421, 651
+\bibitem[{{Balbus \& Hawley}(1991)}]{Balbus-Hawley91} Balbus, S. A. \&  Hawley, J. F. 1991, ApJ, 376, 214
+\bibitem[{{Barge \& Sommeria}(1995)}]{Barge-Sommeria95} Barge, P. \&  Sommeria, J. 1995, A\&A, 295L, 1
+\bibitem[{{Birnstiel et al.}(2013)}]{Birnstiel13} Birnstiel, T., Dullemond, C. P., \& Pinilla, P. 2013, A\&A, 550L, 8
+\bibitem[{{Brauer et al.}(2007)}]{Brauer07} Brauer, F., Dullemond, C. P., \& Henning, Th. 2007, A\&A, 469, 1169
+\bibitem[{{Brown et al.}(2009)}]{Brown09} Brown, J. M., Blake, G. A., Qi, C., Dullemond, C. P., Wilner, D. J., \& Williams, J. P. 2009, ApJ, 704, 496
+\bibitem[{{Bryden et al.}(1999)}]{Bryden99} Bryden, G., Chen, X., Lin, D. N. C., Nelson, R. P., \& Papaloizou, J. C. B. 1999, ApJ, 514, 344
+\bibitem[{{Calvet et al.}(2002)}]{Calvet02} Calvet, N., D'Alessio, P., Hartmann, L., Wilner, D., Walsh, A., \& Sitko, M. 2002, ApJ, 568, 1008
+\bibitem[{{Calvet et al.}(2004)}]{Calvet04} Calvet, N., Muzerolle, J., Brice\~no, C.,  Hern\'andez, J., Hartmann, L., Saucedo, J.L., \& Gordon, K.D. 2004, AJ, 128, 1294
 \bibitem[{{Calvet et al.}(2005)}]{Calvet05} Calvet, N., D'Alessio, P.,
   Watson, D. M., Franco-Hern\'andez, R., Furlan, E., Green, J., Sutter,
   P. M., Forrest, W. J., Hartmann, L., Uchida, K. I., Keller, L. D.,
   Sargent, B., Najita, J., Herter, T. L., Barry, D. J., \& Hall,
   P. 2005, ApJ, 630, 185
-%
-
-Casassus et al. 2012
-Casassus et al. 2013
-Chandrasekhar 1961
-Chang \& Oishi (2010)
-Chavanis 2000
-Cieza et al. 2008 
-Cieza et al. 2010
-Clarke \& Owen 2013   
-Currie et al. 2009
-Currie \& Sicilia-Aguilar 2011
-Currie 2010
-Cuzzi et al. (1993)
-Dominik \& Dullemond 2005
-Dubrulle et al. (1995)
-Dzyurkevich et al. 2010
-Espaillat et al. 2008
-Espallat 2010
-Gauvin \& Strom 1992
-Goldreich \& Ward 1973
-Goodman et al. 1987
-Hawley et al. 1987
-Hawley et al. 1995
-Hohfeld \& Lovelace 1978
-Hu\'elamo et al. 2011
-Inaba \& Barge 2006
-Ireland \& Kraus 2008
-Isella et al. 2012
-Johansen et al. 2004
-Johansen et al. 2007
-Kida (1981) 
-Klahr \& Bodenheimer 2003
-Klahr \& Henning 1997
-Klahr \& Kley 2006
-Kley et al. 2012
-Kraus et al. 2011
-Jacquet et al. (2012)
-Lin \& Papaloizou, 1979a,b
-Lin \& Papaloizou
-Lin, 1986
-Lin \& Papaloizou 1993
-Lin et al. 2010
-Lin \& Papaloizou (2011)
-Lin 2012
-Lin 2013a
-Lin 2013b
-Lovelace et al. 1999
-Lyttleton 1972
-Lyra et al. 2008
-Lyra et al. 2009a
-Lyra et al. 2009b
-Lyra \& Klahr 2011
-Lyra \& Mac Low 2012 
-Lesur \& Papaloizou 2010
-van der Marel et al. 2013
-Marsh\& Mahoney 1992
-Masset \& Snellgrove 2001
-Meheut et al. 2010
-Meheut 2012a
-Meheut 2012b
-Meheut 2012c
-Merin et al. 2010
-Muto et al. 2012
-Muzerolle et al. 2006
-Muzerolle et al. 2010
-Najita et al. 2007
-Nelson et al. 2000
-Olofsson et al. 2011
-Openheimer et al. 2008,
-Owen et al. 2010
-Paardekooper \& Mellema 2004
-Papaloizou \& Lin 1984
-Papaloizou \& Pringle 1985
-Pascucci \& Sterzik 2009
-Pinilla et al. 2012
-Pott et al. 2010
-Quillen et al. 2004
-Raettig et al. 2013
-Reg\'aly et al. (2012)
-Russel et al. 2013
-Saffman 1992
-Safronov 1969
-Sicilia-Aguilar et al. 2006
-Skrutskie et al. 1990
-Strom et al. 1989
-Tanga et al. 1996
-Toomre 1981
-Umurhan 2010
-de Val Borro et al. 2006
-de Val-Borro et al. 2007
-Varni\`ere \& Tagger 2006
-Velikhov 1959
-Wolk \& Walter 1996
-Youdin \& Shu 2002
-Youdin \& Goodman 2005
-Youdin 2008
-Zhu et al. 2011
-Zsom et al. 2010
-
+\bibitem[{{Casassus et al.}(2012)}]{Casassu12} Casassus, S., Perez M., S., Jord\'an, A., M\'enard, F., Cuadra, J., Schreiber, M. R., Hales, 
+  A. S., \& Ercolano, B. 2012, ApJ, 754, 31
+\bibitem[{{Casassus et al.}(2013)}]{Casassus13} Casassus, S., van der Plas, G., Perez, S., Dent, W.R.F., Fomalont, E., Hagelberg, J., Hales,
+  A., Jord\'an, A., Mawet, D., M\'enard, F., Wootten, A., Wilner, D., Hughes, M., Schreiber, M.R., Girard, J.H., Ercolano, B., Canovas, H., 
+  Rom\'an, P., \& Salinas, V. 2013, Nature, 493, 191
+\bibitem[{{Chandrasekhar}(1960)}]{Chandrasekhar60} Chandrasekhar, S., 1960, Proc. Nat. Acad. Sci., 46, 253
+\bibitem[{{Chandrasekhar}(1961)}]{Chandrasekhar61} Chandrasekhar 1961 {\it Hydrodynamic and Hydromagnetic Stability} (Oxford: Clarendon), 384
+\bibitem[{{Chang \& Oishi}(2010)}]{Chang-Oishi10} Chang, P. \& Oishi, J.S. 2010, ApJ, 721, 1593
+\bibitem[{{Chavanis}(2000)}]{Chavanis00} Chavanis, P.-H. 2000, A\&A, 356, 1089
+\bibitem[{{Cieza}(2008)}]{Cieza08} Cieza, L.A., Swift, J.J., Mathews, G.S., \& Williams, J.P. 2008, ApJ, 686, 115
+\bibitem[{{Cieza}(2010)}]{Cieza10} Cieza, L.A., Schreiber, M.R., Romero, G.A., Mora, M.D., Mer\'in, B., Swift, J.J., 
+  Orellana, M., Williams, J.P., Harvey, P.M., \& Evans, N.J. 2010, ApJ, 712, 925
+\bibitem[{{Clarke \& Owen}(2013)}]{Clarke-Owen13} Clarke, C.J. \& Owen, J.E. 2013, MNRAS, accepted, arXiv:1305.2483
+\bibitem[{{Currie et al.}(2009)}]{Currie09} Currie, Th., Lada, C.J., Plavchan, P.,  Robitaille, T.P., Irwin, J., \& Kenyon, S.J. 2009, ApJ, 698, 1
+\bibitem[{{Currie}(2010)}]{Currie10} Currie, Th. 2010, arXiv1002.1715C	
+\bibitem[{{Currie \& Sicilia-Aguilar}(2011)}]{Currie11} Currie, Th. \& Sicilia-Aguilar, A. 2011, ApJ, 732, 24
+\bibitem[{{Cuzzi et al.}(1993)}]{Cuzzi93} Cuzzi, J.N., Dobrovolskis, A.R., \& Champney, J.M. 1993, Icarus, 106, 102
+\bibitem[{{Dominik \& Dullemond}(2008)}]{Dominik-Dullemond08} Dominik, C. \& Dullemond, C. P. 2008, A\&A, 491, 663
+\bibitem[{{Dubrulle et al.}(1995)}]{Dubrulle95} Dubrulle, B., Morfill, G., \& Sterzik, M. 1995, Icarus, 114, 237
+\bibitem[{{Dzyurkevich et al.}(2013)}]{Dzyurkevich13} Dzyurkevich, N., Turner, N.J., Henning, Th., \& Kley, W. 2013, ApJ, 765, 114
+\bibitem[{{Espaillat et al.}(2008)}]{Espaillat08} Espaillat, C., Calvet, N., Luhman, K.L., Muzerolle, J., \& D'Alessio, P. 2008, ApJ, 682L, 125
+\bibitem[{{Espaillat et al.}(2010)}]{Espaillat10} Espaillat, C., D'Alessio, P., Hern\'andez, J., Nagel, E., Luhman, K. L., Watson, D. M., Calvet, N., Muzerolle, J., \& McClure, M. 2010, ApJ, 717, 441
+\bibitem[{{Gauvin et al.}(1992)}]{Gauvin} Gauvin, L.S. \& Strom, K.M. 1992, ApJ, 385, 217
+\bibitem[{{Goldreich \& Ward}(1973)}]{Goldreich-Ward73} Goldreich, P. \& Ward, W.R. 1973, ApJ, 183, 1051
+\bibitem[{{Goodman et al.}(1987)}]{Goodman87} Goodman, J., Narayan, R., \& Goldreich, P. 1987, MNRAS, 225, 695
+\bibitem[{{Hawley}(1987)}]{Hawley87} Hawley, J.F. 1987, MNRAS, 225, 677
+\bibitem[{{Hawley et al.}(1995)}]{Hawley95} Hawley, J.F., Gammie, C.F., \& Balbus, S.A. 1995, ApJ, 440, 742
+\bibitem[{{Lovelace \& Hohlfeld}(1978)}]{Lovelace-Hohlfeld78} Lovelace, R.V.E. \& Hohlfeld, R.G. 1978, ApJ, 221, 51
+\bibitem[{{Huelamo et al.}(2011)}]{Huelamo11} Hu\'elamo, N., Lacour, S., Tuthill, P., Ireland, M.,  Kraus, A., \& Chauvin, G. 2011, A\&A, 528L, 7
+\bibitem[{{Inaba \& Barge}(2006)}]{Inaba-Barge06} Inaba, S. \& Barge, P. 2006, ApJ, 649, 415
+\bibitem[{{Ireland \& Kraus}(2008)}]{Ireland-Kraus08} Ireland, M. J. \& Kraus, A. L. 2008, ApJ, 678L, 59
+\bibitem[{{Isella et al.}(2012)}]{Isella12} Isella, A., P\'erez, L.M., \& Carpenter, J.M. 2012, ApJ, 747, 136
+\bibitem[{{Johansen et al.}(2004)}]{Johansen04} Johansen, A., Andersen, A. C., \& Brandenburg, A. 2004, 417, 361
+\bibitem[{{Johansen et al.}(2007)}]{Johansen07} Johansen, A., Oishi, J. S., Mac Low, M.-M., Klahr, H., Henning, Th., \& Youdin, A. 2007, Nature, 448, 1022
+\bibitem[{{Kida}(1981)}]{Kida81} Kida, S. 1981, J. Phys. Soc. Jpn., 50, 351
+\bibitem[{{Klahr \& Bodenheimer}(2003)}]{Klahr-Bodenheimer03} Klahr, H. \& Bodenheimer, P. 2003, ApJ, 582, 869
+\bibitem[{{Klahr \& Henning}(1997)}]{Klahr-Henning97} Klahr, H.H. \& Henning, Th. 1997, Icarus, 128, 213
+\bibitem[{{Klahr \& Kley}(2006)}]{Klahr-Kley06} Klahr, H. \& Kley, W. 2006, A\&A, 445, 747
+\bibitem[{{Kley et al.}(2012)}]{Kley12} Kley, W., M\"uller, T. W. A., Kolb, S. M., Ben\'itez-Llambay, P., \& Masset, F. 2012, A\&A, 546, 99
+\bibitem[{{Kraus \& Ireland}(2012)}]{Kraus12} Kraus, AL. \& Ireland, M.J. 2012, ApJ, 745, 5
+\bibitem[{{Jacquet et al.}(2012)}]{Jacquet12} Jacquet, E., Gounelle, M., \& Fromang, S. 2012, Icarus, 220, 162
+\bibitem[{{Landry et al.}(2013)}]{Landry13} Landry, R., Dodson-Robinson, S.E., Turner, N.J., \& Abram, G. 2013, arXiv1305.0770
+\bibitem[{{Lin \& Papaloizou}(1986)}]{Lin-Papaloizou86a} Lin, D.N.C. \& Papaloizou, J. 1986a, ApJ, 307, 395
+\bibitem[{{Lin \& Papaloizou}(1986)}]{Lin-Papaloizou86b} Lin, D.N.C. \& Papaloizou, J. 1986b, ApJ, 309, 846
+\bibitem[{{Lin \& Papaloizou}(2011)}]{Lin-Papaloizou11a} Lin, M.-K. \& Papaloizou, J.C.B. 2011, MNRAS, 415, 1426
+\bibitem[{{Lin \& Papaloizou}(2011)}]{Lin-Papaloizou11b} Lin, M.-K. \& Papaloizou, J.C.B. 2011, MNRAS, 415, 1445
+\bibitem[{{Lin \& Papaloizou}(2012)}]{Lin-Papaloizou12} Lin, M.-K. \& Papaloizou, J.C.B. 2012, MNRAS, 421, 780
+\bibitem[{{Lin}(2012)}]{Lin12} Lin, M.-K. 2012, ApJ, 754, 21
+\bibitem[{{Lin}(2013)}]{Lin13} Lin, M.-K. 2013, ApJ, 765, 84
+\bibitem[{{Lesur \& Papaloizou}(2010)}]{Lesur-Papaloizou10} Lesur, G. \& Papaloizou, J.C.B. 2010, A\&A, 513, 60
+\bibitem[{{Lovelace et al.}(1999)}]{Lovelace99} Lovelace, R.V.E., Li, H., Colgate, S.A., \& Nelson, A. F. 1999, ApJ, 513, 805
+\bibitem[{{Lyra \& Klahr}(2011)}]{Lyra-Klahr11} Lyra, W. \& Klahr,  H. 2011, A\&A, 527A, 138
+\bibitem[{{Lyra et al.}(2009)}]{Lyra09b} Lyra, W., Johansen, A., Zsom, A., Klahr, H., Piskunov, N. 2009b, A\&A, 497, 869
+\bibitem[{{Lyra et al.}(2009)}]{Lyra09a} Lyra, W., Johansen, A., Klahr, H., Piskunov, N. 2009a, A\&A, 493, 1125 
+\bibitem[{{Lyra et al.}(2008)}]{Lyra08} Lyra, W., Johansen, A., Klahr, H., \& Piskunov, N. 2008, A\&A, 491, L41
+\bibitem[{{Lyttleton}(1972)}]{Lyttleton72} Lyttleton, R.A. 1972, MNRAS, 160, 255
+\bibitem[{{Lyra \& Mac Low}(2012)}]{Lyra-MacLow12} Lyra, W. \& Mac Low, M.-M. 2012, ApJ, 756, 62
+\bibitem[{{van der Marel et al.}(13)}]{vanderMarel13} van der Marel et al. 2013, Science, accepted
+\bibitem[{{Masset \& Snellgrove}(2001)}]{Masset-Snellgrove01} Masset, F. \& Snellgrove, M. 2001, MNRAS, 320L, 55
+\bibitem[{{M\'eheut et al.}(2010)}]{Meheut10} M\'eheut, H., Casse, F., Varni\`ere, P., \& Tagger M. 2010, A\&A, 516, 31
+\bibitem[{{M\'eheut et al.}(2012a)}]{Meheut12a} M\'eheut H., Cong, Y., \& Lai, D. 2012, MNRAS, 422, 2399
+\bibitem[{{M\'eheut et al.}(2012b)}]{Meheut12b} M\'eheut H., Keppens,  R., Casse, F., \& Benz, W. 2012, A\&A, 542A, 9
+\bibitem[{{M\'eheut et al.}(2012c)}]{Meheut12c} M\'eheut, H., Meliani, Z., Varni\`ere, P., \& Benz, W. 2012, A\&A, 545, 134
+\bibitem[{{Mer\'in et al.}(2012)}]{Merin12} Mer\'in, B., Brown, J. M., Oliveira, I., Herczeg, G.J., van Dishoeck, E.F., 
+  Bottinelli, S., Evans, N.J., Cieza, L., Spezzi, L., Alcal\'a, J.M., Harvey, P.M., Blake, G.A., Bayo, A., Geers, V.G., 
+  Lahuis, F., Prusti, T., Augereau, J.-C., Olofsson, J., Walter, F.M., \& Chiu, K. 2010, ApJ, 718, 1200
+\bibitem[{{Muto et al.}(2012)}]{Muto12} Muto, T., Grady, C. A., Hashimoto, J., Fukagawa, M., Hornbeck, J. B. et al. 2012, ApJ, 748L, 22
+\bibitem[{{Muzerolle et al.}(2006)}]{Muzerolle06} Muzerolle, J., Adame, L., D'Alessio, P., Calvet, N., Luhman, K.L., Muench, A.A., 
+  Lada, C.J., Rieke, G.H., Siegler, N., Trilling, D.E., Young, E.T., Allen, L., Hartmann, L., \& Megeath, Th. 2006, ApJ, 643, 1003
+\bibitem[{{Muzerolle et al.}(2010)}]{Muzerolle10} Muzerolle, J., Allen, L.E., Megeath, Th., Hern\'andez, J., \& Gutermuth, R.A. 2010, ApJ, 708, 1107
+\bibitem[{{Najita et al.}(2007)}]{Najita07} Najita, J.R., Strom, S.E., \& Muzerolle, J. 2007, MNRAS, 378, 369
+\bibitem[{{Nelson et al.}(2000)}]{Nelson00} Nelson, R.P., Papaloizou, J.C.B., Masset, F., \& Kley, W. 2000, MNRAS, 318, 18
+\bibitem[{{Olofsson et al.}(2011)}]{Olofsson11} Olofsson, J., Benisty, M., Augereau, J.-C., Pinte, C., M\'enard, F., Tatulli, E., 
+  Berger, J.-P., Malbet, F., Mer\'in, B., van Dishoeck, E.F., Lacour, S., Pontoppidan, K.M., Monin, J.-L., Brown, J.M., \& Blake, G.A. 2011, A\&A, 528L, 6O
+\bibitem[{{Oppenheimer et al.}(2008)}]{Oppenheimer08} Oppenheimer, B.R., Brenner, D., Hinkley, S., Zimmerman, N., Sivaramakrishnan, A., 
+  Soummer, R., Kuhn, J., Graham, J.R., Perrin, M., Lloyd, J.P., Roberts, L.C., \& Harrington, D.M. 2008, ApJ, 679, 1574
+\bibitem[{{Owen et al.}(2010)}]{Owen10} Owen, J.E., Ercolano, B., Clarke, C.J., \& Alexander, R.D. 2010, MNRAS, 401, 1415
+\bibitem[{{Paardekooper \& Mellema}(2004)}]{Paardekooper-Mellema04} Paardekooper, S.-J. \& Mellema, G.	2004, A\&A, 425L, 9
+\bibitem[{{Papaloizou \& Lin}(1984)}]{Papaloizou-Lin84} Papaloizou, J. \& Lin, D.N.C. 1984, ApJ, 285, 818
+\bibitem[{{Papaloizou \& Pringle}(1984)}]{Papaloizou-Pringle84} Papaloizou, J.C.B. \& Pringle, J.E. 1984, MNRAS, 208, 721
+\bibitem[{{Papaloizou \& Pringle}(1985)}]{Papaloizou-Pringle85} Papaloizou, J.C.B. \& Pringle, J.E. 1985, MNRAS, 213, 799
+\bibitem[{{Pascucci \& Sterzik}(2009)}]{Pascucci-Sterzik09} Pascucci, I. \& Sterzik, M. 2009, ApJ, 702, 724
+\bibitem[{{Pinilla et al.}(2012)}]{Pinilla12} Pinilla, P., Benisty, M., \& Birnstiel, T. 2012, A\&A, 545, 81
+\bibitem[{{Pott et al.}(2010)}]{Pott10} Pott, J.-U., Perrin, M.D., Furlan, E., Ghez, A.M., Herbst, T.M., \& Metchev, S. 2010, ApJ, 710, 265
+\bibitem[{{Quillen et al.}(2004)}]{Quillen04} Quillen, A.C., Blackman, E.G., Frank, A., \& Varni\`ere, P. 2004, ApJ, 612, 137
+\bibitem[{{Raettig et al.}(2013)}]{Raettig13} Raettig, N., Lyra, W., \& Klahr, H. 2013, ApJ, 765, 115
+\bibitem[{{Reg\'aly et al.}(2012)}]{Regaly12} Reg\'aly, Zs., Juh\'asz, A., S\'andor, Zs, \& Dullemond, C.P. 2012, MNRAS, 419, 1701
+\bibitem[{{Safronov}(1969)}]{Safronov69} Safronov, V. S. 1969, Evoliutsiia Doplanetnogo Oblaka (English transl: Evolution of the
+  Protoplanetary Cloud and Formation of Earth and the Planets, NASA Tech. Trans. F-677, Jerusalem: Israel Sci. Transl., 1972)
+\bibitem[{{Sicilia-Aguilar et al.}(2006)}]{Sicilia06} Sicilia-Aguilar, A., Hartmann, L.W., F\"ur\'esz, G., Henning, Th., Dullemond, C., \& Brandner, W. 2006, AJ, 132, 2135
+\bibitem[{{Skrutskie et al.}(1990)}]{Skrutskie90} Skrutskie, M. F., Dutkevitch, D., Strom, S.E., Edwards, S., Strom, K.M., \& Shure, M.A. 1990, AJ, 99, 1187
+\bibitem[{{Strom et al.}(1989)}]{Strom89} Strom, K.M., Strom, S.E., Edwards, S., Cabrit, S., \& Skrutskie, M.F. 1989, AJ, 97, 1451
+\bibitem[{{Tanga et al.}(1996)}]{Tanga96} Tanga P., Babiano, A., Dubrulle, B., \& Provenzale, A. 1996, Icarus, 121, 158
+\bibitem[{{Toomre}(1981)}]{Toomre81} Toomre, A. 1981, What amplifies the spirals. In {\it The Structure and Evolution of Normal Galaxies},
+  Proceedings of the Advanced Study Institute, Cambridge, England,
+  Cambridge and New York, Cambridge University Press, 1981, p.111-136.
+\bibitem[{{Umurhan}(2010)}]{Umurhan10} Umurhan O. M. 2010, A\&A, 521,  25
+\bibitem[{{de Val-Borro et al.}(2007)}]{deVal-Borro07}de Val-Borro, M., Artymowicz, P., D'Angelo, G., Peplinski, A. 2007, A\&A, 471, 1043
+\bibitem[{{de Val-Borro et al.}(2006)}]{deVal-Borro06}de Val-Borro, M., Edgar, R.G., Artymowicz, P., Ciecielag, P., Cresswell, P., D'Angelo, G., Delgado-Donate, E.J., Dirksen, G., Fromang, S., Gawryszczak, A., Klahr, H., Kley, W., Lyra, W., Masset, F., Mellema, G., Nelson, R., Paardekooper, S.-J., Peplinski, A., Pierens, A., Plewa, T., Rice, K., Sch\"afer, C., \& Speith, R. 2006, MNRAS
+\bibitem[{{Varni\`ere \& Tagger}(2006)}]{Varniere-Tagger06} Varni\`ere, P. \& Tagger, M. 2006, A\&A, 446, 13
+\bibitem[{{Velikhov}(1959)}]{Velikhov} Velikhov, E. P. 1959, Soviet Phys. JETP, 36, 1398
+\bibitem[{{Wolk \& Walter}(1996)}]{Wolk-Walter96} Wolk, S.J. \& Walter, F.M. 1996, AJ, 111, 2066
+\bibitem[{{Youdin \& Goodman}(2005)}]{Youdin-Goodman05} Youdin, A. N. \& Goodman, J. 2005, ApJ, 620, 459
+\bibitem[{{Youdin \& Shu}(2002)}]{Youdin-Shu02} Youdin, A. N. \& Shu, F. H. 2002, ApJ, 580, 494
+\bibitem[{{Youdin}(2008)}]{Youdin08} Youdin, A. 2008arXiv:0807.1114
+\bibitem[{{Zhu et al.}(2011)}]{Zhu11} Zhu, Zh., Nelson, R.P., Hartmann, L.,  Espaillat, C., \& Calvet, N. 2011, ApJ, 729, 47
+\bibitem[{{Zsom et al.}(2011)}]{Zsom11} Zsom, A., Ormel, C.W., Dullemond, C.P., \& Henning, Th. 2011, A\&A, 534, 73
 \end{thebibliography}
 
 \end{document}
