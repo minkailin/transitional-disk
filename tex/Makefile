@@ -1,6 +1,6 @@
-default: nature
+default: paper
 
-nature: trapping.tex
+paper: trapping.tex
 	pdflatex trapping
 	pdflatex trapping
 	open trapping.pdf
