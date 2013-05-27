@@ -22,6 +22,7 @@
 \newcommand{\vt}[1]{\mathbf{#1}}       %for tensors
 \renewcommand{\v}[1]{{\boldsymbol{#1}}} %for vectors
 \def\white#1{\textcolor{white}{#1}}
+\def\blue#1{\textcolor{blue}{#1}}
 \definecolor{brown}{rgb}{0.42,0.24,0.07}
 \def\brown#1{\textcolor{brown}{#1}}
 \newcommand{\comm}[1]{({\it \brown{#1}})}
@@ -104,26 +105,26 @@ objects caught in the evolutionary stage between gas-rich
 primordial and gas-poor debris disks, hence the name. 
 
 Explanations for the opacity hole generally fall in four distinct
-categories. These are, namely, grain growth and dust settling \citep{Brauer07,Dominik-Dullemond08,Zsom11}, photoevaporation
+categories. These are, namely, grain growth and dust settling \citep{Brauer07,Dominik-Dullemond08,Zsom11,Birnstiel12}, photoevaporation
 \citep{Alexander06,Cieza08,Pascucci-Sterzik09,Owen10}, 
 dynamical interaction with close stellar or substellar companions
 \citep{Ireland-Kraus08}, and planet
 formation via dust locking \citep{Safronov69,Lyttleton72,Goldreich-Ward73,Youdin-Shu02,Johansen07} and gap
-carving \citep{Papaloizou-Lin84,Lin-Papaloizou86a,Lin-Papaloizou86b,Bryden99,Paardekooper-Mellema04,Quillen04,Najita07}. 
+carving \citep{Papaloizou-Lin84,Lin-Papaloizou86a,Lin-Papaloizou86b,Bryden99,Paardekooper-Mellema04,Quillen04,Najita07,Andrews11}. 
 Analyses of individual disks \citep{Calvet04,Calvet05,Espaillat08} tend to favor one process over another, and even census
 studies of statistically significant samples of disks find one process
 to be dominant \citep{Najita07,Cieza08}. These
 seemingly conflicting results in fact illustrate the
 heterogeneity of transitional disks, where a combination of all
 suggested processes are needed to explain the rich diversity observed 
-\citep{Cieza10,Muzerolle10,Merin10,Clarke-Owen13}.   
+\citep{Cieza10,Muzerolle10,Merin10,Rosotti13,Clarke-Owen13}.   
 
-Recently, high angular resolution mm and sub-mm imaging of the outer regions of transitional 
+Recently, high angular resolution imaging of the outer regions of transitional 
 disks have become available, adding to the debate by showing a myriad of puzzling asymmetries 
 that beg for explanation. These come in the shape of elliptical dust walls \citep{Isella12}, spiral arms
-\citep{Muto12}, and non-axisymmetric dust clouds \citep{Oppenheimer08,Brown09}. In particular, 
-giant horseshoe-shaped dust distributions are seen in images obtained with ALMA 
-\citep{Casassus12,Casassus13,vanderMarel13}. The planet interpretation is particularly attractive for 
+\citep{Muto12,Tang12}, and non-axisymmetric dust clouds \citep{Oppenheimer08,Brown09,Casassus12}. In particular, 
+giant horseshoe-shaped dust distributions are seen in images obtained with \blue{the Combined Array for Research in Millimeter-wave Astronomy 
+(CARMA, \citealt{Isella13})} and with the \blue{Atacama Large Millimeter Array} (ALMA, \citealt{Casassus13,vanderMarel13}). The planet interpretation is particularly attractive for 
 explaining these asymmetries, since they generally match the range of structures predicted by hydrodynamical 
 models of planet-disk interaction. 
 
@@ -154,7 +155,7 @@ While in the dense, fast rotating, inner regions of primordial disks,
 the preferentially trapped particle size corresponds to meter-size, in
 the thin, slowly rotating, outer regions of transitional
 disks, the size corresponding to \St=1 drops by about three orders of
-magnitude. The resulting trapping of sub-mm and mm-size dust may not
+magnitude \blue{\citep{Brauer07,Pinilla12a}}. The resulting trapping of sub-mm and mm-size dust may not
 lead to the critical densities necessary to form planets, but they may
 well explain the puzzling observed lopsided asymmetries. While the 
 motivation and particle sizes are different, the relevant physics 
@@ -167,7 +168,7 @@ as the drag force drives dust toward the vortex center, diffusion is
 needed to maintain a steady state over the lifetime of the disk
 \citep{Klahr-Henning97,Chavanis00}. \citet{Birnstiel13} presented a semi-analytical model that solves for the azimuthal dust 
 distribution while using fits from numerical simulations
-\citep{Pinilla12} to constrain the radial morphology. In this work we present an analytical 
+\citep{Pinilla12b} to constrain the radial morphology. In this work we present an analytical 
 model for the steady state distribution of dust trapped in vortices, 
 accurate to first order in Stokes number, and general in space. In 
 \sect{sect:model-equations} we derive the
@@ -595,7 +596,7 @@ this solution, setting $c_2=0$. So, the axisymmetric mode is $\rho_d(a)
 \eeq 
 
 The Bessel function $J_0(x)$ is
-non-motononic, with the first root around $x=2.5$. The first zero is therefore around
+non-monotonic, with the first root around $x=2.5$. The first zero is therefore around
 $a_0 \approx H \sqrt{\delta/\St}$.  As the density
 cannot be negative, that sets the validity of our solution. 
 The solution is also constrained by our use of the shearing sheet
@@ -809,7 +810,7 @@ magnitudes of the induced higher $m$ modes decay with $m$.
 
 We solve for the distribution of dust trapped in
 disk vortices, in steady state between friction, that 
-tends to drives dust into the vortex, and diffusion, that expels
+tends to drive dust into the vortex, and diffusion, that expels
 it. \eqs{eq:gen_axi}{eq:hv} are our result for a distribution with
 ``axis-symmetry''  in the coordinate system defined by
 \eqs{eq:change-x}{eq:change-y}. That is, consisting of ellipses of
@@ -837,8 +838,8 @@ challenging one to quantify. In principle, it is not equal to
 $\alpha$ (the dimensionless gas viscosity of
 \citealt{Shakura-Sunyaev73}), because the processes generating turbulence in the
 vortex and in the disk are different. The latter is supposedly the
-magneto-rotational instability \citep{Balbus-Hawley91}, whereas the former is the elliptic or
-magneto-elliptic instability instability (see \citealt{Lyra13} and references
+magneto-rotational instability \citep[MRI,][]{Balbus-Hawley91}, whereas the former is the elliptic or
+magneto-elliptic instability (see \citealt{Lyra13} and references
 therein). A way to determine $\delta$ would be to measure the spatial rms of
 the velocity field inside the vortex. The degeneracy between the
 parameters ($H$, $\chi$, $\delta/\St$) and the vortex angular frequency
@@ -867,18 +868,21 @@ isothermal. This leaves gap-edge RWI as the only currently known plausible mecha
 \acknowledgments W.L. acknowledges financial support by the National Science
 Foundation under grant no. AST10-09802. Part of this paper was written
 at the Jet Propulsion Laboratory, California Institute of Technology, under a contract with the
-National Aeronautics and Space Administration. 
+National Aeronautics and Space Administration. \blue{The authors are indebited to L. Ricci and 
+J. Oishi for thoughtful suggestions.} 
 
 \begin{thebibliography}{}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Adams \& Watkins}(1995)}]{Adams-Watkins95} Adams, F, C. \& Watkins, R. 1995, ApJ, 451, 314
 \bibitem[{{Alexander et al.}(2006)}]{Alexander06} Alexander, R. D., Clarke, C. J., \& Pringle, J. E 2006, MNRAS, 369, 216
+\bibitem[{{\blue{Andrews et al.}}(2011)}]{Andrews11} \blue{Andrews, S.M., Wilner, D.J., Espaillat, C., Hughes, A.M., Dullemond, C.P., McClure, M.K., Qi, C., \& Brown, J.M. 2011, ApJ, 732, 42} 
 %\bibitem[{{Artymowicz \& Lubow}(1994)}]{Artymowicz-Lubow94} Artymowicz, P. \& Lubow, S. H. 1994, ApJ, 421, 651
 \bibitem[{{Balbus \& Hawley}(1991)}]{Balbus-Hawley91} Balbus, S. A. \&  Hawley, J. F. 1991, ApJ, 376, 214
 \bibitem[{{Barge \& Sommeria}(1995)}]{Barge-Sommeria95} Barge, P. \&  Sommeria, J. 1995, A\&A, 295L, 1
 \bibitem[{{Birnstiel et al.}(2013)}]{Birnstiel13} Birnstiel, T., Dullemond, C. P., \& Pinilla, P. 2013, A\&A, 550L, 8
-\bibitem[{{Brauer et al.}(2007)}]{Brauer07} Brauer, F., Dullemond, C. P., \& Henning, Th. 2007, A\&A, 469, 1169
+\bibitem[{{\blue{Birnstiel et al.}}(2012)}]{Birnstiel12} \blue{Birnstiel, T., Andrews, S. M., \& Ercolano, B. 2012, A\&A, 544, 79}
+\bibitem[{{Brauer et al.}(2007)}]{Brauer07} Brauer, F., Dullemond, C.P., \blue{Johansen, A.,} Henning, Th.\blue{, Klahr, H., \& Natta, A.} 2007, A\&A, 469, 1169
 \bibitem[{{Brown et al.}(2009)}]{Brown09} Brown, J. M., Blake, G. A., Qi, C., Dullemond, C. P., Wilner, D. J., \& Williams, J. P. 2009, ApJ, 704, 496
 \bibitem[{{Bryden et al.}(1999)}]{Bryden99} Bryden, G., Chen, X., Lin, D. N. C., Nelson, R. P., \& Papaloizou, J. C. B. 1999, ApJ, 514, 344
 \bibitem[{{Calvet et al.}(2002)}]{Calvet02} Calvet, N., D'Alessio, P., Hartmann, L., Wilner, D., Walsh, A., \& Sitko, M. 2002, ApJ, 568, 1008
@@ -913,6 +917,7 @@ National Aeronautics and Space Administration.
 %\bibitem[{{Huelamo et al.}(2011)}]{Huelamo11} Hu\'elamo, N., Lacour, S., Tuthill, P., Ireland, M.,  Kraus, A., \& Chauvin, G. 2011, A\&A, 528L, 7
 \bibitem[{{Inaba \& Barge}(2006)}]{Inaba-Barge06} Inaba, S. \& Barge, P. 2006, ApJ, 649, 415
 \bibitem[{{Ireland \& Kraus}(2008)}]{Ireland-Kraus08} Ireland, M. J. \& Kraus, A. L. 2008, ApJ, 678L, 59
+\bibitem[{{\blue{Isella et al.}}(2013)}]{Isella13} \blue{Isella, A., P\'erez, L.M., Carpenter, J.M., Ricci, L., Andrews, S., \& Rosenfeld, K. 2013, ApJ, submitted}
 \bibitem[{{Isella et al.}(2012)}]{Isella12} Isella, A., P\'erez, L.M., \& Carpenter, J.M. 2012, ApJ, 747, 136
 \bibitem[{{Johansen et al.}(2004)}]{Johansen04} Johansen, A., Andersen, A. C., \& Brandenburg, A. 2004, 417, 361
 \bibitem[{{Johansen et al.}(2007)}]{Johansen07} Johansen, A., Oishi, J. S., Mac Low, M.-M., Klahr, H., Henning, Th., \& Youdin, A. 2007, Nature, 448, 1022
@@ -963,16 +968,19 @@ National Aeronautics and Space Administration.
 \bibitem[{{Pascucci \& Sterzik}(2009)}]{Pascucci-Sterzik09} Pascucci, I. \& Sterzik, M. 2009, ApJ, 702, 724
 \bibitem[{{Petersen et al.}(2007a)}]{Petersen07a} Petersen, M. R., Julien, K., Stewart, G. R. 2007a, ApJ, 658, 1236
 \bibitem[{{Petersen et al.}(2007b)}]{Petersen07b} Petersen, M. R., Stewart, G. R., Julien, K. 2007b, ApJ, 658, 1252
-\bibitem[{{Pinilla et al.}(2012)}]{Pinilla12} Pinilla, P., Benisty, M., \& Birnstiel, T. 2012, A\&A, 545, 81
+\bibitem[{{Pinilla et al.}(2012b)}]{Pinilla12b} Pinilla, P., Benisty, M., \& Birnstiel, T. 2012\blue{b}, A\&A, 545, 81
+\bibitem[{{\blue{Pinilla et al.}}(2012a)}]{Pinilla12a} \blue{Pinilla, P., Birnstiel, T., Ricci, L., Dullemond, C.P., Uribe, A.L., Testi, L., \& Natta, A. 2012a, A\&A, 538, 114} 
 %\bibitem[{{Pott et al.}(2010)}]{Pott10} Pott, J.-U., Perrin, M.D., Furlan, E., Ghez, A.M., Herbst, T.M., \& Metchev, S. 2010, ApJ, 710, 265
 \bibitem[{{Quillen et al.}(2004)}]{Quillen04} Quillen, A.C., Blackman, E.G., Frank, A., \& Varni\`ere, P. 2004, ApJ, 612, 137
 \bibitem[{{Raettig et al.}(2013)}]{Raettig13} Raettig, N., Lyra, W., \& Klahr, H. 2013, ApJ, 765, 115
 \bibitem[{{Reg\'aly et al.}(2012)}]{Regaly12} Reg\'aly, Zs., Juh\'asz, A., S\'andor, Zs, \& Dullemond, C.P. 2012, MNRAS, 419, 1701
+\bibitem[{{\blue{Rosotti et al.}}(2013)}]{Rosotti13} \blue{Rosotti, G.P., Ercolano, B., Owen, J.E., \& Armitage, P.J. 2013, MNRAS, 430, 1392} 
 \bibitem[{{Safronov}(1969)}]{Safronov69} Safronov, V. S. 1969, Evoliutsiia Doplanetnogo Oblaka (English transl: Evolution of the Protoplanetary Cloud and Formation of Earth and the Planets, NASA Tech. Trans. F-677, Jerusalem: Israel Sci. Transl., 1972)
 \bibitem[{{Sicilia-Aguilar et al.}(2006)}]{Sicilia06} Sicilia-Aguilar, A., Hartmann, L.W., F\"ur\'esz, G., Henning, Th., Dullemond, C., \& Brandner, W. 2006, AJ, 132, 2135
 \bibitem[{{Shakura \& Sunyaev}(1973)}]{Shakura-Sunyaev73} Shakura, N. I. \& Sunyaev, R. A. 1973, A\&A, 24, 337
 \bibitem[{{Skrutskie et al.}(1990)}]{Skrutskie90} Skrutskie, M. F., Dutkevitch, D., Strom, S.E., Edwards, S., Strom, K.M., \& Shure, M.A. 1990, AJ, 99, 1187
 \bibitem[{{Strom et al.}(1989)}]{Strom89} Strom, K.M., Strom, S.E., Edwards, S., Cabrit, S., \& Skrutskie, M.F. 1989, AJ, 97, 1451
+\bibitem[{{\blue{Tang et al.}}(2012)}]{Tang12} \blue{Tang, Y.-W., Guilloteau, S., Pi\'etu, V., Dutrey, A., Ohashi, N., \& Ho, P.T.P. 2012, A\&A, 547, 84}
 \bibitem[{{Tanga et al.}(1996)}]{Tanga96} Tanga P., Babiano, A., Dubrulle, B., \& Provenzale, A. 1996, Icarus, 121, 158
 \bibitem[{{Toomre}(1981)}]{Toomre81} Toomre, A. 1981, What amplifies the spirals. In {\it The Structure and Evolution of Normal Galaxies}, Proceedings of the Advanced Study Institute, Cambridge, England, Cambridge and New York, Cambridge University Press, 1981, p.111-136.
 %\bibitem[{{Umurhan}(2010)}]{Umurhan10} Umurhan O. M. 2010, A\&A, 521,  25
