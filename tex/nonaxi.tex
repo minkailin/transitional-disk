@@ -1,0 +1,237 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[12pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+\usepackage{amsmath}
+\usepackage{bm}
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margin=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Extensions and corrections}
+%\author{The Author}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+{\bf Check everything}
+\section{Non-axisymmetric problem}
+In $(a,\phi)$ co-ordinates the dust trapping equation is
+\begin{align}\label{pde}
+&\nabla^2\rho_d + \left[A - \frac{1}{2}\left(B_1-B_2\right)\sin{2\phi}\right]\frac{\partial\rho_d}{\partial\phi}\notag\\
+&+\frac{1}{2}\left[B+\left(B_1-B_2\right)\cos{2\phi}\right]a\frac{\partial\rho_d}{\partial a} + B\rho_d = 0,
+\end{align}
+where $B\equiv B_1 + B_2$. 
+\subsection{Fourier decomposition}
+Assume solutions of the form
+\begin{align}\label{fourier}
+\rho_d(a,\phi) = \sum_{n=0}^\infty\rho_m(a)\exp{(-\mathrm{i}n\phi)},	
+\end{align}
+where the real part is to be taken for the physical solution. 	
+
+\subsection{Ordinary differential equations}
+Inserting Eq. \ref{fourier} in Eq. \ref{pde}, multiply by $e^{-\mathrm{i}m\phi}$ and integrating over $\phi$ gives 
+\begin{align}\label{ode}
+\mathcal{B}_m\rho_{m-2} (z)+ \mathcal{A}_m\rho_m(z) + \mathcal{C}_m\rho_{m+2}(z) = 0,
+\end{align}
+where
+\begin{align}
+&\mathcal{B}_m \equiv \tilde{\chi}\frac{d^2}{dz^2} + \left[\Delta C z - \frac{2\tilde{\chi}}{z}\left(m-\frac{3}{2}\right)\right]
+\frac{d}{dz} + \left(m-2\right)\left(\frac{m\tilde{\chi}}{z^2} -\Delta C\right),\\
+&\mathcal{A}_m\equiv\frac{d^2}{dz^2} + \left(\frac{1}{z}+\frac{z}{2}\right)\frac{d}{dz} + \left(k_m^2-\frac{m^2}{z^2}\right),\\
+&\mathcal{C}_m \equiv \tilde{\chi}\frac{d^2}{dz^2} + \left[\Delta C z + \frac{2\tilde{\chi}}{z}\left(m+\frac{3}{2}\right)\right]
+\frac{d}{dz} + \left(m+2\right)\left(\frac{m\tilde{\chi}}{z^2} +\Delta C\right),
+\end{align}
+and
+\begin{align}
+\Delta C \equiv \frac{B_1-B_2}{2k^2(1+\chi^{-2})} = \frac{B_1 - B_2}{4B}.
+\end{align}
+[Recall $k^2\equiv 2B/\left(1+\chi^{-2}\right)$.] The independent variable is $z\equiv ka$. Note that $\Delta C$ depends on the vortex model. 
+\subsection{Operator properties}
+Consider
+\begin{align}
+	g_m \equiv z^m\exp{(-z^2/4)}.
+\end{align}
+Then
+\begin{align}
+&\mathcal{B}_mg_{m-2} =\frac{1}{4}\left(\tilde{\chi} - 2\Delta C\right)g_m,\\
+&\mathcal{A}_mg_m = \left(k_m^2 - \frac{m}{2} - 1\right)g_m,\\
+&\mathcal{C}_mg_{m+2} = \left[4\tilde{\chi}(m+1)(m+2) +2(\Delta C-\tilde{\chi})(m+2)z^2 + \frac{\left(\tilde{\chi} - 2\Delta C\right)}{4}z^4\right]g_m. 
+\end{align}
+The first two expressions will be useful in constructing nearly-axisymmetric solutions. 
+
+\subsection{Source term approximation}
+Assume $|\rho_m|$ decreases with $m$, so that in Eq. \ref{ode} the $\mathcal{C}_m\rho_{m+2}$ term has smallest magnitude.  Neglecting it as a first approximation, we solve
+\begin{align}
+\mathcal{A}_m\rho_m = \begin{cases}
+        0 & m =0 \\
+	-\mathcal{B}_m\rho_{m-2} & m \geq 2.
+\end{cases}
+\end{align}
+The solutions are 
+\begin{align}
+\rho_m (z)= D_m z^m\exp{(-z^2/4)},
+\end{align}
+where $D_0$ is arbitrary, but
+\begin{align}
+D_m  = -\frac{\left(\tilde{\chi} - 2\Delta C\right)}{2\left[2k_m^2 - (m+2)\right]}D_{m-2},
+\end{align}
+for $m\geq2$, which utilized the operator properties above. The explicit solution is
+\begin{align}
+D_m  = \left(-1\right)^{m/2}\frac{\left(\tilde{\chi}/2-\Delta C\right)^{m/2}}{\prod_{l=1}^{m/2}
+\left(2k_{2l}^2 -2l - 2\right)}D_0.
+\end{align}
+
+\subsubsection{Limitations}
+Consider
+\begin{align}
+R\equiv\frac{|\mathcal{C}_m\rho_{m+2}|}{|\mathcal{A}_m\rho_m|}.
+\end{align}
+The source term approximation assumes $R\ll 1$. This can be achieved by choosing $|k_m^2|\gg1$, corresponding to small Stokes number, and/or if $\tilde{\chi}\sim2\Delta C$ (see below). However, the source term approximation will eventually fail for large $z$ because the solution above implies $R\sim z^4$ for $z\gg1$, violating the assumption used to obtain the solutions in the first place. Thus the solution above is only self-consistent for sufficiently small $z$.  (But note that, if $\rho_m = D_m g_m$ then all terms in Eq. \ref{ode} individually vanish for as $z\to\infty$ because of the exponential decay.)
+
+%The solution obtained above is not valid for large $z$. This is because $\mathcal{C}_m\rho_{m+2}$, with $\rho_m$ given above, d
+
+\subsection{Exactly axisymmetric solutions}
+In the special case where $\tilde{\chi} = 2\Delta C$,
+\begin{align}
+\mathcal{B}_mg_{m-2} = 0.
+\end{align}
+So the solution is exactly axisymmetric with $\rho_0 = D_0e^{-z^2/4}$ and $\rho_{m>0} \equiv 0$. 
+
+\subsubsection{Dust in GNG vortex is axisymmetric}
+For the GNG vortex, one can verify that $\tilde{\chi}\equiv 2\Delta C$, implying dust density only depends on the ellipse under consideration, not the position along it. This is because the GNG vortex has no pressure gradient along the ellipse. 
+
+\subsubsection{Condition for dust in Kida vortex to be axisymmetric}
+For the Keplerian Kida vortex, we find
+
+\begin{align}
+\tilde{\chi} - 2\Delta C = \frac{\chi(\chi-1)(\chi-7)}{2(\chi-2)(2\chi+1)(\chi^2+1)}.
+\end{align}
+So that exactly axisymmetric solutions are possible for aspect-ratio $\chi=7$. (The case $\chi=1$ is discarded because in that case dust is not concentrated at the vortex center.) It is also with $\chi=7$ that the Keplerian Kida vortex has no pressure gradient along the ellipse. 
+
+\subsection{Weakly non-axisymmetric solutions}
+The previous results indicate the axisymmetry is possible if there is no pressure gradients along the ellipse. Consider the Keplerian Kida vortex with $\chi\neq 7$, this means that the frictional force on the dust has a non-vanishing component along the fluid velocity vector. 
+
+We assume non-axisymmetry in the dust distribution is sufficiently weak, so one may truncate the series solution at $m=2$. Thus we set $\rho_{m>2}\equiv0$. Although we do not assume a small Stokes number at the onset, it will turn out that small $\mathrm{St}$ is required for consistency with our solution procedure below. Let
+\begin{align}
+\rho_0(z) = D_0g_0(z) + \epsilon(z),
+\end{align}
+where $\epsilon(x)$ represents the correction to the axisymmetric
+solution due to $\rho_2(z)$. We wish to solve
+\begin{align}
+&\mathcal{A}_0\epsilon(z) = -\mathcal{C}_0\rho_2(z),\label{eq:m2_eq1}\\
+&\mathcal{A}_2\rho_2(z)   = -\mathcal{B}_2\left(D_0g_0 + \epsilon\right).\label{eq:m2_eq2}
+\end{align}
+To make further progress, at this stage we \emph{assume} that the
+$\epsilon$ term in Eq. \ref{eq:m2_eq2} can be neglected. Then $\rho_2$ is just given 
+by the source term approximation above, $\rho_2 = D_2 g_2$. Thus,
+\begin{align}
+\frac{\rho_2}{\rho_0} = \frac{D_2}{D_0}z^2,
+\end{align}
+implying non-axisymmetry becomes significant for sufficiently large $z$, and our approximation fails. However, in practice the ratio $|D_2/D_0|$ is small. 
+For example, inserting $\chi=4$ gives $|D_2/D_0|\simeq0.1\%$ for $\mathrm{St}=0.1$ and $|D_2/D_0=\sim 1\%$ for $\mathrm{St}=1$. This suggests that non-axisymmetry is in general a small effect. 
+
+We can insert $\rho_2 = D_2 z^2e^{-z^2/4}$ in Eq. \ref{eq:m2_eq1} to
+calculate the correction term $\epsilon$. We find
+\begin{align}
+\epsilon(z) = \frac{1}{8}D_2g_2\left[-16\tilde{\chi}+\left(\tilde{\chi} - 2\Delta C\right)z^2\right].
+\end{align}
+
+Collecting the above results and Taylor-expanding the $g_m$'s, our
+weakly non-axisymmetric solution for $z\ll 1$ reads:
+
+\begin{align}
+&\rho_0(z) =D_0\left\{1 -
+  \frac{z^2}{4}\left[1-\frac{\tilde{\chi}\left(\tilde{\chi} - 2\Delta C\right)}{\mathrm{i}A/B - 1/2}\right]
++ O(z^4)\right\},\\
+&\rho_2(z) =-\frac{D_0\left(\tilde{\chi} - 2\Delta C\right)}{2\left(4\mathrm{i}A/B - 2\right)}z^2+O(z^4)
+\end{align}
+where we used the definition of $k_m$. Non-axisymmetric effects are small for $\mathrm{St}\ll1$ because $B\propto \mathrm{St}$. 
+
+\subsubsection{Consistency check}
+Using the above expression for $\epsilon(z)$, we can evaluate
+$\mathcal{B}_2\epsilon(z)$ in order to assess our assumption that
+$\epsilon(x)$ has a negligible contribution to $\rho_2$. We find
+\begin{align}
+\mathcal{B}_2\epsilon(z) = \frac{1}{32}D_2g_2
+\left[32\tilde{\chi}(5\tilde{\chi} - 6\Delta C) - 16(\tilde{\chi}-2\Delta C)(2\tilde{\chi}-\Delta C)z^2
++(\tilde{\chi} - 2\Delta C)^2z^4\right]
+\end{align}
+Provided that $|k_2^2|\gg1$ (or $\mathrm{St}\ll 1$) and we consider small $z$,  
+this term is indeed small compared to the  first term on the RHS of Eq. \ref{eq:m2_eq2}.  Our solution procedure above is self-consistent.  
+
+
+\section{Other forms of the diffusion term}
+In co-ordinate free notation, the steady-state problem was described by
+\begin{align}
+0 = -\nabla\cdot(\rho_d\bm{v}) + D\nabla^2\rho_d,
+\end{align}
+with constant $D$. 
+
+Now consider replacing the diffusion term by 
+\begin{align}
+D\nabla^2\rho_d \to \nabla\cdot\left(D\rho_g\nabla\frac{\rho_d}{\rho_g}\right) 
+= -\nabla\cdot\left(\rho_d D\nabla\ln{\rho_g}\right) + D\nabla^2\rho_d.
+\end{align}
+So the new equation is the same as the previous one, except with the modified dust velocity
+\begin{align}
+\bm{v}_\mathrm{eff} =\bm{v} + D\nabla\ln{\rho_g}. 
+\end{align}
+Recall the old dust velocity is $\bm{v} = \bm{u} + \tau\nabla h$. Now if we assume a strictly isothermal gas, then $h=c_s^2\ln\rho_g$, so that
+\begin{align}
+\bm{v}_\mathrm{eff} =\bm{u}  +\left(\tau +\frac{D}{c_s^2}\right)\nabla h.   
+\end{align}
+In other words, the effective stopping time is
+\begin{align}
+\tau_\mathrm{eff} = \tau + \frac{D}{c_s^2}.
+\end{align}
+Previous equations are valid provided we re-interpret $\tau$ as the turbulent friction time. This means that the statement `$\mathrm{St}\ll1$' used previously translates to requiring both the laminar Stokes number and the diffusion coefficient to be small. 
+
+\end{document}
