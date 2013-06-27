@@ -72,7 +72,7 @@ where $B\equiv B_1 + B_2$.
 \subsection{Fourier decomposition}
 Assume solutions of the form
 \begin{align}\label{fourier}
-\rho_d(a,\phi) = \sum_{n=0}^\infty\rho_m(a)\exp{(-\mathrm{i}n\phi)},	
+\rho_d(a,\phi) = \sum_{n=0}^\infty\rho_n(a)\exp{(\mathrm{i}n\phi)},	
 \end{align}
 where the real part is to be taken for the physical solution. 	
 
@@ -123,18 +123,20 @@ where $D_0$ is arbitrary, but
 \begin{align}
 D_m  = -\frac{\left(\tilde{\chi} - 2\Delta C\right)}{2\left[2k_m^2 - (m+2)\right]}D_{m-2},
 \end{align}
-for $m\geq2$, which utilized the operator properties above. The explicit solution is
+for $m\geq2$, which utilized the operator properties above. Note that $D_m=0$ for odd $m$ because $D_1=0$ since 
+we require $\rho_1^\prime(0)=0$. Then the explicit solution is
 \begin{align}
 D_m  = \left(-1\right)^{m/2}\frac{\left(\tilde{\chi}/2-\Delta C\right)^{m/2}}{\prod_{l=1}^{m/2}
-\left(2k_{2l}^2 -2l - 2\right)}D_0.
+\left(2k_{2l}^2 -2l - 2\right)}D_0,
 \end{align}
+for even $m$. 
 
 \subsubsection{Limitations}
 Consider
 \begin{align}
 R\equiv\frac{|\mathcal{C}_m\rho_{m+2}|}{|\mathcal{A}_m\rho_m|}.
 \end{align}
-The source term approximation assumes $R\ll 1$. This can be achieved by choosing $|k_m^2|\gg1$, corresponding to small Stokes number, and/or if $\tilde{\chi}\sim2\Delta C$ (see below). However, the source term approximation will eventually fail for large $z$ because the solution above implies $R\sim z^4$ for $z\gg1$, violating the assumption used to obtain the solutions in the first place. Thus the solution above is only self-consistent for sufficiently small $z$.  (But note that, if $\rho_m = D_m g_m$ then all terms in Eq. \ref{ode} individually vanish for as $z\to\infty$ because of the exponential decay.)
+The source term approximation assumes $R\ll 1$. This can be achieved by choosing $|k_m^2|\gg1$, corresponding to small Stokes number. However, the source term approximation will eventually fail for large $z$ because the solution above implies $R\sim z^4$ for $z\gg1$, violating the assumption used to obtain the solutions in the first place. Thus the solution above is only self-consistent for sufficiently small $z$.  (But note that, if $\rho_m = D_m g_m$ then all terms in Eq. \ref{ode} individually vanish for as $z\to\infty$ because of the exponential decay.)
 
 %The solution obtained above is not valid for large $z$. This is because $\mathcal{C}_m\rho_{m+2}$, with $\rho_m$ given above, d
 
@@ -176,7 +178,7 @@ by the source term approximation above, $\rho_2 = D_2 g_2$. Thus,
 \frac{\rho_2}{\rho_0} = \frac{D_2}{D_0}z^2,
 \end{align}
 implying non-axisymmetry becomes significant for sufficiently large $z$, and our approximation fails. However, in practice the ratio $|D_2/D_0|$ is small. 
-For example, inserting $\chi=4$ gives $|D_2/D_0|\simeq0.1\%$ for $\mathrm{St}=0.1$ and $|D_2/D_0=\sim 1\%$ for $\mathrm{St}=1$. This suggests that non-axisymmetry is in general a small effect. 
+For example, inserting $\chi=4$ gives $|D_2/D_0|\simeq0.1\%$ for $\mathrm{St}=0.1$ and $|D_2/D_0|\sim 1\%$ for $\mathrm{St}=1$. This suggests that non-axisymmetry is in general a small effect. 
 
 We can insert $\rho_2 = D_2 z^2e^{-z^2/4}$ in Eq. \ref{eq:m2_eq1} to
 calculate the correction term $\epsilon$. We find
@@ -204,8 +206,11 @@ $\epsilon(x)$ has a negligible contribution to $\rho_2$. We find
 \left[32\tilde{\chi}(5\tilde{\chi} - 6\Delta C) - 16(\tilde{\chi}-2\Delta C)(2\tilde{\chi}-\Delta C)z^2
 +(\tilde{\chi} - 2\Delta C)^2z^4\right]
 \end{align}
-Provided that $|k_2^2|\gg1$ (or $\mathrm{St}\ll 1$) and we consider small $z$,  
-this term is indeed small compared to the  first term on the RHS of Eq. \ref{eq:m2_eq2}.  Our solution procedure above is self-consistent.  
+Provided that $|k_2^2|\gg1$ (or $\mathrm{St}\ll 1$) and we consider sufficiently small $z$,  
+this term is indeed small compared to the  first term on the RHS of Eq. \ref{eq:m2_eq2}.  For example, considering $z=1$, 
+for $\chi=4$ and $\mathrm{St}=0.1$ we obtain $|\mathcal{B}_2\epsilon|/|\mathcal{B}_2\rho_0|\simeq0.02$. 
+Even with $\mathrm{St}=1$, this ratio is $\sim0.2$.  
+Our solution procedure above is self-consistent.  
 
 
 \section{Other forms of the diffusion term}
