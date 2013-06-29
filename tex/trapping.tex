@@ -23,6 +23,7 @@
 \renewcommand{\v}[1]{{\boldsymbol{#1}}} %for vectors
 \def\white#1{\textcolor{white}{#1}}
 \def\blue#1{\textcolor{blue}{#1}}
+\def\red#1{\textcolor{red}{#1}}
 \definecolor{brown}{rgb}{0.42,0.24,0.07}
 \def\brown#1{\textcolor{brown}{#1}}
 \newcommand{\comm}[1]{({\it \brown{#1}})}
@@ -56,6 +57,7 @@
 \newcommand{\eeqn}{\end{eqnarray}}
 \newcommand{\epsp}{\varepsilon_{_{+}}}
 \newcommand{\epsm}{\varepsilon_{_{-}}}
+\newcommand{\tilchi}{\tilde\chi}
 
 \newcommand{\St}{{\rm St}}
 
@@ -326,8 +328,8 @@ $f(\chi)$ & \eq{eq:scale-function} & scale function \\
 $H_V$ & $=\frac{H}{f(\chi)} \ \sqrt{\frac{\delta}{\St}}$ & vortex scale length \\
 $k$ & $=\sqrt{2}/H_V$ & \\ 
 $z$ & $=ka$ & \\
-$\tilde\chi$ & $=\frac{\chi^2-1}{2(\chi^2+1)}$ & \\
-%\blue{$\Delta C$} & \blue{$=(B_1-B_2)/4B$}& \\
+$\tilchi$ & $=\frac{\chi^2-1}{2(\chi^2+1)}$ & \\
+\blue{$\beta$} & \blue{$=(B_1-B_2)/4B$}& \\
 $k_m$ & $= 1+imA/B$ & \\
 $\mathcal{A}_m$ $\mathcal{B}_m$ $\mathcal{C}_m$  &\eqss{eq:ops}{eq:opsw} & differential operators \\
 \blue{$b_m$} & & constants\\
@@ -559,7 +561,7 @@ It is worth noting that for certain vortex models and/or aspect-ratios, the Gaus
 }
 \subsection{Axisymmetric $\v{u} = \v{v}$ }
 It is illustrative to consider the case in which $|\v{u}| \gg \tau|\grad{h}|$,
-so that we can approximate $\v{v}=\v{u}$ in the advection term. (We do
+so that we can approximate $\v{v}=\v{u}$ in the advection term\red{.} (We do
 not make this substitution in the compression term because $\v{u}$ is
 exactly divergence-free). In this case, \eq{eq:dust-trapping-uvzero} reduces
 to a relatively simple equation 
@@ -641,57 +643,67 @@ distribution in the vortex core.}
  \label{fig:bessel-gaussian}
 \end{figure}
 
-\blue{
 \section{Non-axisymmetric corrections}
 \label{sect:nonaxisymmetric} 
-}
-\blue{
-We now consider the non-axisymmetric problem ($\partial_\nu\neq0$). 
-We explicitly show that non-axisymmetric effects are small provided the Stokes number is not 
-large, and that we do not consider large distances from the vortex center. These requirements will become 
-apparent as we proceed through the solution method. 
-}
 
-\blue{
+We \blue{now} consider the non-axisymmetric problem ($\partial_\nu\neq0$)\blue{.} 
+\red{inside the vortex core in the limit $\St \ll 1$. We formally set $\v{v} = \v{u}$ in the advection term 
+$\v{v}\cdot\del$. This problem is artificial but isolates non-axisymmetries that arise in the 
+situation where dust is effectively advected by the vortex.} We explicitly show that such effects are small 
+\blue{in the vortex core} provided the Stokes number is not large. \blue{These requirements will become
+apparent as we proceed through the solution method.} \red{The procedure outlined below also serves as a basis for future 
+work on the non-axisymmetric problem including full dust velocity.}
+
+
 \subsection{Conversion to ordinary differential equations}
-We wish to solve \eq{eq:dust-trapping-uvzero}. The dust density $\rho_d$ is periodic in the $\nu$ co-ordinate. We 
+
+The dust density $\rho_d$ is periodic in the $\nu$ co-ordinate. We 
 therefore seek solutions of the form
-\beq\label{eq:series}
+
+\beq\label{eq:series-n}
 \rho_d(a,\nu) = {\rm Re}
 \left[\sum_{n=0}^\infty\rho_n(a)\exp{\left(\mathrm{i}n\nu\right)} \right].
 \eeq
+
 For convenience, we will drop the real part notation from now on. Inserting
-\eq{eq:series} into the partial differential equation \eqp{eq:dust-trapping-uvzero},
+\eq{eq:series-n} into the partial differential equation \eqp{eq:dust-trapping-uvzero},
 multiplying by $\exp{(-\mathrm{i}m\nu)}$, and integrating the resulting
 expressions over the $\nu$ co-ordinate, we arrive at a set of coupled
 ordinary differential equations, 
-}
+
 \blue{
 \beq\label{eq:ode2}
-\mathcal{B}_m\rho_{m-2} (z)+ \mathcal{A}_m\rho_m(z) + \mathcal{C}_m\rho_{m+2}(z) = 0,
+\red{\tilchi}\mathcal{B}_m\rho_{m-2} (z)+ \mathcal{A}_m\rho_m(z) + \red{\tilchi}\mathcal{C}_m\rho_{m+2}(z) = 0,
 \eeq
 }
-\blue{
-where $z\equiv ka$, 
-\beqn
-\mathcal{B}_m &\equiv& \tilde{\chi}\frac{d^2}{dz^2} + \left[\Delta C z - \frac{2\tilde{\chi}}{z}\left(m-\frac{3}{2}\right)\right]
-\frac{d}{dz} \notag\\&+& \left(m-2\right)\left(\frac{m\tilde{\chi}}{z^2} -\Delta C\right),\label{eq:ops}\\
-\mathcal{A}_m&\equiv&\frac{d^2}{dz^2} + \left(\frac{1}{z}+\frac{z}{2}\right)\frac{d}{dz} + \left(k_m^2-\frac{m^2}{z^2}\right),\\
-\mathcal{C}_m &\equiv& \tilde{\chi}\frac{d^2}{dz^2} + \left[\Delta C z + \frac{2\tilde{\chi}}{z}\left(m+\frac{3}{2}\right)\right]
-\frac{d}{dz} \notag\\&+& \left(m+2\right)\left(\frac{m\tilde{\chi}}{z^2} +\Delta C\right),\label{eq:opsw}
-\eeqn
-with $\tilde{\chi}\equiv(\chi^2-1)/[2(\chi^2+1)]$, $k_m^2 \equiv 1+\mathrm{i}mA/B$, and 
-\begin{align}
-\Delta C \equiv \frac{B_1-B_2}{2k^2(1+\chi^{-2})} = \frac{B_1 - B_2}{4B}.
-\end{align}
-%[Recall $k^2\equiv 2B/\left(1+\chi^{-2}\right)$.] The independent variable is $z\equiv ka$. 
-Note that $\Delta C$ just depends on the vortex model. 
-}
 
-\eq{eq:ode2} holds for each $m$ except for $m=0$ for which the $\rho_{m-2}$ terms are absent. Each 
+where $z\equiv ka$, \red{$\tilchi\equiv(\chi^2-1)/[2(\chi^2+1)]$,} and
+
+\beqn
+\mathcal{B}_m &\equiv& \blue{\tilchi}\frac{d^2}{dz^2} + \left[\blue{\beta z}-
+  \frac{2\blue{\tilchi}}{z}
+  \left(m-\frac{3}{2}\right)\right]\frac{d}{dz}+\left(m-2\right)\left(\frac{m\blue{\tilchi}}{z^2}\blue{-\beta}\right), \notag\\
+&&\label{eq:ops}\\ 
+\mathcal{A}_m&\equiv&\frac{d^2}{dz^2} +\left(\frac{1}{z}\blue{+\frac{z}{2}}\right)\frac{d}{dz} +\left(k_m^2-\frac{m^2}{z^2}\right),\\
+%
+&&\notag\\
+\mathcal{C}_m &\equiv& \blue{\tilchi}\frac{d^2}{dz^2}
++\left[\blue{\beta z} +
+  \frac{2\blue{\tilchi}}{z}\left(m+\frac{3}{2}\right)\right]\frac{d}{dz}
++ \left(m+2\right)\left(\frac{m\blue{\tilchi}}{z^2}
+  \blue{+\beta}\right),\notag\\
+&&\label{eq:opsw}
+\eeqn
+where \blue{$\tilchi\equiv(\chi^2-1)/[2(\chi^2+1)]$}, $k_m^2 \equiv 1+\mathrm{i}mA/B$\blue{, and}
+\beq
+\blue{\beta \equiv \frac{B_1-B_2}{2k^2(1+\chi^{-2})} = \frac{B_1 - B_2}{4B}.}
+\eeq
+%[Recall $k^2\equiv 2B/\left(1+\chi^{-2}\right)$.] The independent variable is $z\equiv ka$. 
+\blue{Note that $\beta$ depends on the vortex model but not on the
+  aspect ratio.} \eq{eq:ode2} holds for each $m$ except for $m=0$ for which the $\rho_{m-2}$ terms are absent. Each 
 $\rho_m$ couples to $\rho_{m\pm2}$ through operators $\mathcal{B}_m$
 and $\mathcal{C}_m$. The axisymmetric problem is recovered by
-setting $\rho_{m>0}=0$. 
+setting $\rho_{m>0}=0$. \red{(We remark that a similar set of ODEs may be derived when the full expression for dust velocity is used.)}
 
 In the limit $\St\ll 1$, dust is advected by fluid with elliptic
 streamlines, so we expect $\rho_d(a,\nu)$ to have even symmetry in
@@ -699,40 +711,51 @@ $\nu$. Henceforth we only consider even $m$. We seek solutions with
 $\rho_m^\prime(0)=0$ and $\rho_{m\geq2}(0)=0$, so that
 $\partial_x\rho_d=\partial_y\rho_d=0$ at the origin, consistent with 
 dust reaching maximal density there.  
-%
+
+\blue{\subsection{Operator properties}}
+
+\red{
+Finally, we note that
+\beqn\label{eq:ops2}
+\mathcal{B}_mJ_{m-2}(\mu z) &=& \mu^2J_m(\mu z),\notag\\
+\mathcal{A}_mJ_m(\mu z) &=& \left(k_m^2 - \mu^2\right)J_m(\mu z),\notag\\
+\mathcal{C}_mJ_{m+2}(\mu z) &= & \mu^2J_m(\mu z),\notag
+\eeqn
+where $\mu$ is a constant. These relations will be useful in
+constructing solutions.}
 
 \blue{
-\subsubsection{Operator properties}
 Consider 
 \begin{align}
 	g_m(z) \equiv z^m\exp{(-z^2/4)}.
 \end{align}
 Then we find that 
 \beqn
-\mathcal{B}_mg_{m-2} &=&\frac{1}{4}\left(\tilde{\chi} - 2\Delta C\right)g_m,\\
+\mathcal{B}_mg_{m-2} &=&\frac{1}{4}\left(\tilchi - 2\beta\right)g_m,\\
 \mathcal{A}_mg_m &=& \left(k_m^2 - \frac{m}{2} - 1\right)g_m,\\
-\mathcal{C}_mg_{m+2}&=& \left[4\tilde{\chi}(m+1)(m+2) +2(\Delta C-\tilde{\chi})(m+2)z^2 \right.
-\notag\\ &+&\left. \frac{\left(\tilde{\chi} - 2\Delta C\right)}{4}z^4\right]g_m. 
+\mathcal{C}_mg_{m+2}&=& \left[4\tilchi(m+1)(m+2) +2(\beta-\tilchi)(m+2)z^2 \right.
+\notag\\ &+&\left. \frac{\left(\tilchi - 2\beta\right)}{4}z^4\right]g_m. 
 \eeqn
 The first two expressions will be useful in constructing nearly-axisymmetric solutions. 
 }
+
 \blue{
-\subsection{Exactly axisymmetric solutions}
-It is useful to see how the formulation above connects with the  axisymmetric solutions discussed in the previous section.  Consider the special case where $\tilde{\chi} = 2\Delta C$, so that 
+\subsection{Exact axisymmetric solutions}
+It is useful to see how the formulation above connects with the  axisymmetric solutions discussed in the previous section.  Consider the special case where $\tilchi = 2\beta$, so that 
 %\begin{align}
 $\mathcal{B}_mg_{m-2} = 0.$
 %\end{align}
-Then the complete solution to \eq{eq:ode2} is $\rho_0 = b_0e^{-z^2/4}$ with $\rho_{m>0} \equiv 0$, and $b_0$ is an arbitrary constant. That is, if $\tilde{\chi}=2\Delta C$ then the dust distribution is exactly axisymmetric. 
+Then the complete solution to \eq{eq:ode2} is $\rho_0 = b_0e^{-z^2/4}$ with $\rho_{m>0} \equiv 0$, and $b_0$ is an arbitrary constant. That is, if $\tilchi=2\beta$ then the dust distribution is exactly axisymmetric. 
 }
 \blue{
 \subsubsection{Dust in a GNG vortex is axisymmetric}
-For the GNG vortex, one can verify that $\tilde{\chi}\equiv 2\Delta C$, implying dust density only depends on the ellipse under consideration, not the position along it. This is because the GNG vortex has no pressure gradient along the ellipctical streamlines \citep{Chang-Oishi10}. 
+For the GNG vortex, one can verify that $\tilchi\equiv 2\beta$, implying dust density only depends on the ellipse under consideration, not the position along it. This is because the GNG vortex has no pressure gradient along the ellipctical streamlines \citep{Chang-Oishi10}. 
 }
 \blue{
 \subsubsection{Condition for dust in a Kida vortex to be axisymmetric}
 For the Keplerian Kida vortex, we find
 \begin{align}
-\tilde{\chi} - 2\Delta C = \frac{\chi(\chi-1)(\chi-7)}{2(\chi-2)(2\chi+1)(\chi^2+1)}.
+\tilchi - 2\beta = \frac{\chi(\chi-1)(\chi-7)}{2(\chi-2)(2\chi+1)(\chi^2+1)}.
 \end{align}
 The dust distribution is exactly axisymmetric for aspect-ratio $\chi=7$, which is also when the Keplerian Kida vortex has no pressure gradient along its elliptical streamlines \citep{Chang-Oishi10}. 
 }
@@ -750,16 +773,16 @@ We assume that $\rho_m$ decreases with $m$, so that in \eq{eq:ode2} the $\mathca
 \end{align}
 The solutions are 
 \begin{align}\label{eq:series}
-\rho_m (z)= b_m g_m(z),
+\rho_m (z)= b_m z^m\exp{(-z^2/4)}, 
 \end{align}
 with
 \begin{align}
-b_m  = -\frac{\left(\tilde{\chi} - 2\Delta C\right)}{2\left[2k_m^2 - (m+2)\right]}b_{m-2}
+b_m  = -\frac{\left(\tilchi - 2\beta\right)}{2\left[2k_m^2 - (m+2)\right]}b_{m-2}
 \end{align}
 for $m\geq2$, and $b_0$ is arbitrary as before. Note that $b_m=0$ for odd $m$ because $b_1=0$ since 
-we require $\rho_1^\prime(0)=0$. Then the explicit solution is 
+we require $\rho_1^\prime(0)=0$. Then, by induction 
 \begin{align}\label{eq:induction}
-b_m  = \left(-1\right)^{m/2}\frac{\left(\tilde{\chi}/2-\Delta C\right)^{m/2}}{\prod_{l=1}^{m/2}
+b_m  = \left(-1\right)^{m/2}\frac{\left(\tilchi/2-\beta\right)^{m/2}}{\prod_{l=1}^{m/2}
 \left(2k_{2l}^2 -2l - 2\right)}b_0,
 \end{align}
 for even $m\geq 2$.  
@@ -778,84 +801,80 @@ an iterative scheme to obtain numerical solutions to the full set of ODE's.
 \subsection{Weakly non-axisymmetric dust distributions}
 We are now ready to construct non-axisymmetric solutions. 
 %The previous results indicate the axisymmetry is possible if there is no pressure gradients along the ellipse. 
-Consider a Keplerian Kida vortex with $\chi\neq 7$, meaning that the frictional force on the dust has a non-vanishing component along the fluid velocity vector. (I.e. dust particles are accelerated along the ellipse.) We assume non-axisymmetry in the dust distribution is sufficiently weak, so one may truncate the series solution at $m=2$. Thus we set $\rho_{m>2}\equiv0$. 
-}
-
-\blue{
-Let
+Consider a Keplerian Kida vortex with $\chi\neq 7$, meaning that the
+frictional force on the dust has a non-vanishing component along the
+fluid velocity vector. (I.e. dust particles are accelerated along the
+ellipse.) We assume non-axisymmetry in the dust distribution is
+sufficiently weak, so one may truncate the series solution at
+$m=2$. Thus we set $\rho_{m>2}\equiv0$.} Let
 \begin{align}
-\rho_0(z) = b_0g_0(z) + \epsilon(z),
+\rho_0(z) = b_0\blue{g_0(z)} + \epsilon(z),
 \end{align}
 where $\epsilon(x)$ represents the correction to the axisymmetric
-solution due to $\rho_2(z)$. We wish to solve
-}
-\blue{
+solution due to $\rho_2(z)$. The ODEs to be solved are
+
 \begin{align}
-&\mathcal{A}_0\epsilon(z) = -\mathcal{C}_0\rho_2(z),\label{eq:m2_eq1}\\
-&\mathcal{A}_2\rho_2(z)   = -\mathcal{B}_2\left(b_0g_0 + \epsilon\right).\label{eq:m2_eq2}
+&\mathcal{A}_0\epsilon(z) = -\red{\tilchi}\mathcal{C}_0\rho_2(z),\label{eq:m2_eq1}\\
+&\mathcal{A}_2\rho_2(z)   = \blue{-\mathcal{B}_2\left(b_0g_0 + \epsilon\right)}.\label{eq:m2_eq2}
 \end{align}
 To make further progress, at this stage we \emph{assume} that the
-$\epsilon$ term in Eq. \ref{eq:m2_eq2} can be neglected, so $\rho_2 = b_2 g_2$ with $b_2$ given by the source term approximation. 
+$\epsilon$ term in Eq. \ref{eq:m2_eq2} can be neglected\blue{, so $\rho_2 = b_2 g_2$ with $b_2$ given by the source term approximation.} 
 This means that  
-}
+
 \blue{
-\begin{align}
+\beq\label{eq:rho2}
 \frac{\rho_2}{\rho_0} = \frac{b_2}{b_0}z^2,
-\end{align}
+\eeq
 }
 \blue{
 implying non-axisymmetry becomes significant for sufficiently large $z$, 
 and truncating the series at $m=2$ is no longer self-consistent. 
 %(higher $m$ components should be included) 
 However, in practice the ratio $|b_2/b_0|$ is small. 
-For example, inserting $\chi=4$ gives $|b_2/b_0|\simeq0.1\%$ for $\mathrm{St}=0.1$ and $|b_2/b_0|\sim 1\%$ for $\mathrm{St}=1$. This suggests that non-axisymmetry is in general a small effect (since most of the dust is contained
-within $z\lesssim 1$). 
-}
+For example, inserting $\chi=4$ gives $|b_2/b_0|\simeq0.1\%$ for
+$\mathrm{St}=0.1$ and $|b_2/b_0|\sim 1\%$ for $\mathrm{St}=1$. Since
+most of the dust is contained within $z\lesssim 1$, we conclude that
+non-axisymmetry is {\it in general} a small effect.}
 
-\blue{
-Next, we use $\rho_2 = b_2 z^2e^{-z^2/4}$ in Eq. \ref{eq:m2_eq1} to
+We can use \eq{eq:rho2} in \eq{eq:m2_eq1} to
 calculate the correction term $\epsilon$. We find
-}
-\blue{
-\begin{align}
-\epsilon(z) = \frac{1}{8}b_2g_2\left[-16\tilde{\chi}+\left(\tilde{\chi} - 2\Delta C\right)z^2\right].
-\end{align}
-}
 
-\blue{
-Collecting the above results and Taylor-expanding the $g_m$'s, our
+\beq
+\epsilon(z) = \blue{\frac{1}{8}b_2g_2\left[-16\tilchi+\left(\tilchi - 2\beta\right)z^2\right]}.
+\eeq
+
+Collecting the above results and Taylor-expanding the \blue{$g_m$}'s, our
 weakly non-axisymmetric solution for $z\ll 1$ reads:
-}
 
-\blue{
 \begin{align}
-&\rho_0(z) =1 -
-  \frac{z^2}{4}\left[1-\frac{\tilde{\chi}\left(\tilde{\chi} - 2\Delta C\right)}{\mathrm{i}A/B - 1/2}\right]
-+ O(z^4),\\
-&\rho_2(z) =-\frac{\left(\tilde{\chi} - 2\Delta C\right)}{2\left(4\mathrm{i}A/B - 2\right)}z^2+O(z^4)
+&\rho_0(z) =1 -  \frac{z^2}{4}\left[1-\frac{\tilchi\left(\tilchi \blue{- 2\beta}\right)}{\mathrm{i}A/B \blue{- 1/2}}\right]+ O(z^4),\\
+&\rho_2(z) =-\frac{\left(\tilchi \blue{- 2\beta}\right)}{2\left(4\mathrm{i}A/B \blue{- 2}\right)}z^2+O(z^4)
 \end{align}
-where we have used the definition of $k_m$ and set $b_0=1$ without loss of generality. We see that non-axisymmetric effects are weak for $\mathrm{St}\ll1$ because $B\propto \mathrm{St}$.  This makes sense because the force on the dust along the ellipse is proportional to $\mathrm{St}$. 
-}
+where we have used the definition of $k_m$ \blue{and set $b_0=1$
+  without loss of generality}. %We see that non-axisymmetric effects
+%are weak for $\mathrm{St}\ll1$ because $B\propto \mathrm{St}$.  
+In the previous section, we obtained the axisymmetric solution
+assuming the axisymmetric components are negligible. 
+Here, we see explicitly that the axisymmetric solution in fact leads
+to non-axisymmetry through the coupling terms, but these corrections
+are small for $\St \ll 1, because B \propto \St$. We conclude that dust in the vortex core is effectively axisymmetric.
+%This makes sense because the force on the dust along the ellipse is proportional to $\mathrm{St}$. 
 
-\blue{
 \subsubsection{Consistency check}
 Using the above expression for $\epsilon(z)$, we can evaluate
 $\mathcal{B}_2\epsilon(z)$ in order to assess our assumption that
 $\epsilon(z)$ has a negligible contribution to $\rho_2$. We find
-}
-\blue{
+
 \beqn
-\mathcal{B}_2\epsilon(z) =&& 
-\left[32\tilde{\chi}(5\tilde{\chi} - 6\Delta C)-16(\tilde{\chi}-2\Delta C)(2\tilde{\chi}-\Delta C)z^2
-\right.\notag\\&&\left.+(\tilde{\chi} - 2\Delta C)^2z^4\right]\frac{b_2g_2}{32}.
+\mathcal{B}_2\epsilon(z) =&& \blue{\left[32\tilchi(5\tilchi - 6\beta)-16(\tilchi-2\beta)(2\tilchi-\beta)z^2
+\right.\notag}\\&&\blue{\left.+(\tilchi - 2\beta)^2z^4\right]\frac{b_2g_2}{32}.}
 \eeqn
-}
-\blue{
-Provided that $|k_2^2|\gg1$ and  $z$ is not large,  
-this term is indeed small compared to the first term on the RHS of Eq. \ref{eq:m2_eq2}.  For example, considering $z=1$, 
+
+Provided that $|k_2^2|\gg1$ \blue{and $z$ is not large},  
+this term is indeed small compared to the first term on the RHS of \eq{eq:m2_eq2}.  \blue{For example, considering $z=1$, 
 for $\chi=4$ and $\mathrm{St}=0.1$ we obtain $|\mathcal{B}_2\epsilon|/|\mathcal{B}_2\rho_0|\simeq0.02$. 
-Even with $\mathrm{St}=1$, this ratio $\sim0.2$ is not large. 
-}
+Even with $\mathrm{St}=1$, this ratio $\sim0.2$ is not large. We
+conclude that}  our solution procedure above is self-consistent.
 
 \section{\blue{Observational predictions}}
 
@@ -918,7 +937,8 @@ should be possible with the exquisite angular resolution of ALMA.
 We also solve for the non-axisymmetric problem, but with
 approximations that render the solution valid only within 
 the inner $H_V$ of distance from the vortex center. The solution is
-\eq{eq:series}, with coefficients given by \eq{eq:induction}. In practice, the magnitude
+\eq{eq:series-n}, with \blue{``radial'' function given by
+  \eq{eq:series} and} coefficients given by \eq{eq:induction}. In practice, the magnitude
 of the higher non-axisymmetric modes fall fast as $m$ increases, and 
 only the $m=2$ term would provide an appreciable deviation from
 axisymmetry. \blue{We find that non-axisymmetry in dust 
