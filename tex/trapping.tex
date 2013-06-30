@@ -58,6 +58,7 @@
 \newcommand{\epsp}{\varepsilon_{_{+}}}
 \newcommand{\epsm}{\varepsilon_{_{-}}}
 \newcommand{\tilchi}{\tilde\chi}
+\newcommand{\tauf}{\tau_{\rm \blue{f}}}
 
 \newcommand{\St}{{\rm St}}
 
@@ -186,34 +187,59 @@ with a brief discussion on how observations can validate the model.
 \label{sect:model-equations}
 
 Considering the dust is of small sizes, we can treat it as a
-fluid. The dust should then follow the continuity equation 
+fluid. The dust should then follow the continuity equation \blue{\citep{Morfill-Volk84,Clarke-Pringle88,Charnoz11}}
 
 \beq
-  \pderiv{\rho_d}{t} = -(\v{v}\cdot\del)\rho_d - \rho_d \Div{\v{v}} + D\Laplace{\rho_d},
-  \label{eq:continuity}
+  \pderiv{\rho_d}{t} = -(\v{\blue{w}}\cdot\del)\rho_d - \rho_d \Div{\v{\blue{w}}} - \blue{\Div{J}}
+%\blue{\Div{\left(D\,\rho_g\grad\varepsilon\right)}},
+  \label{eq:continuity-w}
 \eeq
 
-\noindent where $\rho_d$ is the dust density, $\v{v}$ is the dust
-velocity, and $D$ is the diffusion coefficient (the diffusion is due
+\noindent where $\rho_d$ is the dust density, $\v{w}$ is the dust
+velocity, \blue{and $J$ is the diffusion flux. We take it to be}
+ 
+\beq 
+\blue{J=-D\,\rho_g\grad{\left(\rho_p/\rho_g\right)}}\label{eq:j-flux}
+\eeq 
+
+\noindent \blue{as in the contaminant equation
+\citep{Morfill-Volk84,Clarke-Pringle88,Charnoz11},} where $D$ is the  
+diffusion coefficient (the diffusion is due
 to elliptical turbulence in the vortex core and in general will be
-different than the turbulent viscosity in the disk). We assume $D$ is
-constant. A list of the mathematical symbols used in this work, together
+different than the turbulent viscosity in the disk), \blue{and $\rho_g$ is
+the gas density}. We assume \blue{that} $D$ is constant. A list of the mathematical symbols used in this work, together
 with their definitions, is provided in Table~\ref{table:symbols}. 
-
-
 
 To derive the velocities, instead of solving the momentum equations
 for the dust, we make use of the relative velocity, following
 \citet[see also \citealt{Youdin08}]{Youdin-Goodman05}
 
 \beq
-\v{v} = \v{u} + \tau  \grad{h}, 
-\label{eq:v}
+\blue{\v{w}} = \v{u} + \tauf  \grad{h}, 
+\label{eq:w}
 \eeq
-\noindent where $\v{u}$ is the gas velocity. \eq{eq:v} is 
-accurate to first order in friction time $\tau$, assumed 
+\noindent where $\v{u}$ is the gas velocity. \eq{eq:w} is 
+accurate to first order in friction time $\tauf$, assumed 
 constant. The enthalpy $h$ is defined as $dh = dp /\rho_g$, where $p$ 
-is the pressure and $\rho_g$ the gas density. 
+is the pressure \red{ and $\rho_g$ the gas density}. \blue{As noted by
+\cite{Charnoz11}, \eq{eq:continuity-w} can be written as a typical continuity equation with Laplacian diffusion 
+\beq
+\partial_t \rho_d = -(\v{v} \cdot\del)\rho_d - \rho_d \Div{\v{v}} + D\Laplace\rho_d \label{eq:continuity}
+\eeq
+\noindent provided that the effective velocity $\v{v}$ is 
+\beq
+\v{v} \equiv \v{w}  + D\grad\ln \rho_g\label{eq:v-prime}.
+\eeq\noindent For isothermal gas the extra term is $D/c_s^2 \grad{h}$,
+and, comparing with \eq{eq:w}, its effect amounts to redefining the
+friction time as 
+\beq
+\tau \equiv \tauf + \frac{D}{c_s^2}\label{eq:tau-prime}
+\eeq
+\noindent combining \eq{eq:w}, \eq{eq:v-prime} and \eq{eq:tau-prime},
+we can thus write
+\beq
+\blue{\v{v}} = \v{u} + \tau \grad{h}, \label{eq:v}
+\eeq \noindent valid for isothermal gas only.}
 
 Inside the vortex, the gas flow is divergenceless, and 
 we adopt the following model for $\v{u}$
@@ -277,7 +303,9 @@ with $\omega_{_V}=\varOmega_V/\varOmega$, the divergence becomes
 \label{eq:scale-div}
 \eeqn
 
-\noindent where we define $C$ as positive, so that the divergence is negative (physically meaning that the dust gets trapped). Replacing \eq{eq:const-div} in the continuity equation, and setting $\partial_t$ =
+\noindent where we define $C$ as positive, so that the divergence is
+negative (physically meaning that the dust gets trapped). Replacing
+\eq{eq:const-div} in the \blue{modified} continuity equation \blue{\eqp{eq:continuity}}, and setting $\partial_t$ =
 0 for steady state, 
 
 \beq
@@ -285,7 +313,7 @@ with $\omega_{_V}=\varOmega_V/\varOmega$, the divergence becomes
 \label{eq:steady}
 \eeq
 
-Substituting the gas velocity, and dividing by $D$, we
+Substituting the gas velocity \blue{\eqp{eq:vortex}}, and dividing by $D$, we
 arrive at the modified advection-diffusion equation that should
 determine the steady-state distribution of the vortex-trapped dust, 
 
@@ -303,13 +331,16 @@ determine the steady-state distribution of the vortex-trapped dust,
 \begin{center}
 \begin{tabular}{l l l}\hline
 Symbol & Definition & Description \\\hline
-$\tau$ && friction time\\
+$\tauf$ && friction time\\
+$D$ & & dust diffusion coefficient \\
+$c_s$ & & sound speed \\
+$\blue{\tau}$ &\blue{=$\tauf + D/c_s^2$}& \blue{effective friction time}\\
 $\varOmega$ & & Keplerian angular frequency \\
-\St & $= \varOmega \tau$ & Stokes number \\
+\St & $= \varOmega \tauf$ & Stokes number \\
 $t$ &  & time \\
 $\rho_g$, $\rho_d$  & & gas and dust density\\
-$D$ & & dust diffusion coefficient \\
-$\v{u}$, $\v{v}$ & & gas and dust velocity\\
+$\v{u}$, \blue{$\v{w}$} & & gas and dust velocity\\
+\blue{$\v{v}$} & \blue{$= \v{w} + D\grad\ln\rho$}& \blue{effective dust velocity} \\
 $p$ && gas pressure \\
 $h$ &$dh=dp/\rho_g$ & gas enthalpy\\
 $\chi$ & & vortex aspect ratio ($>1$) \\
@@ -321,11 +352,11 @@ $A$ & $=\varOmega_V/D$ & \\
 $B$  &$=C/D$ & \\
 $\nu$ & & azimuth in vortex reference frame\\
 $\varepsilon_\pm$ & $ = 1\pm\chi^{-2}$ \\
-$c_s$ & & sound speed \\
 $H$ & $c_s/\varOmega$ & sonic scale, gas scale height\\
 $\delta$ & $D=\delta c_s H$ & dimensionless diffusion parameter\\
 $f(\chi)$ & \eq{eq:scale-function} & scale function \\
-$H_V$ & $=\frac{H}{f(\chi)} \ \sqrt{\frac{\delta}{\St}}$ & vortex scale length \\
+\blue{$S$} & \blue{$= \St/\delta$} & \blue{dimensionless number} \\
+$H_V$ & $=\frac{H}{f(\chi)} \ \sqrt{\blue{\frac{1}{S+1}}}$ & vortex scale length \\
 $k$ & $=\sqrt{2}/H_V$ & \\ 
 $z$ & $=ka$ & \\
 $\tilchi$ & $=\frac{\chi^2-1}{2(\chi^2+1)}$ & \\
@@ -433,8 +464,8 @@ The dust-trapping equation is therefore
   \right) a \ \partial_a  + B \right\} \rho_d = 0. \label{eq:dust-trapping-uvzero}
 \eeqn
 
-\blue{We remark that a very similar equation  can be derived  when the diffusive flux is modeled as $D\rho_g\nabla(\rho_d/\rho_g)$, as used by \cite{Birnstiel13} . In fact, by redefining the friction time, 
-our solution below can be made applicable to this case as well.} 
+%\blue{We remark that a very similar equation  can be derived  when the diffusive flux is modeled as $D\rho_g\nabla(\rho_d/\rho_g)$, as used by \cite{Birnstiel13} . In fact, by redefining the friction time, 
+%our solution below can be made applicable to this case as well.} 
 
 \section{``Axisymmetric'' dust distribution}
 \label{sect:axisymmetric}
@@ -478,21 +509,26 @@ the exponential integral function. Since it diverges at the origin, $c_2$ has to
 \noindent with $H_V = \sqrt{2}/k$ for symmetry with the gas sonic scale. We can 
 rewrite this length scale recalling that $k^2=2B/\epsp$ and
 $B=C/D$. We can substitute the diffusion coefficient $D=\delta \varOmega H^2$ where 
-$\delta$ is a dimensionless coefficient, and $\St = \tau\varOmega$ for 
+$\delta$ is a dimensionless coefficient, and $\St = \tauf\varOmega$ for 
 the Stokes number, writing thus 
 
 \beqn
 \label{eq:k}
-k^2 = \frac{2\St}{\delta H^2} f^2(\chi),
+k^2 = \frac{2\blue{(}\St+\blue{\delta)}}{\delta H^2} f^2(\chi),
 \eeqn 
 
 \noindent so
 
 \beq
- H_V = \frac{H}{f(\chi)} \sqrt{\frac{\delta}\St}. 
-\label{eq:hv}
+ H_V = \frac{H}{f(\chi)} \sqrt{\frac{\delta}{\St\blue{+\delta}}}. 
+\label{eq:hv-pre}
 \eeq
-
+\noindent \blue{following \cite{Jacquet12} we define $S=\St/\delta$. The vortex scale
+length is therefore
+\beq
+H_V = \frac{H}{f(\chi)} \sqrt{\frac{1}{S+1}}
+\label{eq:hv}
+\eeq}
 
 \noindent In these equations, the scale function $f(\chi)$ is given by 
 
@@ -527,10 +563,20 @@ interval of physical relevance ($2 < \chi \lesssim 10$). The dust distribution i
  \label{fig:scale-function}
 \end{figure}
 
-Dust distributions for different values of $\delta/\St$ are plotted in \fig{fig:gaussian}, as a 
+Dust distributions for different values of \blue{$S$} are plotted in \fig{fig:gaussian}, as a 
 function of $a/H$. We show in \fig{fig:disk}, in the inertial frame, 
-the dust distribution for $\delta/\St$=1 in a Kida vortex of $\chi=4$ embedded in a 
-disk of aspect ratio $H/r$=0.1, where $r$ is the stellocentric distance. 
+the dust distribution for \blue{$S$}=1 in a Kida vortex of $\chi=4$ embedded in a 
+disk of aspect ratio $H/r$=0.1, where $r$ is the stellocentric
+distance. \blue{We highlight that for tracer particles ($\St=0$), the dust distribution should
+  mimic that of the gas. This immediatelly tells us the gas
+  distribution: an exponential like \eq{eq:gen_axi}
+\beq
+\rho_g(a) = \rho_{g0} \exp\left(-\frac{a^2}{2H_g^2}\right), \label{eq:gas_axi}
+\eeq
+\noindent with $H_g = {H_V}{\vert_{\St=0}} = H/f(\chi)$. Notice also
+that for $\St=0$ the effect of diffusion cancels out. This is because
+the diffusion is proportional to the gradient of the dust-to-gas
+ratio \eqp{eq:j-flux}, which is zero for tracer particles.}
 
 \begin{figure}
   \begin{center}
@@ -538,8 +584,8 @@ disk of aspect ratio $H/r$=0.1, where $r$ is the stellocentric distance.
   \end{center}
 \caption[]{Dust distribution for the axisymmetric case. As in
   \fig{fig:scale-function}, red and blue lines are for the Kida and
-  GNG solutions, respectively. Distributions for $\delta/\St$=0.1, 1, and
-  10 are shown (dashed, solid, and dot-dashed lines). The $x$-axis is
+  GNG solutions, respectively. Distributions for \blue{$S$}=0.1, 1, and
+  10 are shown (\blue{dot-}dashed, solid, and \red{dot-}dashed lines). The $x$-axis is
   $a/H$, where $H$ is the gas scale height. There is degeneracy
   between $\delta/\St$ and $f(\chi)$, as is clear from \eq{eq:hv}.}
  \label{fig:gaussian}
@@ -551,97 +597,95 @@ disk of aspect ratio $H/r$=0.1, where $r$ is the stellocentric distance.
  \end{center}
 \caption[]{Three parameters, plus a vortex solution, control the dust distribution. 
 The figure shows the appearance of the dust trapped in a Kida vortex of $\chi=4$, 
-for $\delta/\St$=1, in a disk of aspect ratio $H/r$=0.1.}
+for \blue{$S$}=1, in a disk of aspect ratio $H/r$=0.1.}
  \label{fig:disk}
 \end{figure}
 
-\blue{
-\subsection{Exact solutions}
-It is worth noting that for certain vortex models and/or aspect-ratios, the Gaussian solution, \eq{eq:gen_axi}, is in fact an exact solution to the dust-steady state equation.  We will explore this in more detail  in \sect{sect:nonaxisymmetric}, but one can check this by inserting \eq{eq:gen_axi} into \eq{eq:axi} and finding the condition for the coefficient of the trigonometric terms to vanish. In this special case, the $\nu$-integration is not needed.  
-}
-\subsection{Axisymmetric $\v{u} = \v{v}$ }
-It is illustrative to consider the case in which $|\v{u}| \gg \tau|\grad{h}|$,
-so that we can approximate $\v{v}=\v{u}$ in the advection term\red{.} (We do
-not make this substitution in the compression term because $\v{u}$ is
-exactly divergence-free). In this case, \eq{eq:dust-trapping-uvzero} reduces
-to a relatively simple equation 
+%\subsection{Exact solutions}
+\blue{It is worth noting that for certain vortex models and/or
+aspect-ratios, the Gaussian solution, \label{eq:dust-trapping-uvzero}, is in fact an 
+exact solution to th dust-steady state equation.  We will explore this
+in more detail  in 
+\sect{sect:nonaxisymmetric}, but one can check this by inserting
+\eq{eq:gen_axi} into 
+\eq{eq:axi} and finding the condition for the coefficient of the trigonometric terms to vanish. In this special case, the $\nu$-integration is not needed.} 
+%}
 
-\beq\label{eq:uveq}
-\left(\Laplace{} + A\partial_\nu + B \right)\rho_d = 0. 
-\eeq
-
-\eq{eq:uveq} reflects dust diffusion (first term), dust advection due
-to the vortex flow (second term) and dust concentration (third term). 
-Note that we are effectively considering regions close to the vortex
-center because $\nabla h$ vanishes at the origin, while $\nabla^2h$
-(i.e. $B$), does not.   
-
-Now, assuming axis-symmetry and integrating in
-$\frac{1}{2\pi} \int_0^{2\pi} d\nu$, we get  
-\beq
-\frac{\epsp}{2}\pderivn{\rho_d}{a}{2} +
-\frac{\epsp}{2a}\pderiv{\rho_d}{a} + B \rho_d = 0.  
-\eeq
-That is, 
-\beq
-y^{\prime\prime} + \frac{1}{a}y^\prime + k^2 y = 0. 
-\label{eq:axisymmetric}
-\eeq where $y(a) = \rho_d$ and $k$ is given by \eq{eq:k}. 
-\eq{eq:axisymmetric} only differs from \eq{eq:dust-trapping-axis} through the
-absence of the $k^2a\partial_a$ term, which appears when the full
-expression for the dust velocity is used consistently, and that term represented
-axisymmetric advection, which is entirely absent in the 
-problem here. Physically, as $a\to0$ there is no advection, so the two
-equations behave similarly, both stating a balance between dust
-concentration and dust diffusion. 
-
-The general solution of \eq{eq:axisymmetric} is a
-sum of Bessel functions of the first and second kinds: 
-
-\beq
-y(a) = c_1 J_0 (ka) + c_2 Y_0(ka). 
-\eeq
-
-\noindent Since  $Y_0$ diverges at the origin, we can physically discard 
-this solution, setting $c_2=0$. So, the axisymmetric mode is $\rho_d(a)
-= c_1 \ J_0 (ka)$, or
-
-\beq
-\rho_d(a) = c_1 \ J_0 \left(\frac{a}{H} \ f(\chi) \sqrt{\frac{2\St}{\delta}}\right).
-\eeq 
-
-The Bessel function $J_0(x)$ is
-non-monotonic, with the first root around $x=2.5$. The first zero is therefore around
-$a_0 \approx H \sqrt{\delta/\St}$.  As the density
-cannot be negative, that sets the validity of our solution. 
-The solution is also constrained by our use of the shearing sheet
-equations, so the results should not be valid for $x \gg H$.
-As we made use of the approximation $\v{v}=\v{u}$, $\St \ll 1$,
-and the solution  is indeed $a_0 \gg H$, for finite values of $\delta$.
-
-We compare in \fig{fig:bessel-gaussian} the Bessel function with the exponential found in the
-previous section for the general solution. They agree up to 10\% inside
-$ka$=1.5 (i.e., $a/H_V\approx 1$), and up to 1\% within $ka$=1 (i.e.,
-$a/H_V\approx 0.7$). 
-%Confident that approximating $\v{u}=\v{v}$ for
+%\subsection{Axisymmetric $\v{u} = \v{v}$ }
+%It is illustrative to consider the case in which $|\v{u}| \gg \tau|\grad{h}|$,
+%so that we can approximate $\v{v}=\v{u}$ in the advection term\red{.} (We do
+%not make this substitution in the compression term because $\v{u}$ is
+%exactly divergence-free). In this case, \eq{eq:dust-trapping-uvzero} reduces
+%to a relatively simple equation 
+%\beq\label{eq:uveq}
+%\left(\Laplace{} + A\partial_\nu + B \right)\rho_d = 0. 
+%\eeq
+%\eq{eq:uveq} reflects dust diffusion (first term), dust advection due
+%to the vortex flow (second term) and dust concentration (third term). 
+%Note that we are effectively considering regions close to the vortex
+%center because $\nabla h$ vanishes at the origin, while $\nabla^2h$
+%(i.e. $B$), does not.   
+%Now, assuming axis-symmetry and integrating in
+%$\frac{1}{2\pi} \int_0^{2\pi} d\nu$, we get  
+%\beq
+%\frac{\epsp}{2}\pderivn{\rho_d}{a}{2} +
+%\frac{\epsp}{2a}\pderiv{\rho_d}{a} + B \rho_d = 0.  
+%\eeq
+%That is, 
+%\beq
+%y^{\prime\prime} + \frac{1}{a}y^\prime + k^2 y = 0. 
+%\label{eq:axisymmetric}
+%\eeq where $y(a) = \rho_d$ and $k$ is given by \eq{eq:k}. 
+%\eq{eq:axisymmetric} only differs from \eq{eq:dust-trapping-axis} through the
+%absence of the $k^2a\partial_a$ term, which appears when the full
+%expression for the dust velocity is used consistently, and that term represented
+%axisymmetric advection, which is entirely absent in the 
+%problem here. Physically, as $a\to0$ there is no advection, so the two
+%equations behave similarly, both stating a balance between dust
+%concentration and dust diffusion. 
+%%
+%The general solution of \eq{eq:axisymmetric} is a
+%sum of Bessel functions of the first and second kinds: 
+%\beq
+%y(a) = c_1 J_0 (ka) + c_2 Y_0(ka). 
+%\eeq
+%\noindent Since  $Y_0$ diverges at the origin, we can physically discard 
+%this solution, setting $c_2=0$. So, the axisymmetric mode is $\rho_d(a)
+%= c_1 \ J_0 (ka)$, or
+%\beq
+%\rho_d(a) = c_1 \ J_0 \left(\frac{a}{H} \ f(\chi) \sqrt{\frac{2\St}{\delta}}\right).
+%\eeq 
+%The Bessel function $J_0(x)$ is
+%non-monotonic, with the first root around $x=2.5$. The first zero is therefore around
+%$a_0 \approx H \sqrt{\delta/\St}$.  As the density
+%cannot be negative, that sets the validity of our solution. 
+%The solution is also constrained by our use of the shearing sheet
+%equations, so the results should not be valid for $x \gg H$.
+%As we made use of the approximation $\v{v}=\v{u}$, $\St \ll 1$,
+%and the solution  is indeed $a_0 \gg H$, for finite values of $\delta$.
+%%
+%We compare in \fig{fig:bessel-gaussian} the Bessel function with the exponential found in the
+%previous section for the general solution. They agree up to 10\% inside
+%$ka$=1.5 (i.e., $a/H_V\approx 1$), and up to 1\% within $ka$=1 (i.e.,
+%$a/H_V\approx 0.7$). Confident that approximating $\v{u}=\v{v}$ for
 %advection works well within the vortex core, we use this
 %simplification to find solutions to the full non-axisymmetric problem,
 %in the next section. 
-
-\begin{figure}
-  \begin{center}
-    \resizebox{\columnwidth}{!}{\includegraphics{../figs/bessel-gaussian.png}}
-  \end{center}
-\caption[]{The axisymmetric solutions for (solid line) the general 
-$\v{v}=\v{u}+\tau\grad{h}$ case and, (dashed line) the case where
-  we set $\v{v}=\v{u}$ for dust advection. 
-The exponential and Bessel solutions agree up to 10\% up to $x$=1.5, and up 
-to 1\% up to $x$=1. This means that dust advection due to $\tau\nabla{h}$
-is not significant within $x\lesssim1$. We conclude that the latter
-approximate solution is quite accurate for describing the dust
-distribution in the vortex core.} 
- \label{fig:bessel-gaussian}
-\end{figure}
+%
+%\begin{figure}
+%  \begin{center}
+%    \resizebox{\columnwidth}{!}{\includegraphics{../figs/bessel-gaussian.png}}
+%  \end{center}
+%\caption[]{The axisymmetric solutions for (solid line) the general 
+%$\v{v}=\v{u}+\tau\grad{h}$ case and, (dashed line) the case where
+%  we set $\v{v}=\v{u}$ for dust advection. 
+%The exponential and Bessel solutions agree up to 10\% up to $x$=1.5, and up 
+%to 1\% up to $x$=1. This means that dust advection due to $\tau\nabla{h}$
+%is not significant within $x\lesssim1$. We conclude that the latter
+%approximate solution is quite accurate for describing the dust
+%distribution in the vortex core.} 
+% \label{fig:bessel-gaussian}
+%\end{figure}
 
 \section{Non-axisymmetric corrections}
 \label{sect:nonaxisymmetric} 
@@ -794,7 +838,7 @@ for even $m\geq 2$.
 The source term approximation assumes 
 $R\equiv|\mathcal{C}_m\rho_{m+2}|/|\mathcal{A}_m\rho_m| \ll 1.$ 
 For given $z$, the solution $\rho_m=b_mg_m$ is consistent with this requirement if $|k_m^2|\gg1$, corresponding to small Stokes number.  
- However, this approximation will eventually fail for large $z$ because the solution above implies $R\propto z^4$ for $z\gg1$. Thus the solution is only self-consistent for sufficiently small $z$ and/or $\mathrm{St}$. Nevertheless,
+ However, this approximation will eventually fail for large $z$ because the solution above implies $R\propto z^4$ for $z\gg1$. Thus the solution is only self-consistent for sufficiently small $z$ and/or $\St$. Nevertheless,
 we comment that the closed-formed solutions obtained here may be useful in
 an iterative scheme to obtain numerical solutions to the full set of ODE's. 
 }
@@ -908,8 +952,8 @@ properties. It is a Gaussian of standard deviation $H_V$, where, given
 the angular velocity $\varOmega_V$ of the vortex, $H_V$
 is determined by three quantities. These are: 
 the sonic length and gas scale height, $H$; the vortex aspect ratio
-$\chi$; and the relative strength of diffusion to friction,
-$\delta/\St$. The importance of this latter parameter had already been 
+$\chi$; and \blue{$S=\St/\delta$}, the relative strength of friction to
+diffusion. The importance of this latter parameter had already been 
 hinted upon by \citet{Cuzzi93} and \citet{Dubrulle95} 
 in the context of steady states of dust sedimentation, and by
 \citet{Klahr-Henning97} for vortices in the meridional plane. An insightful study by 
@@ -989,9 +1033,11 @@ National Aeronautics and Space Administration. \blue{The authors are
 %\bibitem[{{Chandrasekhar}(1961)}]{Chandrasekhar61} Chandrasekhar 1961 {\it Hydrodynamic and Hydromagnetic Stability} (Oxford: Clarendon), 384
 \bibitem[{{Chang \& Oishi}(2010)}]{Chang-Oishi10} Chang, P. \& Oishi, J.S. 2010, ApJ, 721, 1593
 \bibitem[{{Chavanis}(2000)}]{Chavanis00} Chavanis, P.-H. 2000, A\&A, 356, 1089
+\bibitem[{{\blue{Charnoz et al}}(2011)}]{Charnoz11} \blue{Charnoz, S., Fouchet, L., Aleon, J., \& Moreira, M. 2011, ApJ, 737, 33}
 \bibitem[{{Cieza}(2008)}]{Cieza08} Cieza, L.A., Swift, J.J., Mathews, G.S., \& Williams, J.P. 2008, ApJ, 686, 115
 \bibitem[{{Cieza}(2010)}]{Cieza10} Cieza, L.A., Schreiber, M.R., Romero, G.A., Mora, M.D., Mer\'in, B., Swift, J.J., Orellana, M., Williams, J.P., Harvey, P.M., \& Evans, N.J. 2010, ApJ, 712, 925
 \bibitem[{{Clarke \& Owen}(2013)}]{Clarke-Owen13} Clarke, C.J. \& Owen, J.E. 2013, MNRAS, accepted, arXiv:1305.2483
+\bibitem[{{\blue{Clarke \& Pringle}}(1988)}]{Clarke-Pringle88} \blue{Clarke, C. J.; Pringle, J. E. 1988, MNRAS, 235, 365}
 \bibitem[{{\blue{Corder et al.}}(2005)}]{Corder05} \blue{Corder, S., Eisner, J., \& Sargent, A. 2005, ApJ, 622, 133}
 \bibitem[{{Currie et al.}(2009)}]{Currie09} Currie, Th., Lada, C.J., Plavchan, P.,  Robitaille, T.P., Irwin, J., \& Kenyon, S.J. 2009, ApJ, 698, 1
 \bibitem[{{Currie}(2010)}]{Currie10} Currie, Th. 2010, arXiv1002.1715C	
@@ -1049,6 +1095,7 @@ National Aeronautics and Space Administration. \blue{The authors are
 \bibitem[{{M\'eheut et al.}(2012b)}]{Meheut12b} M\'eheut H., Keppens,  R., Casse, F., \& Benz, W. 2012, A\&A, 542A, 9
 \bibitem[{{M\'eheut et al.}(2012c)}]{Meheut12c} M\'eheut, H., Meliani, Z., Varni\`ere, P., \& Benz, W. 2012, A\&A, 545, 134
 \bibitem[{{Mer\'in et al.}(2010)}]{Merin10} Mer\'in, B., Brown, J. M., Oliveira, I., Herczeg, G.J., van Dishoeck, E.F., Bottinelli, S., Evans, N.J., Cieza, L., Spezzi, L., Alcal\'a, J.M., Harvey, P.M., Blake, G.A., Bayo, A., Geers, V.G., Lahuis, F., Prusti, T., Augereau, J.-C., Olofsson, J., Walter, F.M., \& Chiu, K. 2010, ApJ, 718, 1200
+\bibitem[{{\blue{Morfill \& V\"olk}}(1984)}]{Morfill-Volk84}\blue{Morfill, G. E. \& Voelk, H. J. 1984, ApJ, 287, 371}
 \bibitem[{{Muto et al.}(2012)}]{Muto12} Muto, T., Grady, C. A., Hashimoto, J., Fukagawa, M., Hornbeck, J. B. et al. 2012, ApJ, 748L, 22
 \bibitem[{{Muzerolle et al.}(2006)}]{Muzerolle06} Muzerolle, J., Adame, L., D'Alessio, P., Calvet, N., Luhman, K.L., Muench, A.A., Lada, C.J., Rieke, G.H., Siegler, N., Trilling, D.E., Young, E.T., Allen, L., Hartmann, L., \& Megeath, Th. 2006, ApJ, 643, 1003
 \bibitem[{{Muzerolle et al.}(2010)}]{Muzerolle10} Muzerolle, J., Allen, L.E., Megeath, Th., Hern\'andez, J., \& Gutermuth, R.A. 2010, ApJ, 708, 1107
@@ -1093,5 +1140,4 @@ National Aeronautics and Space Administration. \blue{The authors are
 \bibitem[{{Zhu et al.}(2011)}]{Zhu11} Zhu, Zh., Nelson, R.P., Hartmann, L.,  Espaillat, C., \& Calvet, N. 2011, ApJ, 729, 47
 \bibitem[{{Zsom et al.}(2011)}]{Zsom11} Zsom, A., Ormel, C.W., Dullemond, C.P., \& Henning, Th. 2011, A\&A, 534, 73
 \end{thebibliography}
-
 \end{document}
