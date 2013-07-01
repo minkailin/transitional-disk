@@ -24,72 +24,55 @@ endelse
 !x.thick=thick
 !y.thick=thick
 
-chi = 4
+Hg=1.
 
-a=grange(0.,5.,100)
+a=grange(0.,3.,100)
 
-delta=1e-2
-St=1e-2
+S=[0.0,0.1,1,10,100] ;delta/St
 
-para=[0.1,1,0.25,10] ;delta/St
+para=1/(S+1)
 
-omega_kida = 3./2 * 1./(chi-1)     & omega1=omega_kida
-omega_goodman = sqrt(3./(chi^2-1)) & omega2=omega_goodman
+rhod=fltarr(100,5)
+maxrhod = (S+1)^1.5
 
-epsp =  1. + 1./chi^2
-
-f_kida = sqrt(2*chi*omega1 - (2*omega1^2 + 3)/epsp)
-f_good = sqrt(2*chi*omega2 - (2*omega1^2 + 3)/epsp)
-
-rhok=fltarr(100,4)
-rhog=fltarr(100,4)
-
-for i=0,3 do begin
-   Hvk=1./f_kida * sqrt(para[i])
-   Hvg=1./f_good * sqrt(para[i])
-
-   rhok[*,i]=exp(-a^2/(2*hvk^2))
-   rhog[*,i]=exp(-a^2/(2*hvg^2))
+for i=0,4 do begin
+   Hv=Hg * sqrt(para[i])
+   rhod[*,i]=maxrhod[i]*exp(-a^2/(2*hv^2))
 endfor
 
-!p.multi=0
+aa=max(rhod)
+erase
+!p.noerase=1
 
-loadct,5
+loadct,0
 
- plot,a,rhok[*,0],/nodata,$
-      xtitle='!8a/H!x',ytitle=textoidl("\rho")+"!8!dd!n(a)!x",$
-      title="Dust distribution"
+ plot,a,rhod[*,0],/nodata,$
+      xtitle='!8a/H!dg!n!x',ytitle=textoidl("\rho")+"!8!dd!n(a)!x",$
+      title="Dust distribution",yr=[1e-1,1000],/ylog,ys=3,color=0,xr=[0,2.5],xs=1
 
-      
-oplot,a,rhok[*,0],li=2,color=120
-oplot,a,rhog[*,0],li=2,color=50
+loadct,12
 
-oplot,a,rhok[*,1],li=0,color=120
-oplot,a,rhog[*,1],li=0,color=50
+ cor=fix(indgen(17)/16. * 255)
+;0      black                                                                   
+;1      dark green                                                              
+;3      light green                                                             
+;6      anil                                                                    
+;7      dark blue                                                               
+;8      purple                                                                  
+;9      dark pink                                                               
+;13     red                                                                     
+;15     grey                                                                    
+;16     white  
 
-;oplot,a,rhok[*,2],color=200
+oplot,a,rhod[*,0],li=0,color=0
+oplot,a,rhod[*,1],li=1,color=cor[1]
+oplot,a,rhod[*,2],li=2,color=cor[9]
+oplot,a,rhod[*,3],li=3,color=cor[13]
+oplot,a,rhod[*,4],li=4,color=cor[7]
 
-oplot,a,rhok[*,3],li=3,color=120
-oplot,a,rhog[*,3],li=3,color=50
-
-!p.multi=0
-
-;delta/St=0.25 kida is equal to delta/St=0.1 goodman for chi=4
-
-;legend,["Kida","GNG"],li=[0,0],color=[120,50],box=0,$
-;       position=[3.4,0.99]
-
-sdelta=textoidl("\delta")
-
-;legend,[sdelta+"/St=10",sdelta+"/St=1",sdelta+"/St=0.1"],$
-legend,["!8S!x=0.1","!8S!x=1","!8S!x=10"],$
-       li=[3,0,2],color=[0,0,0],box=0,$
-       position=[2.8,0.5],charsize=0.9
-
-;xyouts,.85,0.15,sdelta+"/St=0.1",orientation=-50
-;xyouts,2.25,0.315,sdelta+"/St=1",orientation=-40
-;xyouts,3.5,0.735,sdelta+"/St=10",orientation=-30
-
+legend,["!8S!x=0","!8S!x=0.1","!8S!x=1","!8S!x=10","!8S!x=100"],$
+       li=[0,1,2,3,4],color=[0,cor[1],cor[9],cor[13],cor[7]],box=0,$
+       position=[1.5,500],charsize=0.9
 
 if (ps eq 1) then begin
    device,/close
