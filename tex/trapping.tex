@@ -199,7 +199,7 @@ fluid. The dust should then follow the continuity equation \blue{\citep{Morfill-
 velocity, \blue{and $J$ is the diffusion flux. We take it to be}
  
 \beq 
-\blue{J=-D\,\rho_g\grad{\left(\rho_p/\rho_g\right)}}\label{eq:j-flux}
+\blue{J=-D\,\rho_g\grad{\left(\rho_d/\rho_g\right)}}\label{eq:j-flux}
 \eeq 
 
 \noindent \blue{as in the contaminant equation
@@ -568,14 +568,7 @@ interval of physical relevance ($2 < \chi \lesssim 10$). %The dust distribution 
 We show in \fig{fig:disk}, in the inertial frame, 
 the dust distribution for \blue{$S$}=1 in a Kida vortex of $\chi=4$ embedded in a 
 disk of aspect ratio $H/r$=0.1, where $r$ is the stellocentric
-distance. \blue{It is worth noting that for certain vortex models and/or
-aspect-ratios, the Gaussian solution, \label{eq:dust-trapping-uvzero}, is in fact an 
-exact solution to th dust-steady state equation.  We will explore this
-in more detail  in 
-\sect{sect:nonaxisymmetric}, but one can check this by inserting
-\eq{eq:gen_axi} into 
-\eq{eq:axi} and finding the condition for the coefficient of the trigonometric terms to vanish. In this special case, the $\nu$-integration is not needed.} 
-%}
+distance. 
 
 \blue{\subsection{Gas distribution and dust density enhancement}}
 
@@ -587,13 +580,14 @@ in more detail  in
 \beq
 \rho_g(a) = \rho_{g\,{\rm max}} \ \exp\left(-\frac{a^2}{2H_g^2}\right), \label{eq:gas_axi}
 \eeq
-\noindent with $H_g = {H_V}{\vert_{\St=0}} = H/f(\chi)$ and $\rho_{g\,max}$, the maximum gas density.  
+\noindent with $H_g = {H_V}{\vert_{\St=0}} = H/f(\chi)$ and
+$\rho_{g\,{\rm max}}$, the maximum gas density.  
 Notice that for $\St=0$ the effect of diffusion cancels out. This is because
 the diffusion is proportional to the gradient of the dust-to-gas
 ratio \eqp{eq:j-flux}, which is zero for tracer
 particles. \eq{eq:gen_axi} and \eq{eq:gas_axi} also allows us to calculate the gas-dust
-density constrast, and, therefore, $\rho_{d\,max}$ as a function of
-$\rho_{g\,max}$. For that, we calculate the surface integral of $\rho_d$
+density constrast, and, therefore, $\rho_{d\,{\rm max}}$ as a function of
+$\rho_{g\,{\rm max}}$. For that, we calculate the surface integral of $\rho_d$
 and $\rho_g$}
 
 \blue{
@@ -638,6 +632,18 @@ for \blue{$S$}=1, in a disk of aspect ratio $H/r$=0.1.}
 \end{figure}
 
 
+%\subsection{Exact solutions}
+\blue{It is worth noting that for certain vortex models and/or
+aspect-ratios, the Gaussian solution, \eq{eq:gen_axi}, is in fact an 
+exact solution to th dust-steady state equation, \eq{eq:dust-trapping-uvzero}.  
+We will explore this in more detail  in \sect{sect:nonaxisymmetric}, but one can check this by inserting
+\eq{eq:gen_axi} into \eq{eq:dust-trapping-uvzero}, and finding the condition 
+for the coefficient of the trigonometric terms to vanish. 
+In this special case, explicitly averaging over $\nu$ is not
+required to remove the $\nu$-dependence from the 
+problem. 
+} 
+%}
 
 %\subsection{Axisymmetric $\v{u} = \v{v}$ }
 %It is illustrative to consider the case in which $|\v{u}| \gg \tau|\grad{h}|$,
@@ -723,7 +729,7 @@ We \blue{now} consider the non-axisymmetric problem ($\partial_\nu\neq0$)\blue{.
 \red{inside the vortex core in the limit $\St \ll 1$. We formally set $\v{v} = \v{u}$ in the advection term 
 $\v{v}\cdot\del$. This problem is artificial but isolates non-axisymmetries that arise in the 
 situation where dust is effectively advected by the vortex.} We explicitly show that such effects are small 
-\blue{in the vortex core} provided the Stokes number is not large. \blue{These requirements will become
+\blue{in the vortex core} provided the \blue{effective} Stokes number \blue{$\overline{\mathrm{St}}\equiv\mathrm{St}+\delta$} is not large. \blue{These requirements will become
 apparent as we proceed through the solution method.} \red{The procedure outlined below also serves as a basis for future 
 work on the non-axisymmetric problem including full dust velocity.}
 
@@ -772,16 +778,17 @@ where \blue{$\tilchi\equiv(\chi^2-1)/[2(\chi^2+1)]$}, $k_m^2 \equiv 1+\mathrm{i}
 \blue{\beta \equiv \frac{B_1-B_2}{2k^2(1+\chi^{-2})} = \frac{B_1 - B_2}{4B}.}
 \eeq
 %[Recall $k^2\equiv 2B/\left(1+\chi^{-2}\right)$.] The independent variable is $z\equiv ka$. 
-\blue{Note that $\beta$ depends on the vortex model but not on the
-  aspect ratio.} \eq{eq:ode2} holds for each $m$ except for $m=0$ for which the $\rho_{m-2}$ terms are absent. Each 
+\blue{Note that $\beta$ is a function of the aspect-ratio depending on the vortex model.} 
+\eq{eq:ode2} holds for each $m$ except for $m=0$ for which the $\rho_{m-2}$ terms are absent. Each 
 $\rho_m$ couples to $\rho_{m\pm2}$ through operators $\mathcal{B}_m$
 and $\mathcal{C}_m$. The axisymmetric problem is recovered by
 setting $\rho_{m>0}=0$. \red{(We remark that a similar set of ODEs may be derived when the full expression for dust velocity is used.)}
 
-In the limit $\St\ll 1$, dust is advected by fluid with elliptic
-streamlines, so we expect $\rho_d(a,\nu)$ to have even symmetry in
-$\nu$. Henceforth we only consider even $m$. We seek solutions with  
-$\rho_m^\prime(0)=0$ and $\rho_{m\geq2}(0)=0$, so that
+\red{In the limit $\St\ll 1$, dust is advected by fluid with elliptic
+streamlines, so} \blue{We} expect $\rho_d(a,\nu)$ to have even symmetry in
+$\nu$ \blue{because of the elliptical nature of the vortex streamlines}. 
+Henceforth we only consider even $m$. We seek solutions with  
+$\rho_m^\prime(0)=0$ \blue{(where the prime denotes derivative with respect to the argument)} and $\rho_{m\geq2}(0)=0$, so that
 $\partial_x\rho_d=\partial_y\rho_d=0$ at the origin, consistent with 
 dust reaching maximal density there.  
 
@@ -835,7 +842,7 @@ The dust distribution is exactly axisymmetric for aspect-ratio $\chi=7$, which i
 \blue{
 \subsection{Source term approximation}
 In preparation for constructing non-axisymmetric solutions, we here describe the \emph{source term approximation} \citep{Zhang06}.
-We assume that $\rho_m$ decreases with $m$, so that in \eq{eq:ode2} the $\mathcal{C}_m\rho_{m+2}$ term has smallest magnitude.  Neglecting it as a first approximation, we solve 
+We assume that $|\rho_m|$ decreases with $m$, so that in \eq{eq:ode2} the $\mathcal{C}_m\rho_{m+2}$ term has smallest magnitude.  Neglecting it as a first approximation, we solve 
 }
 \blue{
 \begin{align}
@@ -845,8 +852,10 @@ We assume that $\rho_m$ decreases with $m$, so that in \eq{eq:ode2} the $\mathca
 \end{cases}
 \end{align}
 The solutions are 
-\begin{align}\label{eq:series}
-\rho_m (z)= b_m z^m\exp{(-z^2/4)}, 
+\begin{align}\label{eq:series1}
+\rho_m (z)= b_m g_m(z),
+%\begin{align}\label{eq:series}
+%\rho_m (z)= b_m z^m\exp{(-z^2/4)}, 
 \end{align}
 with
 \begin{align}
@@ -865,7 +874,7 @@ for even $m\geq 2$.
 The source term approximation assumes 
 $R\equiv|\mathcal{C}_m\rho_{m+2}|/|\mathcal{A}_m\rho_m| \ll 1.$ 
 For given $z$, the solution $\rho_m=b_mg_m$ is consistent with this requirement if $|k_m^2|\gg1$, corresponding to small Stokes number.  
- However, this approximation will eventually fail for large $z$ because the solution above implies $R\propto z^4$ for $z\gg1$. Thus the solution is only self-consistent for sufficiently small $z$ and/or $\St$. Nevertheless,
+ However, this approximation will eventually fail for large $z$ because the solution above implies $R\propto z^4$ for $z\gg1$. Thus the solution is only self-consistent for sufficiently small $z$ and/or $\overline{\St}$. Nevertheless,
 we comment that the closed-formed solutions obtained here may be useful in
 an iterative scheme to obtain numerical solutions to the full set of ODE's. 
 }
@@ -905,7 +914,7 @@ and truncating the series at $m=2$ is no longer self-consistent.
 %(higher $m$ components should be included) 
 However, in practice the ratio $|b_2/b_0|$ is small. 
 For example, inserting $\chi=4$ gives $|b_2/b_0|\simeq0.1\%$ for
-$\mathrm{St}=0.1$ and $|b_2/b_0|\sim 1\%$ for $\mathrm{St}=1$. Since
+$\overline{\St}=0.1$ and $|b_2/b_0|\sim 1\%$ for $\overline{\St}=1$. Since
 most of the dust is contained within $z\lesssim 1$, we conclude that
 non-axisymmetry is {\it in general} a small effect.}
 
@@ -927,10 +936,10 @@ where we have used the definition of $k_m$ \blue{and set $b_0=1$
   without loss of generality}. %We see that non-axisymmetric effects
 %are weak for $\mathrm{St}\ll1$ because $B\propto \mathrm{St}$.  
 In the previous section, we obtained the axisymmetric solution
-assuming the axisymmetric components are negligible. 
+assuming the \blue{non-}axisymmetric components are negligible. 
 Here, we see explicitly that the axisymmetric solution in fact leads
 to non-axisymmetry through the coupling terms, but these corrections
-are small for $\St \ll 1, because B \propto \St$. We conclude that dust in the vortex core is effectively axisymmetric.
+are small for $\overline{\St} \ll 1$, because $B \propto \overline{\St}$. We conclude that dust in the vortex core is effectively axisymmetric.
 %This makes sense because the force on the dust along the ellipse is proportional to $\mathrm{St}$. 
 
 \subsubsection{Consistency check}
@@ -945,8 +954,8 @@ $\epsilon(z)$ has a negligible contribution to $\rho_2$. We find
 
 Provided that $|k_2^2|\gg1$ \blue{and $z$ is not large},  
 this term is indeed small compared to the first term on the RHS of \eq{eq:m2_eq2}.  \blue{For example, considering $z=1$, 
-for $\chi=4$ and $\mathrm{St}=0.1$ we obtain $|\mathcal{B}_2\epsilon|/|\mathcal{B}_2\rho_0|\simeq0.02$. 
-Even with $\mathrm{St}=1$, this ratio $\sim0.2$ is not large. We
+for $\chi=4$ and $\overline{\St}=0.1$ we obtain $|\mathcal{B}_2\epsilon|/|\mathcal{B}_2\rho_0|\simeq0.02$. 
+Even with $\overline{\St}=1$, this ratio $\sim0.2$ is not large. We
 conclude that}  our solution procedure above is self-consistent.
 
 \section{\blue{Observational predictions}}
@@ -1011,7 +1020,7 @@ We also solve for the non-axisymmetric problem, but with
 approximations that render the solution valid only within 
 the inner $H_V$ of distance from the vortex center. The solution is
 \eq{eq:series-n}, with \blue{``radial'' basis functions given by
-  \eq{eq:series} and} coefficients given by \eq{eq:induction}. In practice, the magnitude
+\eq{eq:series1} and} coefficients given by \eq{eq:induction}. In practice, the magnitude
 of the higher non-axisymmetric modes fall fast as $m$ increases, and 
 only the $m=2$ term would provide an appreciable deviation from
 axisymmetry. \blue{We find that non-axisymmetry in dust 

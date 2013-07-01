@@ -81,14 +81,14 @@ oplot,a,rhog[*,3],li=3,color=50
 
 sdelta=textoidl("\delta")
 
-legend,[sdelta+"/St=10",sdelta+"/St=1",sdelta+"/St=0.1"],$
+;legend,[sdelta+"/St=10",sdelta+"/St=1",sdelta+"/St=0.1"],$
+legend,["!8S!x=0.1","!8S!x=1","!8S!x=10"],$
        li=[3,0,2],color=[0,0,0],box=0,$
        position=[2.8,0.5],charsize=0.9
 
 ;xyouts,.85,0.15,sdelta+"/St=0.1",orientation=-50
 ;xyouts,2.25,0.315,sdelta+"/St=1",orientation=-40
 ;xyouts,3.5,0.735,sdelta+"/St=10",orientation=-30
-
 
 
 if (ps eq 1) then begin
