@@ -5,5 +5,10 @@ paper: trapping.tex
 	pdflatex trapping
 	open trapping.pdf
 
+nonaxi: nonaxi.tex
+	pdflatex nonaxi
+	pdflatex nonaxi
+	open nonaxi.pdf
+
 clean:
 	rm -f *.log *.aux *.dvi *.ps *.pdf
