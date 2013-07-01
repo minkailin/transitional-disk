@@ -55,8 +55,8 @@
 \newcommand{\eeq}{\end{equation}}
 \newcommand{\beqn}{\begin{eqnarray}}
 \newcommand{\eeqn}{\end{eqnarray}}
-\newcommand{\epsp}{\varepsilon_{_{+}}}
-\newcommand{\epsm}{\varepsilon_{_{-}}}
+\newcommand{\epsp}{\xi_{_{+}}}
+\newcommand{\epsm}{\xi_{_{-}}}
 \newcommand{\tilchi}{\tilde\chi}
 \newcommand{\tauf}{\tau_{\rm \blue{f}}}
 
@@ -351,7 +351,7 @@ $C$ & $=-\Div{\v{v}}$ &  \\
 $A$ & $=\varOmega_V/D$ & \\
 $B$  &$=C/D$ & \\
 $\nu$ & & azimuth in vortex reference frame\\
-$\varepsilon_\pm$ & $ = 1\pm\chi^{-2}$ \\
+$\xi_\pm$ & $ = 1\pm\chi^{-2}$ \\
 $H$ & $c_s/\varOmega$ & sonic scale, gas scale height\\
 $\delta$ & $D=\delta c_s H$ & dimensionless diffusion parameter\\
 $f(\chi)$ & \eq{eq:scale-function} & scale function \\
@@ -448,7 +448,7 @@ The transformations are therefore
                 &+& \frac{\sin 2\nu}{a^2} \epsm\partial_\nu, \label{eq:laplace}
 \eeqn
 
-\noindent with $\varepsilon_{\pm} = (1 \pm \chi^{-2})$.  As for the advection term, we have 
+\noindent with $\xi_{\pm} = (1 \pm \chi^{-2})$.  As for the advection term, we have 
 
 \beqn
 \v{v}\cdot\del &=& (\v{u} + \tau \grad h) \cdot \del \nonumber \\
@@ -502,7 +502,7 @@ not relevant in the $\nu$-averaged problem. The solution of
 the exponential integral function. Since it diverges at the origin, $c_2$ has to be zero, and 
 
 \beq
-\rho_d(a) = \rho_{d0} \exp\left(-\frac{a^2}{2H_V^2}\right),
+\rho_d(a) = \rho_{d\,{\rm max}} \ \exp\left(-\frac{a^2}{2H_V^2}\right),
 \label{eq:gen_axi}
 \eeq
 
@@ -543,7 +543,7 @@ used. We plot $f(\chi)$ for the Kida and GNG solutions in
 \fig{fig:scale-function}. They are defined in the real axis only for $\chi > 2$ ($f^2
 < 0$ for $0 < \chi < 2$ ). The Goodman solution tends to an asymptote
 around 0.7. The Kida solution has a  tail around $0.5\pm0.25$ in the
-interval of physical relevance ($2 < \chi \lesssim 10$). The dust distribution is thus 
+interval of physical relevance ($2 < \chi \lesssim 10$). %The dust distribution is thus 
 
 \begin{figure}
   \begin{center}
@@ -563,33 +563,56 @@ interval of physical relevance ($2 < \chi \lesssim 10$). The dust distribution i
  \label{fig:scale-function}
 \end{figure}
 
-Dust distributions for different values of \blue{$S$} are plotted in \fig{fig:gaussian}, as a 
-function of $a/H$. We show in \fig{fig:disk}, in the inertial frame, 
+%Dust distributions for different values of \blue{$S$} are plotted in \fig{fig:gaussian}, as a 
+%function of $a/H$. 
+We show in \fig{fig:disk}, in the inertial frame, 
 the dust distribution for \blue{$S$}=1 in a Kida vortex of $\chi=4$ embedded in a 
 disk of aspect ratio $H/r$=0.1, where $r$ is the stellocentric
-distance. \blue{We highlight that for tracer particles ($\St=0$), the dust distribution should
+distance. \blue{It is worth noting that for certain vortex models and/or
+aspect-ratios, the Gaussian solution, \label{eq:dust-trapping-uvzero}, is in fact an 
+exact solution to th dust-steady state equation.  We will explore this
+in more detail  in 
+\sect{sect:nonaxisymmetric}, but one can check this by inserting
+\eq{eq:gen_axi} into 
+\eq{eq:axi} and finding the condition for the coefficient of the trigonometric terms to vanish. In this special case, the $\nu$-integration is not needed.} 
+%}
+
+\blue{\subsection{Gas distribution and dust density enhancement}}
+
+\blue{Next we need to find $\rho_{d\,{\rm max}}$, the maximum of dust
+  density that appears in \eq{eq:gen_axi}, that should be a function
+  of $S$. For that, we recall that for tracer particles ($\St=0$), the dust distribution should
   mimic that of the gas. This immediatelly tells us the gas
   distribution: an exponential like \eq{eq:gen_axi}
 \beq
-\rho_g(a) = \rho_{g0} \exp\left(-\frac{a^2}{2H_g^2}\right), \label{eq:gas_axi}
+\rho_g(a) = \rho_{g\,{\rm max}} \ \exp\left(-\frac{a^2}{2H_g^2}\right), \label{eq:gas_axi}
 \eeq
-\noindent with $H_g = {H_V}{\vert_{\St=0}} = H/f(\chi)$. Notice also
-that for $\St=0$ the effect of diffusion cancels out. This is because
+\noindent with $H_g = {H_V}{\vert_{\St=0}} = H/f(\chi)$ and $\rho_{g\,max}$, the maximum gas density.  
+Notice that for $\St=0$ the effect of diffusion cancels out. This is because
 the diffusion is proportional to the gradient of the dust-to-gas
-ratio \eqp{eq:j-flux}, which is zero for tracer particles.}
+ratio \eqp{eq:j-flux}, which is zero for tracer
+particles. \eq{eq:gen_axi} and \eq{eq:gas_axi} also allows us to calculate the gas-dust
+density constrast, and, therefore, $\rho_{d\,max}$ as a function of
+$\rho_{g\,max}$. For that, we calculate the surface integral of $\rho_d$
+and $\rho_g$}
 
-\begin{figure}
-  \begin{center}
-    \resizebox{\columnwidth}{!}{\includegraphics{../figs/gaussian.png}}
-  \end{center}
-\caption[]{Dust distribution for the axisymmetric case. As in
-  \fig{fig:scale-function}, red and blue lines are for the Kida and
-  GNG solutions, respectively. Distributions for \blue{$S$}=0.1, 1, and
-  10 are shown (\blue{dot-}dashed, solid, and \red{dot-}dashed lines). The $x$-axis is
-  $a/H$, where $H$ is the gas scale height. There is degeneracy
-  between $\delta/\St$ and $f(\chi)$, as is clear from \eq{eq:hv}.}
- \label{fig:gaussian}
-\end{figure}
+\blue{
+\beqn
+\oint\rho_d(a) dA  &=& \rho_{d\,{\rm max}} \ \int_0^{2\pi}\int_0^\infty {\rm e}^{-a^2/2H_g^2 \ (S+1)} \ a\chi \ da\,d\nu\notag\\
+&=& \rho_{d\,{\rm max}} \ \frac{2\pi \chi H_g^2}{S+1}, \label{eq:int-dust}\\ 
+\oint\rho_g(a) dA  &=& \rho_{g\,{\rm max}} \ \int_0^{2\pi}\int_0^\infty {\rm e}^{-a^2/2H_g^2} \ a\chi \ da\,d\nu\notag\\
+ &=& \rho_{g\,{\rm max}} \ 2\pi \chi H_g^2. \label{eq:int-gas}\\
+\eeqn \noindent Dividing \eq{eq:int-dust} by \eq{eq:int-gas}, the
+ratio of the integrals in the left hand sides is the global dust-to-gas
+ratio, $\varepsilon$. The density enhancement factor is thus 
+\beq
+  \rho_{d\,{\rm max}} =  \varepsilon \ \rho_0 \ (S+1) 
+\eeq where $\rho_0=\rho_{g\,{\rm max}}$ is an appropriate reference
+density. Because we did not include the vertical direction, this
+density enhancement is caused by the vortex motion alone (vertical
+integration would include the effect of sedimentation). Dust
+distributions for different values of \blue{$S$} are plotted in \fig{fig:gaussian}, as a 
+function of $a/H$.}
 
 \begin{figure}
 \begin{center}
@@ -601,15 +624,20 @@ for \blue{$S$}=1, in a disk of aspect ratio $H/r$=0.1.}
  \label{fig:disk}
 \end{figure}
 
-%\subsection{Exact solutions}
-\blue{It is worth noting that for certain vortex models and/or
-aspect-ratios, the Gaussian solution, \label{eq:dust-trapping-uvzero}, is in fact an 
-exact solution to th dust-steady state equation.  We will explore this
-in more detail  in 
-\sect{sect:nonaxisymmetric}, but one can check this by inserting
-\eq{eq:gen_axi} into 
-\eq{eq:axi} and finding the condition for the coefficient of the trigonometric terms to vanish. In this special case, the $\nu$-integration is not needed.} 
-%}
+\begin{figure}
+  \begin{center}
+    \resizebox{\columnwidth}{!}{\includegraphics{../figs/gaussian.png}}
+  \end{center}
+\caption[]{Dust distribution for the axisymmetric case. As in
+  \fig{fig:scale-function}, red and blue lines are for the Kida and
+  GNG solutions, respectively. Distributions for \blue{$S$}=0.1, 1, and
+  10 are shown (\blue{dot-}dashed, solid, and \red{dot-}dashed lines). The $x$-axis is
+  $a/H$, where $H$ is the gas scale height. There is degeneracy
+  between \blue{$S$} and $f(\chi)$, as is clear from \eq{eq:hv}.}
+ \label{fig:gaussian}
+\end{figure}
+
+
 
 %\subsection{Axisymmetric $\v{u} = \v{v}$ }
 %It is illustrative to consider the case in which $|\v{u}| \gg \tau|\grad{h}|$,
@@ -686,6 +714,7 @@ in more detail  in
 %distribution in the vortex core.} 
 % \label{fig:bessel-gaussian}
 %\end{figure}
+
 
 \section{Non-axisymmetric corrections}
 \label{sect:nonaxisymmetric} 
@@ -973,7 +1002,7 @@ magneto-rotational instability \citep[MRI,][]{Balbus-Hawley91}, whereas the form
 magneto-elliptic instability (see \citealt{Lyra13} and references
 therein). A way to determine $\delta$ would be to measure the spatial rms of
 the velocity field inside the vortex. The degeneracy between the
-parameters ($H$, $\chi$, $\delta/\St$) and the vortex angular frequency
+parameters ($H$, $\chi$, $\blue{S}$) and the vortex angular frequency
 would also be resolved by measuring the velocity field. As these
 vortices are very extended spatially, measuring their velocity field
 should be possible with the exquisite angular resolution of ALMA.
@@ -981,7 +1010,7 @@ should be possible with the exquisite angular resolution of ALMA.
 We also solve for the non-axisymmetric problem, but with
 approximations that render the solution valid only within 
 the inner $H_V$ of distance from the vortex center. The solution is
-\eq{eq:series-n}, with \blue{``radial'' function given by
+\eq{eq:series-n}, with \blue{``radial'' basis functions given by
   \eq{eq:series} and} coefficients given by \eq{eq:induction}. In practice, the magnitude
 of the higher non-axisymmetric modes fall fast as $m$ increases, and 
 only the $m=2$ term would provide an appreciable deviation from
