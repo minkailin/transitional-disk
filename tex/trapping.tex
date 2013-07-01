@@ -587,26 +587,32 @@ the diffusion is proportional to the gradient of the dust-to-gas
 ratio \eqp{eq:j-flux}, which is zero for tracer
 particles. \eq{eq:gen_axi} and \eq{eq:gas_axi} also allows us to calculate the gas-dust
 density constrast, and, therefore, $\rho_{d\,{\rm max}}$ as a function of
-$\rho_{g\,{\rm max}}$. For that, we calculate the surface integral of $\rho_d$
-and $\rho_g$}
+$\rho_{g\,{\rm max}}$. For that, we calculate the volume integral of $\rho_d$
+and $\rho_g$. These, in turn, need the dependencies on $z$. So far we
+have only considered midplane densities, so we need the dependencies on $z$. 
+These are straightforward, being $\exp(-z^2/2H^2)$ for the gas and
+$\exp(-z^2/2H_d^2)$ for the dust, with $H_d=H/\sqrt{(1+S)}$. Integrated
+over plus and minus infinity, these yield $\sqrt{2\pi}H$ and
+$\sqrt{2\pi}H_d$, respectively. We have thus}
 
 \blue{
 \beqn
-\oint\rho_d(a) dA  &=& \rho_{d\,{\rm max}} \ \int_0^{2\pi}\int_0^\infty {\rm e}^{-a^2/2H_g^2 \ (S+1)} \ a\chi \ da\,d\nu\notag\\
-&=& \rho_{d\,{\rm max}} \ \frac{2\pi \chi H_g^2}{S+1}, \label{eq:int-dust}\\ 
-\oint\rho_g(a) dA  &=& \rho_{g\,{\rm max}} \ \int_0^{2\pi}\int_0^\infty {\rm e}^{-a^2/2H_g^2} \ a\chi \ da\,d\nu\notag\\
- &=& \rho_{g\,{\rm max}} \ 2\pi \chi H_g^2. \label{eq:int-gas}\\
-\eeqn \noindent Dividing \eq{eq:int-dust} by \eq{eq:int-gas}, the
+\int\rho_d(a,z) dV  &=& \rho_{d\,{\rm max}} \ \frac{(2\pi)^{3/2}}{\sqrt{S+1}} H \int_0^\infty {\rm  e}^{-a^2/2H_g^2 \ (S+1)} \ a\chi \ da \notag\\
+&&= \rho_{d\,{\rm max}} \ \left(\frac{2\pi}{S+1}\right)^{3/2} \chi H H_g^2, \label{eq:int-dust}\\ 
+%
+\int\rho_g(a,z) dV  &=& \rho_{g\,{\rm max}} \ (2\pi)^{3/2} H \int_0^\infty {\rm e}^{-a^2/2H_g^2} \ a\chi \ da\ \notag\\
+ &&= \rho_{g\,{\rm max}} \ (2\pi)^{3/2} \chi H H_g^2. \label{eq:int-gas}\\
+\eeqn 
+\noindent Dividing \eq{eq:int-dust} by \eq{eq:int-gas}, the
 ratio of the integrals in the left hand sides is the global dust-to-gas
 ratio, $\varepsilon$. The density enhancement factor is thus 
 \beq
-  \rho_{d\,{\rm max}} =  \varepsilon \ \rho_0 \ (S+1) 
+  \rho_{d\,{\rm max}} =  \varepsilon \ \rho_0 \ (S+1)^{3/2} \label{eq:maxrhod}
 \eeq where $\rho_0=\rho_{g\,{\rm max}}$ is an appropriate reference
-density. Because we did not include the vertical direction, this
-density enhancement is caused by the vortex motion alone (vertical
-integration would include the effect of sedimentation). Dust
+density. In this enhancement, only a third (in log) is caused by sedimention. The
+rest is due to in-plane vortex capturing. Dust
 distributions for different values of \blue{$S$} are plotted in \fig{fig:gaussian}, as a 
-function of $a/H$.}
+function of $a/H_g$.}
 
 \begin{figure}
 \begin{center}
@@ -622,12 +628,13 @@ for \blue{$S$}=1, in a disk of aspect ratio $H/r$=0.1.}
   \begin{center}
     \resizebox{\columnwidth}{!}{\includegraphics{../figs/gaussian.png}}
   \end{center}
-\caption[]{Dust distribution for the axisymmetric case. As in
-  \fig{fig:scale-function}, red and blue lines are for the Kida and
-  GNG solutions, respectively. Distributions for \blue{$S$}=0.1, 1, and
-  10 are shown (\blue{dot-}dashed, solid, and \red{dot-}dashed lines). The $x$-axis is
-  $a/H$, where $H$ is the gas scale height. There is degeneracy
-  between \blue{$S$} and $f(\chi)$, as is clear from \eq{eq:hv}.}
+\caption[]{Dust distribution for the axisymmetric case. Curves for
+  \blue{$S$}=\blue{0,} 0.1, 1, 10, and \blue{100} are shown. \blue{The
+  $S$=0 case represents tracer particles and, consequently, the gas
+  density. The $x$-axis is $a/H_g$, where $H_g=H/f(\chi)$ is the
+  vortex scale length in the gas phase, with $H$ the sonic scale and
+  $f(\chi)$ the model-dependent scale function
+  \eqp{eq:scale-function}.}}
  \label{fig:gaussian}
 \end{figure}
 
@@ -958,16 +965,52 @@ for $\chi=4$ and $\overline{\St}=0.1$ we obtain $|\mathcal{B}_2\epsilon|/|\mathc
 Even with $\overline{\St}=1$, this ratio $\sim0.2$ is not large. We
 conclude that}  our solution procedure above is self-consistent.
 
-\section{\blue{Observational predictions}}
+\blue{\section{Observational predictions}}
 
-\subsection{\blue{Density constrast}}
-\subsubsection{\blue{As a function of St}}
+\blue{\subsection{Density constrast}}
 
-\subsection{\blue{Trapped mass}}
-\subsubsection{\blue{As a function of St}}
+\blue{As given by \eq{eq:gen_axi} and \eq{eq:maxrhod}, the dust density is 
+\beq
+   \rho_d(a,z) = \varepsilon \, \rho_0 \, (S+1)^{3/2} \  \exp{\left\{-\frac{\left[a^2f^2(\chi) + z^2\right]}{2H^2}(S+1)\right\}} 
+\label{eq:sect6-exp}
+\eeq where $\varepsilon$ is the global dust-to-gas ratio, $\rho_0$ is the
+maximum gas density, $S=\St/\delta$ with $\St$ the Stokes number and $\delta$
+the dimensionless diffusion parameter, $a$ the semi-minor axis of the
+vortex, $\chi$ its aspect ratio, $f(\chi)$ the model dependent scale
+function \eqp{eq:scale-function}, and $H$ the disk sonic scale. The
+dust densities for different values of S are plotted in
+\fig{fig:gaussian}; the curve $S$=0 corresponds to the density of tracer
+particles, i.e., the gas density.} 
 
-\subsection{\blue{Comparison between this work and Birnstiel et
-    al. 2013}}
+\blue{In \fig{fig:gaussian} we plot the $x$-axis as $a/H_g$, where
+$H_g=H/f(\chi)$ is the scale length of the gas \eqp{eq:gas_axi}, 
+and thus model-dependent. Luckily, the degeneracy between $f(\chi)$ and $S$ in
+the exponential in \eq{eq:sect6-exp} is easily resolved by noticing
+that the maximum dust density, $\rho_{d,\,{\rm max}} = \varepsilon \,
+\rho_0 \, (S+1)^{3/2}$ , is determined by $S$ but not $\chi$. So, given that
+the peak gas density can be measured (and the global dust to gas
+ratio), $S$ is immediatelly determined.}
+
+\blue{The contrast in the same orbit $r_0$ is found by writing
+  $a^2=x^2+y^2/\chi^2$, substituting the shearing sheet coordinates
+  $x=r-r_0$ and $y=r_0 \phi$, setting $r=r_0$ and comparing the
+  maximum and minimum density,  respectivelt, the densities at
+  $\phi=0$ and $\phi=\pi$. This procedure yields
+\beq
+  \frac{\rho_{d\,{\rm max}}}{\rho_{d\,{\rm min}}} = \exp\left[\frac{\pi^2}{2h^2}\frac{f^2(\chi)}{\chi^2}(S+1)\right] 
+\eeq 
+\noindent where $h=H/r_0$ is the disk aspect ratio at the location of
+the vortex (not to be confused with gas enthalpy).} 
+
+
+\blue{\subsection{Trapped mass}}
+
+\blue{For the total trapped mass for a particular grain size, we simply need
+to integrate the equation 
+\beq
+\int\rho_d(a,z) dV  = \left(2\pi\right)^{3/2} \chi H H_g^2 \, \varepsilon \, \rho_0 \label{eq:int-dust}\\ 
+\eeq
+}
 
 \subsection{\blue{Spectral signatures}}
 
