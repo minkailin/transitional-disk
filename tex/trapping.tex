@@ -262,6 +262,11 @@ compressible Euler equations
 \varOmega_V=\varOmega\sqrt{3/(\chi^2-1)}.
 \eeq
 
+\blue{We comment that the GNG solution was used to model vortices found in non-linear hydrodynamic simluations of the Papaloizou-Pringle instability \citep{Hawley87}, which is similar to the RWI. Recently, \cite{Lin-Papaloizou11a} explicitly simulated the RWI at planetary gap edges and found that in quasi-steady state, the RWI vortices resemble  vortices formed by perturbing the disk with the Kida solution. We thus believe the above solutions are suitable as a first model for disk vortices.  However, it is straight forward to generalize the solutions 
+below to any flow in the form $u_x\propto y$ and $u_y\propto x$. 
+}
+
+
 We note that the dust
 velocity is comprised of a divergent-free part, $\v{u}$, and a
 curl-free part, $\tau\nabla{h}$. The vortex flow attempts to keep the
@@ -286,10 +291,10 @@ the force balance yields
 \pderiv{h}{x} &=& 3\varOmega^2 x + 2\varOmega u_y -
 u_y\pderiv{u_x}{y} \nonumber \\
 &=& \left(3\varOmega^2 - 2\varOmega\varOmega_V \chi + \varOmega_V^2\right) x
-= -\frac{C_1}{\tau} \  x,  \\
+= -\frac{C_1}{\tau} \  x,  \label{eq:gas_mom1}\\
 \pderiv{h}{y} &=& - 2\varOmega u_x -
 u_x\pderiv{u_y}{x} \nonumber \\
-&=& \left(-2\varOmega\varOmega_V/\chi + \varOmega_V^2\right) y = -\frac{C_2}{\tau} \  y.
+&=& \left(-2\varOmega\varOmega_V/\chi + \varOmega_V^2\right) y = -\frac{C_2}{\tau} \  y.\label{eq:gas_mom2}
 \end{eqnarray}
 
 \noindent  Substituting the equations above into \eq{eq:divv}, also
@@ -572,16 +577,23 @@ distance.
 
 \blue{\subsection{Gas distribution and dust density enhancement}}
 
-\blue{Next we need to find $\rho_{d\,{\rm max}}$, the maximum of dust
-  density that appears in \eq{eq:gen_axi}, that should be a function
-  of $S$. For that, we recall that for tracer particles ($\St=0$), the dust distribution should
+\blue{Next we find $\rho_{d\,{\rm max}}$, the maximum of dust
+  density that appears in \eq{eq:gen_axi}, as a function
+  of $S$ and the total dust-to-gas mass ratio. 
+  For that, we recall that for tracer particles ($\St=0$), the dust distribution should
   mimic that of the gas. This immediatelly tells us the gas
   distribution: an exponential like \eq{eq:gen_axi}
 \beq
 \rho_g(a) = \rho_{g\,{\rm max}} \ \exp\left(-\frac{a^2}{2H_g^2}\right), \label{eq:gas_axi}
 \eeq
 \noindent with $H_g = {H_V}{\vert_{\St=0}} = H/f(\chi)$ and
-$\rho_{g\,{\rm max}}$, the maximum gas density.  
+$\rho_{g\,{\rm max}}$, the maximum gas density.  Note that 
+\eq{eq:gas_axi} is the gas density averaged over $\nu$ at fixed $a$.  (One may  
+directly integrate the gas momenta equations to see that the gas density/pressure generally depends on
+both $a$ and $\nu$.) 
+}
+
+\blue{
 Notice that for $\St=0$ the effect of diffusion cancels out. This is because
 the diffusion is proportional to the gradient of the dust-to-gas
 ratio \eqp{eq:j-flux}, which is zero for tracer
@@ -609,7 +621,9 @@ ratio, $\varepsilon$. The density enhancement factor is thus
 \beq
   \rho_{d\,{\rm max}} =  \varepsilon \ \rho_0 \ (S+1)^{3/2} \label{eq:maxrhod}
 \eeq where $\rho_0=\rho_{g\,{\rm max}}$ is an appropriate reference
-density. In this enhancement, only a third (in log) is caused by sedimention. The
+density. \eq{eq:maxrhod} shows that the dust-to-gas ratio at the origin (vortex center)
+is related to the total dust-to-gas mass ratio by a simple function of $S$.  
+In this enhancement, only a third (in log) is caused by sedimention. The
 rest is due to in-plane vortex capturing. Dust
 distributions for different values of \blue{$S$} are plotted in \fig{fig:gaussian}, as a 
 function of $a/H_g$.}
@@ -642,7 +656,7 @@ for \blue{$S$}=1, in a disk of aspect ratio $H/r$=0.1.}
 %\subsection{Exact solutions}
 \blue{It is worth noting that for certain vortex models and/or
 aspect-ratios, the Gaussian solution, \eq{eq:gen_axi}, is in fact an 
-exact solution to th dust-steady state equation, \eq{eq:dust-trapping-uvzero}.  
+exact solution to the dust-steady state equation, \eq{eq:dust-trapping-uvzero}.  
 We will explore this in more detail  in \sect{sect:nonaxisymmetric}, but one can check this by inserting
 \eq{eq:gen_axi} into \eq{eq:dust-trapping-uvzero}, and finding the condition 
 for the coefficient of the trigonometric terms to vanish. 
@@ -762,8 +776,7 @@ ordinary differential equations,
 \red{\tilchi}\mathcal{B}_m\rho_{m-2} (z)+ \mathcal{A}_m\rho_m(z) + \red{\tilchi}\mathcal{C}_m\rho_{m+2}(z) = 0,
 \eeq
 }
-
-where $z\equiv ka$, \red{$\tilchi\equiv(\chi^2-1)/[2(\chi^2+1)]$,} and
+where $z\equiv ka$ \blue{(not to be confused with the Cartesian co-ordinate)}, \red{$\tilchi\equiv(\chi^2-1)/[2(\chi^2+1)]$,} and
 
 \beqn
 \mathcal{B}_m &\equiv& \blue{\tilchi}\frac{d^2}{dz^2} + \left[\blue{\beta z}-
@@ -880,7 +893,7 @@ for even $m\geq 2$.
 \blue{
 The source term approximation assumes 
 $R\equiv|\mathcal{C}_m\rho_{m+2}|/|\mathcal{A}_m\rho_m| \ll 1.$ 
-For given $z$, the solution $\rho_m=b_mg_m$ is consistent with this requirement if $|k_m^2|\gg1$, corresponding to small Stokes number.  
+For given $z$, the solution $\rho_m=b_mg_m$ is consistent with this requirement if $|k_m^2|\gg1$, corresponding to small effective Stokes number.  
  However, this approximation will eventually fail for large $z$ because the solution above implies $R\propto z^4$ for $z\gg1$. Thus the solution is only self-consistent for sufficiently small $z$ and/or $\overline{\St}$. Nevertheless,
 we comment that the closed-formed solutions obtained here may be useful in
 an iterative scheme to obtain numerical solutions to the full set of ODE's. 
@@ -890,7 +903,7 @@ an iterative scheme to obtain numerical solutions to the full set of ODE's.
 \subsection{Weakly non-axisymmetric dust distributions}
 We are now ready to construct non-axisymmetric solutions. 
 %The previous results indicate the axisymmetry is possible if there is no pressure gradients along the ellipse. 
-Consider a Keplerian Kida vortex with $\chi\neq 7$, meaning that the
+Consider a Keplerian Kida vortex with $\chi\neq 7$, meaning that the effective 
 frictional force on the dust has a non-vanishing component along the
 fluid velocity vector. (I.e. dust particles are accelerated along the
 ellipse.) We assume non-axisymmetry in the dust distribution is
