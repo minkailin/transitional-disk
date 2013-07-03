@@ -642,7 +642,7 @@ for \blue{$S$}=1, in a disk of aspect ratio $H/r$=0.1.}
 %\subsection{Exact solutions}
 \blue{It is worth noting that for certain vortex models and/or
 aspect-ratios, the Gaussian solution, \eq{eq:gen_axi}, is in fact an 
-exact solution to th dust-steady state equation, \eq{eq:dust-trapping-uvzero}.  
+exact solution to the dust-steady state equation, \eq{eq:dust-trapping-uvzero}.  
 We will explore this in more detail  in \sect{sect:nonaxisymmetric}, but one can check this by inserting
 \eq{eq:gen_axi} into \eq{eq:dust-trapping-uvzero}, and finding the condition 
 for the coefficient of the trigonometric terms to vanish. 
@@ -1012,11 +1012,64 @@ to integrate the equation
 \eeq
 }
 
-\subsection{\blue{Spectral signatures}}
+\subsection{\blue{Measuring delta}}
 
-\subsubsection{\blue{Doppler broadening due to turbulence in the vortex core}}
+The last thing left to do is to disentangle $\St$ from $\delta$ in the
+parameter $S$. The parameter is measured directly from the maximum dust density,
+provided that the dust-to-gas ratio and the gas density are known, 
+acoording to \eq{eq:rhomax}. 
 
-\subsubsection{\blue{Rotational broadening due to vortical motion}}
+Another way to measure $\delta$ would be by measuring the
+turbulence inside the vortex core directly. This turbulence is
+subsonic, at about 10\% of the sound speed \cite{LyraKlahr11}. For gas
+at 60\,K, it corresponds to an rms velocity of 0.3\,km/s. This should
+have an effect similar to microturbulence, providing an slight extra
+broadening to the Doppler core of spectral lines. The velocity is
+small, but in principle detectable (\cite{vanderMarel13} report a
+sensitivity limit of ALMA if of 0.2\,km/s for their observations of
+Oph IRS 48). 
+
+% 30 mili-arcseconds. spatial resolution
+
+\subsection{\blue{Application to Oph IRS 48}}
+
+%\chi=3.1
+%T=60K (assuming? typical dust temperature?) 
+%mass=9 earth
+%center=63
+%extent:45-80 AU
+%a_\bullet = up to 4 mm
+%(sigmal to noise = 390)
+%density constrast: 130 (same orbit)
+%gas density: 5x(1e-14 - 1e-15) g/cm3 
+
+
+%funnybits: quartic gaussians; Sigmar = Sigmar*exp(-(r-rc)^4/2*rw^4),
+%ditto for phi
+%Rc=63, Rw=18 , Phic=95, phiw=50
+%Mgas = 19 and 27 Jup masses of gas
+%rhod=0.8 g/cm3
+
+%The Stokes number is 
+
+%\beq
+%    \St = \tau  \varOmega = \sqrt{\frac{\pi}{8}} \ \frac{a_\bullet}{H}\frac{\rho_\bullet}{\rho_g}
+%\eeq
+
+%\noindent where a_\bullet is the particle radius and \rho_\bullet the
+%particle internal density. For the possible vortex seen with 
+
+
+
+%\rho_{d\,{\rm max}} =  \varepsilon \ \rho_0 \ (S+1)^{3/2}
+
+
+% With maximum dust density
+% Or turbulent broadening 
+% probably maximum dust density is simpler
+% (but needs to know what the gas density is, to measure the Stokes
+% number)
+
 
 \section{Conclusions}
 
