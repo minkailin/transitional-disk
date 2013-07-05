@@ -221,7 +221,7 @@ for the dust, we make use of the relative velocity, following
 \noindent where $\v{u}$ is the gas velocity. \eq{eq:w} is 
 accurate to first order in friction time $\tauf$, assumed 
 constant. \blue{For isentropic gas, t}he enthalpy $h$ is defined as $dh = dp /\rho_g$, where $p$ 
-is the pressure \red{ and $\rho_g$ the gas density}. \blue{As noted by
+is the pressure. \blue{As noted by
 \cite{Charnoz11}, \eq{eq:continuity-w} can be written as a typical continuity equation with Laplacian diffusion 
 \beq
 \partial_t \rho_d = -(\v{v} \cdot\del)\rho_d - \rho_d \Div{\v{v}} + D\Laplace\rho_d \label{eq:continuity}
@@ -490,7 +490,7 @@ The dust-trapping equation is therefore
 %\blue{We remark that a very similar equation  can be derived  when the diffusive flux is modeled as $D\rho_g\nabla(\rho_d/\rho_g)$, as used by \cite{Birnstiel13} . In fact, by redefining the friction time, 
 %our solution below can be made applicable to this case as well.} 
 
-\section{``Axisymmetric'' \red{dust distribution} \blue{solution}}
+\section{``Axisymmetric'' \blue{solution}}
 \label{sect:axisymmetric}
 
 \blue{\subsection{Dust distribution}}
@@ -736,12 +736,9 @@ for \blue{$S$}=1, in a disk of aspect ratio $H/r$=0.1. \blue{We
 \label{sect:nonaxisymmetric} 
 
 We \blue{now} consider the non-axisymmetric problem ($\partial_\nu\neq0$)\blue{.} 
-\red{inside the vortex core in the limit $\St \ll 1$. We formally set $\v{v} = \v{u}$ in the advection term 
-$\v{v}\cdot\del$. This problem is artificial but isolates non-axisymmetries that arise in the 
-situation where dust is effectively advected by the vortex.} We explicitly show that such effects are small 
+We explicitly show that such effects are small 
 \blue{in the vortex core} provided the \blue{effective} Stokes number \blue{$\overline{\mathrm{St}}\equiv\mathrm{St}+\delta$} is not large. \blue{These requirements will become
-apparent as we proceed through the solution method.} \red{The procedure outlined below also serves as a basis for future 
-work on the non-axisymmetric problem including full dust velocity.}
+apparent as we proceed through the solution method.} 
 
 
 \subsection{Conversion to ordinary differential equations}
@@ -762,10 +759,10 @@ ordinary differential equations,
 
 \blue{
 \beq\label{eq:ode2}
-\red{\tilchi}\mathcal{B}_m\rho_{m-2} (z)+ \mathcal{A}_m\rho_m(z) + \red{\tilchi}\mathcal{C}_m\rho_{m+2}(z) = 0,
+\mathcal{B}_m\rho_{m-2} (z)+ \mathcal{A}_m\rho_m(z) + \mathcal{C}_m\rho_{m+2}(z) = 0,
 \eeq
 }
-where $z\equiv ka$ \blue{(not to be confused with the Cartesian co-ordinate)}, \red{$\tilchi\equiv(\chi^2-1)/[2(\chi^2+1)]$,} and
+where $z\equiv ka$ \blue{(not to be confused with the Cartesian co-ordinate)}, and
 
 \beqn
 \mathcal{B}_m &\equiv& \blue{\tilchi}\frac{d^2}{dz^2} + \left[\blue{\beta z}-
@@ -791,10 +788,9 @@ where \blue{$\tilchi\equiv(\chi^2-1)/[2(\chi^2+1)]$}, $k_m^2 \equiv 1+\mathrm{i}
 \eq{eq:ode2} holds for each $m$ except for $m=0$ for which the $\rho_{m-2}$ terms are absent. Each 
 $\rho_m$ couples to $\rho_{m\pm2}$ through operators $\mathcal{B}_m$
 and $\mathcal{C}_m$. The axisymmetric problem is recovered by
-setting $\rho_{m>0}=0$. \red{(We remark that a similar set of ODEs may be derived when the full expression for dust velocity is used.)}
+setting $\rho_{m>0}=0$. 
 
-\red{In the limit $\St\ll 1$, dust is advected by fluid with elliptic
-streamlines, so} \blue{We} expect $\rho_d(a,\nu)$ to have even symmetry in
+\blue{We} expect $\rho_d(a,\nu)$ to have even symmetry in
 $\nu$ \blue{because of the elliptical nature of the vortex streamlines}. 
 Henceforth we only consider even $m$. We seek solutions with  
 $\rho_m^\prime(0)=0$ \blue{(where the prime denotes derivative with respect to the argument)} and $\rho_{m\geq2}(0)=0$, so that
@@ -802,16 +798,6 @@ $\partial_x\rho_d=\partial_y\rho_d=0$ at the origin, consistent with
 dust reaching maximal density there.  
 
 \blue{\subsection{Operator properties}}
-
-\red{
-Finally, we note that
-\beqn\label{eq:ops2}
-\mathcal{B}_mJ_{m-2}(\mu z) &=& \mu^2J_m(\mu z),\notag\\
-\mathcal{A}_mJ_m(\mu z) &=& \left(k_m^2 - \mu^2\right)J_m(\mu z),\notag\\
-\mathcal{C}_mJ_{m+2}(\mu z) &= & \mu^2J_m(\mu z),\notag
-\eeqn
-where $\mu$ is a constant. These relations will be useful in
-constructing solutions.}
 
 \blue{
 Consider 
@@ -905,7 +891,7 @@ where $\epsilon(x)$ represents the correction to the axisymmetric
 solution due to $\rho_2(z)$. The ODEs to be solved are
 
 \begin{align}
-&\mathcal{A}_0\epsilon(z) = -\red{\tilchi}\mathcal{C}_0\rho_2(z),\label{eq:m2_eq1}\\
+&\mathcal{A}_0\epsilon(z) = -\mathcal{C}_0\rho_2(z),\label{eq:m2_eq1}\\
 &\mathcal{A}_2\rho_2(z)   = \blue{-\mathcal{B}_2\left(b_0g_0 + \epsilon\right)}.\label{eq:m2_eq2}
 \end{align}
 To make further progress, at this stage we \emph{assume} that the
