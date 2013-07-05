@@ -187,7 +187,7 @@ with a brief discussion on how observations can validate the model.
 \label{sect:model-equations}
 
 Considering the dust is of small sizes, we can treat it as a
-fluid. The dust should then follow the continuity equation \blue{\citep{Morfill-Volk84,Clarke-Pringle88,Charnoz11}}
+fluid. The dust should then follow the continuity equation 
 
 \beq
   \pderiv{\rho_d}{t} = -(\v{\blue{w}}\cdot\del)\rho_d - \rho_d \Div{\v{\blue{w}}} - \blue{\Div{J}}
@@ -248,7 +248,9 @@ we adopt the following model for $\v{u}$
   \label{eq:vortex}
 \eeq
 \noindent where $\chi > 1$ is the vortex aspect ratio (it has
-semi-minor axis $a$ and semimajor axis $a\chi$). In this work
+semi-minor axis $a$ and semimajor axis $a\chi$). \blue{Notice that the flow eventually
+  gets supersonic for large values of $x$ and $y$. This will limit the
+  validity of the solution, as the vortices shock.} In this work
 we consider the Kida solution \citep{Kida81}
 
 \beq
@@ -262,10 +264,16 @@ compressible Euler equations
 \varOmega_V=\varOmega\sqrt{3/(\chi^2-1)}.
 \eeq
 
-\blue{We comment that the GNG solution was used to model vortices found in non-linear hydrodynamic simluations of the Papaloizou-Pringle instability \citep{Hawley87}, which is similar to the RWI. Recently, \cite{Lin-Papaloizou11a} explicitly simulated the RWI at planetary gap edges and found that in quasi-steady state, the RWI vortices resemble  vortices formed by perturbing the disk with the Kida solution. We thus believe the above solutions are suitable as a first model for disk vortices.  However, it is straight forward to generalize the solutions 
-below to any flow in the form $u_x\propto y$ and $u_y\propto x$. 
-}
-
+\blue{We comment that the GNG solution was used to model vortices
+  found in non-linear hydrodynamic simluations of the
+  Papaloizou-Pringle instability \citep{Hawley87}, which is similar to
+  the RWI. Recently, \cite{Lin-Papaloizou11a} explicitly simulated the
+  RWI at planetary gap edges and found that in quasi-steady state, the
+  RWI vortices resemble  vortices formed by perturbing the disk with
+  the Kida solution. We thus believe the above solutions are suitable
+  as a first model for disk vortices.  However, it is straight forward
+  to generalize the solutions below to any flow in the form
+  $u_x\propto y$ and $u_y\propto -x$.}
 
 We note that the dust
 velocity is comprised of a divergent-free part, $\v{u}$, and a
@@ -472,8 +480,10 @@ The dust-trapping equation is therefore
 %\blue{We remark that a very similar equation  can be derived  when the diffusive flux is modeled as $D\rho_g\nabla(\rho_d/\rho_g)$, as used by \cite{Birnstiel13} . In fact, by redefining the friction time, 
 %our solution below can be made applicable to this case as well.} 
 
-\section{``Axisymmetric'' dust distribution}
+\section{``Axisymmetric'' \red{dust distribution} \blue{solution}}
 \label{sect:axisymmetric}
+
+\blue{\subsection{Midplane dust distribution}}
 
 We now make the assumption that the dust distribution follows, in shape, that of
 the gas (we will relax this approximation in the next section). In this case, the
@@ -575,14 +585,11 @@ the dust distribution for \blue{$S$}=1 in a Kida vortex of $\chi=4$ embedded in 
 disk of aspect ratio $H/r$=0.1, where $r$ is the stellocentric
 distance. 
 
-\blue{\subsection{Gas distribution and dust density enhancement}}
+\blue{\subsection{Midplane gas distribution}} % and dust density enhancement}}
 
-\blue{Next we find $\rho_{d\,{\rm max}}$, the maximum of dust
-  density that appears in \eq{eq:gen_axi}, as a function
-  of $S$ and the total dust-to-gas mass ratio. 
-  For that, we recall that for tracer particles ($\St=0$), the dust distribution should
-  mimic that of the gas. This immediatelly tells us the gas
-  distribution: an exponential like \eq{eq:gen_axi}
+\blue{\eq{eq:gen_axi} allows us to calculate the gas distribution. For
+  that we recall that  for tracer particles ($\St=0$), the dust distribution should
+  mimic that of the gas. The distribution should thus be 
 \beq
 \rho_g(a) = \rho_{g\,{\rm max}} \ \exp\left(-\frac{a^2}{2H_g^2}\right), \label{eq:gas_axi}
 \eeq
@@ -590,17 +597,24 @@ distance.
 $\rho_{g\,{\rm max}}$, the maximum gas density.  Note that 
 \eq{eq:gas_axi} is the gas density averaged over $\nu$ at fixed $a$.  (One may  
 directly integrate the gas momenta equations to see that the gas density/pressure generally depends on
-both $a$ and $\nu$.) 
-}
+both $a$ and $\nu$.) }
 
-\blue{
-Notice that for $\St=0$ the effect of diffusion cancels out. This is because
+\blue{Notice that for $\St=0$ the effect of diffusion cancels out. This is because
 the diffusion is proportional to the gradient of the dust-to-gas
 ratio \eqp{eq:j-flux}, which is zero for tracer
-particles. \eq{eq:gen_axi} and \eq{eq:gas_axi} also allows us to calculate the gas-dust
+particles.}
+
+\blue{\subsection{Vertical dependencies and dust-gas constrast}}
+
+
+\blue{\eq{eq:gen_axi} and \eq{eq:gas_axi} also allows us to calculate the gas-dust
 density constrast, and, therefore, $\rho_{d\,{\rm max}}$ as a function of
 $\rho_{g\,{\rm max}}$. For that, we calculate the volume integral of $\rho_d$
-and $\rho_g$. These, in turn, need the dependencies on $z$. So far we
+and $\rho_g$. These, in turn, need the dependencies on $z$, that we
+calculate in the next subsection}
+
+
+\blue{ So far we
 have only considered midplane densities, so we need the dependencies on $z$. 
 These are straightforward, being $\exp(-z^2/2H^2)$ for the gas and
 $\exp(-z^2/2H_d^2)$ for the dust, with $H_d=H/\sqrt{(1+S)}$. Integrated
