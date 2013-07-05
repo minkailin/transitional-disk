@@ -381,13 +381,13 @@ $f(\chi)$ & \eq{eq:scale-function} & scale function \\
 \blue{$S$} & \blue{$= \St/\delta$} & \blue{dimensionless number} \\
 $H_V$ & $=\frac{H}{f(\chi)} \ \sqrt{\blue{\frac{1}{S+1}}}$ & vortex scale length \\
 $k$ & $=\sqrt{2}/H_V$ & \\ 
-$z$ & $=ka$ & \\
+$\blue{\zeta}$ & $=ka$ & \\
 $\tilchi$ & $=\frac{\chi^2-1}{2(\chi^2+1)}$ & \\
 \blue{$\beta$} & \blue{$=(B_1-B_2)/4B$}& \\
 $k_m$ & $= 1+imA/B$ & \\
 $\mathcal{A}_m$ $\mathcal{B}_m$ $\mathcal{C}_m$  &\eqss{eq:ops}{eq:opsw} & differential operators \\
 \blue{$b_m$} & & constants\\
-$\epsilon(z)$ & & non-axisymmetric correction \\
+$\epsilon(\blue{\zeta})$ & & non-axisymmetric correction \\
  & & \\ \hline
 \end{tabular}
 \end{center}
@@ -759,23 +759,23 @@ ordinary differential equations,
 
 \blue{
 \beq\label{eq:ode2}
-\mathcal{B}_m\rho_{m-2} (z)+ \mathcal{A}_m\rho_m(z) + \mathcal{C}_m\rho_{m+2}(z) = 0,
+\mathcal{B}_m\rho_{m-2} (\blue{\zeta})+ \mathcal{A}_m\rho_m(\blue{\zeta}) + \mathcal{C}_m\rho_{m+2}(\blue{\zeta}) = 0,
 \eeq
 }
-where $z\equiv ka$ \blue{(not to be confused with the Cartesian co-ordinate)}, and
+where $\blue{\zeta}\equiv ka$, and
 
 \beqn
-\mathcal{B}_m &\equiv& \blue{\tilchi}\frac{d^2}{dz^2} + \left[\blue{\beta z}-
-  \frac{2\blue{\tilchi}}{z}
-  \left(m-\frac{3}{2}\right)\right]\frac{d}{dz}+\left(m-2\right)\left(\frac{m\blue{\tilchi}}{z^2}\blue{-\beta}\right), \notag\\
+\mathcal{B}_m &\equiv& \blue{\tilchi}\frac{d^2}{d\blue{\zeta}^2} + \left[\blue{\beta \blue{\zeta}}-
+  \frac{2\blue{\tilchi}}{\blue{\zeta}}
+  \left(m-\frac{3}{2}\right)\right]\frac{d}{d\blue{\zeta}}+\left(m-2\right)\left(\frac{m\blue{\tilchi}}{\blue{\zeta}^2}\blue{-\beta}\right), \notag\\
 &&\label{eq:ops}\\ 
-\mathcal{A}_m&\equiv&\frac{d^2}{dz^2} +\left(\frac{1}{z}\blue{+\frac{z}{2}}\right)\frac{d}{dz} +\left(k_m^2-\frac{m^2}{z^2}\right),\\
+\mathcal{A}_m&\equiv&\frac{d^2}{d\blue{\zeta}^2} +\left(\frac{1}{\blue{\zeta}}\blue{+\frac{\blue{\zeta}}{2}}\right)\frac{d}{d\blue{\zeta}} +\left(k_m^2-\frac{m^2}{\blue{\zeta}^2}\right),\\
 %
 &&\notag\\
-\mathcal{C}_m &\equiv& \blue{\tilchi}\frac{d^2}{dz^2}
-+\left[\blue{\beta z} +
-  \frac{2\blue{\tilchi}}{z}\left(m+\frac{3}{2}\right)\right]\frac{d}{dz}
-+ \left(m+2\right)\left(\frac{m\blue{\tilchi}}{z^2}
+\mathcal{C}_m &\equiv& \blue{\tilchi}\frac{d^2}{d\blue{\zeta}^2}
++\left[\blue{\beta \blue{\zeta}} +
+  \frac{2\blue{\tilchi}}{\blue{\zeta}}\left(m+\frac{3}{2}\right)\right]\frac{d}{d\blue{\zeta}}
++ \left(m+2\right)\left(\frac{m\blue{\tilchi}}{\blue{\zeta}^2}
   \blue{+\beta}\right),\notag\\
 &&\label{eq:opsw}
 \eeqn
@@ -783,7 +783,7 @@ where \blue{$\tilchi\equiv(\chi^2-1)/[2(\chi^2+1)]$}, $k_m^2 \equiv 1+\mathrm{i}
 \beq
 \blue{\beta \equiv \frac{B_1-B_2}{2k^2(1+\chi^{-2})} = \frac{B_1 - B_2}{4B}.}
 \eeq
-%[Recall $k^2\equiv 2B/\left(1+\chi^{-2}\right)$.] The independent variable is $z\equiv ka$. 
+%[Recall $k^2\equiv 2B/\left(1+\chi^{-2}\right)$.] The independent variable is $\blue{\zeta}\equiv ka$. 
 \blue{Note that $\beta$ is a function of the aspect-ratio depending on the vortex model.} 
 \eq{eq:ode2} holds for each $m$ except for $m=0$ for which the $\rho_{m-2}$ terms are absent. Each 
 $\rho_m$ couples to $\rho_{m\pm2}$ through operators $\mathcal{B}_m$
@@ -802,14 +802,14 @@ dust reaching maximal density there.
 \blue{
 Consider 
 \begin{align}
-	g_m(z) \equiv z^m\exp{(-z^2/4)}.
+	g_m(\blue{\zeta}) \equiv \blue{\zeta}^m\exp{(-\blue{\zeta}^2/4)}.
 \end{align}
 Then we find that 
 \beqn
 \mathcal{B}_mg_{m-2} &=&\frac{1}{4}\left(\tilchi - 2\beta\right)g_m,\\
 \mathcal{A}_mg_m &=& \left(k_m^2 - \frac{m}{2} - 1\right)g_m,\\
-\mathcal{C}_mg_{m+2}&=& \left[4\tilchi(m+1)(m+2) +2(\beta-\tilchi)(m+2)z^2 \right.
-\notag\\ &+&\left. \frac{\left(\tilchi - 2\beta\right)}{4}z^4\right]g_m. 
+\mathcal{C}_mg_{m+2}&=& \left[4\tilchi(m+1)(m+2) +2(\beta-\tilchi)(m+2)\blue{\zeta}^2 \right.
+\notag\\ &+&\left. \frac{\left(\tilchi - 2\beta\right)}{4}\blue{\zeta}^4\right]g_m. 
 \eeqn
 The first two expressions will be useful in constructing nearly-axisymmetric solutions. 
 }
@@ -820,7 +820,7 @@ It is useful to see how the formulation above connects with the  axisymmetric so
 %\begin{align}
 $\mathcal{B}_mg_{m-2} = 0.$
 %\end{align}
-Then the complete solution to \eq{eq:ode2} is $\rho_0 = b_0e^{-z^2/4}$ with $\rho_{m>0} \equiv 0$, and $b_0$ is an arbitrary constant. That is, if $\tilchi=2\beta$ then the dust distribution is exactly axisymmetric. 
+Then the complete solution to \eq{eq:ode2} is $\rho_0 = b_0e^{-\blue{\zeta}^2/4}$ with $\rho_{m>0} \equiv 0$, and $b_0$ is an arbitrary constant. That is, if $\tilchi=2\beta$ then the dust distribution is exactly axisymmetric. 
 }
 \blue{
 \subsubsection{Dust in a GNG vortex is axisymmetric}
@@ -848,9 +848,9 @@ We assume that $|\rho_m|$ decreases with $m$, so that in \eq{eq:ode2} the $\math
 \end{align}
 The solutions are 
 \begin{align}\label{eq:series1}
-\rho_m (z)= b_m g_m(z),
+\rho_m (\blue{\zeta})= b_m g_m(\blue{\zeta}),
 %\begin{align}\label{eq:series}
-%\rho_m (z)= b_m z^m\exp{(-z^2/4)}, 
+%\rho_m (\blue{\zeta})= b_m \blue{\zeta}^m\exp{(-\blue{\zeta}^2/4)}, 
 \end{align}
 with
 \begin{align}
@@ -868,8 +868,8 @@ for even $m\geq 2$.
 \blue{
 The source term approximation assumes 
 $R\equiv|\mathcal{C}_m\rho_{m+2}|/|\mathcal{A}_m\rho_m| \ll 1.$ 
-For given $z$, the solution $\rho_m=b_mg_m$ is consistent with this requirement if $|k_m^2|\gg1$, corresponding to small effective Stokes number.  
- However, this approximation will eventually fail for large $z$ because the solution above implies $R\propto z^4$ for $z\gg1$. Thus the solution is only self-consistent for sufficiently small $z$ and/or $\overline{\St}$. Nevertheless,
+For given $\blue{\zeta}$, the solution $\rho_m=b_mg_m$ is consistent with this requirement if $|k_m^2|\gg1$, corresponding to small effective Stokes number.  
+ However, this approximation will eventually fail for large $\blue{\zeta}$ because the solution above implies $R\propto \blue{\zeta}^4$ for $\blue{\zeta}\gg1$. Thus the solution is only self-consistent for sufficiently small $\blue{\zeta}$ and/or $\overline{\St}$. Nevertheless,
 we comment that the closed-formed solutions obtained here may be useful in
 an iterative scheme to obtain numerical solutions to the full set of ODE's. 
 }
@@ -885,14 +885,14 @@ ellipse.) We assume non-axisymmetry in the dust distribution is
 sufficiently weak, so one may truncate the series solution at
 $m=2$. Thus we set $\rho_{m>2}\equiv0$.} Let
 \begin{align}
-\rho_0(z) = b_0\blue{g_0(z)} + \epsilon(z),
+\rho_0(\blue{\zeta}) = b_0\blue{g_0(\blue{\zeta})} + \epsilon(\blue{\zeta}),
 \end{align}
 where $\epsilon(x)$ represents the correction to the axisymmetric
-solution due to $\rho_2(z)$. The ODEs to be solved are
+solution due to $\rho_2(\blue{\zeta})$. The ODEs to be solved are
 
 \begin{align}
-&\mathcal{A}_0\epsilon(z) = -\mathcal{C}_0\rho_2(z),\label{eq:m2_eq1}\\
-&\mathcal{A}_2\rho_2(z)   = \blue{-\mathcal{B}_2\left(b_0g_0 + \epsilon\right)}.\label{eq:m2_eq2}
+&\mathcal{A}_0\epsilon(\blue{\zeta}) = -\mathcal{C}_0\rho_2(\blue{\zeta}),\label{eq:m2_eq1}\\
+&\mathcal{A}_2\rho_2(\blue{\zeta})   = \blue{-\mathcal{B}_2\left(b_0g_0 + \epsilon\right)}.\label{eq:m2_eq2}
 \end{align}
 To make further progress, at this stage we \emph{assume} that the
 $\epsilon$ term in Eq. \ref{eq:m2_eq2} can be neglected\blue{, so $\rho_2 = b_2 g_2$ with $b_2$ given by the source term approximation.} 
@@ -900,32 +900,32 @@ This means that
 
 \blue{
 \beq\label{eq:rho2}
-\frac{\rho_2}{\rho_0} = \frac{b_2}{b_0}z^2,
+\frac{\rho_2}{\rho_0} = \frac{b_2}{b_0}\blue{\zeta}^2,
 \eeq
 }
 \blue{
-implying non-axisymmetry becomes significant for sufficiently large $z$, 
+implying non-axisymmetry becomes significant for sufficiently large $\blue{\zeta}$, 
 and truncating the series at $m=2$ is no longer self-consistent. 
 %(higher $m$ components should be included) 
 However, in practice the ratio $|b_2/b_0|$ is small. 
 For example, inserting $\chi=4$ gives $|b_2/b_0|\simeq0.1\%$ for
 $\overline{\St}=0.1$ and $|b_2/b_0|\sim 1\%$ for $\overline{\St}=1$. Since
-most of the dust is contained within $z\lesssim 1$, we conclude that
+most of the dust is contained within $\blue{\zeta}\lesssim 1$, we conclude that
 non-axisymmetry is {\it in general} a small effect.}
 
 We can use \eq{eq:rho2} in \eq{eq:m2_eq1} to
 calculate the correction term $\epsilon$. We find
 
 \beq
-\epsilon(z) = \blue{\frac{1}{8}b_2g_2\left[-16\tilchi+\left(\tilchi - 2\beta\right)z^2\right]}.
+\epsilon(\blue{\zeta}) = \blue{\frac{1}{8}b_2g_2\left[-16\tilchi+\left(\tilchi - 2\beta\right)\blue{\zeta}^2\right]}.
 \eeq
 
 Collecting the above results and Taylor-expanding the \blue{$g_m$}'s, our
-weakly non-axisymmetric solution for $z\ll 1$ reads:
+weakly non-axisymmetric solution for $\blue{\zeta}\ll 1$ reads:
 
 \begin{align}
-&\rho_0(z) =1 -  \frac{z^2}{4}\left[1-\frac{\tilchi\left(\tilchi \blue{- 2\beta}\right)}{\mathrm{i}A/B \blue{- 1/2}}\right]+ O(z^4),\\
-&\rho_2(z) =-\frac{\left(\tilchi \blue{- 2\beta}\right)}{2\left(4\mathrm{i}A/B \blue{- 2}\right)}z^2+O(z^4)
+&\rho_0(\blue{\zeta}) =1 -  \frac{\blue{\zeta}^2}{4}\left[1-\frac{\tilchi\left(\tilchi \blue{- 2\beta}\right)}{\mathrm{i}A/B \blue{- 1/2}}\right]+ O(\blue{\zeta}^4),\\
+&\rho_2(\blue{\zeta}) =-\frac{\left(\tilchi \blue{- 2\beta}\right)}{2\left(4\mathrm{i}A/B \blue{- 2}\right)}\blue{\zeta}^2+O(\blue{\zeta}^4)
 \end{align}
 where we have used the definition of $k_m$ \blue{and set $b_0=1$
   without loss of generality}. %We see that non-axisymmetric effects
@@ -938,17 +938,17 @@ are small for $\overline{\St} \ll 1$, because $B \propto \overline{\St}$. We con
 %This makes sense because the force on the dust along the ellipse is proportional to $\mathrm{St}$. 
 
 \subsubsection{Consistency check}
-Using the above expression for $\epsilon(z)$, we can evaluate
-$\mathcal{B}_2\epsilon(z)$ in order to assess our assumption that
-$\epsilon(z)$ has a negligible contribution to $\rho_2$. We find
+Using the above expression for $\epsilon(\blue{\zeta})$, we can evaluate
+$\mathcal{B}_2\epsilon(\blue{\zeta})$ in order to assess our assumption that
+$\epsilon(\blue{\zeta})$ has a negligible contribution to $\rho_2$. We find
 
 \beqn
-\mathcal{B}_2\epsilon(z) =&& \blue{\left[32\tilchi(5\tilchi - 6\beta)-16(\tilchi-2\beta)(2\tilchi-\beta)z^2
-\right.\notag}\\&&\blue{\left.+(\tilchi - 2\beta)^2z^4\right]\frac{b_2g_2}{32}.}
+\mathcal{B}_2\epsilon(\blue{\zeta}) =&& \blue{\left[32\tilchi(5\tilchi - 6\beta)-16(\tilchi-2\beta)(2\tilchi-\beta)\blue{\zeta}^2
+\right.\notag}\\&&\blue{\left.+(\tilchi - 2\beta)^2\blue{\zeta}^4\right]\frac{b_2g_2}{32}.}
 \eeqn
 
-Provided that $|k_2^2|\gg1$ \blue{and $z$ is not large},  
-this term is indeed small compared to the first term on the RHS of \eq{eq:m2_eq2}.  \blue{For example, considering $z=1$, 
+Provided that $|k_2^2|\gg1$ \blue{and $\blue{\zeta}$ is not large},  
+this term is indeed small compared to the first term on the RHS of \eq{eq:m2_eq2}.  \blue{For example, considering $\blue{\zeta}=1$, 
 for $\chi=4$ and $\overline{\St}=0.1$ we obtain $|\mathcal{B}_2\epsilon|/|\mathcal{B}_2\rho_0|\simeq0.02$. 
 Even with $\overline{\St}=1$, this ratio $\sim0.2$ is not large. We
 conclude that}  our solution procedure above is self-consistent.
@@ -965,9 +965,8 @@ conclude that}  our solution procedure above is self-consistent.
 \blue{\eq{eq:gen_axi} and \eq{eq:gas_axi} also allows us to calculate the gas-dust
 density contrast, and, therefore, $\rho_{d\,{\rm max}}$ as a function of
 $\rho_{g\,{\rm max}}$. For that, we calculate the volume integral of $\rho_d$
-and $\rho_g$. These, in turn, need the dependencies on $z$ (the
-vertical coordinate, not $ka$ as used in
-\sect{sect:nonaxisymmetric}). These are straightforward, being $\exp(-z^2/2H^2)$ for the gas and
+and $\rho_g$. These, in turn, need the dependencies on the vertical
+coordinates $z$. These are straightforward, being $\exp(-z^2/2H^2)$ for the gas and
 $\exp(-z^2/2H_d^2)$ for the dust, with $H_d=H/\sqrt{(1+S)}$. Integrated
 over plus and minus infinity, these yield $\sqrt{2\pi}H$ and
 $\sqrt{2\pi}H_d$, respectively. We have thus}
