@@ -1009,6 +1009,40 @@ to integrate \eq{eq:sect6-exp}, which amounts to replacing
 \eeq
 }
 
+\blue{\subsection{Dust density contrast}}
+
+\blue{The constrast in the same orbit is found by calculating the
+  minimum dust density and comparing it to \eq{eq:maxrhod}. By substituting the gas solution \eqp{eq:gas_axi}
+  into \eq{eq:gen_axi} we can write
+\beq
+\frac{\rho_{d\,{\rm max}}}{\rho_{d\,{\rm min}}} = \frac{\rho_{g\,{\rm max}}}{\rho_{g\,{\rm min}}} \exp{(S)},\
+\eeq
+which is the same result
+as found by \cite{Birnstiel13}, provided a suitable choice is made for
+$\delta$ (we do not assume a relationship between $\delta$ and $\alpha$
+because the turbulence in the vortex core is locally generated and
+unrelated to the disk turbulence, c.f., elliptic instability,
+\citealt{Lesur-Papaloizou10,Lyra-Klahr11}).
+%
+ The minimum densities occurs at the boundary of the vortex, which is
+ the sonic perimeter where shocks occur. Its limit is found by
+ writing the vortex velocities \eqp{eq:vortex} as Mach numbers 
+\beq
+  {\rm Ma}_x = \frac{u_x}{c_s} = \omega_V\chi^{-1} \  y/H \qquad  {\rm Ma}_y = \frac{u_y}{c_s}= -\omega_V\chi \ x/H,
+  \label{eq:vortex-mach}
+\eeq and setting ${\rm Ma}_x = {\rm Ma}_y - u_K/c_s = 1$, where
+$u_K=q\varOmega  x$ is the linearized Keplerian velocity. This yields the
+boundary at 
+\beq
+a_s = H/\omega_v
+\eeq where the subscript $s$ stands for
+sonic. Substituting that in \eq{eq:gas_axi}, the gas density contrast is 
+\beq
+  \frac{\rho_{g\,{\rm max}}}{\rho_{g\,{\rm min}}} = \exp{\left[\frac{f^2(\chi)}{2\omega_V^2}\right]},
+\eeq
+\noindent which translates into a contrast of $\approx$2.16 for a Kida
+vortex, and $\approx$1.56 for a GNG vortex. These values, times
+$\exp{(S)}$, yield the dust contrast.} 
 
 \blue{\subsection{Measuring $\delta$}}
 
@@ -1032,28 +1066,7 @@ small, but in principle detectable, as \cite{vanderMarel13} report a
 sensitivity limit of ALMA of 0.2\,km/s for their observations of
 Oph IRS 48.} 
 
-\blue{\subsection{Dust density contrast}}
-
-\blue{The contrast in the same orbit $r_0$ is found by writing
-  $a^2=x^2+y^2/\chi^2$, substituting the shearing sheet coordinates
-  $x=r-r_0$ and $y=r_0 \phi$, setting $r=r_0$ and comparing the
-  maximum and minimum density,  respectively, the densities at
-  $\phi=0$ and $\phi=\pi$. This procedure yields
-\beq
-  \frac{\rho_{d\,{\rm max}}}{\rho_{d\,{\rm min}}} = \exp\left[\frac{\pi^2}{2h^2}\frac{f^2(\chi)}{\chi^2}(S+1)\right] 
-\eeq 
-\noindent where $h=H/r_0$ is the disk aspect ratio at the location of
-the vortex (not to be confused with gas enthalpy). By substituting the
-gas solution \eqp{eq:gas_axi}, we get \[\frac{\rho_{d\,{\rm
-      max}}}{\rho_{d\,{\rm min}}} = \frac{\rho_{g\,{\rm
-      max}}}{\rho_{g\,{\rm min}}} e^S,\] which is the same result
-as found by \cite{Birnstiel13}, provided a suitable choice is made for
-$\delta$ (we do not assume a relationship between $\delta$ and $\alpha$
-because the turbulence in the vortex core is locally generated and
-unrelated to the disk turbulence, c.f., elliptic instability,
-\citealt{Lesur-Papaloizou10,Lyra-Klahr11}). We remark, though, that
-this solution is {\it invalid} because it extrapolates the spatial
-range of applicability of the shearing box approximation. } 
+%\blue{\section{Limitations}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
