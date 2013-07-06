@@ -85,7 +85,7 @@ The Atacama Large Millimeter Array (ALMA) has been  returning images of transiti
 mm-size in the outer disk. The explanation in vogue borrows from the vortex literature by suggesting 
 that these asymmetries are the result of dust trapping in giant vortices, excited via Rossby wave instability (RWI) 
 at planetary gap edges. Due to the drag force, dust trapped in vortices will accumulate 
-in the center. Diffusion is needed to maintain a steady state over the lifetime of the disk. While previous work 
+in the center\blue{, and} diffusion is needed to maintain a steady state over the lifetime of the disk. While previous work 
 derived semi-analytical models of the process, in this paper we
 provide analytical steady-steady solutions. \blue{Exact solutions exist for certain vortex models.}
 The solution is determined by the vortex rotation profile, the gas scale height, the 
@@ -1001,7 +1001,7 @@ function of $a/H_g$.}
 
 \blue{\subsection{Trapped mass}}
 
-\blue{For the total trapped mass for a particular grain size, we simply need
+\blue{For the total trapped mass, we simply need
 to integrate \eq{eq:sect6-exp}, which amounts to replacing
 \eq{eq:maxrhod} in \eq{eq:integral-dust}
  \beq
@@ -1049,7 +1049,8 @@ $\exp{(S)}$, yield the dust contrast.}
 \blue{To measure $\delta$, once needs to disentangle $\St$ from $\delta$
   in the $S$ parameter. The Stokes number is 
 \beq
-    \St = \tauf  \varOmega = \sqrt{\frac{\pi}{8}} \ \frac{a_\bullet}{H}\frac{\rho_\bullet}{\rho_g}
+    \St = \tauf  \varOmega = \sqrt{\frac{\pi}{8}} \
+    \frac{a_\bullet}{H} \ \frac{\rho_\bullet}{\rho_g}
 \eeq
 \noindent where $a_\bullet$ is the particle radius and $\rho_\bullet$ the
 particle internal density.}
@@ -1058,7 +1059,7 @@ particle internal density.}
 turbulence inside the vortex core. The beam smearing would render the velocity
 field unresolved even for moderately close systems, so 
 one should look for unresolved signatures, such as in spectral
-lines. The turbulence is subsonic, at about 10\% of the sound speed \citep{Lyra-Klahr11}. 
+lines. The turbulence is subsonic, at about 10\% of the sound speed \citep{Lesur-Papaloizou10,Lyra-Klahr11}. 
 For gas at 10-100\,K, it corresponds to an rms velocity of $\approx$
 0.1-0.5\,km/s. This should have an effect similar to microturbulence, providing an slight extra
 broadening to the Doppler core of suitable spectral lines. The signal is
@@ -1072,7 +1073,34 @@ Oph IRS 48.}
 
 % 30 mili-arcseconds. spatial resolution
 
-%\subsection{\blue{Application to Oph IRS 48}}
+\blue{\subsection{Application to Oph IRS 48}}
+
+\blue{We now apply our model to the observed Oph IRS 48 system, with the
+parameters derived by \cite{vanderMarel13}. The dust constrast in the
+same orbit is 130, which sets $S\approx 2.2$ for a Kida vortex, or
+$S\approx 3.1$ for a GNG vortex. The gas ratio would allow to
+determine the vortex model but, unfortunately, for that system, the gas
+density at the location of the maximum is blocked by interstellar
+absorption.} 
+
+\blue{The dust temperature is estimated at 60\,K, which for a $2
+  M_\sun$ star translates into $H/r \approx 0.06$ for the
+disk aspect ratio. For their vortex located at 63\,AU, $H \approx
+4$\,AU. The particle radius measurement is $a_\bullet \geq 4$\,mm. The 
+gas density is estimated \citep{Brown12} at $\rho_g \approx 5\times 10^{-14}$ g\,cm$^{\rm
+  -3}$. For particles of material density 0.8 g\,cm$^{\rm  -3}$, the
+Stokes number should be $\St \gtrsim 0.07$. That yields
+$\delta \gtrsim 0.02$, meaning typical turbulent velocities in the
+vortex core at $\sqrt{\delta} \approx 15\%$ of the sound speed. Though
+slightly on the high side, they are consistent with the velocities
+expected for the elliptic instability \citep{Lesur-Papaloizou10,Lyra-Klahr11}.}
+
+\blue{The aspect ratio is $\chi=3.1$. For the typical interstellar
+dust-to-gas ratio of $\varepsilon=0.01$, the trapped mass yields
+$\approx 2$ Earth masses. Given the uncertainties, it is in the
+correct order of magnitude as measured (9 Earth masses).}
+
+
 
 %\chi=3.1
 %T=60K (assuming? typical dust temperature?) 
@@ -1081,7 +1109,7 @@ Oph IRS 48.}
 %extent:45-80 AU
 %a_\bullet = up to 4 mm
 %(sigmal to noise = 390)
-%density constrast: 130 (same orbit)
+%density constrast: 130 (same orbit)        => S=2.5
 %gas density: 5x(1e-14 - 1e-15) g/cm3 
 
 %funnybits: quartic gaussians; Sigmar = Sigmar*exp(-(r-rc)^4/2*rw^4),
@@ -1187,6 +1215,7 @@ National Aeronautics and Space Administration. \blue{The authors are
 \bibitem[{{Birnstiel et al.}(2013)}]{Birnstiel13} Birnstiel, T., Dullemond, C. P., \& Pinilla, P. 2013, A\&A, 550L, 8
 \bibitem[{{\blue{Birnstiel et al.}}(2012)}]{Birnstiel12} \blue{Birnstiel, T., Andrews, S. M., \& Ercolano, B. 2012, A\&A, 544, 79}
 \bibitem[{{Brauer et al.}(2007)}]{Brauer07} Brauer, F., Dullemond, C.P., \blue{Johansen, A.,} Henning, Th.\blue{, Klahr, H., \& Natta, A.} 2007, A\&A, 469, 1169
+\bibitem[{{Brown et al.}(2012)}]{Brown12} \blue{Brown, J. M., Rosenfeld, K. A., Andrews, S. M., Wilner, D. J., \& van Dishoeck, E. F. 2012 ApJ, 758, 30}
 \bibitem[{{Brown et al.}(2009)}]{Brown09} Brown, J. M., Blake, G. A., Qi, C., Dullemond, C. P., Wilner, D. J., \& Williams, J. P. 2009, ApJ, 704, 496
 \bibitem[{{Bryden et al.}(1999)}]{Bryden99} Bryden, G., Chen, X., Lin, D. N. C., Nelson, R. P., \& Papaloizou, J. C. B. 1999, ApJ, 514, 344
 \bibitem[{{Calvet et al.}(2002)}]{Calvet02} Calvet, N., D'Alessio, P., Hartmann, L., Wilner, D., Walsh, A., \& Sitko, M. 2002, ApJ, 568, 1008
