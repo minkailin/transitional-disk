@@ -91,7 +91,9 @@ provide analytical steady-steady solutions. \blue{Exact solutions exist for cert
 The solution is determined by the vortex rotation profile, the gas scale height, the 
 vortex aspect ratio, and the ratio of dust diffusion to gas-dust friction. In principle, all these quantities can be derived
 from observations, which would give validation of the model, also giving constrains on the strength of the turbulence 
-inside the vortex core.
+inside the vortex core.  \blue{Based on our solution, we derive quantities such as the gas-dust constrast, the trapped dust mass,
+and the dust constrast at the same orbital location. We apply our model to the recently imaged Oph IRS 48 system, finding 
+values within the range of the observational uncertainties.}
 \end{abstract}
 
 \section{Introduction}
@@ -252,7 +254,7 @@ semi-minor axis $a$ and semimajor axis $a\chi$). \blue{Notice that the flow even
   gets supersonic for large values of $x$ and $y$. This will limit the
   validity of the solution, as the vortices shock beyond the sonic
   perimeter. This effectively leads to a vortex ``boundary'', beyond
-  which the motion resumes to the background Keplerian flow''.} 
+  which the motion resumes to the background Keplerian flow'.} 
 
 In this work we consider the Kida solution \citep{Kida81}
 
@@ -1015,7 +1017,7 @@ to integrate \eq{eq:sect6-exp}, which amounts to replacing
   minimum dust density and comparing it to \eq{eq:maxrhod}. By substituting the gas solution \eqp{eq:gas_axi}
   into \eq{eq:gen_axi} we can write
 \beq
-\frac{\rho_{d\,{\rm max}}}{\rho_{d\,{\rm min}}} = \frac{\rho_{g\,{\rm max}}}{\rho_{g\,{\rm min}}} \exp{(S)},\
+\frac{\rho_{d\,{\rm max}}}{\rho_{d\,{\rm min}}} = \frac{\rho_{g\,{\rm max}}}{\rho_{g\,{\rm min}}} \exp{(S)},\label{eq:max-contrast}
 \eeq
 which is the same result
 as found by \cite{Birnstiel13}, provided a suitable choice is made for
@@ -1026,23 +1028,34 @@ unrelated to the disk turbulence, c.f., elliptic instability,
 %
  The minimum densities occurs at the boundary of the vortex, which is
  the sonic perimeter where shocks occur. Its limit is found by
- writing the vortex velocities \eqp{eq:vortex} as Mach numbers 
+ writing the vortex velocity \eqp{eq:vortex} as a Mach number 
 \beq
-  {\rm Ma}_x = \frac{u_x}{c_s} = \omega_V\chi^{-1} \  y/H \qquad  {\rm Ma}_y = \frac{u_y}{c_s}= -\omega_V\chi \ x/H,
+  {\rm Ma} = \frac{|u_y|}{c_s} = \omega_V\chi \  \frac{x}{H} 
   \label{eq:vortex-mach}
-\eeq and setting ${\rm Ma}_x = {\rm Ma}_y - u_K/c_s = 1$, where
-$u_K=q\varOmega  x$ is the linearized Keplerian velocity. This yields the
+\eeq and setting ${\rm Ma} = 1$. This yields the
 boundary at 
 \beq
-a_s = H/\omega_v
+a_s = H (\chi \omega_V)^{-1} \label{eq:sonic}
 \eeq where the subscript $s$ stands for
-sonic. Substituting that in \eq{eq:gas_axi}, the gas density contrast is 
+sonic. The Kida solution asymptotically reaches $a_s=2H/3$, while the
+GNG solution asymptotically reaches $a_s=H/\sqrt{3}$. In the physical
+range of relevance, they both yield values around $H/2$, which matches
+the results of numerical simulations.}
+
+\blue{Substituting \eq{eq:sonic} in \eq{eq:gas_axi}, the gas density contrast is 
 \beq
-  \frac{\rho_{g\,{\rm max}}}{\rho_{g\,{\rm min}}} = \exp{\left[\frac{f^2(\chi)}{2\omega_V^2}\right]},
+  \frac{\rho_{g\,{\rm max}}}{\rho_{g\,{\rm min}}} =
+  \exp{\left[\frac{f^2(\chi)}{2\chi^2\omega_V^2}\right]}, \label{eq:gas-contrast}
 \eeq
-\noindent which translates into a contrast of $\approx$2.16 for a Kida
-vortex, and $\approx$1.56 for a GNG vortex. These values, times
-$\exp{(S)}$, yield the dust contrast.} 
+\noindent For neither the Kida not the GNG solutions does this quantity
+deviate much from unity. The argument in the exponent tends
+asymptotically in both cases to small fractions of $f^2$; $2/9$ in the
+Kida case, $1/6$ in the GNG case.} 
+
+%which translates into a contrast of $\approx$2.16 for a Kida
+%vortex, and $\approx$1.56 for a GNG vortex. 
+
+
 
 \blue{\subsection{Measuring $\delta$}}
 
@@ -1076,31 +1089,33 @@ Oph IRS 48.}
 \blue{\subsection{Application to Oph IRS 48}}
 
 \blue{We now apply our model to the observed Oph IRS 48 system, with the
-parameters derived by \cite{vanderMarel13}. The dust constrast in the
-same orbit is 130, which sets $S\approx 2.2$ for a Kida vortex, or
-$S\approx 3.1$ for a GNG vortex. The gas ratio would allow to
-determine the vortex model but, unfortunately, for that system, the gas
-density at the location of the maximum is blocked by interstellar
-absorption.} 
+parameters derived by \cite{vanderMarel13}.The dust constrast in the same orbit is 130, which, according to
+\eq{eq:max-contrast} and \eq{eq:gas-contrast} for $\chi=3.1$, set $S=4.79$ and
+$S=4.82$ for the Kida and GNG solutions, respectively. } 
 
-\blue{The dust temperature is estimated at 60\,K, which for a $2
-  M_\sun$ star translates into $H/r \approx 0.06$ for the
-disk aspect ratio. For their vortex located at 63\,AU, $H \approx
-4$\,AU. The particle radius measurement is $a_\bullet \geq 4$\,mm. The 
-gas density is estimated \citep{Brown12} at $\rho_g \approx 5\times 10^{-14}$ g\,cm$^{\rm
-  -3}$. For particles of material density 0.8 g\,cm$^{\rm  -3}$, the
-Stokes number should be $\St \gtrsim 0.07$. That yields
-$\delta \gtrsim 0.02$, meaning typical turbulent velocities in the
-vortex core at $\sqrt{\delta} \approx 15\%$ of the sound speed. Though
-slightly on the high side, they are consistent with the velocities
-expected for the elliptic instability \citep{Lesur-Papaloizou10,Lyra-Klahr11}.}
+\blue{The dust temperature is estimated at 60\,K. Assuming this is the
+  same as the gas temperature, and that the gas is a 5:2 hydrogen to
+  helium mixture (mean molecular weight of 2.4), the isothermal sound speed is 
+  $c_s \approx {\rm 456 \, cm/s}$. At $r_0$=63\,AU, around a $2 M_\sun$ star, this translates into an aspect
+  ratio of $H/r \approx0.09$, or $H\approx5.4$ \,AU. The particle radius measurement is $a_\bullet \approx 4$\,mm. 
+The gas density is highly uncertain. \cite{Brown12} estimate the mass
+as $10^{-4} - 10^{-3} M_\sun$ within 30\,AU, using a mm flux vs mass
+calibration \citep{Beckwith90}, which translates into a surface
+density of 10$^{15}$-10$^{16}$ \, cm$^{-2}$ assuming
+H$_2$/CO=10$^4$. For a mean molecular weight of 2.4, these values imply $\rho_g \approx 3 \times 10^{-14}-10^{-15}$ g\,cm$^{\rm  -3}$. We
+take the mean (in log), $\approx 10^{-14}$ g\,cm$^{\rm  -3}$, as representative. For particles of material density 0.8 g\,cm$^{\rm  -3}$, the
+Stokes number should be $\St \approx 0.25$. That yields
+$\delta \approx 5\times 10^{-2}$, meaning typical turbulent velocities in the
+vortex core at $\sqrt{\delta} \approx 22\%$ of the sound speed. These
+velocities are somewhat on the high side, as the speeds expected for
+the elliptic instability range from 5-10\% of the sound speed
+\citep{Lesur-Papaloizou10,Lyra-Klahr11}, but given the approximations,
+assumptions, and uncertainties, the agreement within a factor $\approx$ 2-4 is remarkable.}
 
-\blue{The aspect ratio is $\chi=3.1$. For the typical interstellar
-dust-to-gas ratio of $\varepsilon=0.01$, the trapped mass yields
-$\approx 2$ Earth masses. Given the uncertainties, it is in the
-correct order of magnitude as measured (9 Earth masses).}
-
-
+\blue{As for the trapped mass, for the typical interstellar
+dust-to-gas ratio of $\varepsilon=0.01$, \eq{eq:dust-mass} yields 0.55
+and  1.39\,$M_\oplus$ for Kida and GNG, respectively. A factor 16 and
+6, respectively, from the measured trapped mass of 9\,$M_\oplus$.} 
 
 %\chi=3.1
 %T=60K (assuming? typical dust temperature?) 
@@ -1212,6 +1227,7 @@ National Aeronautics and Space Administration. \blue{The authors are
 %\bibitem[{{Artymowicz \& Lubow}(1994)}]{Artymowicz-Lubow94} Artymowicz, P. \& Lubow, S. H. 1994, ApJ, 421, 651
 \bibitem[{{Balbus \& Hawley}(1991)}]{Balbus-Hawley91} Balbus, S. A. \&  Hawley, J. F. 1991, ApJ, 376, 214
 \bibitem[{{Barge \& Sommeria}(1995)}]{Barge-Sommeria95} Barge, P. \&  Sommeria, J. 1995, A\&A, 295L, 1
+\bibitem[{{Beckwith et al.}(1990)}]{Beckwith90} \blue{Beckwith, S. V. W., Sargent, A. I., Chini, R. S., \& Guesten, R. 1990, AJ, 99, 924}
 \bibitem[{{Birnstiel et al.}(2013)}]{Birnstiel13} Birnstiel, T., Dullemond, C. P., \& Pinilla, P. 2013, A\&A, 550L, 8
 \bibitem[{{\blue{Birnstiel et al.}}(2012)}]{Birnstiel12} \blue{Birnstiel, T., Andrews, S. M., \& Ercolano, B. 2012, A\&A, 544, 79}
 \bibitem[{{Brauer et al.}(2007)}]{Brauer07} Brauer, F., Dullemond, C.P., \blue{Johansen, A.,} Henning, Th.\blue{, Klahr, H., \& Natta, A.} 2007, A\&A, 469, 1169
