@@ -1,4 +1,25 @@
 
+We thank the referee for insightful questions and comments that helped
+improve our work. Changes wrt the previous manuscript are marked as
+blue font text in this new version. 
+
+In addition to modifications related to the points raised by the referee, we 
+highlight that we have taken the analysis beyond that of the
+previous manuscript by generalizing the non-axisymmetric
+solution (Sect 5). While in the previous manuscript we considered only the u=v
+solution, in this version we solve the non-axisymmetric problem for the full dust velocity. 
+
+We have also derived detailed observational predictions, and present a 
+comparison of the model with the system of Oph IRS 48, recently imaged
+with ALMA. These go into a new Sect 6. 
+
+We believe these changes have enriched the paper. The answers to the
+specific points raised by the referee follow below. 
+
+Sincerely,
+Wladimir Lyra
+Min-Kai Lin
+
 ======================================================
 
 a) How does the choice of the shearing sheet approximation influence the results? In
@@ -174,9 +195,4 @@ and 19."
 We hope this will avoid any confusion. 
 
 ======================================================
-
-We also highlight that we have taken the analysis beyond that of the
-previous manuscript by generalizing the non-axisymmetric
-solution. While in the previous manuscript we considered only the u=v
-solution, in this version we solve the non-axisymmetric problem for the full dust velocity. 
 
