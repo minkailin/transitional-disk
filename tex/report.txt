@@ -1,0 +1,33 @@
+This paper looks at the steady state dust distribution in disk vortices. Such
+vortices are among the preferred candidates to explain the asymmetries newly
+detected by ALMA, therefore obtaining an analytical form of the dust distribution is
+a timely effort, especially as the authors are proposing a method to compare with
+future observations. 
+
+The paper is clearly written and the analytical work is presented with clarity.
+Nevertheless, I would like some of the hypotheses/choices made to be clarified.
+
+a) How does the choice of the shearing sheet approximation influence the results? In
+this approximation the vortex would not survive for long, as some of the terms
+necessary are not kept, those terms could have an influence on the results. The
+author could either comment on those terms and try to  assess their influence on the
+resulting dust distribution or use the full Rossby-Shearing Sheet approximation. 
+
+b) How are the vortex models the authors are using different from the ones obtained
+in, for example, RWI simulations?
+
+c) Is the choice of the diffusion component important? How does it influence the
+results?
+
+Concerning the comparison with observation, it would be nice to add the typical
+resolution required in order to determine the parameters such as \delta. Indeed,
+what is the spatial resolution needed on the rms of the radial velocity  field
+inside the vortex? That would probably translate into a minimal distance of the
+vortex to be readily seen with ALMA.
+
+Also, what are the typical dust sizes, how well can we resolve the aspect ratio at
+that wavelength? how do the error bar/ upper limit on the aspect ratio influence the
+comparison with observation? 
+
+On a side note, the author might want to remind the reader a bit more often when the
+use of axisymmetric refers to the new coordinate system.
