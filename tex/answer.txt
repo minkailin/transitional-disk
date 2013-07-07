@@ -1,0 +1,182 @@
+
+======================================================
+
+a) How does the choice of the shearing sheet approximation influence the results? In
+this approximation the vortex would not survive for long, as some of the terms
+necessary are not kept, those terms could have an influence on the results. The
+author could either comment on those terms and try to  assess their influence on the
+resulting dust distribution or use the full Rossby-Shearing Sheet approximation. 
+
+-------------------------------------------------------------------
+
+We thank the referee for this question. Indeed, the vortex solutions
+we choose make use of the shearing box equations, and are thus subject 
+to the same limitations as that approximation. In 
+particular, the shearing box does not have a radial vorticity
+gradient, and thus cannot 
+excite certain modes of vortex formation, such as the Rossby Wave
+Instability (Tagger 2001).  However, vortex
+excitation and vortex survival are separate issues. The vortex
+velocity field is an exact solution of the Euler equations, and can
+decay only due to viscosity or elliptic instability. Baroclinic vortices,
+for instance, are excited and survive indeterminately in 3D
+hydrodynamical simulations in the shearing box (e.g. Lesur & Papaloizou 2010, Lyra & Klahr
+2011). Moreover,  independently of the excitation
+mechanism, these solutions are good local descriptions of the perturbed
+flow (see answer to the following question). In short, we are agnostic
+with respect to the excitation mechanism, but, once excited, the
+shearing box solution holds. 
+
+We inserted this discussion in the manuscript. The new version 
+also places more words of caution concerning the shearing box approximation. In fig 3, for instance, we
+constructed a global view of a Kida vortex, yet the Kida vortex is
+essentially rectilinear, and matches to streamlines only in the
+shearing box. A very large vortex will be affected by curvature,
+which is missing from that approximation (the figure is nevertheless
+helpful). 
+
+======================================================
+
+b) How are the vortex models the authors are using different from the ones obtained
+in, for example, RWI simulations?
+
+-------------------------------------------------------------------
+
+The GNG solution was used to model vortices found in non-linear
+hydrodynamic global simulations of the
+Papaloizou-Pringle instability, which is similar to
+the RWI. Recent studies (Lin & Papaloizou 2011) also found that, in
+quasi-steady state, the RWI vortices excited at planetary gap edges 
+resemble vortices formed by perturbing the disk with
+the Kida solution. We are thus confident that the chosen vortex models are suitable
+as a first model for disk vortices.  In any case, the solutions we
+find are easily generalized to any flow in the form (u_x,u_y) \propto (y,-x). 
+
+We also point out now that the vortex velocity field (u_x,u_y) \propto
+(y,-x) is unbounded, and eventually goes supersonic at some point. This defines a "sonic
+perimeter" beyond which deviations from the vortex motion easily lead
+to shocks, which effectively gives rise to a "vortex boundary". We
+calculate this boundary to be of semiminor axis ~ H/2 (giving vortices
+a radial extent of roughly H), in agreement with numerical
+simulations. 
+
+We included this discussion in the manuscript. 
+
+======================================================
+
+c) Is the choice of the diffusion component important? How does it influence the
+results?
+
+-------------------------------------------------------------------
+
+Definitely! We were aware that our choice of diffusive flux, 
+
+  J=-D*grad(rhod),  (I) 
+
+was not the same as Dubrulle et al (1995), Johansen & Klahr (2005), and
+Birnstiel et al. (2013), who use instead 
+
+J=-D*rhog*grad(rhod/rhog).  (II) 
+
+While (I) equalizes the dust density, (II) equalizes the dust-to-gas
+ratio, a desirable property. However, these works simply throw this
+diffusive flux without reference or rationale with respect to its
+ab initio derivation. That's why we chose (I) in the submitted manuscript. 
+
+However, when attempting to derive observables, we encountered with
+the flux given by (I) some puzzling results, such as the vortex scale length Hv propto
+delta/St. If that was the case, tracer particles (St=0) would have Hv extending
+to infinity. With the flux given by (II), the scale length is Hv
+propto (delta/(St+delta)), which, for St=0, has the neat properties of remaining
+finite and being unaffected by diffusion. 
+
+We did now a literature search on the origin of the diffusion equation
+with flux given by (II), tracing it back to Morfill & Volk (1984) and
+Clarke & Pringle (1988), who call it "contaminant equation". 
+
+We redid the analysis with (II) as the diffusive flux. The analytical
+method remains the same: the new flux amounts to defining an effective
+dust velocity and an effective friction time. The results are modified
+by, as already mentioned, changing Hv from Hv propto 1/S to Hv propto
+1/(S+1), where S=St/delta.
+
+======================================================
+
+Concerning the comparison with observation, it would be nice to add the typical
+resolution required in order to determine the parameters such as \delta. Indeed,
+what is the spatial resolution needed on the rms of the radial velocity  field
+inside the vortex? That would probably translate into a minimal distance of the
+vortex to be readily seen with ALMA.
+
+-------------------------------------------------------------------
+
+Actually, when we talked of measuring delta, we were not thinking about resolving
+it spatially (the beam will smear the turbulent velocity field inside
+the vortex core), but of measuring it spectroscopically. 
+
+However, we checked the numbers now, and it seems that even that would
+be fairly difficult. For subsonic turbulence at ~10% of the sound
+speed at 200K, the typical velocity signal would be of the order of
+0.1 km/s. Only the 2 sigma tail of the distribution would rise above
+the noise (ALMA observations report sensitivity of 0.2 km/s), and the
+signal would be very weak. 
+
+We now suggest measuring delta indirectly, by measuring S(=St/delta) with the
+equations we derive for the density contrast, and disentangle St from
+delta by measuring St (which needs gas density and temperatures, plus
+particle radius and porosity).
+
+We included this discussion in the manuscript. 
+
+======================================================
+
+Also, what are the typical dust sizes, how well can we resolve the aspect ratio at
+that wavelength? how do the error bar/ upper limit on the aspect ratio influence the
+comparison with observation? 
+
+-------------------------------------------------------------------
+
+We have added a whole section about comparison with observations (sect
+6), where we derive observational predictions - the maximum dust
+density, the gas contrast, the dust contrast, and the total trapped
+mass. We also test the model against the recent observations of the
+Oph IRS 48 system (Sect 6.5). Combining their observationally
+determined parameters with our results, we find reasonable numbers.
+The dust contrast implies S=4.8. The measures densities,
+temperatures, and particle properties yield St=0.25, which translates
+into delta=5e-2. This implies turbulent velocities inside the vortex
+of the order of 20% of the sound speed. These velocities are somewhat 
+on the high side, as the speeds expected for the elliptic instability
+range from 5-10% of the sound speed (Lesur & Papaloizou 2010; Lyra &
+Klahr 2011), but given the approximations in the analytics and
+(chiefly) assumptions and uncertainties in the observationally derived
+parameters, the agreement within a factor 2-4 is remarkable.
+
+We derive also the total trapped mass, finding, for the (assumed) gas-to-dust
+ratio of 0.01, 1.4 Earth masses. This is within a factor 6 from the
+observationally determined value is 9 Earth masses. 
+
+======================================================
+
+On a side note, the author might want to remind the reader a bit more often when the
+use of axisymmetric refers to the new coordinate system.
+
+-------------------------------------------------------------------
+
+We now remind the reader of that every time we mention "axisymmetric"
+in that sense, except in Sect 5.  In that section, we state in the
+opening statement that 
+
+"In this section we consistently refer to
+axisymmetric as nu-symmetry in the coordinate system defined by eqs 18
+and 19." 
+
+We hope this will avoid any confusion. 
+
+======================================================
+
+We also highlight that we have taken the analysis beyond that of the
+previous manuscript by generalizing the non-axisymmetric
+solution. While in the previous manuscript we considered only the u=v
+solution, in this version we solve the non-axisymmetric problem for the full dust velocity. 
+
