@@ -13,6 +13,8 @@ We have also derived detailed observational predictions, and present a
 comparison of the model with the system of Oph IRS 48, recently imaged
 with ALMA. These go into a new Sect 6. 
 
+We have added a subtitle to the work: "Observational predictions and applications to transitional disks"
+
 We believe these changes have enriched the paper. The answers to the
 specific points raised by the referee follow below. 
 
