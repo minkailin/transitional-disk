@@ -127,11 +127,11 @@ suggested processes are needed to explain the rich diversity observed
 \citep{Cieza10,Muzerolle10,Merin10,Rosotti13,Clarke-Owen13}.   
 
 Recently, high angular resolution imaging of the outer regions of transitional 
-disks have become available, adding to the debate by showing a myriad of puzzling asymmetries 
+disks have become available, showing a myriad of puzzling asymmetries 
 that beg for explanation. These come in the shape of spiral arms
 \citep{Pietu05,Corder05,Muto12,Tang12},  elliptical dust walls
-\citep{Isella12}, and non-axisymmetric dust clouds \citep{Oppenheimer08,Brown09,Casassus12}. In particular, 
-giant horseshoe-shaped dust distributions are seen in images obtained with \blue{the Combined Array for Research in Millimeter-wave Astronomy 
+\citep{Isella12}, and non-axisymmetric dust clouds
+\citep{Oppenheimer08,Brown09,Casassus12}. In particular, giant horseshoe-shaped dust distributions are seen in images obtained with \blue{the Combined Array for Research in Millimeter-wave Astronomy 
 (CARMA, \citealt{Isella13})} and with the \blue{Atacama Large Millimeter Array} (ALMA, \citealt{Casassus13,vanderMarel13}). The planet interpretation is particularly attractive for 
 explaining these asymmetries, since they generally match the range of structures predicted by hydrodynamical 
 models of planet-disk interaction. 
@@ -147,19 +147,19 @@ akin to Kelvin-Helmholtz instability, thus converting the extra shear
 into vorticity. The large-scale vortices that result are well-known to trap 
 dust, a property that has been invoked in the context of primordial disks to
 speed up planet formation by trapping solids of cm to m size \citep{Barge-Sommeria95,Adams-Watkins95,Tanga96,Klahr-Henning97,Hodgson-Brandenburg98,Chavanis00,delaFuenteMarcos-Barge01,Johansen04,Inaba-Barge06}, and demonstrated through numerical simulations to efficiently achieve the
-critical densities needed for gravitational collapse
-\citep{Lyra08,Lyra09a,Lyra09b}. 
+critical densities needed for gravitational collapse \blue{of the
+  trapped clumps} \citep{Lyra08,Lyra09a,Lyra09b}. 
 
 Part of these results have been applied to the field of
 transitional disks. The particle size that is
-preferentially trapped is set by the friction time, $\tau$, which is a
+preferentially trapped is set by the friction time, $\tauf$, which is a
 function of the gas density and particle radius. A suitable nondimensionalization for the
-friction time is the Stokes number, $\St = \varOmega \tau$,
+friction time is the Stokes number, $\St = \varOmega \tauf$,
 where $\varOmega$ is the Keplerian frequency. Dust that is too
 well-coupled to the gas ($\St\rightarrow 0$) does not suffer friction, and bodies
 that are too large ($\St\rightarrow \infty$) have too much inertia to be moved by the
-gas: the preferential size for trapping is around \St=1 (see e.g. \citealt{Youdin-Goodman05,Youdin08}).
-While in the dense, fast rotating, inner regions of primordial disks,
+gas: the preferential size for trapping is \St=1 (see e.g. \citealt{Youdin-Goodman05,Youdin08}).
+While in the dense, fast rotating, inner regions of primordial disks, 
 the preferentially trapped particle size corresponds to meter-size, in
 the thin, slowly rotating, outer regions of transitional
 disks, the size corresponding to \St=1 drops by about three orders of
@@ -181,9 +181,11 @@ model for the steady state distribution of dust trapped in vortices,
 accurate to first order in Stokes number, and general in space. In 
 \sect{sect:model-equations} we derive the
 advective-diffusive equation, and in \sect{sect:coordinate-transformation} the appropriate coordinate
-transformation. In \sect{sect:axisymmetric} we solve the equation for the axisymmetric
-case, and in \sect{sect:nonaxisymmetric} we generalize it for non-axisymmetry. We conclude
-with a brief discussion on how observations can validate the model. 
+transformation. In \sect{sect:axisymmetric} we solve the equation for
+the ``axisymmetric'' case \blue{in that coordinate system}, and in
+\sect{sect:nonaxisymmetric}  we generalize it for
+non-axisymmetry. \blue{In \sect{sect:observables} 
+we derive observational predictions, and apply the model to the Oph IRS 48 system.}
 
 \section{Dust steady state} 
 \label{sect:model-equations}
@@ -254,7 +256,7 @@ semi-minor axis $a$ and semimajor axis $a\chi$). \blue{Notice that the flow even
   gets supersonic for large values of $x$ and $y$. This will limit the
   validity of the solution, as the vortices shock beyond the sonic
   perimeter. This effectively leads to a vortex ``boundary'', beyond
-  which the motion resumes to the background Keplerian flow'.} 
+  which the motion resumes to the background Keplerian flow.} 
 
 In this work we consider the Kida solution \citep{Kida81}
 
@@ -283,16 +285,14 @@ compressible Euler equations
   quasi-steady state, the RWI vortices excited at planetary gap edges 
   resemble vortices formed by perturbing the disk with
   the Kida solution. We are thus confident that the above solutions are suitable
-  as a first model for disk vortices.  However, it is straight forward
+  as a first model for disk vortices.  Moreover, it is straight forward
   to generalize the solutions below to any flow in the form
   $u_x\propto y$ and $u_y\propto -x$.}
 
-We note that the dust
-velocity is comprised of a divergent-free part, $\v{u}$, and a
-curl-free part, $\tau\nabla{h}$. The vortex flow attempts to keep the
+We note that the dust velocity \blue{\eqp{eq:v}} is comprised of a divergent-free part, $\v{u}$, and a
+curl-free part, $\tau\grad{h}$. The vortex flow attempts to keep the
 dust particles on closed elliptic streamlines via $\v{u}$, while friction
-attempts to concentrate dust toward pressure maximum via $\tau\nabla
-h$. The only effect that attempts to spread out the dust is diffusion
+attempts to concentrate dust toward pressure maximum via $\tau\grad{h}$. The only effect that attempts to spread out the dust is diffusion
 via $D$.  
 
 Taking the divergence of
@@ -381,7 +381,8 @@ $H$ & $c_s/\varOmega$ & sonic scale, gas scale height\\
 $\delta$ & $D=\delta c_s H$ & dimensionless diffusion parameter\\
 $f(\chi)$ & \eq{eq:scale-function} & scale function \\
 \blue{$S$} & \blue{$= \St/\delta$} & \blue{dimensionless number} \\
-$H_V$ & $=\frac{H}{f(\chi)} \ \sqrt{\blue{\frac{1}{S+1}}}$ & vortex scale length \\
+\blue{$H_g$} & \blue{$=H/f(\chi)$} & \blue{gas vortex scale length} \\
+$H_V$ & $=H_g \sqrt{\blue{\frac{1}{S+1}}}$ & \blue{dusty} vortex scale length \\
 $k$ & $=\sqrt{2}/H_V$ & \\ 
 $\blue{\zeta}$ & $=ka$ & \\
 $\tilchi$ & $=\frac{\chi^2-1}{2(\chi^2+1)}$ & \\
@@ -390,6 +391,8 @@ $k_m$ & $= 1+imA/B$ & \\
 $\mathcal{A}_m$ $\mathcal{B}_m$ $\mathcal{C}_m$  &\eqss{eq:ops}{eq:opsw} & differential operators \\
 \blue{$b_m$} & & constants\\
 $\epsilon(\blue{\zeta})$ & & non-axisymmetric correction \\
+\blue{$\varepsilon$} & \blue{$=\int \rho_d dV/ \int \rho_g dV$}& \blue{global dust-to-gas ratio}\\
+\blue{$\rho_0$} & & \blue{max gas density, reference density} \\
  & & \\ \hline
 \end{tabular}
 \end{center}
@@ -595,7 +598,9 @@ interval of physical relevance ($2 < \chi \lesssim 10$). %The dust distribution 
 We show in \fig{fig:disk}, in the inertial frame, 
 the dust distribution for \blue{$S$}=1 in a Kida vortex of $\chi=4$ embedded in a 
 disk of aspect ratio $H/r$=0.1, where $r$ is the stellocentric
-distance. 
+distance. \blue{We caution that this image extrapolates the spatial
+range of applicability of the shearing box approximation used to construct
+the solution.}
 
 \blue{It is worth noting that for certain vortex models and/or
 aspect-ratios, the Gaussian solution, \eq{eq:gen_axi}, is in fact an 
@@ -607,6 +612,24 @@ In this special case, explicitly averaging over $\nu$ is not
 required to remove the $\nu$-dependence from the 
 problem.} 
 
+%\blue{For completeness, we present also the vertical dependency of the
+%  dust distribution. It is straighforward and has already been
+%  calculated by, e.g., \citet{Dubrulle95}). We take
+%  the right-hand-side of the modified diffusion equation \eqp{eq:continuity}
+%  \beq
+%  -v_z\partial_z \rho_d - \rho_d\partial_z v_z + D\partial^2_z \rho_d  = 0 
+%\eeq and substitute the terminal dust velocity $v_z = \tau \partial_z h =
+%-\tau\varOmega^2 z$ (this step used the gas stratification $\ln \rho_g (z) =
+%-z^2/2H^2$). Using the ansatz $\ln \rho_d (z) =-z^2/2H_d^2$, the equation
+%above becomes 
+%   \beq
+%\left[\frac{D}{H_d^2} - \tau\varOmega^2\right] \left(\frac{z^2}{H_d^2} - 1\right) = 0 
+%\eeq which is only true for all values of $z$ if $H_d^2 = D/(\tau\varOmega^2)$, i.e., 
+%\beq
+%H_d = H/\sqrt{{S+1}}
+%\eeq
+%} 
+
 \blue{\subsection{Gas distribution}}
 
 \blue{\eq{eq:gen_axi} allows us to calculate the gas distribution. For
@@ -615,7 +638,10 @@ problem.}
 \beq
 \rho_g(a) = \rho_{g\,{\rm max}} \ \exp\left(-\frac{a^2}{2H_g^2}\right), \label{eq:gas_axi}
 \eeq
-\noindent with $H_g = {H_V}{\vert_{\St=0}} = H/f(\chi)$ and
+\noindent with 
+\beq
+H_g = {H_V}{\vert_{\St=0}} = H/f(\chi) \label{eq:hg}
+\eeq \noindent and
 $\rho_{g\,{\rm max}}$, the maximum gas density{\footnote{\blue{Note that 
 \eq{eq:gas_axi} is the gas density averaged over $\nu$ at fixed $a$.  One may  
 directly integrate the gas momenta equations to see that the gas
@@ -634,10 +660,7 @@ particles.}
  \end{center}
 \caption[]{Three parameters, plus a vortex solution, control the dust distribution. 
 The figure shows the appearance of the dust trapped in a Kida vortex of $\chi=4$, 
-for \blue{$S$}=1, in a disk of aspect ratio $H/r$=0.1. \blue{We
-  caution that this image extrapolates the spatial range of
-  applicability of the shearing box approximation used to construct
-  the solution.}}
+for \blue{$S$}=1, in a disk of aspect ratio $H/r$=0.1.} 
  \label{fig:disk}
 \end{figure}
 
@@ -645,7 +668,8 @@ for \blue{$S$}=1, in a disk of aspect ratio $H/r$=0.1. \blue{We
   \begin{center}
     \resizebox{\columnwidth}{!}{\includegraphics{../figs/gaussian.png}}
   \end{center}
-\caption[]{Dust distribution for the axisymmetric case. \blue{The
+\caption[]{Dust distribution for the ``axisymmetric'' case \blue{(in
+    the coordinate system defined by \eqs{eq:change-x}{eq:change-y})}. \blue{The
     maximum density is proportional to $(S+1)^{3/2}$}. Curves for
   \blue{$S$}=\blue{0,} 0.1, 1, 10, and \blue{100} are shown. \blue{The
   $S$=0 case represents tracer particles and, consequently, the gas
@@ -740,7 +764,9 @@ for \blue{$S$}=1, in a disk of aspect ratio $H/r$=0.1. \blue{We
 We \blue{now} consider the non-axisymmetric problem ($\partial_\nu\neq0$)\blue{.} 
 We explicitly show that such effects are small 
 \blue{in the vortex core} provided the \blue{effective} Stokes number \blue{$\overline{\mathrm{St}}\equiv\mathrm{St}+\delta$} is not large. \blue{These requirements will become
-apparent as we proceed through the solution method.} 
+apparent as we proceed through the solution method. In this section we
+consistently refer to axisymmetric' as $\nu$-symmetry in the coordinate
+system defined by \eqs{eq:change-x}{eq:change-y}.} 
 
 
 \subsection{Conversion to ordinary differential equations}
@@ -955,9 +981,10 @@ for $\chi=4$ and $\overline{\St}=0.1$ we obtain $|\mathcal{B}_2\epsilon|/|\mathc
 Even with $\overline{\St}=1$, this ratio $\sim0.2$ is not large. We
 conclude that}  our solution procedure above is self-consistent.
 
-\blue{\section{Observational predictions}}
+\section{\blue{Observational predictions}}
+\label{sect:observables}
 
-\blue{Having arrived at the ``axis-symmetric'' solutions (in the
+\blue{Having arrived at the ``axisymmetric'' solutions (in the
   $a$-$\nu$ plane, \sect{sect:axisymmetric}), and shown that deviations from
   $\nu$-symmetry are small (\sect{sect:nonaxisymmetric}), we go back to
   the solutions of \sect{sect:axisymmetric} to derive observational predictions.}
@@ -969,8 +996,7 @@ density contrast, and, therefore, $\rho_{d\,{\rm max}}$ as a function of
 $\rho_{g\,{\rm max}}$. For that, we calculate the volume integral of $\rho_d$
 and $\rho_g$. These, in turn, need the dependencies on the vertical
 coordinates $z$. These are straightforward, being $\exp(-z^2/2H^2)$ for the gas and
-$\exp(-z^2/2H_d^2)$ for the dust, with $H_d=H/\sqrt{(1+S)}$. Integrated
-over plus and minus infinity, these yield $\sqrt{2\pi}H$ and
+$\exp(-z^2/2H_d^2)$ for the dust, with $H_d=H/\sqrt{(1+S)}$ \citep{Dubrulle95}. Integrated over plus and minus infinity, these yield $\sqrt{2\pi}H$ and
 $\sqrt{2\pi}H_d$, respectively. We have thus}
 
 \blue{
@@ -1039,46 +1065,60 @@ a_s = H (\chi \omega_V)^{-1} \label{eq:sonic}
 \eeq where the subscript $s$ stands for
 sonic. The Kida solution asymptotically reaches $a_s=2H/3$, while the
 GNG solution asymptotically reaches $a_s=H/\sqrt{3}$. In the physical
-range of relevance, they both yield values around $H/2$, which matches
-the results of numerical simulations.}
-
-\blue{Substituting \eq{eq:sonic} in \eq{eq:gas_axi}, the gas density contrast is 
+range of relevance ($2\lesssim \chi \lesssim 10$), they both yield values around $H/2$, which matches  
+the results of numerical simulations. Substituting \eq{eq:sonic} in \eq{eq:gas_axi}, the gas density contrast is 
 \beq
   \frac{\rho_{g\,{\rm max}}}{\rho_{g\,{\rm min}}} =
   \exp{\left[\frac{f^2(\chi)}{2\chi^2\omega_V^2}\right]}, \label{eq:gas-contrast}
 \eeq
-\noindent For neither the Kida not the GNG solutions does this quantity
-deviate much from unity. The argument in the exponent tends
+\noindent For neither the Kida nor the GNG solutions does this quantity
+deviate much from unity. This is because the argument in the exponent tends
 asymptotically in both cases to small fractions of $f^2$; $2/9$ in the
 Kida case, $1/6$ in the GNG case.} 
 
 %which translates into a contrast of $\approx$2.16 for a Kida
 %vortex, and $\approx$1.56 for a GNG vortex. 
 
-
-
 \blue{\subsection{Measuring $\delta$}}
 
-\blue{To measure $\delta$, once needs to disentangle $\St$ from $\delta$
-  in the $S$ parameter. The Stokes number is 
+\blue{Closed elliptic streamlines are subject to the elliptic
+instability, which leads to subsonic turbulence in the vortex core 
+\citep{Lesur-Papaloizou10,Lyra-Klahr11}. To directly measure $\delta$, 
+the turbulent diffusion parameter, one would need to measure the 
+turbulent velocity field. As $\alpha$, the Shakura-Sunyaev viscosity
+parameter \citep{Shakura-Sunyaev73}, $\delta$ can be
+defined as the ratio of stress over pressure. If the turbulence is
+isotropic in the midplane, one can write 
+\beq
+\delta = v_{\rm  rms}^2/c_s^2,
+\eeq where $v_{\rm rms}$ is the rms of the turbulent velocities. 
+The beam smearing would render the velocity field 
+unresolved even for moderately close systems, so one should 
+look for unresolved signatures. Spectroscopically, this extra rms velocity should have 
+an effect similar to microturbulence, providing an slight extra
+broadening to the Doppler core of suitable spectral lines.}
+
+\blue{For gas temperatures ranging 20-200\,K, assuming that the gas is a 5:2 hydrogen to
+helium mixture (mean molecular weight of 2.4), the isothermal sound
+speeds range 0.26-0.83 \, km/s. Considering that typical velocities of subsonic
+turbulence are $\approx$10\% of the sound speed ($\delta \approx
+10^{-2}$), the typical velocity signal for 200\,K would of the order
+of $\leq$0.1\,km/s. As \cite{vanderMarel13} quote a
+sensitivity limit of ALMA of 0.2\,km/s for their observations of
+Oph IRS 48 only the $\geq$2$\sigma$ tail of the turbulent velocity field
+would be detectable.} 
+
+\blue{If a direct determination of $\delta$ does not sound promissing,
+  an indirect way is possible by measuring $S$ and $\St$. The
+  parameter $S$ can be determined via the dust-density
+  constrast with \eqs{eq:max-contrast}{eq:gas-contrast}, or via the
+  dust-gas constrast at maximum \eqp{eq:maxrhod}. The Stokes number is 
 \beq
     \St = \tauf  \varOmega = \sqrt{\frac{\pi}{8}} \
     \frac{a_\bullet}{H} \ \frac{\rho_\bullet}{\rho_g}
 \eeq
 \noindent where $a_\bullet$ is the particle radius and $\rho_\bullet$ the
-particle internal density.}
-
-\blue{Another way to determine $\delta$ would be to directly measure the
-turbulence inside the vortex core. The beam smearing would render the velocity
-field unresolved even for moderately close systems, so 
-one should look for unresolved signatures, such as in spectral
-lines. The turbulence is subsonic, at about 10\% of the sound speed \citep{Lesur-Papaloizou10,Lyra-Klahr11}. 
-For gas at 10-100\,K, it corresponds to an rms velocity of $\approx$
-0.1-0.5\,km/s. This should have an effect similar to microturbulence, providing an slight extra
-broadening to the Doppler core of suitable spectral lines. The signal is
-small, but in principle detectable, as \cite{vanderMarel13} report a
-sensitivity limit of ALMA of 0.2\,km/s for their observations of
-Oph IRS 48.} 
+particle internal density.} 
 
 %\blue{\section{Limitations}}
 
@@ -1091,11 +1131,11 @@ Oph IRS 48.}
 \blue{We now apply our model to the observed Oph IRS 48 system, with the
 parameters derived by \cite{vanderMarel13}.The dust constrast in the same orbit is 130, which, according to
 \eq{eq:max-contrast} and \eq{eq:gas-contrast} for $\chi=3.1$, set $S=4.79$ and
-$S=4.82$ for the Kida and GNG solutions, respectively. } 
+$S=4.82$ for the Kida and GNG solutions, respectively.  The values are
+close because the gas constrast is small \eqp{eq:gas-contrast}.}
 
 \blue{The dust temperature is estimated at 60\,K. Assuming this is the
-  same as the gas temperature, and that the gas is a 5:2 hydrogen to
-  helium mixture (mean molecular weight of 2.4), the isothermal sound speed is 
+  same as the gas temperature, and a mean molecular weight of 2.4, the isothermal sound speed is 
   $c_s \approx {\rm 456 \, cm/s}$. At $r_0$=63\,AU, around a $2 M_\sun$ star, this translates into an aspect
   ratio of $H/r \approx0.09$, or $H\approx5.4$ \,AU. The particle radius measurement is $a_\bullet \approx 4$\,mm. 
 The gas density is highly uncertain. \cite{Brown12} estimate the mass
@@ -1103,9 +1143,11 @@ as $10^{-4} - 10^{-3} M_\sun$ within 30\,AU, using a mm flux vs mass
 calibration \citep{Beckwith90}, which translates into a surface
 density of 10$^{15}$-10$^{16}$ \, cm$^{-2}$ assuming
 H$_2$/CO=10$^4$. For a mean molecular weight of 2.4, these values imply $\rho_g \approx 3 \times 10^{-14}-10^{-15}$ g\,cm$^{\rm  -3}$. We
-take the mean (in log), $\approx 10^{-14}$ g\,cm$^{\rm  -3}$, as representative. For particles of material density 0.8 g\,cm$^{\rm  -3}$, the
-Stokes number should be $\St \approx 0.25$. That yields
-$\delta \approx 5\times 10^{-2}$, meaning typical turbulent velocities in the
+take the mean (in log), $\approx 10^{-14}$ g\,cm$^{\rm  -3}$, as
+representative. For particles of material density 
+$\rho_\bullet=0.8 g\,{\rm cm}^{-3}$, the
+Stokes number should be $\St \approx 0.25$. For $S=4.8$, this translates
+into $\delta \approx 5\times 10^{-2}$, meaning typical turbulent velocities in the
 vortex core at $\sqrt{\delta} \approx 22\%$ of the sound speed. These
 velocities are somewhat on the high side, as the speeds expected for
 the elliptic instability range from 5-10\% of the sound speed
@@ -1116,6 +1158,15 @@ assumptions, and uncertainties, the agreement within a factor $\approx$ 2-4 is r
 dust-to-gas ratio of $\varepsilon=0.01$, \eq{eq:dust-mass} yields 0.55
 and  1.39\,$M_\oplus$ for Kida and GNG, respectively. A factor 16 and
 6, respectively, from the measured trapped mass of 9\,$M_\oplus$.} 
+
+\blue{Although these values seem reasonable, it should be noted that
+  for Oph IRS 48 the candidate planet is at 25AU, whereas the dust trap is at 63 AU. Even though the
+planet is supposed to be massive (planet-to-star mass ratio
+$5\times10^{-3}$), gaps are not expected to be that wide. The supposed
+vortex also seems to be very big, with a semiminor axis of 17\,AU. For
+a temperature of 60\,K, this corresponds to over 3$H$, which is far
+from the $\approx H/2$ expected from numerical simulations and
+\eq{eq:sonic}.}
 
 %\chi=3.1
 %T=60K (assuming? typical dust temperature?) 
@@ -1154,9 +1205,10 @@ and  1.39\,$M_\oplus$ for Kida and GNG, respectively. A factor 16 and
 \section{Conclusions}
 
 We solve for the distribution of dust trapped in
-disk vortices, in steady state between friction, that 
+disk vortices, in steady state between gas drag, that 
 tends to drive dust into the vortex, and diffusion, that expels
-it. \eqs{eq:gen_axi}{eq:hv} are our result for a distribution with
+it. \eqs{eq:gen_axi}{eq:hv}, \blue{with coefficient given by \eq{eq:maxrhod}},
+ are our result for a distribution with
 ``axis-symmetry''  in the coordinate system defined by
 \eqs{eq:change-x}{eq:change-y}. That is, consisting of ellipses of
 equal aspect ratio as those of the gas vortex. The solution has some remarkable
@@ -1164,7 +1216,7 @@ properties. It is a Gaussian of standard deviation $H_V$, where, given
 the angular velocity $\varOmega_V$ of the vortex, $H_V$
 is determined by three quantities. These are: 
 the sonic length and gas scale height, $H$; the vortex aspect ratio
-$\chi$; and \blue{$S=\St/\delta$}, the relative strength of friction to
+$\chi$; and \blue{$S=\St/\delta$}, the relative strength of drag to
 diffusion. The importance of this latter parameter had already been 
 hinted upon by \citet{Cuzzi93} and \citet{Dubrulle95} 
 in the context of steady states of dust sedimentation, and by
@@ -1176,30 +1228,36 @@ the parameter of relevance in their semi-analytical model.
 Transitional disks provide an interesting venue where to test the
 model in an astrophysical context, since all three parameters can be
 derivable from data. The vortex aspect ratio is readily observable,
-and $H$ follows from the temperature ($H=c_s/\varOmega$). The Stokes number is a function of
-dust size and internal density, as well as gas density. In principle,
-these are knowable. The diffusion parameter $\delta$ is the
-challenging one to quantify. In principle, it is not equal to
+and $H$ follows from the temperature ($H=c_s/\varOmega$). \blue{The 
+parameter $S$ follows from the density contrast (either dust-gas
+contrast at maximum or dust constrast in the same
+orbit). Disentangling $\St$ from $\delta$ in this parameter requires
+directly measuring at least one of these quantities. The diffusion
+parameter $\delta$ is in principle not equal to
 $\alpha$ (the dimensionless gas viscosity of
 \citealt{Shakura-Sunyaev73}), because the processes generating turbulence in the
 vortex and in the disk are different. The latter is supposedly the
 magneto-rotational instability \citep[MRI,][]{Balbus-Hawley91}, whereas the former is the elliptic or
 magneto-elliptic instability (see \citealt{Lyra13} and references
-therein). A way to determine $\delta$ would be to measure the spatial rms of
-the velocity field inside the vortex. The degeneracy between the
-parameters ($H$, $\chi$, $\blue{S}$) and the vortex angular frequency
-would also be resolved by measuring the velocity field. As these
-vortices are very extended spatially, measuring their velocity field
-should be possible with the exquisite angular resolution of ALMA.
+therein). A direct measure of $\delta$ would require measuring the
+velocity field inside the vortex, that would appear spectroscopically 
+as a slight extra line broadening. However, this would be
+difficult because the signal is too small. Measuring $\St$ requires
+knowing the gas density and temperature, the particle radius and
+internal density. Of these, the internal density is difficult to measure
+directly and should be inferred by laboratory experiments. We apply
+the model to the Oph IRS 48 system, finding consistent values. The
+Stokes number for the 4\,mm particles is estimated at 0.25, implying 
+$\delta \approx 5\times 10^{-2}$. The total dust masses we estimate 
+are within an order of magnitude of the measured value.}  
 
-We also solve for the non-axisymmetric problem, but with
-approximations that render the solution valid only within 
-the inner $H_V$ of distance from the vortex center. The solution is
+We also solve for the non-axisymmetric problem, \blue{showing that, for the
+vortex core, it is in general but a small correction}. The solution is
 \eq{eq:series-n}, with \blue{``radial'' basis functions given by
 \eq{eq:series1} and} coefficients given by \eq{eq:induction}. In practice, the magnitude
 of the higher non-axisymmetric modes fall fast as $m$ increases, and 
 only the $m=2$ term would provide an appreciable deviation from
-axisymmetry. \blue{We find that non-axisymmetry in dust 
+\blue{$\nu$}-symmetry. \blue{We find that non-axisymmetry in dust 
 is associated with non-zero pressure gradients along elliptical streamlines of the vortex.}
 
 We note that, aside from planetary gap edges, self-sustained disk
@@ -1209,8 +1267,9 @@ These processes, however, are not reasonable in the context of outer
 regions of transition disks: the outer edge of the dead zone is quite smooth
 \citep{Dzyurkevich13,Landry13}, whereas the RWI requires a 
 sharp enough transition; as for the baroclinic instability, it
-requires a negative radial entropy gradient, whereas the outer disk is
-isothermal. This leaves gap-edge RWI as the only currently known plausible mechanism to excite such vortices. 
+requires \blue{finite thermal diffusion, whereas the thin outer disk
+  is supposed to radiate efficiently}. This leaves gap-edge RWI as the only currently known
+plausible mechanism to excite such vortices. 
 
 \acknowledgments W.L. acknowledges financial support by the National Science
 Foundation under grant no. AST10-09802. Part of this paper was written
