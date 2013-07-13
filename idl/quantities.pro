@@ -35,39 +35,32 @@ Rgasmu=Rgas/mmol
 cp=gamma*Rgasmu/(gamma-1)
 cv=cp/gamma
 cs2=T*cp*(gamma-1)
-;print,sqrt(cs2)/1e2
 cs2_iso=cs2/gamma
-;print,sqrt(cs2_iso)/1e2
 
-;cs_m = sqrt(cs2_iso) ;m/s 
-;cs = cs_m * 100. 
 cs=sqrt(cs2_iso)
 H = cs/Omega
 
 print,'isothermal sound speed=',cs/1e2, ' m/s'
 print,'scale height=',H/AU,' AU'
 
-abullet = 0.4
+abullet = 0.15 ;cm
 rhobullet=0.8
 
 
 ;;; Brown estimate
 rhog_brown=1e-14 ; g/cm3
 
-;;; Nienke estimate
-r_ref= 20 * AU
-Sigma0 = 1.35*1e-4 * Mstar/r_ref^2
-Sigma = Sigma0 / (r/r_ref) 
-rhog_nienke = Sigma/(sqrt(2*!pi)*H)
+;;; van der Marel estimate
+;r_ref= 20 * AU
+;Sigma0 = 1.35*1e-4 * Mstar/r_ref^2
+;Sigma = Sigma0 / (r/r_ref)
+Sigma_vanderMarel=25 ; g/cm2 
+rhog_vanderMarel = Sigma_vanderMarel/(sqrt(2*!pi)*H)
 
-rhog=rhog_brown
+rhog=rhog_vanderMarel
 
-;print,sigma0,sigma,rhog_nienke
-;stop
+print,'gas density=',rhog,' g/cm3'
 
-
-
-;St = sqrt(!pi/8) * abullet/H * rhobullet/rhog
 St = sqrt(!pi/8) * abullet/H * rhobullet/rhog
 
 print,'Stokes number=',St
