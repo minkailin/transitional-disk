@@ -22,7 +22,7 @@
 \newcommand{\vt}[1]{\mathbf{#1}}       %for tensors
 \renewcommand{\v}[1]{{\boldsymbol{#1}}} %for vectors
 \def\white#1{\textcolor{white}{#1}}
-\def\blue#1{\textcolor{blue}{ #1}}
+%\def\blue#1{\textcolor{blue}{ #1}}
 \def\red#1{\textcolor{red}{#1}}
 \definecolor{brown}{rgb}{0.42,0.24,0.07}
 \def\brown#1{\textcolor{brown}{#1}}
@@ -58,7 +58,7 @@
 \newcommand{\epsp}{\xi_{_{+}}}
 \newcommand{\epsm}{\xi_{_{-}}}
 \newcommand{\tilchi}{\tilde\chi}
-\newcommand{\tauf}{\tau_{\rm \blue{f}}}
+\newcommand{\tauf}{\tau_{\rm f}}
 
 \newcommand{\St}{{\rm St}}
 
@@ -69,8 +69,8 @@
 
 \begin{document}
 
-\title{Steady state of dust distributions in disk vortices{\blue:}\\
-\blue{Observational predictions and applications to transitional disks}}
+\title{Steady state of dust distributions in disk vortices:\\
+Observational predictions and applications to transitional disks}
 \author{Wladimir Lyra\altaffilmark{1,2,3,$\star$} and Min-Kai Lin\altaffilmark{4,$\star$}}
 \email{wlyra@caltech.edu, \ mklin924@cita.utoronto.ca}
 \altaffiltext{1}{Jet Propulsion Laboratory, California Institute of Technology, 4800 Oak Grove Drive, Pasadena, CA, 91109, USA}
@@ -85,15 +85,15 @@ The Atacama Large Millimeter Array (ALMA) has been  returning images of transiti
 mm-size in the outer disk. The explanation in vogue borrows from the vortex literature by suggesting 
 that these asymmetries are the result of dust trapping in giant vortices, excited via Rossby wave instability (RWI) 
 at planetary gap edges. Due to the drag force, dust trapped in vortices will accumulate 
-in the center\blue{, and} diffusion is needed to maintain a steady state over the lifetime of the disk. While previous work 
+in the center, and diffusion is needed to maintain a steady state over the lifetime of the disk. While previous work 
 derived semi-analytical models of the process, in this paper we
-provide analytical steady-steady solutions. \blue{Exact solutions exist for certain vortex models.}
+provide analytical steady-steady solutions. Exact solutions exist for certain vortex models.
 The solution is determined by the vortex rotation profile, the gas scale height, the 
 vortex aspect ratio, and the ratio of dust diffusion to gas-dust friction. In principle, all these quantities can be derived
 from observations, which would give validation of the model, also giving constrains on the strength of the turbulence 
-inside the vortex core.  \blue{Based on our solution, we derive quantities such as the gas-dust contrast, the trapped dust mass,
+inside the vortex core. Based on our solution, we derive quantities such as the gas-dust contrast, the trapped dust mass,
 and the dust contrast at the same orbital location. We apply our model to the recently imaged Oph IRS 48 system, finding 
-values within the range of the observational uncertainties.}
+values within the range of the observational uncertainties.
 \end{abstract}
 
 \section{Introduction}
@@ -131,8 +131,9 @@ disks have become available, showing a myriad of puzzling asymmetries
 that beg for explanation. These come in the shape of spiral arms
 \citep{Pietu05,Corder05,Muto12,Tang12},  elliptical dust walls
 \citep{Isella12}, and non-axisymmetric dust clouds
-\citep{Oppenheimer08,Brown09,Casassus12}. In particular, giant horseshoe-shaped dust distributions are seen in images obtained with \blue{the Combined Array for Research in Millimeter-wave Astronomy 
-(CARMA, \citealt{Isella13})} and with the \blue{Atacama Large Millimeter Array} (ALMA, \citealt{Casassus13,vanderMarel13}). The planet interpretation is particularly attractive for 
+\citep{Oppenheimer08,Brown09,Casassus12}. In particular, giant horseshoe-shaped dust distributions are seen in images obtained with 
+the Combined Array for Research in Millimeter-wave Astronomy 
+(CARMA, \citealt{Isella13}) and with the Atacama Large Millimeter Array (ALMA, \citealt{Casassus13,vanderMarel13}). The planet interpretation is particularly attractive for 
 explaining these asymmetries, since they generally match the range of structures predicted by hydrodynamical 
 models of planet-disk interaction. 
 
@@ -147,8 +148,8 @@ akin to Kelvin-Helmholtz instability, thus converting the extra shear
 into vorticity. The large-scale vortices that result are well-known to trap 
 dust, a property that has been invoked in the context of primordial disks to
 speed up planet formation by trapping solids of cm to m size \citep{Barge-Sommeria95,Adams-Watkins95,Tanga96,Klahr-Henning97,Hodgson-Brandenburg98,Chavanis00,delaFuenteMarcos-Barge01,Johansen04,Inaba-Barge06}, and demonstrated through numerical simulations to efficiently achieve the
-critical densities needed for gravitational collapse \blue{of the
-  trapped clumps} \citep{Lyra08,Lyra09a,Lyra09b}. 
+critical densities needed for gravitational collapse of the
+trapped clumps \citep{Lyra08,Lyra09a,Lyra09b}. 
 
 Part of these results have been applied to the field of
 transitional disks. The particle size that is
@@ -163,7 +164,7 @@ While in the dense, fast rotating, inner regions of primordial disks,
 the preferentially trapped particle size corresponds to meter-size, in
 the thin, slowly rotating, outer regions of transitional
 disks, the size corresponding to \St=1 drops by about three orders of
-magnitude \blue{\citep{Brauer07,Pinilla12a}}. The resulting trapping of sub-mm and mm-size dust may not
+magnitude \citep{Brauer07,Pinilla12a}. The resulting trapping of sub-mm and mm-size dust may not
 lead to the critical densities necessary to form planets, but they may
 well explain the puzzling observed lopsided asymmetries. While the 
 motivation and particle sizes are different, the relevant physics 
@@ -182,10 +183,10 @@ accurate to first order in Stokes number, and general in space. In
 \sect{sect:model-equations} we derive the
 advective-diffusive equation, and in \sect{sect:coordinate-transformation} the appropriate coordinate
 transformation. In \sect{sect:axisymmetric} we solve the equation for
-the ``axisymmetric'' case \blue{in that coordinate system}, and in
+the ``axisymmetric'' case in that coordinate system, and in
 \sect{sect:nonaxisymmetric}  we generalize it for
-non-axisymmetry. \blue{In \sect{sect:observables} 
-we derive observational predictions, and apply the model to the Oph IRS 48 system.}
+non-axisymmetry. In \sect{sect:observables} 
+we derive observational predictions, and apply the model to the Oph IRS 48 system.
 
 \section{Dust steady state} 
 \label{sect:model-equations}
@@ -194,24 +195,24 @@ Considering the dust is of small sizes, we can treat it as a
 fluid. The dust should then follow the continuity equation 
 
 \beq
-  \pderiv{\rho_d}{t} = -(\v{\blue{w}}\cdot\del)\rho_d - \rho_d \Div{\v{\blue{w}}} - \blue{\Div{J}}
+  \pderiv{\rho_d}{t} = -(\v{w}\cdot\del)\rho_d - \rho_d \Div{\v{w}} - \Div{J}
 %\blue{\Div{\left(D\,\rho_g\grad\varepsilon\right)}},
   \label{eq:continuity-w}
 \eeq
 
 \noindent where $\rho_d$ is the dust density, $\v{w}$ is the dust
-velocity, \blue{and $J$ is the diffusion flux. We take it to be}
+velocity, and $J$ is the diffusion flux. We take it to be
  
 \beq 
-\blue{J=-D\,\rho_g\grad{\left(\rho_d/\rho_g\right)}}\label{eq:j-flux}
+J=-D\,\rho_g\grad{\left(\rho_d/\rho_g\right)}\label{eq:j-flux}
 \eeq 
 
-\noindent \blue{as in the contaminant equation
-\citep{Morfill-Volk84,Clarke-Pringle88,Charnoz11},} where $D$ is the  
+\noindent as in the contaminant equation
+\citep{Morfill-Volk84,Clarke-Pringle88,Charnoz11}, where $D$ is the  
 diffusion coefficient (the diffusion is due
 to elliptical turbulence in the vortex core and in general will be
-different than the turbulent viscosity in the disk), \blue{and $\rho_g$ is
-the gas density}. We assume \blue{that} $D$ is constant. A list of the mathematical symbols used in this work, together
+different than the turbulent viscosity in the disk), and $\rho_g$ is
+the gas density. We assume that $D$ is constant. A list of the mathematical symbols used in this work, together
 with their definitions, is provided in Table~\ref{table:symbols}. 
 
 To derive the velocities, instead of solving the momentum equations
@@ -219,13 +220,13 @@ for the dust, we make use of the relative velocity, following
 \citet[see also \citealt{Youdin08}]{Youdin-Goodman05}
 
 \beq
-\blue{\v{w}} = \v{u} + \tauf  \grad{h}, 
+\v{w} = \v{u} + \tauf  \grad{h}, 
 \label{eq:w}
 \eeq
 \noindent where $\v{u}$ is the gas velocity. \eq{eq:w} is 
 accurate to first order in friction time $\tauf$, assumed 
-constant. \blue{For isentropic gas, t}he enthalpy $h$ is defined as $dh = dp /\rho_g$, where $p$ 
-is the pressure. \blue{As noted by
+constant. For isentropic gas, the enthalpy $h$ is defined as $dh = dp /\rho_g$, where $p$ 
+is the pressure. As noted by
 \cite{Charnoz11}, \eq{eq:continuity-w} can be written as a typical continuity equation with Laplacian diffusion 
 \beq
 \partial_t \rho_d = -(\v{v} \cdot\del)\rho_d - \rho_d \Div{\v{v}} + D\Laplace\rho_d \label{eq:continuity}
@@ -242,8 +243,8 @@ friction time as
 \noindent combining \eq{eq:w}, \eq{eq:v-prime} and \eq{eq:tau-prime},
 we can thus write
 \beq
-\blue{\v{v}} = \v{u} + \tau \grad{h}, \label{eq:v}
-\eeq \noindent valid for isothermal gas only.}
+\v{v} = \v{u} + \tau \grad{h}, \label{eq:v}
+\eeq \noindent valid for isothermal gas only.
 
 Inside the vortex, the gas flow is divergenceless, and 
 we adopt the following model for $\v{u}$
@@ -252,11 +253,11 @@ we adopt the following model for $\v{u}$
   \label{eq:vortex}
 \eeq
 \noindent where $\chi > 1$ is the vortex aspect ratio (it has
-semi-minor axis $a$ and semimajor axis $a\chi$). \blue{Notice that the flow eventually
+semi-minor axis $a$ and semimajor axis $a\chi$). Notice that the flow eventually
   gets supersonic for large values of $x$ and $y$. This will limit the
   validity of the solution, as the vortices shock beyond the sonic
   perimeter. This effectively leads to a vortex ``boundary'', beyond
-  which the motion resumes to the background Keplerian flow.} 
+  which the motion resumes to the background Keplerian flow.
 
 In this work we consider the Kida solution \citep{Kida81}
 
@@ -271,7 +272,7 @@ compressible Euler equations
 \varOmega_V=\varOmega\sqrt{3/(\chi^2-1)}.
 \eeq
 
-\blue{We comment that these solutions make use of the shearing box
+We comment that these solutions make use of the shearing box
   equations, and are thus subject to the same limitations as that
   approximation \citep{Regev-Umurhan08}. In
   particular, the shearing box does not have a radial vorticity
@@ -287,9 +288,9 @@ compressible Euler equations
   the Kida solution. We are thus confident that the above solutions are suitable
   as a first model for disk vortices.  Moreover, it is straight forward
   to generalize the solutions below to any flow in the form
-  $u_x\propto y$ and $u_y\propto -x$.}
+  $u_x\propto y$ and $u_y\propto -x$.
 
-We note that the dust velocity \blue{\eqp{eq:v}} is comprised of a divergent-free part, $\v{u}$, and a
+We note that the dust velocity \eqp{eq:v} is comprised of a divergent-free part, $\v{u}$, and a
 curl-free part, $\tau\grad{h}$. The vortex flow attempts to keep the
 dust particles on closed elliptic streamlines via $\v{u}$, while friction
 attempts to concentrate dust toward pressure maximum via $\tau\grad{h}$. The only effect that attempts to spread out the dust is diffusion
@@ -330,7 +331,7 @@ with $\omega_{_V}=\varOmega_V/\varOmega$, the divergence becomes
 
 \noindent where we define $C$ as positive, so that the divergence is
 negative (physically meaning that the dust gets trapped). Replacing
-\eq{eq:const-div} in the \blue{modified} continuity equation \blue{\eqp{eq:continuity}}, and setting $\partial_t$ =
+\eq{eq:const-div} in the modified continuity equation \eqp{eq:continuity}, and setting $\partial_t$ =
 0 for steady state, 
 
 \beq
@@ -338,7 +339,7 @@ negative (physically meaning that the dust gets trapped). Replacing
 \label{eq:steady}
 \eeq
 
-Substituting the gas velocity \blue{\eqp{eq:vortex}}, and dividing by $D$, we
+Substituting the gas velocity \eqp{eq:vortex}, and dividing by $D$, we
 arrive at the modified advection-diffusion equation that should
 determine the steady-state distribution of the vortex-trapped dust, 
 
@@ -359,13 +360,13 @@ Symbol & Definition & Description \\\hline
 $\tauf$ && friction time\\
 $D$ & & dust diffusion coefficient \\
 $c_s$ & & sound speed \\
-$\blue{\tau}$ &\blue{=$\tauf + D/c_s^2$}& \blue{effective friction time}\\
+$\tau$ & =$\tauf + D/c_s^2$& effective friction time\\
 $\varOmega$ & & Keplerian angular frequency \\
 \St & $= \varOmega \tauf$ & Stokes number \\
 $t$ &  & time \\
 $\rho_g$, $\rho_d$  & & gas and dust density\\
-$\v{u}$, \blue{$\v{w}$} & & gas and dust velocity\\
-\blue{$\v{v}$} & \blue{$= \v{w} + D\grad\ln\rho$}& \blue{effective dust velocity} \\
+$\v{u}$, $\v{w}$ & & gas and dust velocity\\
+$\v{v}$ & $= \v{w} + D\grad\ln\rho$ & effective dust velocity \\
 $p$ && gas pressure \\
 $h$ &$dh=dp/\rho_g$ & gas enthalpy\\
 $\chi$ & & vortex aspect ratio ($>1$) \\
@@ -380,19 +381,19 @@ $\xi_\pm$ & $ = 1\pm\chi^{-2}$ \\
 $H$ & $c_s/\varOmega$ & sonic scale, gas scale height\\
 $\delta$ & $D=\delta c_s H$ & dimensionless diffusion parameter\\
 $f(\chi)$ & \eq{eq:scale-function} & scale function \\
-\blue{$S$} & \blue{$= \St/\delta$} & \blue{dimensionless number} \\
-\blue{$H_g$} & \blue{$=H/f(\chi)$} & \blue{gas vortex scale length} \\
-$H_V$ & $=H_g \sqrt{\blue{\frac{1}{S+1}}}$ & \blue{dusty} vortex scale length \\
+$S$ & $= \St/\delta$ & dimensionless number \\
+$H_g$ & $=H/f(\chi)$ & gas vortex scale length \\
+$H_V$ & $=H_g \sqrt{\frac{1}{S+1}}$ & dusty vortex scale length \\
 $k$ & $=\sqrt{2}/H_V$ & \\ 
-$\blue{\zeta}$ & $=ka$ & \\
+$\zeta$ & $=ka$ & \\
 $\tilchi$ & $=\frac{\chi^2-1}{2(\chi^2+1)}$ & \\
-\blue{$\beta$} & \blue{$=(B_1-B_2)/4B$}& \\
+$\beta$ & $=(B_1-B_2)/4B$& \\
 $k_m$ & $= 1+imA/B$ & \\
 $\mathcal{A}_m$ $\mathcal{B}_m$ $\mathcal{C}_m$  &\eqss{eq:ops}{eq:opsw} & differential operators \\
-\blue{$b_m$} & & constants\\
-$\epsilon(\blue{\zeta})$ & & non-axisymmetric correction \\
-\blue{$\varepsilon$} & \blue{$=\int \rho_d dV/ \int \rho_g dV$}& \blue{global dust-to-gas ratio}\\
-\blue{$\rho_0$} & & \blue{max gas density, reference density} \\
+$b_m$ & & constants\\
+$\epsilon(\zeta)$ & & non-axisymmetric correction \\
+$\varepsilon$ & $=\int \rho_d dV/ \int \rho_g dV$ & global dust-to-gas ratio\\
+$\rho_0$ & & max gas density, reference density \\
  & & \\ \hline
 \end{tabular}
 \end{center}
@@ -495,10 +496,10 @@ The dust-trapping equation is therefore
 %\blue{We remark that a very similar equation  can be derived  when the diffusive flux is modeled as $D\rho_g\nabla(\rho_d/\rho_g)$, as used by \cite{Birnstiel13} . In fact, by redefining the friction time, 
 %our solution below can be made applicable to this case as well.} 
 
-\section{``Axisymmetric'' \blue{solution}}
+\section{``Axisymmetric'' solution}
 \label{sect:axisymmetric}
 
-\blue{\subsection{Dust distribution}}
+\subsection{Dust distribution}
 
 We now make the assumption that the dust distribution follows, in shape, that of
 the gas (we will relax this approximation in the next section). In this case, the
@@ -544,21 +545,21 @@ the Stokes number, writing thus
 
 \beqn
 \label{eq:k}
-k^2 = \frac{2\blue{(}\St+\blue{\delta)}}{\delta H^2} f^2(\chi),
+k^2 = \frac{2(\St+\delta)}{\delta H^2} f^2(\chi),
 \eeqn 
 
 \noindent so
 
 \beq
- H_V = \frac{H}{f(\chi)} \sqrt{\frac{\delta}{\St\blue{+\delta}}}. 
+ H_V = \frac{H}{f(\chi)} \sqrt{\frac{\delta}{\St+\delta}}. 
 \label{eq:hv-pre}
 \eeq
-\noindent \blue{following \cite{Jacquet12} we define $S=\St/\delta$. The vortex scale
+\noindent following \cite{Jacquet12} we define $S=\St/\delta$. The vortex scale
 length is therefore
 \beq
 H_V = \frac{H}{f(\chi)} \sqrt{\frac{1}{S+1}}
 \label{eq:hv}
-\eeq}
+\eeq
 
 \noindent In these equations, the scale function $f(\chi)$ is given by 
 
@@ -593,16 +594,16 @@ interval of physical relevance ($2 < \chi \lesssim 10$). %The dust distribution 
  \label{fig:scale-function}
 \end{figure}
 
-%Dust distributions for different values of \blue{$S$} are plotted in \fig{fig:gaussian}, as a 
+%Dust distributions for different values of $S$ are plotted in \fig{fig:gaussian}, as a 
 %function of $a/H$. 
 We show in \fig{fig:disk}, in the inertial frame, 
-the dust distribution for \blue{$S$}=1 in a Kida vortex of $\chi=4$ embedded in a 
+the dust distribution for $S$=1 in a Kida vortex of $\chi=4$ embedded in a 
 disk of aspect ratio $H/r$=0.1, where $r$ is the stellocentric
-distance. \blue{We caution that this image extrapolates the spatial
+distance. We caution that this image extrapolates the spatial
 range of applicability of the shearing box approximation used to construct
-the solution.}
+the solution.
 
-\blue{It is worth noting that for certain vortex models and/or
+It is worth noting that for certain vortex models and/or
 aspect-ratios, the Gaussian solution, \eq{eq:gen_axi}, is in fact an 
 exact solution to the dust-steady state equation, \eq{eq:dust-trapping-uvzero}.  
 We will explore this in more detail  in \sect{sect:nonaxisymmetric}, but one can check this by inserting
@@ -610,7 +611,7 @@ We will explore this in more detail  in \sect{sect:nonaxisymmetric}, but one can
 for the coefficient of the trigonometric terms to vanish. 
 In this special case, explicitly averaging over $\nu$ is not
 required to remove the $\nu$-dependence from the 
-problem.} 
+problem.
 
 %\blue{For completeness, we present also the vertical dependency of the
 %  dust distribution. It is straighforward and has already been
@@ -630,9 +631,9 @@ problem.}
 %\eeq
 %} 
 
-\blue{\subsection{Gas distribution}}
+\subsection{Gas distribution}
 
-\blue{\eq{eq:gen_axi} allows us to calculate the gas distribution. For
+\eq{eq:gen_axi} allows us to calculate the gas distribution. For
   that we recall that  for tracer particles ($\St=0$), the dust distribution should
   mimic that of the gas. The distribution should thus be 
 \beq
@@ -642,17 +643,15 @@ problem.}
 \beq
 H_g = {H_V}{\vert_{\St=0}} = H/f(\chi) \label{eq:hg}
 \eeq \noindent and
-$\rho_{g\,{\rm max}}$, the maximum gas density{\footnote{\blue{Note that 
+$\rho_{g\,{\rm max}}$, the maximum gas density{\footnote{Note that 
 \eq{eq:gas_axi} is the gas density averaged over $\nu$ at fixed $a$.  One may  
 directly integrate the gas momenta equations to see that the gas
-density/pressure depends, in general, on both $a$ and $\nu$.}}}. }
+density/pressure depends, in general, on both $a$ and $\nu$.}}.
 
-\blue{Notice that for $\St=0$ the effect of diffusion cancels out. This is because
+Notice that for $\St=0$ the effect of diffusion cancels out. This is because
 the diffusion is proportional to the gradient of the dust-to-gas
 ratio \eqp{eq:j-flux}, which is zero for tracer
-particles.}
-
-
+particles.
 
 \begin{figure}
 \begin{center}
@@ -660,7 +659,7 @@ particles.}
  \end{center}
 \caption[]{Three parameters, plus a vortex solution, control the dust distribution. 
 The figure shows the appearance of the dust trapped in a Kida vortex of $\chi=4$, 
-for \blue{$S$}=1, in a disk of aspect ratio $H/r$=0.1.} 
+for $S$=1, in a disk of aspect ratio $H/r$=0.1.} 
  \label{fig:disk}
 \end{figure}
 
@@ -668,15 +667,15 @@ for \blue{$S$}=1, in a disk of aspect ratio $H/r$=0.1.}
   \begin{center}
     \resizebox{\columnwidth}{!}{\includegraphics{../figs/gaussian.png}}
   \end{center}
-\caption[]{Dust distribution for the ``axisymmetric'' case \blue{(in
-    the coordinate system defined by \eqs{eq:change-x}{eq:change-y})}. \blue{The
-    maximum density is proportional to $(S+1)^{3/2}$}. Curves for
-  \blue{$S$}=\blue{0,} 0.1, 1, 10, and \blue{100} are shown. \blue{The
+\caption[]{Dust distribution for the ``axisymmetric'' case (in
+    the coordinate system defined by \eqs{eq:change-x}{eq:change-y}). The
+    maximum density is proportional to $(S+1)^{3/2}$. Curves for
+  $S$=0, 0.1, 1, 10, and 100 are shown. The
   $S$=0 case represents tracer particles and, consequently, the gas
   density. The $x$-axis is $a/H_g$, where $H_g=H/f(\chi)$ is the
   vortex scale length in the gas phase, with $H$ the sonic scale and
   $f(\chi)$ the model-dependent scale function
-  \eqp{eq:scale-function}.}}
+  \eqp{eq:scale-function}.}
  \label{fig:gaussian}
 \end{figure}
 
@@ -761,13 +760,13 @@ for \blue{$S$}=1, in a disk of aspect ratio $H/r$=0.1.}
 \section{Non-axisymmetric corrections}
 \label{sect:nonaxisymmetric} 
 
-We \blue{now} consider the non-axisymmetric problem ($\partial_\nu\neq0$)\blue{.} 
+We now consider the non-axisymmetric problem ($\partial_\nu\neq0$). 
 We explicitly show that such effects are small 
-\blue{in the vortex core} provided the \blue{effective} Stokes number \blue{$\overline{\mathrm{St}}\equiv\mathrm{St}+\delta$} is not large. \blue{These requirements will become
+in the vortex core provided the effective Stokes number $\overline{\mathrm{St}}\equiv\mathrm{St}+\delta$ 
+is not large. These requirements will become
 apparent as we proceed through the solution method. In this section we
 consistently refer to ``axisymmetric'' as $\nu$-symmetry in the coordinate
-system defined by \eqs{eq:change-x}{eq:change-y}.} 
-
+system defined by \eqs{eq:change-x}{eq:change-y}.
 
 \subsection{Conversion to ordinary differential equations}
 
@@ -785,89 +784,82 @@ multiplying by $\exp{(-\mathrm{i}m\nu)}$, and integrating the resulting
 expressions over the $\nu$ co-ordinate, we arrive at a set of coupled
 ordinary differential equations, 
 
-\blue{
 \beq\label{eq:ode2}
-\mathcal{B}_m\rho_{m-2} (\blue{\zeta})+ \mathcal{A}_m\rho_m(\blue{\zeta}) + \mathcal{C}_m\rho_{m+2}(\blue{\zeta}) = 0,
+\mathcal{B}_m\rho_{m-2} (\zeta)+ \mathcal{A}_m\rho_m(\zeta) + \mathcal{C}_m\rho_{m+2}(\zeta) = 0,
 \eeq
-}
-where $\blue{\zeta}\equiv ka$, and
+
+\noindent where $\zeta\equiv ka$, and
 
 \beqn
-\mathcal{B}_m &\equiv& \blue{\tilchi}\frac{d^2}{d\blue{\zeta}^2} + \left[\blue{\beta \blue{\zeta}}-
-  \frac{2\blue{\tilchi}}{\blue{\zeta}}
-  \left(m-\frac{3}{2}\right)\right]\frac{d}{d\blue{\zeta}}+\left(m-2\right)\left(\frac{m\blue{\tilchi}}{\blue{\zeta}^2}\blue{-\beta}\right), \notag\\
+\mathcal{B}_m &\equiv& \tilchi\frac{d^2}{d\zeta^2} + \left[\beta \zeta-
+  \frac{2\tilchi}{\zeta}
+  \left(m-\frac{3}{2}\right)\right]\frac{d}{d\zeta}+\left(m-2\right)\left(\frac{m\tilchi}{\zeta^2}-\beta\right), \notag\\
 &&\label{eq:ops}\\ 
-\mathcal{A}_m&\equiv&\frac{d^2}{d\blue{\zeta}^2} +\left(\frac{1}{\blue{\zeta}}\blue{+\frac{\blue{\zeta}}{2}}\right)\frac{d}{d\blue{\zeta}} +\left(k_m^2-\frac{m^2}{\blue{\zeta}^2}\right),\\
+\mathcal{A}_m&\equiv&\frac{d^2}{d\zeta^2} +\left(\frac{1}{\zeta}+\frac{\zeta}{2}\right)\frac{d}{d\zeta} +\left(k_m^2-\frac{m^2}{\zeta^2}\right),\\
 %
 &&\notag\\
-\mathcal{C}_m &\equiv& \blue{\tilchi}\frac{d^2}{d\blue{\zeta}^2}
-+\left[\blue{\beta \blue{\zeta}} +
-  \frac{2\blue{\tilchi}}{\blue{\zeta}}\left(m+\frac{3}{2}\right)\right]\frac{d}{d\blue{\zeta}}
-+ \left(m+2\right)\left(\frac{m\blue{\tilchi}}{\blue{\zeta}^2}
-  \blue{+\beta}\right),\notag\\
+\mathcal{C}_m &\equiv& \tilchi\frac{d^2}{d\zeta^2}
++\left[\beta \zeta +
+  \frac{2\tilchi}{\zeta}\left(m+\frac{3}{2}\right)\right]\frac{d}{d\zeta}
++ \left(m+2\right)\left(\frac{m\tilchi}{\zeta^2}
+  +\beta\right),\notag\\
 &&\label{eq:opsw}
 \eeqn
-where \blue{$\tilchi\equiv(\chi^2-1)/[2(\chi^2+1)]$}, $k_m^2 \equiv 1+\mathrm{i}mA/B$\blue{, and}
+where $\tilchi\equiv(\chi^2-1)/[2(\chi^2+1)]$, $k_m^2 \equiv 1+\mathrm{i}mA/B$, and
 \beq
-\blue{\beta \equiv \frac{B_1-B_2}{2k^2(1+\chi^{-2})} = \frac{B_1 - B_2}{4B}.}
+\beta \equiv \frac{B_1-B_2}{2k^2(1+\chi^{-2})} = \frac{B_1 - B_2}{4B}.
 \eeq
 %[Recall $k^2\equiv 2B/\left(1+\chi^{-2}\right)$.] The independent variable is $\blue{\zeta}\equiv ka$. 
-\blue{Note that $\beta$ is a function of the aspect-ratio depending on the vortex model.} 
+Note that $\beta$ is a function of the aspect-ratio depending on the vortex model.
 \eq{eq:ode2} holds for each $m$ except for $m=0$ for which the $\rho_{m-2}$ terms are absent. Each 
 $\rho_m$ couples to $\rho_{m\pm2}$ through operators $\mathcal{B}_m$
 and $\mathcal{C}_m$. The axisymmetric problem is recovered by
 setting $\rho_{m>0}=0$. 
 
-\blue{We} expect $\rho_d(a,\nu)$ to have even symmetry in
-$\nu$ \blue{because of the elliptical nature of the vortex streamlines}. 
+We expect $\rho_d(a,\nu)$ to have even symmetry in
+$\nu$ because of the elliptical nature of the vortex streamlines. 
 Henceforth we only consider even $m$. We seek solutions with  
-$\rho_m^\prime(0)=0$ \blue{(where the prime denotes derivative with respect to the argument)} and $\rho_{m\geq2}(0)=0$, so that
+$\rho_m^\prime(0)=0$ (where the prime denotes derivative with respect to the argument) and $\rho_{m\geq2}(0)=0$, so that
 $\partial_x\rho_d=\partial_y\rho_d=0$ at the origin, consistent with 
 dust reaching maximal density there.  
 
-\blue{\subsection{Operator properties}}
+\subsection{Operator properties}
 
-\blue{
 Consider 
 \begin{align}
-	g_m(\blue{\zeta}) \equiv \blue{\zeta}^m\exp{(-\blue{\zeta}^2/4)}.
+	g_m(\zeta) \equiv \zeta^m\exp{(-\zeta^2/4)}.
 \end{align}
 Then we find that 
 \beqn
 \mathcal{B}_mg_{m-2} &=&\frac{1}{4}\left(\tilchi - 2\beta\right)g_m,\\
 \mathcal{A}_mg_m &=& \left(k_m^2 - \frac{m}{2} - 1\right)g_m,\\
-\mathcal{C}_mg_{m+2}&=& \left[4\tilchi(m+1)(m+2) +2(\beta-\tilchi)(m+2)\blue{\zeta}^2 \right.
-\notag\\ &+&\left. \frac{\left(\tilchi - 2\beta\right)}{4}\blue{\zeta}^4\right]g_m. 
+\mathcal{C}_mg_{m+2}&=& \left[4\tilchi(m+1)(m+2) +2(\beta-\tilchi)(m+2)\zeta^2 \right.
+\notag\\ &+&\left. \frac{\left(\tilchi - 2\beta\right)}{4}\zeta^4\right]g_m. 
 \eeqn
 The first two expressions will be useful in constructing nearly-axisymmetric solutions. 
-}
 
-\blue{
 \subsection{Exact axisymmetric solutions}
 It is useful to see how the formulation above connects with the  axisymmetric solutions discussed in the previous section.  Consider the special case where $\tilchi = 2\beta$, so that 
 %\begin{align}
 $\mathcal{B}_mg_{m-2} = 0.$
 %\end{align}
-Then the complete solution to \eq{eq:ode2} is $\rho_0 = b_0e^{-\blue{\zeta}^2/4}$ with $\rho_{m>0} \equiv 0$, and $b_0$ is an arbitrary constant. That is, if $\tilchi=2\beta$ then the dust distribution is exactly axisymmetric. 
-}
-\blue{
+Then the complete solution to \eq{eq:ode2} is $\rho_0 = b_0e^{-\zeta^2/4}$ with $\rho_{m>0} \equiv 0$, and $b_0$ is an arbitrary constant. That is, if $\tilchi=2\beta$ then the dust distribution is exactly axisymmetric. 
+
 \subsubsection{Dust in a GNG vortex is axisymmetric}
 For the GNG vortex, one can verify that $\tilchi\equiv 2\beta$, implying dust density only depends on the ellipse under consideration, not the position along it. This is because the GNG vortex has no pressure gradient along the elliptical streamlines \citep{Chang-Oishi10}. 
-}
-\blue{
+
 \subsubsection{Condition for dust in a Kida vortex to be axisymmetric}
 For the Keplerian Kida vortex, we find
 \begin{align}
 \tilchi - 2\beta = \frac{\chi(\chi-1)(\chi-7)}{2(\chi-2)(2\chi+1)(\chi^2+1)}.
 \end{align}
 The dust distribution is exactly axisymmetric for aspect-ratio $\chi=7$, which is also when the Keplerian Kida vortex has no pressure gradient along its elliptical streamlines \citep{Chang-Oishi10}. 
-}
-\blue{
+
+
 \subsection{Source term approximation}
 In preparation for constructing non-axisymmetric solutions, we here describe the \emph{source term approximation} \citep{Zhang06}.
 We assume that $|\rho_m|$ decreases with $m$, so that in \eq{eq:ode2} the $\mathcal{C}_m\rho_{m+2}$ term has smallest magnitude.  Neglecting it as a first approximation, we solve 
-}
-\blue{
+
 \begin{align}
 \mathcal{A}_m\rho_m = \begin{cases}
         0 & m =0 \\
@@ -876,7 +868,7 @@ We assume that $|\rho_m|$ decreases with $m$, so that in \eq{eq:ode2} the $\math
 \end{align}
 The solutions are 
 \begin{align}\label{eq:series1}
-\rho_m (\blue{\zeta})= b_m g_m(\blue{\zeta}),
+\rho_m (\zeta)= b_m g_m(\zeta),
 %\begin{align}\label{eq:series}
 %\rho_m (\blue{\zeta})= b_m \blue{\zeta}^m\exp{(-\blue{\zeta}^2/4)}, 
 \end{align}
@@ -891,18 +883,14 @@ b_m  = \left(-1\right)^{m/2}\frac{\left(\tilchi/2-\beta\right)^{m/2}}{\prod_{l=1
 \left(2k_{2l}^2 -2l - 2\right)}b_0,
 \end{align}
 for even $m\geq 2$.  
-}
 
-\blue{
 The source term approximation assumes 
 $R\equiv|\mathcal{C}_m\rho_{m+2}|/|\mathcal{A}_m\rho_m| \ll 1.$ 
-For given $\blue{\zeta}$, the solution $\rho_m=b_mg_m$ is consistent with this requirement if $|k_m^2|\gg1$, corresponding to small effective Stokes number.  
- However, this approximation will eventually fail for large $\blue{\zeta}$ because the solution above implies $R\propto \blue{\zeta}^4$ for $\blue{\zeta}\gg1$. Thus the solution is only self-consistent for sufficiently small $\blue{\zeta}$ and/or $\overline{\St}$. Nevertheless,
+For given $\zeta$, the solution $\rho_m=b_mg_m$ is consistent with this requirement if $|k_m^2|\gg1$, corresponding to small effective Stokes number.  
+ However, this approximation will eventually fail for large $\zeta$ because the solution above implies $R\propto \zeta^4$ for $\zeta\gg1$. Thus the solution is only self-consistent for sufficiently small $\zeta$ and/or $\overline{\St}$. Nevertheless,
 we comment that the closed-formed solutions obtained here may be useful in
 an iterative scheme to obtain numerical solutions to the full set of ODE's. 
-}
 
-\blue{
 \subsection{Weakly non-axisymmetric dust distributions}
 We are now ready to construct non-axisymmetric solutions. 
 %The previous results indicate the axisymmetry is possible if there is no pressure gradients along the ellipse. 
@@ -911,95 +899,92 @@ frictional force on the dust has a non-vanishing component along the
 fluid velocity vector. (I.e. dust particles are accelerated along the
 ellipse.) We assume non-axisymmetry in the dust distribution is
 sufficiently weak, so one may truncate the series solution at
-$m=2$. Thus we set $\rho_{m>2}\equiv0$.} Let
+$m=2$. Thus we set $\rho_{m>2}\equiv0$. Let
 \begin{align}
-\rho_0(\blue{\zeta}) = b_0\blue{g_0(\blue{\zeta})} + \epsilon(\blue{\zeta}),
+\rho_0(\zeta) = b_0 g_0(\zeta) + \epsilon(\zeta),
 \end{align}
 where $\epsilon(x)$ represents the correction to the axisymmetric
-solution due to $\rho_2(\blue{\zeta})$. The ODEs to be solved are
+solution due to $\rho_2(\zeta)$. The ODEs to be solved are
 
 \begin{align}
-&\mathcal{A}_0\epsilon(\blue{\zeta}) = -\mathcal{C}_0\rho_2(\blue{\zeta}),\label{eq:m2_eq1}\\
-&\mathcal{A}_2\rho_2(\blue{\zeta})   = \blue{-\mathcal{B}_2\left(b_0g_0 + \epsilon\right)}.\label{eq:m2_eq2}
+&\mathcal{A}_0\epsilon(\zeta) = -\mathcal{C}_0\rho_2(\zeta),\label{eq:m2_eq1}\\
+&\mathcal{A}_2\rho_2(\zeta)   = -\mathcal{B}_2\left(b_0g_0 + \epsilon\right).\label{eq:m2_eq2}
 \end{align}
 To make further progress, at this stage we \emph{assume} that the
-$\epsilon$ term in Eq. \ref{eq:m2_eq2} can be neglected\blue{, so $\rho_2 = b_2 g_2$ with $b_2$ given by the source term approximation.} 
+$\epsilon$ term in Eq. \ref{eq:m2_eq2} can be neglected, so $\rho_2 = b_2 g_2$ with $b_2$ given by the source term approximation. 
 This means that  
 
-\blue{
 \beq\label{eq:rho2}
-\frac{\rho_2}{\rho_0} = \frac{b_2}{b_0}\blue{\zeta}^2,
+\frac{\rho_2}{\rho_0} = \frac{b_2}{b_0}\zeta^2,
 \eeq
-}
-\blue{
-implying non-axisymmetry becomes significant for sufficiently large $\blue{\zeta}$, 
+
+\noindent implying non-axisymmetry becomes significant for sufficiently large $\zeta$, 
 and truncating the series at $m=2$ is no longer self-consistent. 
 %(higher $m$ components should be included) 
 However, in practice the ratio $|b_2/b_0|$ is small. 
 For example, inserting $\chi=4$ gives $|b_2/b_0|\simeq0.1\%$ for
 $\overline{\St}=0.1$ and $|b_2/b_0|\sim 1\%$ for $\overline{\St}=1$. Since
-most of the dust is contained within $\blue{\zeta}\lesssim 1$, we conclude that
-non-axisymmetry is {\it in general} a small effect.}
+most of the dust is contained within $\zeta\lesssim 1$, we conclude that
+non-axisymmetry is {\it in general} a small effect.
 
 We can use \eq{eq:rho2} in \eq{eq:m2_eq1} to
 calculate the correction term $\epsilon$. We find
 
 \beq
-\epsilon(\blue{\zeta}) = \blue{\frac{1}{8}b_2g_2\left[-16\tilchi+\left(\tilchi - 2\beta\right)\blue{\zeta}^2\right]}.
+\epsilon(\zeta) = \frac{1}{8}b_2g_2\left[-16\tilchi+\left(\tilchi - 2\beta\right)\zeta^2\right].
 \eeq
 
-Collecting the above results and Taylor-expanding the \blue{$g_m$}'s, our
-weakly non-axisymmetric solution for $\blue{\zeta}\ll 1$ reads:
+Collecting the above results and Taylor-expanding the $g_m$'s, our
+weakly non-axisymmetric solution for $\zeta\ll 1$ reads:
 
 \begin{align}
-&\rho_0(\blue{\zeta}) =1 -  \frac{\blue{\zeta}^2}{4}\left[1-\frac{\tilchi\left(\tilchi \blue{- 2\beta}\right)}{\mathrm{i}A/B \blue{- 1/2}}\right]+ O(\blue{\zeta}^4),\\
-&\rho_2(\blue{\zeta}) =-\frac{\left(\tilchi \blue{- 2\beta}\right)}{2\left(4\mathrm{i}A/B \blue{- 2}\right)}\blue{\zeta}^2+O(\blue{\zeta}^4)
+&\rho_0(\zeta) =1 -  \frac{\zeta^2}{4}\left[1-\frac{\tilchi\left(\tilchi - 2\beta\right)}{\mathrm{i}A/B - 1/2}\right]+ O(\zeta^4),\\
+&\rho_2(\zeta) =-\frac{\left(\tilchi - 2\beta\right)}{2\left(4\mathrm{i}A/B - 2\right)}\zeta^2+O(\zeta^4)
 \end{align}
-where we have used the definition of $k_m$ \blue{and set $b_0=1$
-  without loss of generality}. %We see that non-axisymmetric effects
+where we have used the definition of $k_m$ and set $b_0=1$
+  without loss of generality. %We see that non-axisymmetric effects
 %are weak for $\mathrm{St}\ll1$ because $B\propto \mathrm{St}$.  
 In the previous section, we obtained the axisymmetric solution
-assuming the \blue{non-}axisymmetric components are negligible. 
+assuming the non-axisymmetric components are negligible. 
 Here, we see explicitly that the axisymmetric solution in fact leads
 to non-axisymmetry through the coupling terms, but these corrections
 are small for $\overline{\St} \ll 1$, because $B \propto \overline{\St}$. We conclude that dust in the vortex core is effectively axisymmetric.
 %This makes sense because the force on the dust along the ellipse is proportional to $\mathrm{St}$. 
 
 \subsubsection{Consistency check}
-Using the above expression for $\epsilon(\blue{\zeta})$, we can evaluate
-$\mathcal{B}_2\epsilon(\blue{\zeta})$ in order to assess our assumption that
-$\epsilon(\blue{\zeta})$ has a negligible contribution to $\rho_2$. We find
+Using the above expression for $\epsilon(\zeta)$, we can evaluate
+$\mathcal{B}_2\epsilon(\zeta)$ in order to assess our assumption that
+$\epsilon(\zeta)$ has a negligible contribution to $\rho_2$. We find
 
 \beqn
-\mathcal{B}_2\epsilon(\blue{\zeta}) =&& \blue{\left[32\tilchi(5\tilchi - 6\beta)-16(\tilchi-2\beta)(2\tilchi-\beta)\blue{\zeta}^2
-\right.\notag}\\&&\blue{\left.+(\tilchi - 2\beta)^2\blue{\zeta}^4\right]\frac{b_2g_2}{32}.}
+\mathcal{B}_2\epsilon(\zeta) =&& \left[32\tilchi(5\tilchi - 6\beta)-16(\tilchi-2\beta)(2\tilchi-\beta)\zeta^2
+\right.\notag\\&&\left.+(\tilchi - 2\beta)^2\zeta^4\right]\frac{b_2g_2}{32}.
 \eeqn
 
-Provided that $|k_2^2|\gg1$ \blue{and $\blue{\zeta}$ is not large},  
-this term is indeed small compared to the first term on the RHS of \eq{eq:m2_eq2}.  \blue{For example, considering $\blue{\zeta}=1$, 
+Provided that $|k_2^2|\gg1$ and $\zeta$ is not large,  
+this term is indeed small compared to the first term on the RHS of \eq{eq:m2_eq2}. For example, considering $\zeta=1$, 
 for $\chi=4$ and $\overline{\St}=0.1$ we obtain $|\mathcal{B}_2\epsilon|/|\mathcal{B}_2\rho_0|\simeq0.02$. 
 Even with $\overline{\St}=1$, this ratio $\sim0.2$ is not large. We
-conclude that}  our solution procedure above is self-consistent.
+conclude that our solution procedure above is self-consistent.
 
-\section{\blue{Observational predictions}}
+\section{Observational predictions}
 \label{sect:observables}
 
-\blue{Having arrived at the ``axisymmetric'' solutions (in the
+Having arrived at the ``axisymmetric'' solutions (in the
   $a$-$\nu$ plane, \sect{sect:axisymmetric}), and shown that deviations from
   $\nu$-symmetry are small (\sect{sect:nonaxisymmetric}), we go back to
-  the solutions of \sect{sect:axisymmetric} to derive observational predictions.}
+  the solutions of \sect{sect:axisymmetric} to derive observational predictions.
 
-\blue{\subsection{Dust - gas contrast}}
+\subsection{Dust - gas contrast}
 
-\blue{\eq{eq:gen_axi} and \eq{eq:gas_axi} also allows us to calculate the gas-dust
+\eq{eq:gen_axi} and \eq{eq:gas_axi} also allows us to calculate the gas-dust
 density contrast, and, therefore, $\rho_{d\,{\rm max}}$ as a function of
 $\rho_{g\,{\rm max}}$. For that, we calculate the volume integral of $\rho_d$
 and $\rho_g$. These, in turn, need the dependencies on the vertical
 coordinates $z$. These are straightforward, being $\exp(-z^2/2H^2)$ for the gas and
 $\exp(-z^2/2H_d^2)$ for the dust, with $H_d=H/\sqrt{(1+S)}$ \citep{Dubrulle95}. Integrated over plus and minus infinity, these yield $\sqrt{2\pi}H$ and
-$\sqrt{2\pi}H_d$, respectively. We have thus}
+$\sqrt{2\pi}H_d$, respectively. We have thus
 
-\blue{
 \beqn
 \int\rho_d(a,z) dV  &=& \rho_{d\,{\rm max}} \ \frac{(2\pi)^{3/2}}{\sqrt{S+1}} H \int_0^\infty {\rm  e}^{-a^2/2H_g^2 \ (S+1)} \ a\chi \ da \notag\\
 &&= \rho_{d\,{\rm max}} \ \left(\frac{2\pi}{S+1}\right)^{3/2} \chi H H_g^2, \label{eq:integral-dust}\\ 
@@ -1013,33 +998,33 @@ ratio, $\varepsilon$. The density enhancement factor is thus
 \beq
   \rho_{d\,{\rm max}} =  \varepsilon \ \rho_0 \ (S+1)^{3/2} \label{eq:maxrhod}
 \eeq where $\rho_0=\rho_{g\,{\rm max}}$ is an appropriate reference
-density. The full expression for the dust density is therefore} 
+density. The full expression for the dust density is therefore
 
-\blue{\beq
+\beq
    \rho_d(a,z) = \varepsilon \, \rho_0 \, (S+1)^{3/2} \  \exp{\left\{-\frac{\left[a^2f^2(\chi) + z^2\right]}{2H^2}(S+1)\right\}} 
 \label{eq:sect6-exp}
-\eeq}
+\eeq
 
-\blue{\eq{eq:maxrhod} shows that the dust-to-gas ratio at the origin (vortex center)
+\eq{eq:maxrhod} shows that the dust-to-gas ratio at the origin (vortex center)
 is related to the total dust-to-gas mass ratio by a simple function of $S$.  
 In this enhancement, only a third (in log) is caused by sedimentation. The
 rest is due to in-plane vortex capturing. Midplane dust
-distributions for different values of \blue{$S$} are plotted in \fig{fig:gaussian}, as a 
-function of $a/H_g$.} 
+distributions for different values of $S$ are plotted in \fig{fig:gaussian}, as a 
+function of $a/H_g$. 
 
-\blue{\subsection{Trapped mass}}
+\subsection{Trapped mass}
 
-\blue{For the total trapped mass, we simply need
+For the total trapped mass, we simply need
 to integrate \eq{eq:sect6-exp}, which amounts to replacing
 \eq{eq:maxrhod} in \eq{eq:integral-dust}
  \beq
 \int\rho_d(a,z) dV  = \left(2\pi\right)^{3/2} \, \varepsilon \, \rho_0 \ \chi H H_g^2 \label{eq:dust-mass}\\ 
 \eeq
-}
 
-\blue{\subsection{Dust density contrast}}
 
-\blue{The contrast in the same orbit is found by calculating the
+\subsection{Dust density contrast}
+
+The contrast in the same orbit is found by calculating the
   minimum dust density and comparing it to \eq{eq:maxrhod}. By substituting the gas solution \eqp{eq:gas_axi}
   into \eq{eq:gen_axi} we can write
 \beq
@@ -1052,7 +1037,7 @@ because the turbulence in the vortex core is locally generated and
 unrelated to the disk turbulence, c.f., elliptic instability,
 \citealt{Lesur-Papaloizou10,Lyra-Klahr11}).
 %
- The minimum densities occurs at the boundary of the vortex, which is
+ The minimum densities occur at the boundary of the vortex, which is
  the sonic perimeter where shocks occur. Its limit is found by
  writing the vortex velocity \eqp{eq:vortex} as a Mach number 
 \beq
@@ -1074,14 +1059,14 @@ the results of numerical simulations. Substituting \eq{eq:sonic} in \eq{eq:gas_a
 \noindent For neither the Kida nor the GNG solutions does this quantity
 deviate much from unity. This is because the argument in the exponent tends
 asymptotically in both cases to small fractions of $f^2$; $2/9$ in the
-Kida case, $1/6$ in the GNG case.} 
+Kida case, $1/6$ in the GNG case. 
 
 %which translates into a contrast of $\approx$2.16 for a Kida
 %vortex, and $\approx$1.56 for a GNG vortex. 
 
-\blue{\subsection{Measuring $\delta$}}
+\subsection{Measuring $\delta$}
 
-\blue{Closed elliptic streamlines are subject to the elliptic
+Closed elliptic streamlines are subject to the elliptic
 instability, which leads to subsonic turbulence in the vortex core 
 \citep{Lesur-Papaloizou10,Lyra-Klahr11}. To directly measure $\delta$, 
 the turbulent diffusion parameter, one would need to measure the 
@@ -1095,20 +1080,20 @@ isotropic in the midplane, one can write
 The beam smearing would render the velocity field 
 unresolved even for moderately close systems, so one should 
 look for unresolved signatures. Spectroscopically, this extra rms velocity should have 
-an effect similar to microturbulence, providing an slight extra
-broadening to the Doppler core of suitable spectral lines.}
+an effect similar to microturbulence, providing a slight extra
+broadening to the Doppler core of suitable spectral lines.
 
-\blue{For gas temperatures ranging 20-200\,K, assuming that the gas is a 5:2 hydrogen to
+For gas temperatures ranging 20-200\,K, assuming that the gas is a 5:2 hydrogen to
 helium mixture (mean molecular weight of 2.4), the isothermal sound
 speeds range 0.26-0.83 \, km/s. Considering that typical velocities of subsonic
 turbulence are $\approx$10\% of the sound speed ($\delta \approx
-10^{-2}$), the typical velocity signal for 200\,K would of the order
+10^{-2}$), the typical velocity signal for 200\,K would be of the order
 of $\leq$0.1\,km/s. As \cite{vanderMarel13} quote a
-sensitivity limit of ALMA of 0.2\,km/s for their observations of
-Oph IRS 48 only the $\geq$2$\sigma$ tail of the turbulent velocity field
-would be detectable.} 
+sensitivity limit of 0.2\,km/s for their ALMA observations of
+Oph IRS 48, only the $\geq$2$\sigma$ tail of the turbulent velocity field
+should be detectable.
 
-\blue{If a direct determination of $\delta$ does not sound promising,
+If a direct determination of $\delta$ does not sound promising,
   an indirect way is possible by measuring $S$ and $\St$. The
   parameter $S$ can be determined via the dust-density
   contrast with \eqs{eq:max-contrast}{eq:gas-contrast}, or via the
@@ -1118,7 +1103,7 @@ would be detectable.}
     \frac{a_\bullet}{H} \ \frac{\rho_\bullet}{\rho_g}
 \eeq
 \noindent where $a_\bullet$ is the particle radius and $\rho_\bullet$ the
-particle internal density.} 
+particle internal density.
 
 %\blue{\section{Limitations}}
 
@@ -1126,47 +1111,52 @@ particle internal density.}
 
 % 30 mili-arcseconds. spatial resolution
 
-\blue{\subsection{Application to Oph IRS 48}}
+\subsection{Application to Oph IRS 48}
 
-\blue{We now apply our model to the observed Oph IRS 48 system, with the
+We now apply our model to the observed Oph IRS 48 system, with the
 parameters derived by \cite{vanderMarel13}.The dust contrast in the same orbit is 130, which, according to
-\eq{eq:max-contrast} and \eq{eq:gas-contrast} for $\chi=3.1$, set $S=4.79$ and
+\eq{eq:max-contrast} and \eq{eq:gas-contrast} for $\chi=3.1$, sets $S=4.79$ and
 $S=4.82$ for the Kida and GNG solutions, respectively.  The values are
-close because the gas contrast is small \eqp{eq:gas-contrast}.}
+close because the gas contrast is small \eqp{eq:gas-contrast}.
 
-\blue{The dust temperature is estimated at 60\,K. Assuming this is the
+The dust temperature \blue{derived by the authors is} 60\,K. Assuming this is the
   same as the gas temperature, and a mean molecular weight of 2.4, the isothermal sound speed is 
   $c_s \approx {\rm 456 \, cm/s}$. At $r_0$=63\,AU, around a $2 M_\sun$ star, this translates into an aspect
-  ratio of $H/r \approx0.09$, or $H\approx5.4$ \,AU. The particle radius measurement is $a_\bullet \approx 4$\,mm. 
-The gas density is highly uncertain. \cite{Brown12} estimate the mass
-as $10^{-4} - 10^{-3} M_\sun$ within 30\,AU, using a mm flux vs mass
-calibration \citep{Beckwith90}, which translates into a surface
-density of 10$^{15}$-10$^{16}$ \, cm$^{-2}$ assuming
-H$_2$/CO=10$^4$. For a mean molecular weight of 2.4, these values imply $\rho_g \approx 3 \times 10^{-14}-10^{-15}$ g\,cm$^{\rm  -3}$. We
-take the mean (in log), $\approx 10^{-14}$ g\,cm$^{\rm  -3}$, as
-representative. For particles of material density 
-$\rho_\bullet=0.8 g\,{\rm cm}^{-3}$, the
-Stokes number should be $\St \approx 0.25$. For $S=4.8$, this translates
-into $\delta \approx 5\times 10^{-2}$, meaning typical turbulent velocities in the
-vortex core at $\sqrt{\delta} \approx 22\%$ of the sound speed. These
-velocities are somewhat on the high side, as the speeds expected for
-the elliptic instability range from 5-10\% of the sound speed
-\citep{Lesur-Papaloizou10,Lyra-Klahr11}, but given the approximations,
-assumptions, and uncertainties, the agreement within a factor $\approx$ 2-4 is remarkable.}
+  ratio of $H/r \approx0.09$, or $H\approx5.4$ \,AU. \blue{As for the
+    particle radius, the ALMA data is sensitive up to $a_\bullet\approx1.5$\,mm, and we
+    take this size to be representative.} 
 
-\blue{As for the trapped mass, for the typical interstellar
-dust-to-gas ratio of $\varepsilon=0.01$, \eq{eq:dust-mass} yields 0.55
-and  1.39\,$M_\oplus$ for Kida and GNG, respectively. A factor 16 and
-6, respectively, from the measured trapped mass of 9\,$M_\oplus$.} 
+\blue{The gas mass is quoted to range between 19-27 Jupiter masses,
+  measured from a ring centered at 60\,AU. The signal-to-noise is too
+  low to derive a radial extent, but assuming it ranges 50-70\,AU, the
+  gas surface density should range 20-30 \ g\,cm$^2$. We take
+  $\Sigma_g$=25\ g\,cm$^2$ as best estimate, which, for the scale
+  height derived above, translates into $\rho_g=\Sigma_g/(\sqrt{2\pi}H)
+  \approx 1.25\times 10^{-13}\ g\,cm^{-3}$.}
 
-\blue{Although these values seem reasonable, it should be noted that
+For particles of material density $\rho_\bullet=0.8 \ {\rm g\,cm}^{-3}$, the
+Stokes number should \blue{then} be $\St \approx \blue{0.008}$. For $S=4.8$, this translates
+into $\delta \approx \blue{1.5\times10^{-3}}$, meaning typical turbulent velocities in the
+vortex core at $\sqrt{\delta} \approx \blue{4}\%$ of the sound
+speed. These velocities \blue{fall {\it squarely} within the range} expected for the
+  elliptic instability \citep{Lesur-Papaloizou10,Lyra-Klahr11},
+  \blue{that shows a maximum speed of 10\% of the speed of sound.
+
+As for the trapped mass, \blue{\citet{vanderMarel13} measures
+  9\,$M_\oplus$}. For the typical interstellar
+dust-to-gas ratio of $\varepsilon=0.01$, \eq{eq:dust-mass} yields \blue{6} 
+and \blue{17}\,$M_\oplus$ for Kida and GNG, respectively. Given the
+approximations, assumptions, and uncertainties, the agreement within a
+factor \blue{2} is remarkable.
+
+Although these values seem reasonable, it should be noted that
   for Oph IRS 48 the candidate planet is at 25AU, whereas the dust trap is at 63 AU. Even though the
 planet is supposed to be massive (planet-to-star mass ratio
 $5\times10^{-3}$), gaps are not expected to be that wide. The supposed
 vortex also seems to be very big, with a semiminor axis of 17\,AU. For
 a temperature of 60\,K, this corresponds to over 3$H$, which is far
 from the $\approx H/2$ expected from numerical simulations and
-\eq{eq:sonic}.}
+\eq{eq:sonic}. 
 
 %\chi=3.1
 %T=60K (assuming? typical dust temperature?) 
@@ -1207,7 +1197,7 @@ from the $\approx H/2$ expected from numerical simulations and
 We solve for the distribution of dust trapped in
 disk vortices, in steady state between gas drag, that 
 tends to drive dust into the vortex, and diffusion, that expels
-it. \eqs{eq:gen_axi}{eq:hv}, \blue{with coefficient given by \eq{eq:maxrhod}},
+it. \eqs{eq:gen_axi}{eq:hv}, with coefficient given by \eq{eq:maxrhod},
  are our result for a distribution with
 ``axis-symmetry''  in the coordinate system defined by
 \eqs{eq:change-x}{eq:change-y}. That is, consisting of ellipses of
@@ -1216,7 +1206,7 @@ properties. It is a Gaussian of standard deviation $H_V$, where, given
 the angular velocity $\varOmega_V$ of the vortex, $H_V$
 is determined by three quantities. These are: 
 the sonic length and gas scale height, $H$; the vortex aspect ratio
-$\chi$; and \blue{$S=\St/\delta$}, the relative strength of drag to
+$\chi$; and $S=\St/\delta$, the relative strength of drag to
 diffusion. The importance of this latter parameter had already been 
 hinted upon by \citet{Cuzzi93} and \citet{Dubrulle95} 
 in the context of steady states of dust sedimentation, and by
@@ -1228,7 +1218,7 @@ the parameter of relevance in their semi-analytical model.
 Transitional disks provide an interesting venue where to test the
 model in an astrophysical context, since all three parameters can be
 derivable from data. The vortex aspect ratio is readily observable,
-and $H$ follows from the temperature ($H=c_s/\varOmega$). \blue{The 
+and $H$ follows from the temperature ($H=c_s/\varOmega$). The 
 parameter $S$ follows from the density contrast (either dust-gas
 contrast at maximum or dust constrast in the same
 orbit). Disentangling $\St$ from $\delta$ in this parameter requires
@@ -1249,16 +1239,16 @@ directly and should be inferred by laboratory experiments. We apply
 the model to the Oph IRS 48 system, finding consistent values. The
 Stokes number for the 4\,mm particles is estimated at 0.25, implying 
 $\delta \approx 5\times 10^{-2}$. The total dust masses we estimate 
-are within an order of magnitude of the measured value.}  
+are within an order of magnitude of the measured value.
 
-We also solve for the non-axisymmetric problem, \blue{showing that, for the
-vortex core, it is in general but a small correction}. The solution is
-\eq{eq:series-n}, with \blue{``radial'' basis functions given by
-\eq{eq:series1} and} coefficients given by \eq{eq:induction}. In practice, the magnitude
+We also solve for the non-axisymmetric problem, showing that, for the
+vortex core, it is in general but a small correction. The solution is
+\eq{eq:series-n}, with ``radial'' basis functions given by
+\eq{eq:series1} and coefficients given by \eq{eq:induction}. In practice, the magnitude
 of the higher non-axisymmetric modes fall fast as $m$ increases, and 
 only the $m=2$ term would provide an appreciable deviation from
-\blue{$\nu$}-symmetry. \blue{We find that non-axisymmetry in dust 
-is associated with non-zero pressure gradients along elliptical streamlines of the vortex.}
+$\nu$-symmetry. We find that non-axisymmetry in dust 
+is associated with non-zero pressure gradients along elliptical streamlines of the vortex.
 
 We note that, aside from planetary gap edges, self-sustained disk
 vortices may also result from RWI in the boundary between MRI-active and MRI-dead zones \citep{Varniere-Tagger06,Lyra08,Lyra09a,Lyra-MacLow12}, or
@@ -1267,31 +1257,31 @@ These processes, however, are not reasonable in the context of outer
 regions of transition disks: the outer edge of the dead zone is quite smooth
 \citep{Dzyurkevich13,Landry13}, whereas the RWI requires a 
 sharp enough transition; as for the baroclinic instability, it
-requires \blue{finite thermal diffusion, whereas the thin outer disk
-  is supposed to radiate efficiently}. This leaves gap-edge RWI as the only currently known
+requires finite thermal diffusion, whereas the thin outer disk
+  is supposed to radiate efficiently. This leaves gap-edge RWI as the only currently known
 plausible mechanism to excite such vortices. 
 
 \acknowledgments W.L. acknowledges financial support by the National Science
 Foundation under grant no. AST10-09802. Part of this paper was written
 at the Jet Propulsion Laboratory, California Institute of Technology, under a contract with the
-National Aeronautics and Space Administration. \blue{The authors are 
+National Aeronautics and Space Administration. The authors are 
 indebted to J. Carpenter, N. van der Marel, J. Oishi, and L. Ricci for thoughtful suggestions. 
-We thank also the anonymous referee for questions and comments that helped improve the work.} 
+We thank also the anonymous referee for questions and comments that helped improve the work.
 
 \begin{thebibliography}{}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Adams \& Watkins}(1995)}]{Adams-Watkins95} Adams, F, C. \& Watkins, R. 1995, ApJ, 451, 314
 \bibitem[{{Alexander et al.}(2006)}]{Alexander06} Alexander, R. D., Clarke, C. J., \& Pringle, J. E 2006, MNRAS, 369, 216
-\bibitem[{{\blue{Andrews et al.}}(2011)}]{Andrews11} \blue{Andrews, S.M., Wilner, D.J., Espaillat, C., Hughes, A.M., Dullemond, C.P., McClure, M.K., Qi, C., \& Brown, J.M. 2011, ApJ, 732, 42} 
+\bibitem[{{Andrews et al.}(2011)}]{Andrews11} Andrews, S.M., Wilner, D.J., Espaillat, C., Hughes, A.M., Dullemond, C.P., McClure, M.K., Qi, C., \& Brown, J.M. 2011, ApJ, 732, 42 
 %\bibitem[{{Artymowicz \& Lubow}(1994)}]{Artymowicz-Lubow94} Artymowicz, P. \& Lubow, S. H. 1994, ApJ, 421, 651
 \bibitem[{{Balbus \& Hawley}(1991)}]{Balbus-Hawley91} Balbus, S. A. \&  Hawley, J. F. 1991, ApJ, 376, 214
 \bibitem[{{Barge \& Sommeria}(1995)}]{Barge-Sommeria95} Barge, P. \&  Sommeria, J. 1995, A\&A, 295L, 1
-\bibitem[{{Beckwith et al.}(1990)}]{Beckwith90} \blue{Beckwith, S. V. W., Sargent, A. I., Chini, R. S., \& Guesten, R. 1990, AJ, 99, 924}
+%\bibitem[{{Beckwith et al.}(1990)}]{Beckwith90} Beckwith, S. V. W., Sargent, A. I., Chini, R. S., \& Guesten, R. 1990, AJ, 99, 924
 \bibitem[{{Birnstiel et al.}(2013)}]{Birnstiel13} Birnstiel, T., Dullemond, C. P., \& Pinilla, P. 2013, A\&A, 550L, 8
-\bibitem[{{\blue{Birnstiel et al.}}(2012)}]{Birnstiel12} \blue{Birnstiel, T., Andrews, S. M., \& Ercolano, B. 2012, A\&A, 544, 79}
-\bibitem[{{Brauer et al.}(2007)}]{Brauer07} Brauer, F., Dullemond, C.P., \blue{Johansen, A.,} Henning, Th.\blue{, Klahr, H., \& Natta, A.} 2007, A\&A, 469, 1169
-\bibitem[{{Brown et al.}(2012)}]{Brown12} \blue{Brown, J. M., Rosenfeld, K. A., Andrews, S. M., Wilner, D. J., \& van Dishoeck, E. F. 2012 ApJ, 758, 30}
+\bibitem[{{Birnstiel et al.}(2012)}]{Birnstiel12} Birnstiel, T., Andrews, S. M., \& Ercolano, B. 2012, A\&A, 544, 79
+\bibitem[{{Brauer et al.}(2007)}]{Brauer07} Brauer, F., Dullemond, C.P., Johansen, A., Henning, Th., Klahr, H., \& Natta, A. 2007, A\&A, 469, 1169
+%\bibitem[{{Brown et al.}(2012)}]{Brown12} Brown, J. M., Rosenfeld, K. A., Andrews, S. M., Wilner, D. J., \& van Dishoeck, E. F. 2012 ApJ, 758, 30
 \bibitem[{{Brown et al.}(2009)}]{Brown09} Brown, J. M., Blake, G. A., Qi, C., Dullemond, C. P., Wilner, D. J., \& Williams, J. P. 2009, ApJ, 704, 496
 \bibitem[{{Bryden et al.}(1999)}]{Bryden99} Bryden, G., Chen, X., Lin, D. N. C., Nelson, R. P., \& Papaloizou, J. C. B. 1999, ApJ, 514, 344
 \bibitem[{{Calvet et al.}(2002)}]{Calvet02} Calvet, N., D'Alessio, P., Hartmann, L., Wilner, D., Walsh, A., \& Sitko, M. 2002, ApJ, 568, 1008
@@ -1303,12 +1293,12 @@ We thank also the anonymous referee for questions and comments that helped impro
 %\bibitem[{{Chandrasekhar}(1961)}]{Chandrasekhar61} Chandrasekhar 1961 {\it Hydrodynamic and Hydromagnetic Stability} (Oxford: Clarendon), 384
 \bibitem[{{Chang \& Oishi}(2010)}]{Chang-Oishi10} Chang, P. \& Oishi, J.S. 2010, ApJ, 721, 1593
 \bibitem[{{Chavanis}(2000)}]{Chavanis00} Chavanis, P.-H. 2000, A\&A, 356, 1089
-\bibitem[{{\blue{Charnoz et al}}(2011)}]{Charnoz11} \blue{Charnoz, S., Fouchet, L., Aleon, J., \& Moreira, M. 2011, ApJ, 737, 33}
+\bibitem[{{Charnoz et al}(2011)}]{Charnoz11} Charnoz, S., Fouchet, L., Aleon, J., \& Moreira, M. 2011, ApJ, 737, 33
 \bibitem[{{Cieza}(2008)}]{Cieza08} Cieza, L.A., Swift, J.J., Mathews, G.S., \& Williams, J.P. 2008, ApJ, 686, 115
 \bibitem[{{Cieza}(2010)}]{Cieza10} Cieza, L.A., Schreiber, M.R., Romero, G.A., Mora, M.D., Mer\'in, B., Swift, J.J., Orellana, M., Williams, J.P., Harvey, P.M., \& Evans, N.J. 2010, ApJ, 712, 925
 \bibitem[{{Clarke \& Owen}(2013)}]{Clarke-Owen13} Clarke, C.J. \& Owen, J.E. 2013, MNRAS, accepted, arXiv:1305.2483
-\bibitem[{{\blue{Clarke \& Pringle}}(1988)}]{Clarke-Pringle88} \blue{Clarke, C. J.; Pringle, J. E. 1988, MNRAS, 235, 365}
-\bibitem[{{\blue{Corder et al.}}(2005)}]{Corder05} \blue{Corder, S., Eisner, J., \& Sargent, A. 2005, ApJ, 622, 133}
+\bibitem[{{Clarke \& Pringle}(1988)}]{Clarke-Pringle88} Clarke, C. J.; Pringle, J. E. 1988, MNRAS, 235, 365
+\bibitem[{{Corder et al.}(2005)}]{Corder05} Corder, S., Eisner, J., \& Sargent, A. 2005, ApJ, 622, 133
 \bibitem[{{Currie et al.}(2009)}]{Currie09} Currie, Th., Lada, C.J., Plavchan, P.,  Robitaille, T.P., Irwin, J., \& Kenyon, S.J. 2009, ApJ, 698, 1
 \bibitem[{{Currie}(2010)}]{Currie10} Currie, Th. 2010, arXiv1002.1715C	
 \bibitem[{{Currie \& Sicilia-Aguilar}(2011)}]{Currie-Sicilia11} Currie, Th. \& Sicilia-Aguilar, A. 2011, ApJ, 732, 24
@@ -1329,7 +1319,7 @@ We thank also the anonymous referee for questions and comments that helped impro
 %\bibitem[{{Huelamo et al.}(2011)}]{Huelamo11} Hu\'elamo, N., Lacour, S., Tuthill, P., Ireland, M.,  Kraus, A., \& Chauvin, G. 2011, A\&A, 528L, 7
 \bibitem[{{Inaba \& Barge}(2006)}]{Inaba-Barge06} Inaba, S. \& Barge, P. 2006, ApJ, 649, 415
 \bibitem[{{Ireland \& Kraus}(2008)}]{Ireland-Kraus08} Ireland, M. J. \& Kraus, A. L. 2008, ApJ, 678L, 59
-\bibitem[{{\blue{Isella et al.}}(2013)}]{Isella13} \blue{Isella, A., P\'erez, L.M., Carpenter, J.M., Ricci, L., Andrews, S., \& Rosenfeld, K. 2013, ApJ, submitted}
+\bibitem[{{Isella et al.}(2013)}]{Isella13} Isella, A., P\'erez, L.M., Carpenter, J.M., Ricci, L., Andrews, S., \& Rosenfeld, K. 2013, ApJ, submitted
 \bibitem[{{Isella et al.}(2012)}]{Isella12} Isella, A., P\'erez, L.M., \& Carpenter, J.M. 2012, ApJ, 747, 136
 \bibitem[{{Johansen et al.}(2004)}]{Johansen04} Johansen, A., Andersen, A. C., \& Brandenburg, A. 2004, 417, 361
 \bibitem[{{Johansen et al.}(2007)}]{Johansen07} Johansen, A., Oishi, J. S., Mac Low, M.-M., Klahr, H., Henning, Th., \& Youdin, A. 2007, Nature, 448, 1022
@@ -1359,15 +1349,15 @@ We thank also the anonymous referee for questions and comments that helped impro
 \bibitem[{{Lyra et al.}(2008)}]{Lyra08} Lyra, W., Johansen, A., Klahr, H., \& Piskunov, N. 2008, A\&A, 491, L41
 \bibitem[{{Lyttleton}(1972)}]{Lyttleton72} Lyttleton, R.A. 1972, MNRAS, 160, 255
 \bibitem[{{van der Marel et al.}(2013)}]{vanderMarel13} van der Marel,
-  \blue{N., van Dishoeck, E. F., Bruderer, S., Birnstiel, T., Pinilla, P.,
-  Dullemond, C. P., van Kempen, T. A., Schmalzl, M., Brown, J. M., Herczeg, G. J., Matthews, G. S., \& Geers, V.} 2013, Science, \blue{340, 1199}
+  N., van Dishoeck, E. F., Bruderer, S., Birnstiel, T., Pinilla, P.,
+  Dullemond, C. P., van Kempen, T. A., Schmalzl, M., Brown, J. M., Herczeg, G. J., Matthews, G. S., \& Geers, V. 2013, Science, 340, 1199
 \bibitem[{{Masset \& Snellgrove}(2001)}]{Masset-Snellgrove01} Masset, F. \& Snellgrove, M. 2001, MNRAS, 320L, 55
 \bibitem[{{M\'eheut et al.}(2010)}]{Meheut10} M\'eheut, H., Casse, F., Varni\`ere, P., \& Tagger M. 2010, A\&A, 516, 31
 \bibitem[{{M\'eheut et al.}(2012a)}]{Meheut12a} M\'eheut H., Cong, Y., \& Lai, D. 2012, MNRAS, 422, 2399
 \bibitem[{{M\'eheut et al.}(2012b)}]{Meheut12b} M\'eheut H., Keppens,  R., Casse, F., \& Benz, W. 2012, A\&A, 542A, 9
 \bibitem[{{M\'eheut et al.}(2012c)}]{Meheut12c} M\'eheut, H., Meliani, Z., Varni\`ere, P., \& Benz, W. 2012, A\&A, 545, 134
 \bibitem[{{Mer\'in et al.}(2010)}]{Merin10} Mer\'in, B., Brown, J. M., Oliveira, I., Herczeg, G.J., van Dishoeck, E.F., Bottinelli, S., Evans, N.J., Cieza, L., Spezzi, L., Alcal\'a, J.M., Harvey, P.M., Blake, G.A., Bayo, A., Geers, V.G., Lahuis, F., Prusti, T., Augereau, J.-C., Olofsson, J., Walter, F.M., \& Chiu, K. 2010, ApJ, 718, 1200
-\bibitem[{{\blue{Morfill \& V\"olk}}(1984)}]{Morfill-Volk84}\blue{Morfill, G. E. \& Voelk, H. J. 1984, ApJ, 287, 371}
+\bibitem[{{Morfill \& V\"olk}(1984)}]{Morfill-Volk84} Morfill, G. E. \& Voelk, H. J. 1984, ApJ, 287, 371
 \bibitem[{{Muto et al.}(2012)}]{Muto12} Muto, T., Grady, C. A., Hashimoto, J., Fukagawa, M., Hornbeck, J. B. et al. 2012, ApJ, 748L, 22
 \bibitem[{{Muzerolle et al.}(2006)}]{Muzerolle06} Muzerolle, J., Adame, L., D'Alessio, P., Calvet, N., Luhman, K.L., Muench, A.A., Lada, C.J., Rieke, G.H., Siegler, N., Trilling, D.E., Young, E.T., Allen, L., Hartmann, L., \& Megeath, Th. 2006, ApJ, 643, 1003
 \bibitem[{{Muzerolle et al.}(2010)}]{Muzerolle10} Muzerolle, J., Allen, L.E., Megeath, Th., Hern\'andez, J., \& Gutermuth, R.A. 2010, ApJ, 708, 1107
@@ -1383,22 +1373,22 @@ We thank also the anonymous referee for questions and comments that helped impro
 \bibitem[{{Pascucci \& Sterzik}(2009)}]{Pascucci-Sterzik09} Pascucci, I. \& Sterzik, M. 2009, ApJ, 702, 724
 \bibitem[{{Petersen et al.}(2007a)}]{Petersen07a} Petersen, M. R., Julien, K., Stewart, G. R. 2007a, ApJ, 658, 1236
 \bibitem[{{Petersen et al.}(2007b)}]{Petersen07b} Petersen, M. R., Stewart, G. R., Julien, K. 2007b, ApJ, 658, 1252
-\bibitem[{{\blue{Pi\'etu et al.}}(2005)}]{Pietu05} \blue{Pi\'etu, V., Guilloteau, S., \& Dutrey, A. 2005, A\&A, 443, 945}
-\bibitem[{{Pinilla et al.}(2012b)}]{Pinilla12b} Pinilla, P., Benisty, M., \& Birnstiel, T. 2012\blue{b}, A\&A, 545, 81
-\bibitem[{{\blue{Pinilla et al.}}(2012a)}]{Pinilla12a} \blue{Pinilla, P., Birnstiel, T., Ricci, L., Dullemond, C.P., Uribe, A.L., Testi, L., \& Natta, A. 2012a, A\&A, 538, 114} 
+\bibitem[{{Pi\'etu et al.}(2005)}]{Pietu05} Pi\'etu, V., Guilloteau, S., \& Dutrey, A. 2005, A\&A, 443, 945
+\bibitem[{{Pinilla et al.}(2012b)}]{Pinilla12b} Pinilla, P., Benisty, M., \& Birnstiel, T. 2012b, A\&A, 545, 81
+\bibitem[{{Pinilla et al.}(2012a)}]{Pinilla12a} Pinilla, P., Birnstiel, T., Ricci, L., Dullemond, C.P., Uribe, A.L., Testi, L., \& Natta, A. 2012a, A\&A, 538, 114 
 %\bibitem[{{Pott et al.}(2010)}]{Pott10} Pott, J.-U., Perrin, M.D., Furlan, E., Ghez, A.M., Herbst, T.M., \& Metchev, S. 2010, ApJ, 710, 265
 \bibitem[{{Quillen et al.}(2004)}]{Quillen04} Quillen, A.C., Blackman, E.G., Frank, A., \& Varni\`ere, P. 2004, ApJ, 612, 137
 \bibitem[{{Raettig et al.}(2013)}]{Raettig13} Raettig, N., Lyra, W., \& Klahr, H. 2013, ApJ, 765, 115
 \bibitem[{{Reg\'aly et al.}(2012)}]{Regaly12} Reg\'aly, Zs., Juh\'asz,  A., S\'andor, Zs, \& Dullemond, C.P. 2012, MNRAS, 419, 1701
-\blue{\bibitem[{{Regev \& Umurhan}(2008)}]{Regev-Umurhan08} Regev, O. \& Umurhan, O. M. 2008, A\&A, 468, 341}
-\bibitem[{{\blue{Rosotti et al.}}(2013)}]{Rosotti13} \blue{Rosotti, G.P., Ercolano, B., Owen, J.E., \& Armitage, P.J. 2013, MNRAS, 430, 1392} 
+\bibitem[{{Regev \& Umurhan}(2008)}]{Regev-Umurhan08} Regev, O. \& Umurhan, O. M. 2008, A\&A, 468, 341
+\bibitem[{{Rosotti et al.}(2013)}]{Rosotti13} Rosotti, G.P., Ercolano, B., Owen, J.E., \& Armitage, P.J. 2013, MNRAS, 430, 1392 
 \bibitem[{{Safronov}(1969)}]{Safronov69} Safronov, V. S. 1969, Evoliutsiia Doplanetnogo Oblaka (English transl: Evolution of the Protoplanetary Cloud and Formation of Earth and the Planets, NASA Tech. Trans. F-677, Jerusalem: Israel Sci. Transl., 1972)
 \bibitem[{{Sicilia-Aguilar et al.}(2006)}]{Sicilia06} Sicilia-Aguilar, A., Hartmann, L.W., F\"ur\'esz, G., Henning, Th., Dullemond, C., \& Brandner, W. 2006, AJ, 132, 2135
 \bibitem[{{Shakura \& Sunyaev}(1973)}]{Shakura-Sunyaev73} Shakura, N. I. \& Sunyaev, R. A. 1973, A\&A, 24, 337
 \bibitem[{{Skrutskie et al.}(1990)}]{Skrutskie90} Skrutskie, M. F., Dutkevitch, D., Strom, S.E., Edwards, S., Strom, K.M., \& Shure, M.A. 1990, AJ, 99, 1187
 \bibitem[{{Strom et al.}(1989)}]{Strom89} Strom, K.M., Strom, S.E., Edwards, S., Cabrit, S., \& Skrutskie, M.F. 1989, AJ, 97, 1451
-\blue{\bibitem[{{Tagger}(2001)}]{Tagger01} Tagger M. 2001, A\&A, 380, 750}
-\bibitem[{{\blue{Tang et al.}}(2012)}]{Tang12} \blue{Tang, Y.-W., Guilloteau, S., Pi\'etu, V., Dutrey, A., Ohashi, N., \& Ho, P.T.P. 2012, A\&A, 547, 84}
+\bibitem[{{Tagger}(2001)}]{Tagger01} Tagger M. 2001, A\&A, 380, 750
+\bibitem[{{Tang et al.}(2012)}]{Tang12} Tang, Y.-W., Guilloteau, S., Pi\'etu, V., Dutrey, A., Ohashi, N., \& Ho, P.T.P. 2012, A\&A, 547, 84
 \bibitem[{{Tanga et al.}(1996)}]{Tanga96} Tanga P., Babiano, A., Dubrulle, B., \& Provenzale, A. 1996, Icarus, 121, 158
 \bibitem[{{Toomre}(1981)}]{Toomre81} Toomre, A. 1981, What amplifies the spirals. In {\it The Structure and Evolution of Normal Galaxies}, Proceedings of the Advanced Study Institute, Cambridge, England, Cambridge and New York, Cambridge University Press, 1981, p.111-136.
 %\bibitem[{{Umurhan}(2010)}]{Umurhan10} Umurhan O. M. 2010, A\&A, 521,  25
@@ -1410,7 +1400,7 @@ We thank also the anonymous referee for questions and comments that helped impro
 \bibitem[{{Youdin \& Goodman}(2005)}]{Youdin-Goodman05} Youdin, A. N. \& Goodman, J. 2005, ApJ, 620, 459
 \bibitem[{{Youdin \& Shu}(2002)}]{Youdin-Shu02} Youdin, A. N. \& Shu, F. H. 2002, ApJ, 580, 494
 \bibitem[{{Youdin}(2008)}]{Youdin08} Youdin, A. 2008arXiv:0807.1114
-\blue{\bibitem[Zhang \& Lai(2006)]{Zhang06} Zhang, H., \& Lai, D.\ 2006, MNRAS, 368, 917}
+\bibitem[{{Zhang \& Lai}(2006)}]{Zhang06} Zhang, H., \& Lai, D.\ 2006, MNRAS, 368, 917
 \bibitem[{{Zhu et al.}(2011)}]{Zhu11} Zhu, Zh., Nelson, R.P., Hartmann, L.,  Espaillat, C., \& Calvet, N. 2011, ApJ, 729, 47
 \bibitem[{{Zsom et al.}(2011)}]{Zsom11} Zsom, A., Ormel, C.W., Dullemond, C.P., \& Henning, Th. 2011, A\&A, 534, 73
 \end{thebibliography}
