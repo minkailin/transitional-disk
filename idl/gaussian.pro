@@ -12,7 +12,7 @@ endif else begin
    device,filename='gaussian.eps',/encapsul,/color,$
           xsize=13.6,ysize=13.6/phi
    !p.font=0
-   ps_fonts
+;   ps_fonts
    thick=3
 endelse
 
