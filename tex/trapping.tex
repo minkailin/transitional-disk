@@ -1112,6 +1112,7 @@ particle internal density.
 % 30 mili-arcseconds. spatial resolution
 
 \subsection{Application to Oph IRS 48}
+\label{sect:oph-irs-48}
 
 We now apply our model to the observed Oph IRS 48 system, with the
 parameters derived by \cite{vanderMarel13}.The dust contrast in the same orbit is 130, which, according to
@@ -1132,7 +1133,7 @@ The dust temperature \blue{derived by the authors is} 60\,K. Assuming this is th
   gas surface density should range 20-30 \ g\,cm$^2$. We take
   $\varSigma_g$=25\ g\,cm$^2$ as best estimate, which, for the scale
   height derived above, translates into $\rho_g=\varSigma_g/(\sqrt{2\pi}H)
-  \approx 1.25\times 10^{-13}\ g\,cm^{-3}$.}
+  \approx 1.25\times 10^{-13}\ {\rm g\,cm}^{-3}$.}
 
 For particles of material density $\rho_\bullet=0.8 \ {\rm g\,cm}^{-3}$, the
 Stokes number should \blue{then} be $\St \approx \blue{0.008}$. For $S=4.8$, this translates
@@ -1150,13 +1151,17 @@ approximations, assumptions, and uncertainties, the agreement within a
 factor \blue{2} is remarkable.
 
 Although these values seem reasonable, it should be noted that
-  for Oph IRS 48 the candidate planet is at 25AU, whereas the dust trap is at 63 AU. Even though the
+for Oph IRS 48 the candidate planet is at $\blue{\approx}$2\blue{0}\,AU, whereas the dust trap is at 63\,AU. Even though the
 planet is supposed to be massive (planet-to-star mass ratio
 $5\times10^{-3}$), gaps are not expected to be that wide. The supposed
 vortex also seems to be very big, with a semiminor axis of 17\,AU. For
 a temperature of 60\,K, this corresponds to over 3$H$, which is far
 from the $\approx H/2$ expected from numerical simulations and
-\eq{eq:sonic}. 
+\eq{eq:sonic}. \blue{Relaxing the approximation that the gas and dust 
+have the same temperature does little to solve the
+discrepancy. Because $H \propto c_s \propto \sqrt{T}$, a vortex
+six times bigger means a temperature thirty-six times hotter. This would 
+bring the gas temperature above 2\,000\,K, which is unrealistic.}
 
 %\chi=3.1
 %T=60K (assuming? typical dust temperature?) 
@@ -1237,11 +1242,11 @@ knowing the gas density and temperature, the particle radius and
 internal density. Of these, the internal density is difficult to measure
 directly and should be inferred by laboratory experiments. We apply
 the model to the Oph IRS 48 system, finding consistent values. The
-Stokes number for the \blue{1.5}\,mm particles is estimated at \blue{0.008}, implying 
+Stokes number for the \blue{1.5}\,mm particles is estimated at
+\blue{$\St \approx 0.008$}, implying 
 $\delta \approx \blue{1.5}\times 10^{-\blue{3}}$, \blue{and turbulent velocities in 
 agreement with numerical simulations}. The total dust masses we estimate 
-are within a \blue{factor 2} of the measured value. \blue{Needless to say, this 
-constitutes a spectacular agreement}.
+are within a \blue{factor 2} of the measured value. 
 
 We also solve for the non-axisymmetric problem, showing that, for the
 vortex core, it is in general but a small correction. The solution is
@@ -1261,7 +1266,13 @@ regions of transition disks: the outer edge of the dead zone is quite smooth
 sharp enough transition; as for the baroclinic instability, it
 requires finite thermal diffusion, whereas the thin outer disk
   is supposed to radiate efficiently. This leaves gap-edge RWI as the only currently known
-plausible mechanism to excite such vortices. 
+plausible mechanism to excite such vortices. \blue{However, this interpretation 
+is not without difficulties, because, as noted in
+\sect{sect:oph-irs-48}, the dust trap is too far out (63\,AU) to be
+the result of a gas gap carved by a planet at 20\,AU, and because its
+radial size ($\approx$35\,AU) would imply an unrealistic high
+gas temperature. Future modeling should aim at solving these discrepancies.}
+
 
 \acknowledgments W.L. acknowledges financial support by the National Science
 Foundation under grant no. AST10-09802. Part of this paper was written
