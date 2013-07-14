@@ -83,7 +83,7 @@ Observational predictions and applications to transitional disks}
 \begin{abstract}
 The Atacama Large Millimeter Array (ALMA) has been  returning images of transitional disks in which large asymmetries are seen in the dust distribution of 
 mm-size in the outer disk. The explanation in vogue borrows from the vortex literature by suggesting 
-that these asymmetries are the result of dust trapping in giant vortices, excited via Rossby wave instability (RWI) 
+that these asymmetries are the result of dust trapping in giant vortices, excited via Rossby wave instability 
 at planetary gap edges. Due to the drag force, dust trapped in vortices will accumulate 
 in the center, and diffusion is needed to maintain a steady state over the lifetime of the disk. While previous work 
 derived semi-analytical models of the process, in this paper we
@@ -138,18 +138,51 @@ explaining these asymmetries, since they generally match the range of structures
 models of planet-disk interaction. 
 
 A deep gap is one of these expected structures, as the planet tides expel material from the vicinity of its orbit 
-\citep{Papaloizou-Lin84,Lin-Papaloizou86a,Lin-Papaloizou86b,Nelson00,Masset-Snellgrove01,Paardekooper-Mellema04,Quillen04,deValBorro06,Klahr-Kley06,Lyra09a,Zhu11,Kley12}. 
-The gas gap has sharp walls, that constitute a steep pressure gradient, modifying the rotational profile locally. 
-This situation is prone to excite what has been called Rossby wave
-instability (RWI), that are in fact  ``edge modes'' 
-\citep{Lovelace-Hohlfeld78,Toomre81,Papaloizou-Pringle84,Papaloizou-Pringle85,Hawley87,Lovelace99,Varniere-Tagger06,deValBorro07,Lyra08,Lyra09a,Lyra09b,
-Meheut10,Meheut12a,Meheut12b,Meheut12c,Lin-Papaloizou11a,Lin-Papaloizou11b,Lin-Papaloizou12,Lyra-MacLow12,Lin12,Lin13} 
-akin to Kelvin-Helmholtz instability, thus converting the extra shear
-into vorticity. The large-scale vortices that result are well-known to trap 
-dust, a property that has been invoked in the context of primordial disks to
-speed up planet formation by trapping solids of cm to m size \citep{Barge-Sommeria95,Adams-Watkins95,Tanga96,Klahr-Henning97,Hodgson-Brandenburg98,Chavanis00,delaFuenteMarcos-Barge01,Johansen04,Inaba-Barge06}, and demonstrated through numerical simulations to efficiently achieve the
-critical densities needed for gravitational collapse of the
-trapped clumps \citep{Lyra08,Lyra09a,Lyra09b}. 
+\citep{Papaloizou-Lin84,Lin-Papaloizou86a,Lin-Papaloizou86b,Nelson00,Masset-Snellgrove01,Paardekooper-Mellema04,Quillen04,deValBorro06,Klahr-Kley06,Lyra09a,Zhu11,Kley12,Kley-Nelson12}. 
+The gas gap has sharp walls, that constitute a steep pressure gradient.
+\blue{Such steep pressure gradients modify the rotational profile
+  locally, and are notoriously unstable to} what has been called Rossby wave
+instability \citep[RWI,][]{Lovelace-Hohlfeld78,Toomre81,Papaloizou-Pringle84,Papaloizou-Pringle85,Hawley87,Lovelace99}\blue{.}
+\blue{The RWI is} an ``edge mode'' instability akin to Kelvin-Helmholtz, that converts the extra shear
+into vorticity\blue{;} the large-scale vortices that result are well-know
+\blue{in the planet formation literature.} 
+
+\blue{\citet{Barge-Sommeria95,Adams-Watkins95}, and \citet{Tanga96}
+independently proposed, in the context of primordial disks, that they could speed
+up planet formation by trapping solids of cm to m
+size. The dynamics of dust trapping in vortices was 
+developed in a detailed work by \citet{Chavanis00}, setting much of
+the analytical foundations of the
+field. \citet{Godon-Livio99,Godon-Livio00} and \citet{Johansen04} simulated the process
+numerically, finding fast trapping of particles but also quick vortex
+dissipation due to (Laplacian) viscosity. These studies, however, did not consider the question of how to
+form disk vortices in first place, a question tackled in 
+the work of \cite{Varniere-Tagger06}. These authors show that a
+sharp viscosity gradient in the disk leads to a pile-up of
+matter, that in turn goes unstable to the RWI. Because the
+magnetorotational instability \citep[MRI,][]{Balbus-Hawley91} leads to a significant turbulent
+viscosity, \cite{Varniere-Tagger06} suggest that this mechanism could
+be at work in the transition between the MRI-active and dead zones. The accumulation of dust
+in these self-sustained RWI vortices was subsequently studied by
+\citet{Inaba-Barge06}, albeit in the fluid approach, that limited the
+dust size they could use. Planetary gap edges were seen to excite
+vortices in many simulations in the code-comparison study of
+\citet{deValBorro06}, an effect later explained \citep{deValBorro07} in
+terms of the RWI as well.} 
+
+\blue{These efforts culminated into a coherent picture of vortex-assisted
+planet formation in dead zone vortices by \citet{Lyra08,Lyra09a} and in 
+gap edge vortices by \citet{Lyra09b}. These works solved
+self-consistently for the nonlinear compressible hydrodynamics and the
+aerodynamics of interacting solid particles, removing the limitations
+of former approaches, albeit in the context of 2D disks. The RWI was subsequently studied in barotropic 3D
+models by \citet{Meheut10,Meheut12a,Meheut12b}, finding interesting
+meridional circulation patterns; in connection with self-gravity and
+planet migration in 2D \citep{Lin-Papaloizou11a,Lin-Papaloizou11b,Lin-Papaloizou12}
+and 3D \citep{Lin12}, finding slow-down and eventual suppression with
+increasing mass; in MHD by \citet{Lyra-MacLow12}, bringing realism to the dead-zone 
+scenario; and by \citet{Lin13}, who extended the validity of linear
+calculations to 3D non-barotropic models.} 
 
 Part of these results have been applied to the field of
 transitional disks. The particle size that is
@@ -177,7 +210,7 @@ as the drag force drives dust toward the vortex center, diffusion is
 needed to maintain a steady state over the lifetime of the disk
 \citep{Klahr-Henning97,Chavanis00}. \citet{Birnstiel13} presented a semi-analytical model that solves for the azimuthal dust 
 distribution while using fits from numerical simulations
-\citep{Pinilla12b} to constrain the radial morphology. In this work we present an analytical 
+\citep{Pinilla12b} to constrain the radial morphology. In this work we present a \blue{fully} analytical 
 model for the steady state distribution of dust trapped in vortices, 
 accurate to first order in Stokes number, and general in space. In 
 \sect{sect:model-equations} we derive the
@@ -1218,7 +1251,7 @@ in the context of steady states of dust sedimentation, and by
 \citet{Klahr-Henning97} for vortices in the meridional plane. An insightful study by 
 \citet{Jacquet12} emphasized the relevance of this parameter for 
 global redistribution of solids. \citet{Birnstiel13} also find this to be 
-the parameter of relevance in their semi-analytical model.
+the parameter of relevance in their semi-analytical model. 
 
 Transitional disks provide an interesting venue where to test the
 model in an astrophysical context, since all three parameters can be
@@ -1231,8 +1264,7 @@ directly measuring at least one of these quantities. The diffusion
 parameter $\delta$ is in principle not equal to
 $\alpha$ (the dimensionless gas viscosity of
 \citealt{Shakura-Sunyaev73}), because the processes generating turbulence in the
-vortex and in the disk are different. The latter is supposedly the
-magneto-rotational instability \citep[MRI,][]{Balbus-Hawley91}, whereas the former is the elliptic or
+vortex and in the disk are different. The latter is supposedly the MRI, whereas the former is the elliptic or
 magneto-elliptic instability (see \citealt{Lyra13} and references
 therein). A direct measure of $\delta$ would require measuring the
 velocity field inside the vortex, that would appear spectroscopically 
@@ -1257,9 +1289,9 @@ only the $m=2$ term would provide an appreciable deviation from
 $\nu$-symmetry. We find that non-axisymmetry in dust 
 is associated with non-zero pressure gradients along elliptical streamlines of the vortex.
 
-We note that, aside from planetary gap edges, self-sustained disk
-vortices may also result from RWI in the boundary between MRI-active and MRI-dead zones \citep{Varniere-Tagger06,Lyra08,Lyra09a,Lyra-MacLow12}, or
-convective-like nonlinear baroclinic instabilities \citep{Klahr-Bodenheimer03,Klahr04,Petersen07a,Petersen07b,Lesur-Papaloizou10,Lyra-Klahr11,Raettig13}. 
+We recall that aside from planetary gap edges, self-sustained disk
+vortices may also result from either RWI at the boundary between the MRI-active
+and dead zones, or convective-like nonlinear baroclinic instabilities \citep{Klahr-Bodenheimer03,Klahr04,Petersen07a,Petersen07b,Lesur-Papaloizou10,Lyra-Klahr11,Raettig13}. 
 These processes, however, are not reasonable in the context of outer
 regions of transition disks: the outer edge of the dead zone is quite smooth
 \citep{Dzyurkevich13,Landry13}, whereas the RWI requires a 
@@ -1275,11 +1307,14 @@ gas temperature. Future modeling should aim at solving these discrepancies.}
 
 
 \acknowledgments W.L. acknowledges financial support by the National Science
-Foundation under grant no. AST10-09802. Part of this paper was written
-at the Jet Propulsion Laboratory, California Institute of Technology, under a contract with the
-National Aeronautics and Space Administration. The authors are 
-indebted to J. Carpenter, N. van der Marel, J. Oishi, and L. Ricci for thoughtful suggestions. 
-We thank also the anonymous referee for questions and comments that helped improve the work.
+Foundation under grant no. AST10-09802. \blue{This work was performed in part at the Jet Propulsion
+Laboratory, under contract with the California Institute of
+Technology (Caltech) funded by the National Aeronautics and Space
+Administration (NASA) through the Sagan Fellowship Program executed
+by the NASA Exoplanet Science Institute.} The authors are 
+indebted to J. Carpenter, \blue{A. Isella}, \blue{C. McNally}, J. Oishi, and L. Ricci for thoughtful
+suggestions, \blue{and to N. van der Marel for clarifying details
+concerning the observations of Oph IRS 48}. We thank also the anonymous referee for questions and comments that helped improve the work.
 
 \begin{thebibliography}{}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
@@ -1321,14 +1356,16 @@ We thank also the anonymous referee for questions and comments that helped impro
 \bibitem[{{Dzyurkevich et al.}(2013)}]{Dzyurkevich13} Dzyurkevich, N., Turner, N.J., Henning, Th., \& Kley, W. 2013, ApJ, 765, 114
 \bibitem[{{Espaillat et al.}(2008)}]{Espaillat08} Espaillat, C., Calvet, N., Luhman, K.L., Muzerolle, J., \& D'Alessio, P. 2008, ApJ, 682L, 125
 %\bibitem[{{Espaillat et al.}(2010)}]{Espaillat10} Espaillat, C., D'Alessio, P., Hern\'andez, J., Nagel, E., Luhman, K. L., Watson, D. M., Calvet, N., Muzerolle, J., \& McClure, M. 2010, ApJ, 717, 441
-\bibitem[{{de la Fuente Marcos \& Barge}(2001)}]{delaFuenteMarcos-Barge01} de la Fuente Marcos, C. \& Barge, P. 2001, MNRAS, 323, 601 
+%\bibitem[{{de la Fuente Marcos \& Barge}(2001)}]{delaFuenteMarcos-Barge01} de la Fuente Marcos, C. \& Barge, P. 2001, MNRAS, 323, 601 
 \bibitem[{{Gauvin \& Strom}(1992)}]{Gauvin-Strom92} Gauvin, L.S. \& Strom, K.M. 1992, ApJ, 385, 217
+\bibitem[{{Godon \& Livio}(1999)}]{Godon-Livio99} \blue{Godon, P. \& Livio, M. 1999, ApJ, 523, 350}
+\bibitem[{{Godon \& Livio}(2000)}]{Godon-Livio00} \blue{Godon, P. \& Livio, M. 2000, ApJ, 537, 396}
 \bibitem[{{Goldreich \& Ward}(1973)}]{Goldreich-Ward73} Goldreich, P. \& Ward, W.R. 1973, ApJ, 183, 1051
 \bibitem[{{Goodman et al.}(1987)}]{Goodman87} Goodman, J., Narayan, R., \& Goldreich, P. 1987, MNRAS, 225, 695
 \bibitem[{{Hawley}(1987)}]{Hawley87} Hawley, J.F. 1987, MNRAS, 225, 677
 %\bibitem[{{Hawley et al.}(1995)}]{Hawley95} Hawley, J.F., Gammie, C.F., \& Balbus, S.A. 1995, ApJ, 440, 742
 \bibitem[{{Lovelace \& Hohlfeld}(1978)}]{Lovelace-Hohlfeld78}  Lovelace, R.V.E. \& Hohlfeld, R.G. 1978, ApJ, 221, 51
-\bibitem[{{Hodgson \& Brandenburg}(1998)}]{Hodgson-Brandenburg98} Hodgson, L.S. \& Brandenburg A. 1998, A\&A, 330, 1169
+%\bibitem[{{Hodgson \& Brandenburg}(1998)}]{Hodgson-Brandenburg98} Hodgson, L.S. \& Brandenburg A. 1998, A\&A, 330, 1169
 %\bibitem[{{Huelamo et al.}(2011)}]{Huelamo11} Hu\'elamo, N., Lacour, S., Tuthill, P., Ireland, M.,  Kraus, A., \& Chauvin, G. 2011, A\&A, 528L, 7
 \bibitem[{{Inaba \& Barge}(2006)}]{Inaba-Barge06} Inaba, S. \& Barge, P. 2006, ApJ, 649, 415
 \bibitem[{{Ireland \& Kraus}(2008)}]{Ireland-Kraus08} Ireland, M. J. \& Kraus, A. L. 2008, ApJ, 678L, 59
@@ -1339,9 +1376,10 @@ We thank also the anonymous referee for questions and comments that helped impro
 \bibitem[{{Kida}(1981)}]{Kida81} Kida, S. 1981, J. Phys. Soc. Jpn.,  50, 351
 \bibitem[{{Klahr}(2004)}]{Klahr04} Klahr, H. 2004, ApJ, 606, 1070
 \bibitem[{{Klahr \& Bodenheimer}(2003)}]{Klahr-Bodenheimer03} Klahr, H. \& Bodenheimer, P. 2003, ApJ, 582, 869
-\bibitem[{{Klahr \& Henning}(1997)}]{Klahr-Henning97} Klahr, H.H. \& Henning, Th. 1997, Icarus, 128, 213
+%\bibitem[{{Klahr \& Henning}(1997)}]{Klahr-Henning97} Klahr, H.H. \& Henning, Th. 1997, Icarus, 128, 213
 \bibitem[{{Klahr \& Kley}(2006)}]{Klahr-Kley06} Klahr, H. \& Kley, W. 2006, A\&A, 445, 747
 \bibitem[{{Kley et al.}(2012)}]{Kley12} Kley, W., M\"uller, T. W. A., Kolb, S. M., Ben\'itez-Llambay, P., \& Masset, F. 2012, A\&A, 546, 99
+\blue{\bibitem[{{\blue{Kley \& Nelson}}(2012)}]{Kley-Nelson12} Kley, W. \& Nelson, R. P. 2012, ARA\&A, 50, 211} 
 %\bibitem[{{Kraus \& Ireland}(2012)}]{Kraus-Ireland12} Kraus, AL. \& Ireland, M.J. 2012, ApJ, 745, 5
 \bibitem[{{Jacquet et al.}(2012)}]{Jacquet12} Jacquet, E., Gounelle, M., \& Fromang, S. 2012, Icarus, 220, 162
 \bibitem[{{Landry et al.}(2013)}]{Landry13} Landry, R., Dodson-Robinson, S.E., Turner, N.J., \& Abram, G. 2013, arXiv1305.0770
@@ -1416,5 +1454,6 @@ We thank also the anonymous referee for questions and comments that helped impro
 \bibitem[{{Zhang \& Lai}(2006)}]{Zhang06} Zhang, H., \& Lai, D.\ 2006, MNRAS, 368, 917
 \bibitem[{{Zhu et al.}(2011)}]{Zhu11} Zhu, Zh., Nelson, R.P., Hartmann, L.,  Espaillat, C., \& Calvet, N. 2011, ApJ, 729, 47
 \bibitem[{{Zsom et al.}(2011)}]{Zsom11} Zsom, A., Ormel, C.W., Dullemond, C.P., \& Henning, Th. 2011, A\&A, 534, 73
+
 \end{thebibliography}
 \end{document}
